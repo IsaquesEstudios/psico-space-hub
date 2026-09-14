@@ -188,7 +188,7 @@ function Inicio() {
                   loading="lazy"
                   width={1200}
                   height={800}
-                  className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-[333px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <p className="eyebrow mt-5 text-primary">{curso.etiqueta}</p>
