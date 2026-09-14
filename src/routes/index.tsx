@@ -202,6 +202,38 @@ function Inicio() {
         </div>
       </Section>
 
+      {/* Chamada para WhatsApp */}
+      <section className="bg-deep text-deep-foreground">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
+          <div className="px-5 py-16 lg:px-10 lg:py-20">
+            <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
+            <h2 className="mt-5 font-display text-4xl lg:text-5xl">
+              Entre em contato conosco
+            </h2>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70">
+              Fale pelo WhatsApp para tirar dúvidas, conhecer os atendimentos e encontrar o melhor caminho
+              para você e sua família.
+            </p>
+            <a
+              href={site.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="eyebrow mt-10 inline-block bg-primary px-8 py-4 text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Falar no WhatsApp
+            </a>
+          </div>
+          <img
+            src={images.cta}
+            alt="Mesa de trabalho com caderno e laptop"
+            loading="lazy"
+            width={1400}
+            height={900}
+            className="h-64 w-full object-cover lg:h-full"
+          />
+        </div>
+      </section>
+
       {/* Blog */}
       <Section className="bg-muted">
         <div className="max-w-2xl">
@@ -244,37 +276,6 @@ function Inicio() {
         </div>
       </Section>
 
-      {/* Chamada para WhatsApp */}
-      <section className="bg-deep text-deep-foreground">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
-          <div className="px-5 py-16 lg:px-10 lg:py-20">
-            <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
-            <h2 className="mt-5 font-display text-4xl lg:text-5xl">
-              Entre em contato conosco
-            </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70">
-              Fale pelo WhatsApp para tirar dúvidas, conhecer os atendimentos e encontrar o melhor caminho
-              para você e sua família.
-            </p>
-            <a
-              href={site.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="eyebrow mt-10 inline-block bg-primary px-8 py-4 text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Falar no WhatsApp
-            </a>
-          </div>
-          <img
-            src={images.cta}
-            alt="Mesa de trabalho com caderno e laptop"
-            loading="lazy"
-            width={1400}
-            height={900}
-            className="h-64 w-full object-cover lg:h-full"
-          />
-        </div>
-      </section>
     </>
   );
 }
