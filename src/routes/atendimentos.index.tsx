@@ -7,13 +7,13 @@ import { atendimentos, brandShareImage } from "@/data/site";
 export const Route = createFileRoute("/atendimentos/")({
   head: () => ({
     meta: [
-      { title: "Atendimentos | Marina Alvez Psicopedagogia" },
+      { title: "Atendimentos | Clínica Evoluta" },
       {
         name: "description",
         content:
-          "Cinco frentes de atendimento psicopedagógico: dificuldades de aprendizagem, TDAH, dislexia, avaliação e orientação a pais e escolas.",
+          "Cinco frentes de atendimento: dificuldades de aprendizagem, TDAH, dislexia, avaliação e orientação a pais e escolas.",
       },
-      { property: "og:title", content: "Atendimentos | Marina Alvez Psicopedagogia" },
+      { property: "og:title", content: "Atendimentos | Clínica Evoluta" },
       {
         property: "og:description",
         content: "Conheça as especialidades de atendimento e como cada processo funciona.",

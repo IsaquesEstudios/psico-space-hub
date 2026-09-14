@@ -7,13 +7,13 @@ import { atendimentos, brandShareImage, site } from "@/data/site";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato | Marina Alvez Psicopedagogia" },
+      { title: "Contato | Clínica Evoluta" },
       {
         name: "description",
         content:
           "Agende uma primeira conversa: atendimento presencial e online, com horários de segunda a sábado.",
       },
-      { property: "og:title", content: "Contato | Marina Alvez Psicopedagogia" },
+      { property: "og:title", content: "Contato | Clínica Evoluta" },
       {
         property: "og:description",
         content: "Fale sobre a queixa principal e receba as orientações iniciais.",

@@ -7,13 +7,13 @@ import { brandShareImage, cursos, site } from "@/data/site";
 export const Route = createFileRoute("/cursos/")({
   head: () => ({
     meta: [
-      { title: "Cursos | Marina Alvez Psicopedagogia" },
+      { title: "Cursos | Clínica Evoluta" },
       {
         name: "description",
         content:
-          "Cursos online para educadores, psicopedagogos e famílias: alfabetização, funções executivas e apoio familiar.",
+          "Cursos online para educadores, terapeutas e famílias: alfabetização, funções executivas e apoio familiar.",
       },
-      { property: "og:title", content: "Cursos | Marina Alvez Psicopedagogia" },
+      { property: "og:title", content: "Cursos | Clínica Evoluta" },
       {
         property: "og:description",
         content: "Formações práticas com encontros ao vivo e material de apoio.",

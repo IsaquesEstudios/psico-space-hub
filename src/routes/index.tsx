@@ -7,13 +7,13 @@ import { atendimentos, brandShareImage, cursos, destaques, images, posts, site }
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marina Alvez | Psicopedagoga clínica para crianças e adolescentes" },
+      { title: "Clínica Evoluta | Apoio à aprendizagem para crianças e adolescentes" },
       {
         name: "description",
         content:
-          "Psicopedagogia clínica com escuta e método: dificuldades de aprendizagem, TDAH, dislexia, avaliação e orientação a famílias e escolas.",
+          "Atendimento com escuta e método: dificuldades de aprendizagem, TDAH, dislexia, avaliação e orientação a famílias e escolas.",
       },
-      { property: "og:title", content: "Marina Alvez | Psicopedagoga clínica" },
+      { property: "og:title", content: "Clínica Evoluta | Acompanhamento à aprendizagem" },
       {
         property: "og:description",
         content: "Aprender com acolhimento, no tempo de cada criança.",
@@ -34,7 +34,7 @@ function Inicio() {
       <section className="relative flex min-h-screen items-center overflow-hidden bg-deep text-deep-foreground">
         <img
           src={images.hero}
-          alt="Psicopedagoga em seu consultório"
+          alt="Consultório da Clínica Evoluta"
           width={1408}
           height={1200}
           className="absolute inset-0 h-full w-full object-cover"
@@ -44,14 +44,14 @@ function Inicio() {
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
-            <p className="eyebrow text-deep-foreground/60">Psicopedagogia</p>
+            <p className="eyebrow text-deep-foreground/60">Aprendizagem e desenvolvimento</p>
             <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
               Escuta. Método.
               <br />
               Aprendizagem.
             </h1>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/80">
-              Acompanhamento psicopedagógico para crianças e adolescentes que precisam reencontrar a
+              Acompanhamento para crianças e adolescentes que precisam reencontrar a
               confiança de aprender — com a família e a escola junto no processo.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -77,9 +77,9 @@ function Inicio() {
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
-            <Eyebrow>Sobre mim</Eyebrow>
+            <Eyebrow>Sobre a clínica</Eyebrow>
             <h2 className="mt-5 font-display text-4xl leading-tight lg:text-5xl">
-              Psicopedagoga
+              Atendimento
               <br />
               com olhar clínico
               <br />

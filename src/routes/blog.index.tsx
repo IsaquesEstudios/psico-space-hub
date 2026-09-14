@@ -7,13 +7,13 @@ import { brandShareImage, images, posts } from "@/data/site";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog | Marina Alvez Psicopedagogia" },
+      { title: "Blog | Clínica Evoluta" },
       {
         name: "description",
         content:
           "Textos informativos sobre leitura, rotina de estudos, atenção e desenvolvimento da aprendizagem.",
       },
-      { property: "og:title", content: "Blog | Marina Alvez Psicopedagogia" },
+      { property: "og:title", content: "Blog | Clínica Evoluta" },
       {
         property: "og:description",
         content: "Conteúdo prático sobre aprendizagem para famílias e educadores.",
