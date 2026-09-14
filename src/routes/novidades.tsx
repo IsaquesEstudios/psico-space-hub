@@ -33,10 +33,11 @@ function Novidades() {
           alt="Agenda e materiais de trabalho sobre uma mesa"
           width={1600}
           height={900}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute right-0 top-0 h-[112%] w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[12%] via-deep/85 via-[52%] to-transparent to-[96%]" />
-        <div className="absolute inset-0 bg-deep/55 lg:hidden" />
+        {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/65 via-[55%] to-transparent to-[95%]" />
+        <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Novidades</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
