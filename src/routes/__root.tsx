@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -125,12 +126,16 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
+  // precisa de um respiro no topo para não ficar escondido sob o menu.
+  const isHome = pathname === "/";
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1">
+        <main className={`flex-1 ${isHome ? "" : "pt-[88px]"}`}>
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
