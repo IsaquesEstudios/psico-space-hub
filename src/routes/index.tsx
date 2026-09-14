@@ -45,7 +45,7 @@ function Inicio() {
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
             <p className="eyebrow text-deep-foreground/60">Aprendizagem e desenvolvimento</p>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
               Escuta. Método.
               <br />
               Aprendizagem.
@@ -54,7 +54,7 @@ function Inicio() {
               Acompanhamento para crianças e adolescentes que precisam reencontrar a
               confiança de aprender — com a família e a escola junto no processo.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 to="/contato"
                 className="eyebrow bg-primary px-8 py-4 text-primary-foreground transition-opacity hover:opacity-90"
@@ -78,7 +78,7 @@ function Inicio() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
             <Eyebrow>Sobre a clínica</Eyebrow>
-            <h2 className="mt-5 font-display text-4xl leading-tight lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
               Atendimento
               <br />
               com olhar clínico
@@ -118,14 +118,14 @@ function Inicio() {
 
       {/* Atendimentos */}
       <Section className="bg-muted">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+        <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
           <div className="min-w-0">
             <Eyebrow>Atendimentos</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl lg:text-5xl">Especialidades</h2>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Especialidades</h2>
           </div>
           <Link
             to="/atendimentos"
-            className="eyebrow inline-flex items-center gap-2 pb-2 transition-colors hover:text-primary"
+            className="eyebrow inline-flex items-center gap-2 transition-colors hover:text-primary sm:pb-2"
           >
             Ver todos
             <ArrowRight className="h-3.5 w-3.5" />
@@ -161,14 +161,14 @@ function Inicio() {
 
       {/* Cursos */}
       <Section>
-        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+        <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
           <div className="min-w-0">
             <Eyebrow>Cursos</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl lg:text-5xl">Aprendizado que transforma a prática</h2>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Aprendizado que transforma a prática</h2>
           </div>
           <Link
             to="/cursos"
-            className="eyebrow inline-flex items-center gap-2 pb-2 transition-colors hover:text-primary"
+            className="eyebrow inline-flex items-center gap-2 transition-colors hover:text-primary sm:pb-2"
           >
             Ver todos
             <ArrowRight className="h-3.5 w-3.5" />
@@ -209,7 +209,7 @@ function Inicio() {
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
           <div className="px-5 py-16 lg:px-10 lg:py-20">
             <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
-            <h2 className="mt-5 font-display text-4xl lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl">
               Entre em contato conosco
             </h2>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70">
@@ -240,7 +240,7 @@ function Inicio() {
       <Section className="bg-muted">
         <div className="max-w-2xl">
           <Eyebrow>Blog</Eyebrow>
-          <h2 className="mt-4 font-display text-4xl leading-tight lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
             Compartilhamos dicas para ajudar quem precisa
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">

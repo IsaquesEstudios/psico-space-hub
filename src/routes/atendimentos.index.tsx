@@ -31,7 +31,7 @@ function AtendimentosIndex() {
       <section className="bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Atendimentos</p>
-          <h1 className="mt-6 max-w-2xl font-display text-5xl leading-tight lg:text-6xl">
+          <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Cinco frentes de trabalho, um mesmo cuidado
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-deep-foreground/70">

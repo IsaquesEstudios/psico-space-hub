@@ -39,7 +39,7 @@ function Novidades() {
         <div className="absolute inset-0 bg-deep/55 lg:hidden" />
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Novidades</p>
-          <h1 className="mt-6 max-w-2xl font-display text-5xl leading-tight lg:text-6xl">
+          <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Avisos, vagas e agenda
           </h1>
         </div>
@@ -63,7 +63,7 @@ function Novidades() {
             </article>
           ))}
 
-          <div className="mt-14 bg-muted p-10 text-center">
+          <div className="mt-14 bg-muted p-6 text-center sm:p-10">
             <h2 className="font-display text-3xl">Quer ser avisada das próximas turmas?</h2>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Envie uma mensagem pedindo para entrar na lista de espera e aviso assim que abrir vaga.

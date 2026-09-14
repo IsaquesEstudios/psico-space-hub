@@ -31,7 +31,7 @@ function CursosIndex() {
       <section className="bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Cursos</p>
-          <h1 className="mt-6 max-w-2xl font-display text-5xl leading-tight lg:text-6xl">
+          <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Formações práticas, para aplicar na semana seguinte
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-deep-foreground/70">
@@ -53,7 +53,7 @@ function CursosIndex() {
                 height={800}
                 className="h-56 w-full object-cover"
               />
-              <div className="flex flex-1 flex-col p-8">
+              <div className="flex flex-1 flex-col p-6 sm:p-8">
                 <Eyebrow>{c.etiqueta}</Eyebrow>
                 <h2 className="mt-3 font-display text-3xl leading-snug">{c.titulo}</h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.resumo}</p>
