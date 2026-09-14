@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 import { atendimentos, site } from "@/data/site";
@@ -15,9 +15,25 @@ const links = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 32);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Na home, o menu nasce transparente sobre o marrom do hero e ganha o vidro ao rolar.
+  const solid = scrolled || open || pathname !== "/";
 
   return (
-    <header className="sticky top-0 z-50 bg-deep/70 text-deep-foreground backdrop-blur-xl">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 text-deep-foreground transition-colors duration-300 ${
+        solid ? "bg-deep/70 backdrop-blur-xl" : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:gap-8 lg:px-10">
         <Link to="/" className="min-w-0 leading-tight">
           <span className="block truncate font-display text-2xl">{site.nome}</span>
