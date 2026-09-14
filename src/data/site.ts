@@ -27,13 +27,13 @@ export const images = {
 };
 
 export const site = {
-  nome: "Marina Alvez",
-  papel: "Psicopedagoga Clínica",
+  nome: "Clínica Evoluta",
+  papel: "Aprendizagem e desenvolvimento",
   slogan: "Aprender com acolhimento, no tempo de cada criança",
   whatsapp: "https://wa.me/5500000000000",
   telefone: "+55 (00) 00000-0000",
-  email: "contato@exemplo.com.br",
-  instagram: "@exemplo.psicopedagogia",
+  email: "contato@clinicaevoluta.com.br",
+  instagram: "@clinicaevoluta",
   cidade: "Atendimento presencial e online",
 } as const;
 
@@ -162,8 +162,8 @@ export const atendimentos: Atendimento[] = [
     ],
   },
   {
-    slug: "avaliacao-psicopedagogica",
-    titulo: "Avaliação psicopedagógica",
+    slug: "avaliacao-de-aprendizagem",
+    titulo: "Avaliação de aprendizagem",
     etiqueta: "Processo diagnóstico",
     resumo:
       "Investigação completa das funções envolvidas na aprendizagem, com relatório e plano de intervenção.",
@@ -296,7 +296,7 @@ export const cursos: Curso[] = [
     duracao: "8 encontros de 1h30",
     formato: "Online, ao vivo, com gravações",
     investimento: "Sob consulta",
-    publico: "Professores, psicopedagogos e famílias",
+    publico: "Professores, terapeutas e famílias",
     conteudo: [
       "Consciência fonológica na prática",
       "Sequência de sons e sílabas passo a passo",
@@ -319,7 +319,7 @@ export const cursos: Curso[] = [
     duracao: "6 encontros de 2h",
     formato: "Online, ao vivo",
     investimento: "Sob consulta",
-    publico: "Psicopedagogos, terapeutas e educadores",
+    publico: "Educadores, terapeutas e profissionais da saúde",
     conteudo: [
       "O que são funções executivas, sem jargão",
       "Como observar e registrar dificuldades",
@@ -422,7 +422,7 @@ export const posts: Post[] = [
 export const novidades = [
   {
     data: "Setembro de 2026",
-    titulo: "Novas vagas para avaliação psicopedagógica",
+    titulo: "Novas vagas para avaliação de aprendizagem",
     texto:
       "Abertura de quatro vagas para processos de avaliação com início em setembro, nos períodos da manhã e tarde.",
     etiqueta: "Agenda",
