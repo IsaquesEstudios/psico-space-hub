@@ -10,33 +10,168 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AtendimentosRouteImport } from './routes/atendimentos'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CursosRouteImport } from './routes/cursos'
+import { Route as NovidadesRouteImport } from './routes/novidades'
+import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
+import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as CursosIndexRouteImport } from './routes/cursos.index'
+import { Route as CursosSlugRouteImport } from './routes/cursos.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtendimentosRoute = AtendimentosRouteImport.update({
+  id: '/atendimentos',
+  path: '/atendimentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CursosRoute = CursosRouteImport.update({
+  id: '/cursos',
+  path: '/cursos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovidadesRoute = NovidadesRouteImport.update({
+  id: '/novidades',
+  path: '/novidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtendimentosIndexRoute = AtendimentosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AtendimentosRoute,
+} as any)
+const AtendimentosSlugRoute = AtendimentosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => AtendimentosRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
+const CursosIndexRoute = CursosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CursosRoute,
+} as any)
+const CursosSlugRoute = CursosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => CursosRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atendimentos': typeof AtendimentosRouteWithChildren
+  '/blog': typeof BlogRouteWithChildren
+  '/contato': typeof ContatoRoute
+  '/cursos': typeof CursosRouteWithChildren
+  '/novidades': typeof NovidadesRoute
+  '/atendimentos/$slug': typeof AtendimentosSlugRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/cursos/$slug': typeof CursosSlugRoute
+  '/atendimentos/': typeof AtendimentosIndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/cursos/': typeof CursosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/novidades': typeof NovidadesRoute
+  '/atendimentos/$slug': typeof AtendimentosSlugRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/cursos/$slug': typeof CursosSlugRoute
+  '/atendimentos': typeof AtendimentosIndexRoute
+  '/blog': typeof BlogIndexRoute
+  '/cursos': typeof CursosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atendimentos': typeof AtendimentosRouteWithChildren
+  '/blog': typeof BlogRouteWithChildren
+  '/contato': typeof ContatoRoute
+  '/cursos': typeof CursosRouteWithChildren
+  '/novidades': typeof NovidadesRoute
+  '/atendimentos/$slug': typeof AtendimentosSlugRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/cursos/$slug': typeof CursosSlugRoute
+  '/atendimentos/': typeof AtendimentosIndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/cursos/': typeof CursosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/atendimentos'
+    | '/blog'
+    | '/contato'
+    | '/cursos'
+    | '/novidades'
+    | '/atendimentos/$slug'
+    | '/blog/$slug'
+    | '/cursos/$slug'
+    | '/atendimentos/'
+    | '/blog/'
+    | '/cursos/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contato'
+    | '/novidades'
+    | '/atendimentos/$slug'
+    | '/blog/$slug'
+    | '/cursos/$slug'
+    | '/atendimentos'
+    | '/blog'
+    | '/cursos'
+  id:
+    | '__root__'
+    | '/'
+    | '/atendimentos'
+    | '/blog'
+    | '/contato'
+    | '/cursos'
+    | '/novidades'
+    | '/atendimentos/$slug'
+    | '/blog/$slug'
+    | '/cursos/$slug'
+    | '/atendimentos/'
+    | '/blog/'
+    | '/cursos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtendimentosRoute: typeof AtendimentosRouteWithChildren
+  BlogRoute: typeof BlogRouteWithChildren
+  ContatoRoute: typeof ContatoRoute
+  CursosRoute: typeof CursosRouteWithChildren
+  NovidadesRoute: typeof NovidadesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +183,132 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/atendimentos': {
+      id: '/atendimentos'
+      path: '/atendimentos'
+      fullPath: '/atendimentos'
+      preLoaderRoute: typeof AtendimentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cursos': {
+      id: '/cursos'
+      path: '/cursos'
+      fullPath: '/cursos'
+      preLoaderRoute: typeof CursosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novidades': {
+      id: '/novidades'
+      path: '/novidades'
+      fullPath: '/novidades'
+      preLoaderRoute: typeof NovidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimentos/': {
+      id: '/atendimentos/'
+      path: '/'
+      fullPath: '/atendimentos/'
+      preLoaderRoute: typeof AtendimentosIndexRouteImport
+      parentRoute: typeof AtendimentosRoute
+    }
+    '/atendimentos/$slug': {
+      id: '/atendimentos/$slug'
+      path: '/$slug'
+      fullPath: '/atendimentos/$slug'
+      preLoaderRoute: typeof AtendimentosSlugRouteImport
+      parentRoute: typeof AtendimentosRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/cursos/': {
+      id: '/cursos/'
+      path: '/'
+      fullPath: '/cursos/'
+      preLoaderRoute: typeof CursosIndexRouteImport
+      parentRoute: typeof CursosRoute
+    }
+    '/cursos/$slug': {
+      id: '/cursos/$slug'
+      path: '/$slug'
+      fullPath: '/cursos/$slug'
+      preLoaderRoute: typeof CursosSlugRouteImport
+      parentRoute: typeof CursosRoute
+    }
   }
 }
 
+interface AtendimentosRouteChildren {
+  AtendimentosSlugRoute: typeof AtendimentosSlugRoute
+  AtendimentosIndexRoute: typeof AtendimentosIndexRoute
+}
+
+const AtendimentosRouteChildren: AtendimentosRouteChildren = {
+  AtendimentosSlugRoute: AtendimentosSlugRoute,
+  AtendimentosIndexRoute: AtendimentosIndexRoute,
+}
+
+const AtendimentosRouteWithChildren = AtendimentosRoute._addFileChildren(
+  AtendimentosRouteChildren,
+)
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface CursosRouteChildren {
+  CursosSlugRoute: typeof CursosSlugRoute
+  CursosIndexRoute: typeof CursosIndexRoute
+}
+
+const CursosRouteChildren: CursosRouteChildren = {
+  CursosSlugRoute: CursosSlugRoute,
+  CursosIndexRoute: CursosIndexRoute,
+}
+
+const CursosRouteWithChildren =
+  CursosRoute._addFileChildren(CursosRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtendimentosRoute: AtendimentosRouteWithChildren,
+  BlogRoute: BlogRouteWithChildren,
+  ContatoRoute: ContatoRoute,
+  CursosRoute: CursosRouteWithChildren,
+  NovidadesRoute: NovidadesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
