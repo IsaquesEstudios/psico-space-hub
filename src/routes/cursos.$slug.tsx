@@ -2,7 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { cursos, site } from "@/data/site";
+import { brandShareImage, cursos, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
   loader: ({ params }) => {
@@ -22,6 +22,8 @@ export const Route = createFileRoute("/cursos/$slug")({
         { name: "description", content: curso.resumo },
         { property: "og:title", content: titulo },
         { property: "og:description", content: curso.resumo },
+        { property: "og:image", content: brandShareImage },
+        { name: "twitter:image", content: brandShareImage },
       ],
     };
   },

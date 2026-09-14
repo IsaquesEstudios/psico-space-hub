@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide-react";
 
 import { Eyebrow, Section } from "@/components/site/bits";
-import { atendimentos, cursos, destaques, images, posts, site } from "@/data/site";
+import { atendimentos, brandShareImage, cursos, destaques, images, posts, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,6 +18,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Aprender com acolhimento, no tempo de cada criança.",
       },
+      { property: "og:image", content: brandShareImage },
+      { name: "twitter:image", content: brandShareImage },
     ],
   }),
   component: Inicio,
