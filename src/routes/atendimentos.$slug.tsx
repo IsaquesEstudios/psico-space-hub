@@ -16,7 +16,7 @@ export const Route = createFileRoute("/atendimentos/$slug")({
       };
     }
     const { item } = loaderData;
-    const titulo = `${item.titulo} | Marina Alvez Psicopedagogia`;
+    const titulo = `${item.titulo} | Clínica Evoluta`;
     return {
       meta: [
         { title: titulo },
@@ -39,7 +39,7 @@ function AtendimentoPage() {
       return <LayoutFaixa item={item} />;
     case "dislexia-e-leitura":
       return <LayoutZigueZague item={item} />;
-    case "avaliacao-psicopedagogica":
+    case "avaliacao-de-aprendizagem":
       return <LayoutEtapas item={item} />;
     case "orientacao-a-pais-e-escolas":
       return <LayoutEditorial item={item} />;

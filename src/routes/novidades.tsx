@@ -6,13 +6,13 @@ import { brandShareImage, images, novidades, site } from "@/data/site";
 export const Route = createFileRoute("/novidades")({
   head: () => ({
     meta: [
-      { title: "Novidades | Marina Alvez Psicopedagogia" },
+      { title: "Novidades | Clínica Evoluta" },
       {
         name: "description",
         content:
           "Agenda de vagas, turmas abertas, formações em escolas e encontros com famílias.",
       },
-      { property: "og:title", content: "Novidades | Marina Alvez Psicopedagogia" },
+      { property: "og:title", content: "Novidades | Clínica Evoluta" },
       {
         property: "og:description",
         content: "Acompanhe vagas, turmas e eventos do consultório.",
