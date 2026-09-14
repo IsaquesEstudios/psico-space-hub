@@ -204,8 +204,16 @@ function Inicio() {
       </Section>
 
       {/* Chamada para WhatsApp */}
-      <section className="bg-deep text-deep-foreground">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
+      <section className="relative overflow-hidden bg-deep text-deep-foreground">
+        <img
+          src={images.cta}
+          alt="Mesa de trabalho com caderno e laptop"
+          loading="lazy"
+          width={1400}
+          height={900}
+          className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-auto max-w-none object-cover [mask-image:linear-gradient(to_right,transparent_0%,black_45%)] lg:block"
+        />
+        <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2">
           <div className="px-5 py-16 lg:px-10 lg:py-20">
             <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl">
@@ -226,11 +234,12 @@ function Inicio() {
           </div>
           <img
             src={images.cta}
-            alt="Mesa de trabalho com caderno e laptop"
+            alt=""
+            aria-hidden
             loading="lazy"
             width={1400}
             height={900}
-            className="h-64 w-full object-cover lg:h-full"
+            className="h-64 w-full object-cover lg:hidden"
           />
         </div>
       </section>
