@@ -61,74 +61,74 @@
 
 :root {
   --radius: 0.25rem;
-  --background: hsl(35 40% 98%);        /* branco quente #FAF6F1 */
-  --foreground: hsl(25 20% 25%);        /* marrom escuro #3D2E1F */
+  --background: #FAF6F1;                /* branco quente */
+  --foreground: #3D2E1F;                /* marrom escuro */
   --card: hsl(0 0% 100%);
-  --card-foreground: hsl(25 20% 25%);
+  --card-foreground: #3D2E1F;
   --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(25 20% 25%);
-  --primary: hsl(25 90% 52%);           /* laranja #E8652A */
-  --primary-foreground: hsl(35 40% 98%);
-  --secondary: hsl(30 30% 95%);         /* creme #F5EDE4 */
-  --secondary-foreground: hsl(25 20% 25%);
-  --muted: hsl(30 30% 95%);
-  --muted-foreground: hsl(25 20% 33%);  /* marrom médio #5A4535 */
-  --accent: hsl(30 30% 92%);
-  --accent-foreground: hsl(25 20% 25%);
-  --deep: hsl(25 20% 25%);              /* marrom escuro #3D2E1F */
-  --deep-foreground: hsl(35 40% 98%);
-  --sand: hsl(30 30% 95%);
+  --popover-foreground: #3D2E1F;
+  --primary: #E8652A;                   /* laranja */
+  --primary-foreground: #FAF6F1;
+  --secondary: #F5EDE4;                 /* creme */
+  --secondary-foreground: #3D2E1F;
+  --muted: #F5EDE4;
+  --muted-foreground: #5A4535;          /* marrom médio */
+  --accent: #EDE2D4;
+  --accent-foreground: #3D2E1F;
+  --deep: #3D2E1F;                      /* marrom escuro */
+  --deep-foreground: #FAF6F1;
+  --sand: #F5EDE4;
   --destructive: hsl(0 72% 51%);
-  --destructive-foreground: hsl(35 40% 98%);
+  --destructive-foreground: #FAF6F1;
   --border: hsl(30 25% 87%);
   --input: hsl(30 25% 87%);
-  --ring: hsl(25 90% 52%);
-  --chart-1: hsl(25 90% 52%);
-  --chart-2: hsl(25 26% 28%);
-  --chart-3: hsl(25 20% 25%);
-  --chart-4: hsl(30 30% 95%);
-  --chart-5: hsl(25 20% 40%);
-  --sidebar: hsl(30 30% 95%);
-  --sidebar-foreground: hsl(25 20% 25%);
-  --sidebar-primary: hsl(25 90% 52%);
-  --sidebar-primary-foreground: hsl(35 40% 98%);
-  --sidebar-accent: hsl(30 30% 92%);
-  --sidebar-accent-foreground: hsl(25 20% 25%);
+  --ring: #E8652A;
+  --chart-1: #E8652A;
+  --chart-2: #5A4535;
+  --chart-3: #3D2E1F;
+  --chart-4: #F5EDE4;
+  --chart-5: #7A6350;
+  --sidebar: #F5EDE4;
+  --sidebar-foreground: #3D2E1F;
+  --sidebar-primary: #E8652A;
+  --sidebar-primary-foreground: #FAF6F1;
+  --sidebar-accent: #EDE2D4;
+  --sidebar-accent-foreground: #3D2E1F;
   --sidebar-border: hsl(30 25% 87%);
-  --sidebar-ring: hsl(25 90% 52%);
+  --sidebar-ring: #E8652A;
 }
 
 .dark {
   --background: hsl(25 20% 15%);
-  --foreground: hsl(35 40% 98%);
-  --card: hsl(25 20% 20%);
-  --card-foreground: hsl(35 40% 98%);
+  --foreground: #FAF6F1;
+  --card: #4A3928;
+  --card-foreground: #FAF6F1;
   --popover: hsl(25 20% 20%);
-  --popover-foreground: hsl(35 40% 98%);
-  --primary: hsl(25 90% 55%);
-  --primary-foreground: hsl(25 20% 15%);
+  --popover-foreground: #FAF6F1;
+  --primary: #E8652A;
+  --primary-foreground: #FAF6F1;
   --secondary: hsl(25 20% 28%);
-  --secondary-foreground: hsl(35 40% 98%);
+  --secondary-foreground: #FAF6F1;
   --muted: hsl(25 20% 28%);
   --muted-foreground: hsl(30 15% 75%);
   --accent: hsl(25 20% 30%);
-  --accent-foreground: hsl(35 40% 98%);
+  --accent-foreground: #FAF6F1;
   --deep: hsl(25 20% 12%);
-  --deep-foreground: hsl(35 40% 98%);
+  --deep-foreground: #FAF6F1;
   --sand: hsl(25 20% 28%);
   --destructive: hsl(0 72% 55%);
-  --destructive-foreground: hsl(35 40% 98%);
+  --destructive-foreground: #FAF6F1;
   --border: hsl(0 0% 100% / 12%);
   --input: hsl(0 0% 100% / 15%);
-  --ring: hsl(25 90% 55%);
+  --ring: #E8652A;
   --sidebar: hsl(25 20% 20%);
   --sidebar-foreground: hsl(35 40% 98%);
-  --sidebar-primary: hsl(25 90% 55%);
-  --sidebar-primary-foreground: hsl(25 20% 15%);
+  --sidebar-primary: #E8652A;
+  --sidebar-primary-foreground: #FAF6F1;
   --sidebar-accent: hsl(25 20% 30%);
-  --sidebar-accent-foreground: hsl(35 40% 98%);
+  --sidebar-accent-foreground: #FAF6F1;
   --sidebar-border: hsl(0 0% 100% / 12%);
-  --sidebar-ring: hsl(25 90% 55%);
+  --sidebar-ring: #E8652A;
 }
 
 @layer base {
