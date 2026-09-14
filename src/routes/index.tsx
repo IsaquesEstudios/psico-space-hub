@@ -44,8 +44,7 @@ function Inicio() {
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
-            <p className="eyebrow text-deep-foreground/60">Aprendizagem e desenvolvimento</p>
-            <h1 className="mt-6 font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
+            <h1 className="font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
               Escuta. Método.
               <br />
               Aprendizagem.
