@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Section, WhatsAppButton } from "@/components/site/bits";
-import { novidades, site } from "@/data/site";
+import { images, novidades, site } from "@/data/site";
 
 export const Route = createFileRoute("/novidades")({
   head: () => ({
@@ -25,8 +25,17 @@ export const Route = createFileRoute("/novidades")({
 function Novidades() {
   return (
     <>
-      <section className="bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative flex min-h-[420px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
+        <img
+          src={images.novidadesHero}
+          alt="Agenda e materiais de trabalho sobre uma mesa"
+          width={1600}
+          height={900}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[12%] via-deep/85 via-[52%] to-transparent to-[96%]" />
+        <div className="absolute inset-0 bg-deep/55 lg:hidden" />
+        <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Novidades</p>
           <h1 className="mt-6 max-w-2xl font-display text-5xl leading-tight lg:text-6xl">
             Avisos, vagas e agenda

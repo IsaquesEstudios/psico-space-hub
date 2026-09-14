@@ -6,17 +6,21 @@ import atendTdah from "@/assets/atend-tdah.jpg";
 import atendDislexia from "@/assets/atend-dislexia.jpg";
 import atendAvaliacao from "@/assets/atend-avaliacao.jpg";
 import atendOrientacao from "@/assets/atend-orientacao.jpg";
-import cursoAlfabetizacao from "@/assets/curso-alfabetizacao.jpg";
-import cursoOnline from "@/assets/curso-online.jpg";
-import cursoFamilias from "@/assets/curso-familias.jpg";
+import cursoAlfabetizacao from "@/assets/curso-alfabetizacao-novo.jpg";
+import cursoOnline from "@/assets/curso-funcoes-novo.jpg";
+import cursoFamilias from "@/assets/curso-familias-novo.jpg";
 import blogLeitura from "@/assets/blog-leitura.jpg";
 import blogRotina from "@/assets/blog-rotina.jpg";
 import blogMatematica from "@/assets/blog-matematica.jpg";
+import blogHero from "@/assets/blog-hero.jpg";
+import novidadesHero from "@/assets/novidades-hero.jpg";
 
 export const images = {
   hero: heroImg,
   sobre: sobreImg,
   cta: ctaImg,
+  blogHero,
+  novidadesHero,
 };
 
 export const site = {
