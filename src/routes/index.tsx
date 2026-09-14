@@ -38,7 +38,7 @@ function Inicio() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/55 via-[50%] to-transparent to-[88%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[12%] via-deep/80 via-[50%] to-transparent to-[96%]" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-10 lg:py-40">
           <div className="max-w-xl">

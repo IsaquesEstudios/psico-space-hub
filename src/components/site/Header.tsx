@@ -17,7 +17,7 @@ export function Header() {
   const [subOpen, setSubOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-deep text-deep-foreground">
+    <header className="sticky top-0 z-50 bg-deep/70 text-deep-foreground backdrop-blur-xl">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:gap-8 lg:px-10">
         <Link to="/" className="min-w-0 leading-tight">
           <span className="block truncate font-display text-2xl">{site.nome}</span>
@@ -44,7 +44,7 @@ export function Header() {
               <ChevronDown className="h-3 w-3" />
             </Link>
             <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-              <div className="border border-border/60 bg-background p-2 shadow-lg">
+              <div className="border border-border/60 bg-background/90 p-2 shadow-lg backdrop-blur-xl">
                 {atendimentos.map((a) => (
                   <Link
                     key={a.slug}
