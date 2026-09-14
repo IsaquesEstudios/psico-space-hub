@@ -1,4 +1,3 @@
-import heroImg from "@/assets/hero-psicopedagoga.jpg";
 import sobreImg from "@/assets/sobre.jpg";
 import ctaImg from "@/assets/cta-conversa.jpg";
 import atendAprendizagem from "@/assets/atend-aprendizagem.jpg";
@@ -6,9 +5,7 @@ import atendTdah from "@/assets/atend-tdah.jpg";
 import atendDislexia from "@/assets/atend-dislexia.jpg";
 import atendAvaliacao from "@/assets/atend-avaliacao.jpg";
 import atendOrientacao from "@/assets/atend-orientacao.jpg";
-import cursoAlfabetizacao from "@/assets/curso-alfabetizacao-novo.jpg";
-import cursoOnline from "@/assets/curso-funcoes-limpo.jpg";
-import cursoFamilias from "@/assets/curso-familias-novo.jpg";
+import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import blogLeitura from "@/assets/blog-leitura.jpg";
 import blogRotina from "@/assets/blog-rotina.jpg";
 import blogMatematica from "@/assets/blog-matematica.jpg";
@@ -19,7 +16,7 @@ export const brandShareImage =
   "https://id-preview--deb759cf-cdb0-4e38-afae-699e1737adb9.lovable.app/__l5e/assets-v1/50c90749-1ebe-4ab2-a6d1-8badb534742a/logo-social.jpg";
 
 export const images = {
-  hero: heroImg,
+  hero: jessicaAsset.url,
   sobre: sobreImg,
   cta: ctaImg,
   blogHero,
@@ -291,7 +288,7 @@ export const cursos: Curso[] = [
     etiqueta: "Turma aberta",
     resumo:
       "Como conduzir a entrada na leitura e na escrita com método estruturado e sem brigas diárias.",
-    imagem: cursoAlfabetizacao,
+    imagem: jessicaAsset.url,
     duracao: "8 encontros de 1h30",
     formato: "Online, ao vivo, com gravações",
     investimento: "Sob consulta",
@@ -314,7 +311,7 @@ export const cursos: Curso[] = [
     etiqueta: "Novo",
     resumo:
       "Atenção, planejamento e autorregulação com atividades aplicáveis em consultório e sala de aula.",
-    imagem: cursoOnline,
+    imagem: jessicaAsset.url,
     duracao: "6 encontros de 2h",
     formato: "Online, ao vivo",
     investimento: "Sob consulta",
@@ -337,7 +334,7 @@ export const cursos: Curso[] = [
     etiqueta: "Para pais",
     resumo:
       "Um percurso curto para transformar a lição de casa em um momento possível — e às vezes até leve.",
-    imagem: cursoFamilias,
+    imagem: jessicaAsset.url,
     duracao: "4 encontros de 1h",
     formato: "Online, ao vivo",
     investimento: "Sob consulta",
