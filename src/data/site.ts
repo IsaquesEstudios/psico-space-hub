@@ -7,7 +7,7 @@ import atendDislexia from "@/assets/atend-dislexia.jpg";
 import atendAvaliacao from "@/assets/atend-avaliacao.jpg";
 import atendOrientacao from "@/assets/atend-orientacao.jpg";
 import cursoAlfabetizacao from "@/assets/curso-alfabetizacao-novo.jpg";
-import cursoOnline from "@/assets/curso-funcoes-novo.jpg";
+import cursoOnline from "@/assets/curso-funcoes-limpo.jpg";
 import cursoFamilias from "@/assets/curso-familias-novo.jpg";
 import blogLeitura from "@/assets/blog-leitura.jpg";
 import blogRotina from "@/assets/blog-rotina.jpg";
