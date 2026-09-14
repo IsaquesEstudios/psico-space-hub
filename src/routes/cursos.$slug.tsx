@@ -55,7 +55,7 @@ function CursoPage() {
         <div className="mt-10 grid gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-16">
           <div>
             <Eyebrow>{curso.etiqueta}</Eyebrow>
-            <h1 className="mt-4 font-display text-5xl leading-tight lg:text-6xl">{curso.titulo}</h1>
+            <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{curso.titulo}</h1>
             {curso.texto.map((p) => (
               <p key={p} className="mt-6 text-base leading-relaxed text-muted-foreground">
                 {p}
@@ -73,7 +73,7 @@ function CursoPage() {
             </ul>
           </div>
 
-          <aside className="self-start bg-muted p-8">
+          <aside className="self-start bg-muted p-6 sm:p-8">
             <p className="eyebrow text-muted-foreground">Informações</p>
             <dl className="mt-5 space-y-5">
               <div>

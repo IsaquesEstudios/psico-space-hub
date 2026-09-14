@@ -7,7 +7,7 @@ import { atendimentos, site } from "@/data/site";
 export function Footer() {
   return (
     <footer className="bg-muted">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-4 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div>
           <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.nome} — Início`}>
             <img src={logoAsset.url} alt="" width="72" height="65" className="h-16 w-auto object-contain" loading="lazy" />
@@ -90,7 +90,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-5 py-6 text-xs text-muted-foreground lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-10">
           <span>
             © {new Date().getFullYear()} {site.nome}. Conteúdo de demonstração.
           </span>

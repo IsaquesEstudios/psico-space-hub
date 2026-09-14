@@ -14,7 +14,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`px-5 py-20 lg:px-10 lg:py-28 ${className}`}>
+    <section id={id} className={`px-5 py-16 sm:py-20 lg:px-10 lg:py-28 ${className}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -26,7 +26,7 @@ export function WhatsAppButton({ href, label = "Falar no WhatsApp" }: { href: st
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="eyebrow inline-flex items-center gap-2 bg-primary px-7 py-4 text-primary-foreground transition-opacity hover:opacity-90"
+      className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
     >
       {label}
     </a>

@@ -43,7 +43,7 @@ function BlogIndex() {
         <div className="absolute inset-0 bg-deep/55 lg:hidden" />
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Blog</p>
-          <h1 className="mt-6 max-w-2xl font-display text-5xl leading-tight lg:text-6xl">
+          <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Textos para entender a aprendizagem
           </h1>
         </div>
@@ -66,7 +66,7 @@ function BlogIndex() {
             <Eyebrow>
               {destaque.categoria} · {destaque.data}
             </Eyebrow>
-            <h2 className="mt-4 font-display text-4xl leading-tight lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
               {destaque.titulo}
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{destaque.resumo}</p>

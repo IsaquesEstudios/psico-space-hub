@@ -48,7 +48,7 @@ function PostPage() {
           <p className="eyebrow mt-10 text-primary">
             {post.categoria} · {post.data} · {post.leitura}
           </p>
-          <h1 className="mt-4 font-display text-4xl leading-tight lg:text-5xl">{post.titulo}</h1>
+          <h1 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">{post.titulo}</h1>
           <img
             src={post.imagem}
             alt={post.titulo}

@@ -39,16 +39,13 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:gap-8 lg:px-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10 xl:flex xl:justify-between xl:gap-8">
         <Link to="/" className="flex min-w-0 items-center gap-3 leading-tight" aria-label={`${site.nome} — Início`}>
           <img src={logoAsset.url} alt="" width="56" height="51" className="h-12 w-auto shrink-0 object-contain" />
-          <span className="min-w-0">
-            <span className="block truncate font-display text-xl sm:text-2xl">{site.nome}</span>
-            <span className="eyebrow block text-deep-foreground/60">{site.papel}</span>
-          </span>
+          <span className="min-w-0 truncate font-display text-xl font-semibold sm:text-2xl">{site.nome}</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 xl:flex 2xl:gap-8">
           <Link
             to="/"
             activeOptions={{ exact: true }}
@@ -96,7 +93,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden shrink-0 xl:block">
           <Link
             to="/contato"
             className="eyebrow border border-deep-foreground/25 px-5 py-3 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
@@ -109,14 +106,14 @@ export function Header() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label="Abrir menu"
-          className="shrink-0 lg:hidden"
+          className="shrink-0 xl:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-deep-foreground/10 px-5 pb-6 lg:hidden">
+        <div className="max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-deep-foreground/10 px-5 pb-6 xl:hidden">
           <Link to="/" onClick={() => setOpen(false)} className="block py-3 text-sm">
             Início
           </Link>

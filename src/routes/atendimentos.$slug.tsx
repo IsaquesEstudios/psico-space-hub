@@ -80,7 +80,7 @@ function Fechamento({ item }: { item: Atendimento }) {
       <div className="grid gap-8 lg:grid-cols-[1.3fr_auto] lg:items-end">
         <div>
           <p className="eyebrow text-deep-foreground/60">Próximo passo</p>
-          <h2 className="mt-4 font-display text-4xl lg:text-5xl">
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">
             Vamos conversar sobre {item.titulo.toLowerCase()}?
           </h2>
           <p className="mt-4 max-w-lg text-sm text-deep-foreground/70">
@@ -126,7 +126,7 @@ function LayoutLateral({ item }: { item: Atendimento }) {
           />
           <div>
             <Eyebrow>{item.etiqueta}</Eyebrow>
-            <h1 className="mt-4 font-display text-5xl leading-tight lg:text-6xl">{item.titulo}</h1>
+            <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
             {item.texto.map((p) => (
               <p key={p} className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 {p}
@@ -177,7 +177,7 @@ function LayoutFaixa({ item }: { item: Atendimento }) {
         <div className="absolute inset-0 flex items-end">
           <div className="mx-auto w-full max-w-7xl px-5 pb-12 text-deep-foreground lg:px-10 lg:pb-16">
             <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
-            <h1 className="mt-4 max-w-2xl font-display text-5xl leading-tight lg:text-6xl">
+            <h1 className="mt-4 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
               {item.titulo}
             </h1>
           </div>
@@ -197,7 +197,7 @@ function LayoutFaixa({ item }: { item: Atendimento }) {
               <ParaQuem item={item} />
             </div>
           </div>
-          <div className="bg-muted p-8 lg:p-10">
+           <div className="bg-muted p-6 sm:p-8 lg:p-10">
             <h2 className="font-display text-3xl">Como funciona</h2>
             <div className="mt-8 space-y-8">
               {item.comoFunciona.map((c) => (
@@ -226,7 +226,7 @@ function LayoutZigueZague({ item }: { item: Atendimento }) {
       <Section className="bg-muted">
         <div className="max-w-3xl">
           <Eyebrow>{item.etiqueta}</Eyebrow>
-          <h1 className="mt-4 font-display text-5xl leading-tight lg:text-6xl">{item.titulo}</h1>
+          <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{item.texto[0]}</p>
         </div>
       </Section>
@@ -293,7 +293,7 @@ function LayoutEtapas({ item }: { item: Atendimento }) {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div>
             <Eyebrow>{item.etiqueta}</Eyebrow>
-            <h1 className="mt-4 font-display text-5xl leading-tight lg:text-6xl">{item.titulo}</h1>
+            <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               {item.texto[0]}
             </p>
@@ -352,8 +352,8 @@ function LayoutEditorial({ item }: { item: Atendimento }) {
       <Section className="bg-muted">
         <div className="mx-auto max-w-4xl text-center">
           <Eyebrow>{item.etiqueta}</Eyebrow>
-          <h1 className="mt-4 font-display text-5xl leading-tight lg:text-6xl">{item.titulo}</h1>
-          <blockquote className="mt-10 font-display text-3xl leading-snug text-primary lg:text-4xl">
+          <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
+          <blockquote className="mt-10 font-display text-2xl leading-snug text-primary sm:text-3xl lg:text-4xl">
             “Nenhuma criança aprende sozinha — o entorno também aprende.”
           </blockquote>
         </div>
@@ -385,7 +385,7 @@ function LayoutEditorial({ item }: { item: Atendimento }) {
             </div>
           </article>
 
-          <aside className="space-y-8 self-start bg-muted p-8">
+          <aside className="space-y-8 self-start bg-muted p-6 sm:p-8">
             <div>
               <p className="eyebrow text-muted-foreground">Informações</p>
               <dl className="mt-4 space-y-4">

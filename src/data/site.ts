@@ -28,7 +28,6 @@ export const images = {
 
 export const site = {
   nome: "Clínica Evoluta",
-  papel: "Aprendizagem e desenvolvimento",
   slogan: "Aprender com acolhimento, no tempo de cada criança",
   whatsapp: "https://wa.me/5500000000000",
   telefone: "+55 (00) 00000-0000",
