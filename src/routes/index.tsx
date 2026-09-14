@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide-react";
 
 import { Eyebrow, Section } from "@/components/site/bits";
-import { atendimentos, depoimentos, destaques, images, site } from "@/data/site";
+import { atendimentos, cursos, destaques, images, posts, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -157,35 +157,104 @@ function Inicio() {
         </div>
       </Section>
 
-      {/* Depoimentos */}
+      {/* Cursos */}
       <Section>
-        <Eyebrow>Depoimentos</Eyebrow>
-        <h2 className="mt-4 font-display text-4xl lg:text-5xl">O que as famílias dizem</h2>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {depoimentos.map((d) => (
-            <blockquote key={d.autor} className="bg-muted p-8">
-              <span className="font-display text-5xl leading-none text-primary">“</span>
-              <p className="mt-4 font-sans text-sm leading-relaxed text-muted-foreground">{d.texto}</p>
-              <footer className="mt-8">
-                <p className="text-sm">{d.autor}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{d.papel}</p>
-              </footer>
-            </blockquote>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
+          <div className="min-w-0">
+            <Eyebrow>Cursos</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl lg:text-5xl">Aprendizado que transforma a prática</h2>
+          </div>
+          <Link
+            to="/cursos"
+            className="eyebrow inline-flex items-center gap-2 pb-2 transition-colors hover:text-primary"
+          >
+            Ver todos
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {cursos.slice(0, 3).map((curso, index) => (
+            <Link
+              key={curso.slug}
+              to="/cursos/$slug"
+              params={{ slug: curso.slug }}
+              className="group block"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={curso.imagem}
+                  alt={`Imagem ilustrativa do Curso ${index + 1}`}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <p className="eyebrow mt-5 text-primary">{curso.etiqueta}</p>
+              <h3 className="mt-3 font-display text-3xl">Curso {index + 1}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{curso.resumo}</p>
+              <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
+                Conhecer o curso
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
           ))}
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* Blog */}
+      <Section className="bg-muted">
+        <div className="max-w-2xl">
+          <Eyebrow>Blog</Eyebrow>
+          <h2 className="mt-4 font-display text-4xl leading-tight lg:text-5xl">
+            Compartilhamos dicas para ajudar quem precisa
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Conteúdos simples e cuidadosos para apoiar famílias, educadores e crianças no caminho da
+            aprendizagem.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {posts.slice(0, 3).map((post) => (
+            <Link
+              key={post.slug}
+              to="/blog/$slug"
+              params={{ slug: post.slug }}
+              className="group block"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={post.imagem}
+                  alt={post.titulo}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <p className="eyebrow mt-5 text-primary">{post.categoria}</p>
+              <h3 className="mt-3 font-display text-2xl leading-snug">{post.titulo}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.resumo}</p>
+              <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
+                Ler postagem
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Chamada para WhatsApp */}
       <section className="bg-deep text-deep-foreground">
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2">
           <div className="px-5 py-16 lg:px-10 lg:py-20">
-            <p className="eyebrow text-deep-foreground/60">Vamos conversar?</p>
+            <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
             <h2 className="mt-5 font-display text-4xl lg:text-5xl">
-              Conte o que está acontecendo
+              Entre em contato conosco
             </h2>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70">
-              A primeira conversa é para entender a queixa, esclarecer dúvidas e indicar o caminho mais
-              adequado — mesmo que ele não seja aqui.
+              Fale pelo WhatsApp para tirar dúvidas, conhecer os atendimentos e encontrar o melhor caminho
+              para você e sua família.
             </p>
             <a
               href={site.whatsapp}
