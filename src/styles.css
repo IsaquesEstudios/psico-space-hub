@@ -5,8 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — Psicopedagogia (paleta Areia & Terracota)
- * Todas as cores em oklch e usadas apenas via tokens semânticos.
+ * Design system — Psicopedagogia
+ * Fonte: Plus Jakarta Sans em todo o site.
+ * Paleta: laranja #E8652A (destaque), creme #F5EDE4, marrom escuro #3D2E1F,
+ * marrom médio #5A4535 e branco quente #FAF6F1. Tokens semânticos apenas.
  */
 
 @theme inline {
@@ -17,8 +19,8 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -59,74 +61,74 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.983 0.005 85);
-  --foreground: oklch(0.327 0.017 60);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.327 0.017 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.327 0.017 60);
-  --primary: oklch(0.585 0.116 38);
-  --primary-foreground: oklch(0.985 0.005 85);
-  --secondary: oklch(0.943 0.012 85);
-  --secondary-foreground: oklch(0.327 0.017 60);
-  --muted: oklch(0.943 0.012 85);
-  --muted-foreground: oklch(0.53 0.02 62);
-  --accent: oklch(0.9 0.02 70);
-  --accent-foreground: oklch(0.327 0.017 60);
-  --deep: oklch(0.298 0.016 55);
-  --deep-foreground: oklch(0.95 0.008 85);
-  --sand: oklch(0.912 0.018 80);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0.012 80);
-  --input: oklch(0.9 0.012 80);
-  --ring: oklch(0.585 0.116 38);
-  --chart-1: oklch(0.585 0.116 38);
-  --chart-2: oklch(0.7 0.06 70);
-  --chart-3: oklch(0.5 0.03 60);
-  --chart-4: oklch(0.8 0.03 80);
-  --chart-5: oklch(0.4 0.02 55);
-  --sidebar: oklch(0.943 0.012 85);
-  --sidebar-foreground: oklch(0.327 0.017 60);
-  --sidebar-primary: oklch(0.585 0.116 38);
-  --sidebar-primary-foreground: oklch(0.985 0.005 85);
-  --sidebar-accent: oklch(0.9 0.02 70);
-  --sidebar-accent-foreground: oklch(0.327 0.017 60);
-  --sidebar-border: oklch(0.9 0.012 80);
-  --sidebar-ring: oklch(0.585 0.116 38);
+  --background: hsl(35 40% 98%);        /* branco quente #FAF6F1 */
+  --foreground: hsl(25 20% 25%);        /* marrom escuro #3D2E1F */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(25 20% 25%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(25 20% 25%);
+  --primary: hsl(25 90% 52%);           /* laranja #E8652A */
+  --primary-foreground: hsl(35 40% 98%);
+  --secondary: hsl(30 30% 95%);         /* creme #F5EDE4 */
+  --secondary-foreground: hsl(25 20% 25%);
+  --muted: hsl(30 30% 95%);
+  --muted-foreground: hsl(25 20% 33%);  /* marrom médio #5A4535 */
+  --accent: hsl(30 30% 92%);
+  --accent-foreground: hsl(25 20% 25%);
+  --deep: hsl(25 20% 25%);              /* marrom escuro #3D2E1F */
+  --deep-foreground: hsl(35 40% 98%);
+  --sand: hsl(30 30% 95%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(35 40% 98%);
+  --border: hsl(30 25% 87%);
+  --input: hsl(30 25% 87%);
+  --ring: hsl(25 90% 52%);
+  --chart-1: hsl(25 90% 52%);
+  --chart-2: hsl(25 26% 28%);
+  --chart-3: hsl(25 20% 25%);
+  --chart-4: hsl(30 30% 95%);
+  --chart-5: hsl(25 20% 40%);
+  --sidebar: hsl(30 30% 95%);
+  --sidebar-foreground: hsl(25 20% 25%);
+  --sidebar-primary: hsl(25 90% 52%);
+  --sidebar-primary-foreground: hsl(35 40% 98%);
+  --sidebar-accent: hsl(30 30% 92%);
+  --sidebar-accent-foreground: hsl(25 20% 25%);
+  --sidebar-border: hsl(30 25% 87%);
+  --sidebar-ring: hsl(25 90% 52%);
 }
 
 .dark {
-  --background: oklch(0.24 0.014 55);
-  --foreground: oklch(0.95 0.008 85);
-  --card: oklch(0.298 0.016 55);
-  --card-foreground: oklch(0.95 0.008 85);
-  --popover: oklch(0.298 0.016 55);
-  --popover-foreground: oklch(0.95 0.008 85);
-  --primary: oklch(0.65 0.11 40);
-  --primary-foreground: oklch(0.2 0.012 55);
-  --secondary: oklch(0.34 0.018 58);
-  --secondary-foreground: oklch(0.95 0.008 85);
-  --muted: oklch(0.34 0.018 58);
-  --muted-foreground: oklch(0.76 0.02 75);
-  --accent: oklch(0.4 0.03 60);
-  --accent-foreground: oklch(0.95 0.008 85);
-  --deep: oklch(0.2 0.012 55);
-  --deep-foreground: oklch(0.95 0.008 85);
-  --sand: oklch(0.34 0.018 58);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.11 40);
-  --sidebar: oklch(0.298 0.016 55);
-  --sidebar-foreground: oklch(0.95 0.008 85);
-  --sidebar-primary: oklch(0.65 0.11 40);
-  --sidebar-primary-foreground: oklch(0.2 0.012 55);
-  --sidebar-accent: oklch(0.4 0.03 60);
-  --sidebar-accent-foreground: oklch(0.95 0.008 85);
-  --sidebar-border: oklch(1 0 0 / 12%);
-  --sidebar-ring: oklch(0.65 0.11 40);
+  --background: hsl(25 20% 15%);
+  --foreground: hsl(35 40% 98%);
+  --card: hsl(25 20% 20%);
+  --card-foreground: hsl(35 40% 98%);
+  --popover: hsl(25 20% 20%);
+  --popover-foreground: hsl(35 40% 98%);
+  --primary: hsl(25 90% 55%);
+  --primary-foreground: hsl(25 20% 15%);
+  --secondary: hsl(25 20% 28%);
+  --secondary-foreground: hsl(35 40% 98%);
+  --muted: hsl(25 20% 28%);
+  --muted-foreground: hsl(30 15% 75%);
+  --accent: hsl(25 20% 30%);
+  --accent-foreground: hsl(35 40% 98%);
+  --deep: hsl(25 20% 12%);
+  --deep-foreground: hsl(35 40% 98%);
+  --sand: hsl(25 20% 28%);
+  --destructive: hsl(0 72% 55%);
+  --destructive-foreground: hsl(35 40% 98%);
+  --border: hsl(0 0% 100% / 12%);
+  --input: hsl(0 0% 100% / 15%);
+  --ring: hsl(25 90% 55%);
+  --sidebar: hsl(25 20% 20%);
+  --sidebar-foreground: hsl(35 40% 98%);
+  --sidebar-primary: hsl(25 90% 55%);
+  --sidebar-primary-foreground: hsl(25 20% 15%);
+  --sidebar-accent: hsl(25 20% 30%);
+  --sidebar-accent-foreground: hsl(35 40% 98%);
+  --sidebar-border: hsl(0 0% 100% / 12%);
+  --sidebar-ring: hsl(25 90% 55%);
 }
 
 @layer base {
