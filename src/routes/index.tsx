@@ -37,7 +37,7 @@ function Inicio() {
           alt="Consultório da Clínica Evoluta"
           width={1408}
           height={1200}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-contain object-top sm:object-right"
         />
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
         <div className="absolute inset-0 bg-gradient-to-r from-deep from-[12%] via-deep/80 via-[50%] to-transparent to-[96%]" />
@@ -184,7 +184,7 @@ function Inicio() {
               <div className="overflow-hidden">
                 <img
                   src={curso.imagem}
-                  alt={`Imagem ilustrativa do Curso ${index + 1}`}
+                 alt={`Jéssica, da Clínica Evoluta — Curso ${index + 1}`}
                   loading="lazy"
                   width={1200}
                   height={800}

@@ -37,7 +37,7 @@ function CursoPage() {
     <>
       <img
         src={curso.imagem}
-        alt={curso.titulo}
+        alt={`Jéssica, da Clínica Evoluta — ${curso.titulo}`}
         width={1200}
         height={800}
         className="h-64 w-full object-cover lg:h-[420px]"
