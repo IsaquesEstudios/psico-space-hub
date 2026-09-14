@@ -31,7 +31,11 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 text-deep-foreground transition-colors duration-300 ${
-        solid ? "bg-deep/70 backdrop-blur-xl" : "bg-transparent"
+        solid
+          ? pathname === "/"
+            ? "bg-deep/70 backdrop-blur-xl"
+            : "bg-deep"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:gap-8 lg:px-10">
