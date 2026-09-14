@@ -29,16 +29,26 @@ function Inicio() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-deep text-deep-foreground">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:px-10 lg:py-24">
-          <div>
+      <section className="relative overflow-hidden bg-deep text-deep-foreground">
+        <img
+          src={images.hero}
+          alt="Psicopedagoga em seu consultório"
+          width={1408}
+          height={1200}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/55 via-[50%] to-transparent to-[88%]" />
+        <div className="absolute inset-0 bg-deep/70 lg:hidden" />
+        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-10 lg:py-40">
+          <div className="max-w-xl">
             <p className="eyebrow text-deep-foreground/60">Psicopedagogia</p>
             <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
               Escuta. Método.
               <br />
               Aprendizagem.
             </h1>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/70">
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/80">
               Acompanhamento psicopedagógico para crianças e adolescentes que precisam reencontrar a
               confiança de aprender — com a família e a escola junto no processo.
             </p>
@@ -51,20 +61,13 @@ function Inicio() {
               </Link>
               <Link
                 to="/atendimentos"
-                className="eyebrow inline-flex items-center gap-2 text-deep-foreground/70 transition-colors hover:text-primary"
+                className="eyebrow inline-flex items-center gap-2 text-deep-foreground/75 transition-colors hover:text-primary"
               >
                 ou conhecer os atendimentos
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           </div>
-          <img
-            src={images.hero}
-            alt="Psicopedagoga em seu consultório"
-            width={1408}
-            height={1200}
-            className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[560px]"
-          />
         </div>
       </section>
 
