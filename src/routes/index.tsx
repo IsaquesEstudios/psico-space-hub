@@ -29,7 +29,7 @@ function Inicio() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-deep text-deep-foreground">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-deep text-deep-foreground">
         <img
           src={images.hero}
           alt="Psicopedagoga em seu consultório"
@@ -40,7 +40,7 @@ function Inicio() {
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
         <div className="absolute inset-0 bg-gradient-to-r from-deep from-[12%] via-deep/80 via-[50%] to-transparent to-[96%]" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
-        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-10 lg:py-40">
+        <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
             <p className="eyebrow text-deep-foreground/60">Psicopedagogia</p>
             <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
