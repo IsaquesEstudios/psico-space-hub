@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 import { Eyebrow, Section } from "@/components/site/bits";
-import { images, posts } from "@/data/site";
+import { brandShareImage, images, posts } from "@/data/site";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -18,6 +18,8 @@ export const Route = createFileRoute("/blog/")({
         property: "og:description",
         content: "Conteúdo prático sobre aprendizagem para famílias e educadores.",
       },
+      { property: "og:image", content: brandShareImage },
+      { name: "twitter:image", content: brandShareImage },
     ],
   }),
   component: BlogIndex,

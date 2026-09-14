@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Section, WhatsAppButton } from "@/components/site/bits";
-import { images, novidades, site } from "@/data/site";
+import { brandShareImage, images, novidades, site } from "@/data/site";
 
 export const Route = createFileRoute("/novidades")({
   head: () => ({
@@ -17,6 +17,8 @@ export const Route = createFileRoute("/novidades")({
         property: "og:description",
         content: "Acompanhe vagas, turmas e eventos do consultório.",
       },
+      { property: "og:image", content: brandShareImage },
+      { name: "twitter:image", content: brandShareImage },
     ],
   }),
   component: Novidades,

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { cursos, site } from "@/data/site";
+import { brandShareImage, cursos, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/")({
   head: () => ({
@@ -18,6 +18,8 @@ export const Route = createFileRoute("/cursos/")({
         property: "og:description",
         content: "Formações práticas com encontros ao vivo e material de apoio.",
       },
+      { property: "og:image", content: brandShareImage },
+      { name: "twitter:image", content: brandShareImage },
     ],
   }),
   component: CursosIndex,

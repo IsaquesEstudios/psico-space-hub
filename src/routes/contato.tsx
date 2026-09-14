@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 import { Section, WhatsAppButton } from "@/components/site/bits";
-import { atendimentos, site } from "@/data/site";
+import { atendimentos, brandShareImage, site } from "@/data/site";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -18,6 +18,8 @@ export const Route = createFileRoute("/contato")({
         property: "og:description",
         content: "Fale sobre a queixa principal e receba as orientações iniciais.",
       },
+      { property: "og:image", content: brandShareImage },
+      { name: "twitter:image", content: brandShareImage },
     ],
   }),
   component: Contato,

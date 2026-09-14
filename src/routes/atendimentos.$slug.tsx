@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { atendimentos, site, type Atendimento } from "@/data/site";
+import { atendimentos, brandShareImage, site, type Atendimento } from "@/data/site";
 
 export const Route = createFileRoute("/atendimentos/$slug")({
   loader: ({ params }) => {
@@ -23,6 +23,8 @@ export const Route = createFileRoute("/atendimentos/$slug")({
         { name: "description", content: item.resumo },
         { property: "og:title", content: titulo },
         { property: "og:description", content: item.resumo },
+        { property: "og:image", content: brandShareImage },
+        { name: "twitter:image", content: brandShareImage },
       ],
     };
   },
