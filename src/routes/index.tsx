@@ -29,7 +29,7 @@ function Inicio() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-deep text-deep-foreground">
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-deep text-deep-foreground">
         <img
           src={images.hero}
           alt="Psicopedagoga em seu consultório"
