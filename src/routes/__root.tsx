@@ -87,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Atendimento para crianças e adolescentes, avaliação, cursos e orientação a famílias e escolas.",
       },
       { name: "author", content: "Clínica Evoluta" },
-      { property: "og:site_name", content: "Marina Alvez Psicopedagogia" },
+      { property: "og:site_name", content: "Clínica Evoluta" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
