@@ -35,12 +35,12 @@ function Inicio() {
         <img
           src={images.hero}
           alt="Consultório da Clínica Evoluta"
-          width={1408}
-          height={1200}
-          className="absolute inset-0 h-full w-full object-contain object-top sm:object-right"
+          width={594}
+          height={721}
+          className="absolute right-0 top-0 h-[112%] w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
         />
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[12%] via-deep/80 via-[50%] to-transparent to-[96%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[8%] via-deep/50 via-[45%] to-transparent to-[85%]" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
