@@ -37,10 +37,10 @@ function Inicio() {
           alt="Consultório da Clínica Evoluta"
           width={594}
           height={721}
-          className="absolute right-0 top-0 h-[112%] w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
+          className="absolute right-0 top-0 h-[112%] w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_58%)]"
         />
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[8%] via-deep/50 via-[45%] to-transparent to-[85%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/65 via-[55%] to-transparent to-[95%]" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
