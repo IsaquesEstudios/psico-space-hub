@@ -2,6 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 
+import logoAsset from "@/assets/logo-l.png.asset.json";
 import { atendimentos, site } from "@/data/site";
 
 const links = [
@@ -39,9 +40,12 @@ export function Header() {
       }`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:flex lg:justify-between lg:gap-8 lg:px-10">
-        <Link to="/" className="min-w-0 leading-tight">
-          <span className="block truncate font-display text-2xl">{site.nome}</span>
-          <span className="eyebrow block text-deep-foreground/60">{site.papel}</span>
+        <Link to="/" className="flex min-w-0 items-center gap-3 leading-tight" aria-label={`${site.nome} — Início`}>
+          <img src={logoAsset.url} alt="" width="56" height="51" className="h-12 w-auto shrink-0 object-contain" />
+          <span className="min-w-0">
+            <span className="block truncate font-display text-xl sm:text-2xl">{site.nome}</span>
+            <span className="eyebrow block text-deep-foreground/60">{site.papel}</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
