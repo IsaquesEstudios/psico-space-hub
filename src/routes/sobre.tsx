@@ -52,8 +52,7 @@ function SobrePage() {
         </div>
         <img
           src={fotosJessica.sobre}
-          alt=""
-          aria-hidden
+          alt={fundadora.nome}
           loading="lazy"
           width={720}
           height={1080}
