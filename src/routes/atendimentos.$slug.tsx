@@ -1,20 +1,33 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { atendimentos, brandShareImage, site, type Atendimento } from "@/data/site";
+import {
+  atendimentos,
+  brandShareImage,
+  conteudosAtendimentos,
+  site,
+  type Atendimento,
+  type ConteudoAtendimento,
+} from "@/data/site";
 
 export const Route = createFileRoute("/atendimentos/$slug")({
   loader: ({ params }) => {
-    const item = atendimentos.find((a) => a.slug === params.slug);
-    if (!item) throw notFound();
-    return { item };
+    const item = atendimentos.find((atendimento) => atendimento.slug === params.slug);
+    const conteudo = conteudosAtendimentos[params.slug];
+    if (!item || !conteudo) throw notFound();
+    return { item, conteudo };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Atendimento não encontrado" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Atendimento não encontrado" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
+
     const { item } = loaderData;
     const titulo = `${item.titulo} | Clínica Evoluta`;
     return {
@@ -24,6 +37,8 @@ export const Route = createFileRoute("/atendimentos/$slug")({
         { property: "og:title", content: titulo },
         { property: "og:description", content: item.resumo },
         { property: "og:image", content: brandShareImage },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: brandShareImage },
       ],
     };
@@ -32,387 +47,300 @@ export const Route = createFileRoute("/atendimentos/$slug")({
 });
 
 function AtendimentoPage() {
-  const { item } = Route.useLoaderData();
+  const { item, conteudo } = Route.useLoaderData();
 
-  switch (item.slug) {
-    case "neuropsicologia":
-    case "neuropsicopedagogia":
-      return <LayoutEtapas item={item} />;
-    case "tdah":
-    case "fonoaudiologia":
-      return <LayoutFaixa item={item} />;
-    case "psicopedagogia":
-    case "aba":
-      return <LayoutZigueZague item={item} />;
-    case "orientacao-familiar-e-escolar":
-    case "psicoterapia":
-      return <LayoutEditorial item={item} />;
-    default:
-      return <LayoutLateral item={item} />;
-  }
-}
-
-function InfoLista({ item }: { item: Atendimento }) {
   return (
-    <dl className="grid gap-px bg-border sm:grid-cols-2">
-      {item.info.map((i) => (
-        <div key={i.rotulo} className="bg-muted p-6">
-          <dt className="eyebrow text-muted-foreground">{i.rotulo}</dt>
-          <dd className="mt-2 font-display text-2xl">{i.valor}</dd>
-        </div>
-      ))}
-    </dl>
+    <>
+      <AtendimentoHero item={item} conteudo={conteudo} />
+      <Apresentacao item={item} conteudo={conteudo} />
+      <SituacoesEObjetivos item={item} conteudo={conteudo} />
+      <Etapas item={item} />
+      <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
+      <Perguntas conteudo={conteudo} />
+      <OutrosAtendimentos item={item} />
+      <Fechamento item={item} />
+    </>
   );
 }
 
-function ParaQuem({ item }: { item: Atendimento }) {
+function AtendimentoHero({
+  item,
+  conteudo,
+}: {
+  item: Atendimento;
+  conteudo: ConteudoAtendimento;
+}) {
   return (
-    <ul className="space-y-3">
-      {item.paraQuem.map((p) => (
-        <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-          <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-primary" />
-          {p}
-        </li>
-      ))}
-    </ul>
-  );
-}
+    <section className="relative flex min-h-[560px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[680px]">
+      <img
+        src={item.imagem}
+        alt={`Atendimento de ${item.titulo} na Clínica Evoluta`}
+        width={1200}
+        height={800}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-deep/65 lg:hidden" />
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/80 via-[48%] to-deep/15 to-[100%] lg:block" />
 
-function Fechamento({ item }: { item: Atendimento }) {
-  return (
-    <Section className="bg-deep text-deep-foreground">
-      <div className="grid gap-8 lg:grid-cols-[1.3fr_auto] lg:items-end">
-        <div>
-          <p className="eyebrow text-deep-foreground/60">Próximo passo</p>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">
-            Vamos conversar sobre {item.titulo.toLowerCase()}?
-          </h2>
-          <p className="mt-4 max-w-lg text-sm text-deep-foreground/70">
-            Envie uma mensagem com a idade da criança e a principal queixa. Respondo com os horários
-            disponíveis e as orientações iniciais.
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 lg:px-10 lg:pb-24">
+        <div className="max-w-3xl">
+          <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
+          <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            {item.titulo}
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
+            {conteudo.chamada}
           </p>
+          <div className="mt-8">
+            <WhatsAppButton href={site.whatsapp} label="Conversar com a equipe" />
+          </div>
         </div>
-        <WhatsAppButton href={site.whatsapp} />
       </div>
-      <div className="mt-14 border-t border-deep-foreground/15 pt-8">
-        <p className="eyebrow text-deep-foreground/50">Outros atendimentos</p>
-        <div className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
-          {atendimentos
-            .filter((a) => a.slug !== item.slug)
-            .map((a) => (
-              <Link
-                key={a.slug}
-                to="/atendimentos/$slug"
-                params={{ slug: a.slug }}
-                className="text-sm text-deep-foreground/75 transition-colors hover:text-primary"
-              >
-                {a.titulo}
-              </Link>
-            ))}
+    </section>
+  );
+}
+
+function Apresentacao({
+  item,
+  conteudo,
+}: {
+  item: Atendimento;
+  conteudo: ConteudoAtendimento;
+}) {
+  return (
+    <Section>
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <Eyebrow>Sobre o atendimento</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            Um olhar completo para cada história
+          </h2>
+        </div>
+        <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
+          {item.texto.map((paragrafo) => (
+            <p key={paragrafo}>{paragrafo}</p>
+          ))}
+          <p>{conteudo.introducao}</p>
         </div>
       </div>
     </Section>
   );
 }
 
-/* Modelo 1 — foto lateral grande, texto em coluna única */
-function LayoutLateral({ item }: { item: Atendimento }) {
+function SituacoesEObjetivos({
+  item,
+  conteudo,
+}: {
+  item: Atendimento;
+  conteudo: ConteudoAtendimento;
+}) {
   return (
-    <>
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
-          <img
-            src={item.imagem}
-            alt={item.titulo}
-            width={1200}
-            height={900}
-            className="h-72 w-full object-cover lg:h-[540px]"
-          />
-          <div>
-            <Eyebrow>{item.etiqueta}</Eyebrow>
-            <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
-            {item.texto.map((p) => (
-              <p key={p} className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
-            <h2 className="mt-12 font-display text-3xl">Para quem é indicado</h2>
-            <div className="mt-5">
-              <ParaQuem item={item} />
-            </div>
-          </div>
+    <Section className="bg-muted">
+      <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <Eyebrow>Quando buscar</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Situações que merecem atenção</h2>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            A busca pode acontecer diante de dúvidas, mudanças ou dificuldades persistentes. A conversa inicial ajuda a compreender se este é o atendimento mais indicado.
+          </p>
+          <ListaComMarcador itens={conteudo.sinais} className="mt-8" />
         </div>
-      </Section>
 
-      <Section className="bg-muted">
-        <h2 className="font-display text-4xl">Como funciona</h2>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {item.comoFunciona.map((c, i) => (
-            <div key={c.titulo} className="border-t border-foreground/15 pt-6">
-              <span className="font-display text-4xl text-primary">{String(i + 1).padStart(2, "0")}</span>
-              <p className="mt-4 font-display text-2xl">{c.titulo}</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.texto}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-14">
-          <InfoLista item={item} />
-        </div>
-      </Section>
-
-      <Fechamento item={item} />
-    </>
-  );
-}
-
-/* Modelo 2 — faixa larga no topo, duas colunas */
-function LayoutFaixa({ item }: { item: Atendimento }) {
-  return (
-    <>
-      <div className="relative">
-        <img
-          src={item.imagem}
-          alt={item.titulo}
-          width={1400}
-          height={800}
-          className="h-72 w-full object-cover lg:h-[460px]"
-        />
-        <div className="absolute inset-0 bg-deep/50" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto w-full max-w-7xl px-5 pb-12 text-deep-foreground lg:px-10 lg:pb-16">
-            <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
-            <h1 className="mt-4 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              {item.titulo}
-            </h1>
-          </div>
+        <div className="border-t border-border pt-10 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
+          <Eyebrow>O que buscamos</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Objetivos do acompanhamento</h2>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Os objetivos são definidos de forma individualizada e podem ser ajustados ao longo do percurso, conforme as necessidades e os avanços observados.
+          </p>
+          <ListaComMarcador itens={conteudo.objetivos} className="mt-8" />
         </div>
       </div>
 
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            {item.texto.map((p) => (
-              <p key={p} className="mb-5 text-sm leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
-            <h2 className="mt-10 font-display text-3xl">Para quem é indicado</h2>
-            <div className="mt-5">
-              <ParaQuem item={item} />
-            </div>
-          </div>
-           <div className="bg-muted p-6 sm:p-8 lg:p-10">
-            <h2 className="font-display text-3xl">Como funciona</h2>
-            <div className="mt-8 space-y-8">
-              {item.comoFunciona.map((c) => (
-                <div key={c.titulo} className="border-l-2 border-primary pl-5">
-                  <p className="eyebrow">{c.titulo}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.texto}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="mt-14">
-          <InfoLista item={item} />
-        </div>
-      </Section>
-
-      <Fechamento item={item} />
-    </>
-  );
-}
-
-/* Modelo 3 — blocos alternados foto/texto */
-function LayoutZigueZague({ item }: { item: Atendimento }) {
-  return (
-    <>
-      <Section className="bg-muted">
-        <div className="max-w-3xl">
-          <Eyebrow>{item.etiqueta}</Eyebrow>
-          <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{item.texto[0]}</p>
-        </div>
-      </Section>
-
-      <Section>
-        <div className="space-y-16 lg:space-y-24">
-          {item.comoFunciona.map((c, i) => (
-            <div
-              key={c.titulo}
-              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-16 ${
-                i % 2 === 1 ? "lg:[&>img]:order-2" : ""
-              }`}
-            >
-              <img
-                src={item.imagem}
-                alt={c.titulo}
-                loading="lazy"
-                width={1200}
-                height={900}
-                className="h-64 w-full object-cover lg:h-96"
-              />
-              <div>
-                <span className="font-display text-5xl text-primary">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h2 className="mt-4 font-display text-3xl">{c.titulo}</h2>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.texto}</p>
-              </div>
+      <div className="mt-16 border-t border-border pt-12">
+        <p className="eyebrow text-muted-foreground">Indicado para</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {item.paraQuem.map((perfil) => (
+            <div key={perfil} className="flex gap-4 border-l-2 border-primary bg-background p-5">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <p className="text-sm leading-relaxed">{perfil}</p>
             </div>
           ))}
         </div>
-      </Section>
-
-      <Section className="bg-muted">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="font-display text-3xl">Para quem é indicado</h2>
-            <div className="mt-5">
-              <ParaQuem item={item} />
-            </div>
-            <p className="mt-8 text-sm leading-relaxed text-muted-foreground">{item.texto[1]}</p>
-          </div>
-          <dl className="grid gap-px self-start bg-border sm:grid-cols-2">
-            {item.info.map((i) => (
-              <div key={i.rotulo} className="bg-background p-6">
-                <dt className="eyebrow text-muted-foreground">{i.rotulo}</dt>
-                <dd className="mt-2 font-display text-2xl">{i.valor}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </Section>
-
-      <Fechamento item={item} />
-    </>
+      </div>
+    </Section>
   );
 }
 
-/* Modelo 4 — grade de etapas + foto em destaque */
-function LayoutEtapas({ item }: { item: Atendimento }) {
+function ListaComMarcador({ itens, className = "" }: { itens: string[]; className?: string }) {
   return (
-    <>
-      <Section>
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
-          <div>
-            <Eyebrow>{item.etiqueta}</Eyebrow>
-            <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              {item.texto[0]}
-            </p>
-          </div>
-          <img
-            src={item.imagem}
-            alt={item.titulo}
-            width={1200}
-            height={900}
-            className="h-64 w-full object-cover lg:h-80"
-          />
-        </div>
-
-        <div className="mt-16">
-          <h2 className="font-display text-3xl">As etapas do processo</h2>
-          <div className="mt-8 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {item.comoFunciona.map((c) => (
-              <div key={c.titulo} className="bg-muted p-8">
-                <p className="font-display text-2xl text-primary">{c.titulo}</p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.texto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section className="bg-muted">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="font-display text-3xl">Quando indicar</h2>
-            <div className="mt-5">
-              <ParaQuem item={item} />
-            </div>
-            <p className="mt-8 text-sm leading-relaxed text-muted-foreground">{item.texto[1]}</p>
-          </div>
-          <dl className="grid gap-px self-start bg-border sm:grid-cols-2">
-            {item.info.map((i) => (
-              <div key={i.rotulo} className="bg-background p-6">
-                <dt className="eyebrow text-muted-foreground">{i.rotulo}</dt>
-                <dd className="mt-2 font-display text-2xl">{i.valor}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </Section>
-
-      <Fechamento item={item} />
-    </>
+    <ul className={`space-y-4 ${className}`}>
+      {itens.map((item) => (
+        <li key={item} className="flex gap-4 text-sm leading-relaxed">
+          <span className="mt-2 h-2 w-2 shrink-0 bg-primary" aria-hidden="true" />
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
 
-/* Modelo 5 — editorial com citação grande e barra lateral */
-function LayoutEditorial({ item }: { item: Atendimento }) {
+function Etapas({ item }: { item: Atendimento }) {
   return (
-    <>
-      <Section className="bg-muted">
-        <div className="mx-auto max-w-4xl text-center">
-          <Eyebrow>{item.etiqueta}</Eyebrow>
-          <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
-          <blockquote className="mt-10 font-display text-2xl leading-snug text-primary sm:text-3xl lg:text-4xl">
-            “{item.resumo}”
-          </blockquote>
-        </div>
-      </Section>
+    <Section>
+      <div className="max-w-2xl">
+        <Eyebrow>Como acontece</Eyebrow>
+        <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Etapas construídas com clareza</h2>
+        <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+          O percurso é explicado desde o início. A quantidade de encontros e a participação de outras pessoas dependem da demanda apresentada.
+        </p>
+      </div>
 
-      <Section>
-        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
-          <article>
+      <ol className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
+        {item.comoFunciona.map((etapa, indice) => (
+          <li key={etapa.titulo} className="min-h-64 bg-background p-7 sm:p-8">
+            <span className="font-display text-4xl text-primary">
+              {String(indice + 1).padStart(2, "0")}
+            </span>
+            <h3 className="mt-8 font-display text-2xl">{etapa.titulo.replace(/^\d+\.\s*/, "")}</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{etapa.texto}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
+  );
+}
+
+function ParticipacaoEInformacoes({
+  item,
+  conteudo,
+}: {
+  item: Atendimento;
+  conteudo: ConteudoAtendimento;
+}) {
+  return (
+    <Section className="bg-deep text-deep-foreground">
+      <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+        <div>
+          <p className="eyebrow text-deep-foreground/60">Cuidado compartilhado</p>
+          <h2 className="mt-4 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl">
+            {conteudo.participacao.titulo}
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/75">
+            {conteudo.participacao.texto}
+          </p>
+        </div>
+
+        <dl className="grid gap-px self-start bg-deep-foreground/15 sm:grid-cols-2">
+          {item.info.map((informacao) => (
+            <div key={informacao.rotulo} className="min-h-32 bg-deep p-6">
+              <dt className="eyebrow text-deep-foreground/55">{informacao.rotulo}</dt>
+              <dd className="mt-3 font-display text-xl leading-snug">{informacao.valor}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </Section>
+  );
+}
+
+function Perguntas({ conteudo }: { conteudo: ConteudoAtendimento }) {
+  return (
+    <Section>
+      <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+        <div>
+          <Eyebrow>Antes de começar</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Perguntas frequentes</h2>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Se sua dúvida não estiver aqui, nossa equipe pode orientar você em uma primeira conversa.
+          </p>
+        </div>
+
+        <div className="divide-y divide-border border-y border-border">
+          {conteudo.perguntas.map((item) => (
+            <details key={item.pergunta} className="group py-6">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-xl">
+                {item.pergunta}
+                <span className="text-2xl text-primary transition-transform group-open:rotate-45" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <p className="max-w-2xl pt-4 text-sm leading-relaxed text-muted-foreground">{item.resposta}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function OutrosAtendimentos({ item }: { item: Atendimento }) {
+  const relacionados = atendimentos.filter((atendimento) => atendimento.slug !== item.slug).slice(0, 3);
+
+  return (
+    <Section className="bg-muted">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <Eyebrow>Conheça também</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Outros atendimentos</h2>
+        </div>
+        <Link to="/atendimentos" className="eyebrow inline-flex items-center gap-2 text-primary">
+          Ver todos <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {relacionados.map((relacionado) => (
+          <Link
+            key={relacionado.slug}
+            to="/atendimentos/$slug"
+            params={{ slug: relacionado.slug }}
+            className="group bg-background"
+          >
             <img
-              src={item.imagem}
-              alt={item.titulo}
+              src={relacionado.imagem}
+              alt={relacionado.titulo}
+              loading="lazy"
               width={1200}
-              height={900}
-              className="h-72 w-full object-cover lg:h-96"
+              height={800}
+              className="aspect-[4/3] w-full object-cover"
             />
-            {item.texto.map((p) => (
-              <p key={p} className="mt-6 text-base leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
-            <h2 className="mt-12 font-display text-3xl">Como funciona</h2>
-            <div className="mt-6 space-y-6">
-              {item.comoFunciona.map((c) => (
-                <div key={c.titulo}>
-                  <p className="eyebrow">{c.titulo}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.texto}</p>
-                </div>
-              ))}
+            <div className="p-6">
+              <p className="eyebrow text-primary">{relacionado.etiqueta}</p>
+              <h3 className="mt-3 font-display text-2xl">{relacionado.titulo}</h3>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors group-hover:text-primary">
+                Conhecer atendimento <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </span>
             </div>
-          </article>
+          </Link>
+        ))}
+      </div>
+    </Section>
+  );
+}
 
-          <aside className="space-y-8 self-start bg-muted p-6 sm:p-8">
-            <div>
-              <p className="eyebrow text-muted-foreground">Informações</p>
-              <dl className="mt-4 space-y-4">
-                {item.info.map((i) => (
-                  <div key={i.rotulo}>
-                    <dt className="text-xs text-muted-foreground">{i.rotulo}</dt>
-                    <dd className="font-display text-xl">{i.valor}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <div className="border-t border-border pt-6">
-              <p className="eyebrow text-muted-foreground">Para quem é indicado</p>
-              <div className="mt-4">
-                <ParaQuem item={item} />
-              </div>
-            </div>
-            <WhatsAppButton href={site.whatsapp} label="Solicitar proposta" />
-          </aside>
+function Fechamento({ item }: { item: Atendimento }) {
+  return (
+    <Section className="bg-primary text-primary-foreground">
+      <div className="grid gap-10 lg:grid-cols-[1.3fr_auto] lg:items-end">
+        <div>
+          <p className="eyebrow text-primary-foreground/70">Próximo passo</p>
+          <h2 className="mt-4 max-w-3xl font-display text-3xl sm:text-4xl lg:text-5xl">
+            Quer entender se {item.titulo.toLowerCase()} é o atendimento indicado?
+          </h2>
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-primary-foreground/80">
+            Conte brevemente o que motivou sua busca. Nossa equipe acolhe sua dúvida e orienta sobre o caminho mais adequado.
+          </p>
         </div>
-      </Section>
-
-      <Fechamento item={item} />
-    </>
+        <a
+          href={site.whatsapp}
+          target="_blank"
+          rel="noreferrer"
+          className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-deep px-6 py-4 text-center text-deep-foreground transition-opacity hover:opacity-90"
+        >
+          <MessageCircle className="h-5 w-5" aria-hidden="true" />
+          Falar com a Clínica Evoluta
+        </a>
+      </div>
+    </Section>
   );
 }
