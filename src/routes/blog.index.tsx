@@ -31,16 +31,15 @@ function BlogIndex() {
 
   return (
     <>
-      <section className="relative flex min-h-[420px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
+      <section className="relative flex min-h-[600px] items-center overflow-hidden bg-deep px-5 py-24 text-deep-foreground lg:min-h-[720px] lg:px-10 lg:py-28">
         <img
           src={fotosJessica.blog}
           alt="Jéssica Pelissari, neuropsicóloga da Clínica Evoluta"
           width={720}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[70%_30%]"
+          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_20%]"
         />
-        {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/65 via-[55%] to-transparent to-[95%]" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Blog</p>

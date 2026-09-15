@@ -76,18 +76,18 @@ function AtendimentoHero({
   fotoJessica: string;
 }) {
   return (
-    <section className="relative flex min-h-[560px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[680px]">
+    <section className="relative flex min-h-[640px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[780px] xl:min-h-[820px]">
       <img
         src={fotoJessica}
         alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta — ${item.titulo}`}
         width={1080}
         height={720}
-        className="absolute inset-0 h-full w-full object-cover object-top lg:object-contain lg:object-right"
+        className="absolute inset-0 h-full w-full object-cover object-top lg:object-[78%_20%]"
       />
       <div className="absolute inset-0 bg-deep/65 lg:hidden" />
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/80 via-[48%] to-deep/15 to-[100%] lg:block" />
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-36 lg:px-10 lg:pb-24">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-40 lg:px-10 lg:pb-28 lg:pt-48">
         <div className="max-w-3xl">
           <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
           <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">

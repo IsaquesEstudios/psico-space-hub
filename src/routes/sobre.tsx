@@ -30,15 +30,17 @@ function SobrePage() {
   return (
     <>
       {/* Abertura */}
-      <section className="relative overflow-hidden bg-deep text-deep-foreground">
+      <section className="relative flex min-h-[640px] items-center overflow-hidden bg-deep text-deep-foreground lg:min-h-[760px]">
         <img
           src={fotosJessica.sobre}
           alt={fundadora.nome}
           width={720}
           height={1080}
-          className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_52%)] lg:block"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top lg:object-[74%_18%]"
         />
-        <div className="relative mx-auto max-w-7xl px-5 py-16 lg:grid lg:grid-cols-2 lg:px-10 lg:py-24">
+        <div className="absolute inset-0 bg-deep/65 lg:hidden" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
+        <div className="relative mx-auto w-full max-w-7xl px-5 py-24 lg:grid lg:grid-cols-2 lg:px-10 lg:py-28">
           <div>
             <p className="eyebrow text-deep-foreground/60">Quem conduz</p>
             <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
@@ -50,14 +52,6 @@ function SobrePage() {
             </p>
           </div>
         </div>
-        <img
-          src={fotosJessica.sobre}
-          alt={fundadora.nome}
-          loading="lazy"
-          width={720}
-          height={1080}
-          className="h-80 w-full object-cover object-top lg:hidden"
-        />
       </section>
 
       {/* Trajetória */}
