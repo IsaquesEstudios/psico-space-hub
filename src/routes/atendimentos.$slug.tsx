@@ -6,6 +6,7 @@ import {
   atendimentos,
   brandShareImage,
   conteudosAtendimentos,
+  fotosJessica,
   site,
   type Atendimento,
   type ConteudoAtendimento,
@@ -48,10 +49,12 @@ export const Route = createFileRoute("/atendimentos/$slug")({
 
 function AtendimentoPage() {
   const { item, conteudo } = Route.useLoaderData();
+  const indice = atendimentos.findIndex((atendimento) => atendimento.slug === item.slug);
+  const fotoJessica = fotosJessica.atendimentosDetalhes[indice] ?? fotosJessica.atendimentos;
 
   return (
     <>
-      <AtendimentoHero item={item} conteudo={conteudo} />
+      <AtendimentoHero item={item} conteudo={conteudo} fotoJessica={fotoJessica} />
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} />
@@ -66,18 +69,20 @@ function AtendimentoPage() {
 function AtendimentoHero({
   item,
   conteudo,
+  fotoJessica,
 }: {
   item: Atendimento;
   conteudo: ConteudoAtendimento;
+  fotoJessica: string;
 }) {
   return (
     <section className="relative flex min-h-[560px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[680px]">
       <img
-        src={item.imagem}
-        alt={`Atendimento de ${item.titulo} na Clínica Evoluta`}
-        width={1200}
-        height={800}
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        src={fotoJessica}
+        alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta — ${item.titulo}`}
+        width={1080}
+        height={720}
+        className="absolute inset-0 h-full w-full object-cover object-top lg:object-center"
       />
       <div className="absolute inset-0 bg-deep/65 lg:hidden" />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/80 via-[48%] to-deep/15 to-[100%] lg:block" />

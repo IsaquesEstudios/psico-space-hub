@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, cursos, site } from "@/data/site";
+import { brandShareImage, cursos, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/")({
   head: () => ({
@@ -28,8 +28,17 @@ export const Route = createFileRoute("/cursos/")({
 function CursosIndex() {
   return (
     <>
-      <section className="bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative flex min-h-[440px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
+        <img
+          src={fotosJessica.cursos}
+          alt="Jéssica Pelissari, neuropsicóloga e mentora"
+          width={1080}
+          height={720}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[0%] via-deep/80 via-[52%] to-deep/15 to-[100%]" />
+        <div className="absolute inset-0 bg-deep/50 lg:hidden" />
+        <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Cursos</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Formações práticas, para aplicar na semana seguinte

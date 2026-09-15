@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 import { Section, WhatsAppButton } from "@/components/site/bits";
-import { atendimentos, brandShareImage, site } from "@/data/site";
+import { atendimentos, brandShareImage, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -34,8 +34,17 @@ const horarios = [
 function Contato() {
   return (
     <>
-      <section className="bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative flex min-h-[440px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
+        <img
+          src={fotosJessica.contato}
+          alt="Jéssica Pelissari, da Clínica Evoluta"
+          width={720}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_28%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[0%] via-deep/85 via-[58%] to-deep/20 to-[100%]" />
+        <div className="absolute inset-0 bg-deep/50 lg:hidden" />
+        <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Contato</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Vamos começar por uma conversa

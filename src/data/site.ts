@@ -12,6 +12,16 @@ import atendimentoTdah from "@/assets/atendimento-tdah.jpg";
 import atendimentoTea from "@/assets/atendimento-tea.jpg";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
+import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
+import jessicaRetratoLateral from "@/assets/GHR06700.jpg.asset.json";
+import jessicaMesaHorizontal from "@/assets/GHR06849_1.jpg.asset.json";
+import jessicaEntrevista from "@/assets/GHR07165.jpg.asset.json";
+import jessicaEscrevendo from "@/assets/GHR06764.jpg.asset.json";
+import jessicaSorrindo from "@/assets/GHR07265.jpg.asset.json";
+import jessicaJanela from "@/assets/GHR06712.jpg.asset.json";
+import jessicaMesaAmpla from "@/assets/GHR06849-2.jpg.asset.json";
+import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
+import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import blogLeitura from "@/assets/blog-leitura.jpg";
 import blogRotina from "@/assets/blog-rotina.jpg";
 import blogMatematica from "@/assets/blog-matematica.jpg";
@@ -28,6 +38,29 @@ export const images = {
   cta: ctaImg,
   blogHero,
   novidadesHero,
+};
+
+export const fotosJessica = {
+  atendimentos: jessicaJanela.url,
+  sobre: jessicaRetratoFrontal.url,
+  contato: jessicaSorrindo.url,
+  cursos: jessicaSofa.url,
+  cursosDetalhes: [jessicaEscrevendo.url, jessicaMesaAmpla.url, jessicaConversa.url],
+  blog: jessicaEntrevista.url,
+  blogArtigos: [jessicaRetratoLateral.url, jessicaEscrevendo.url, jessicaConversa.url],
+  novidades: jessicaMesaHorizontal.url,
+  atendimentosDetalhes: [
+    jessicaMesaHorizontal.url,
+    jessicaRetratoLateral.url,
+    jessicaEscrevendo.url,
+    jessicaSorrindo.url,
+    jessicaJanela.url,
+    jessicaMesaAmpla.url,
+    jessicaSofa.url,
+    jessicaConversa.url,
+    jessicaRetratoFrontal.url,
+    jessicaEntrevista.url,
+  ],
 };
 
 export const site = {

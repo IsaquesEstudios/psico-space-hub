@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, images, novidades, site } from "@/data/site";
+import { brandShareImage, fotosJessica, novidades, site } from "@/data/site";
 
 export const Route = createFileRoute("/novidades")({
   head: () => ({
@@ -29,11 +29,11 @@ function Novidades() {
     <>
       <section className="relative flex min-h-[420px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
         <img
-          src={images.novidadesHero}
-          alt="Agenda e materiais de trabalho sobre uma mesa"
-          width={1600}
-          height={900}
-          className="absolute right-0 top-0 h-[112%] w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
+          src={fotosJessica.novidades}
+          alt="Jéssica Pelissari trabalhando em seu consultório"
+          width={1080}
+          height={720}
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
         <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/65 via-[55%] to-transparent to-[95%]" />

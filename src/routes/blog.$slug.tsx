@@ -2,7 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 
 import { Section } from "@/components/site/bits";
-import { brandShareImage, posts } from "@/data/site";
+import { brandShareImage, fotosJessica, posts } from "@/data/site";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -33,6 +33,8 @@ export const Route = createFileRoute("/blog/$slug")({
 function PostPage() {
   const { post } = Route.useLoaderData();
   const outros = posts.filter((p) => p.slug !== post.slug);
+  const indice = posts.findIndex((item) => item.slug === post.slug);
+  const fotoJessica = fotosJessica.blogArtigos[indice] ?? fotosJessica.blog;
 
   return (
     <>
@@ -50,11 +52,11 @@ function PostPage() {
           </p>
           <h1 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">{post.titulo}</h1>
           <img
-            src={post.imagem}
-            alt={post.titulo}
-            width={1200}
-            height={800}
-            className="mt-10 h-72 w-full object-cover lg:h-96"
+            src={fotoJessica}
+            alt={`Jéssica Pelissari — ${post.titulo}`}
+            width={1080}
+            height={720}
+            className="mt-10 h-80 w-full object-cover object-top lg:h-[480px]"
           />
           <div className="mt-10">
             {post.paragrafos.map((p) => (

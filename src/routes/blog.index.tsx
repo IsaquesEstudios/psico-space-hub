@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
 import { Eyebrow, Section } from "@/components/site/bits";
-import { brandShareImage, images, posts } from "@/data/site";
+import { brandShareImage, fotosJessica, posts } from "@/data/site";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -33,11 +33,11 @@ function BlogIndex() {
     <>
       <section className="relative flex min-h-[420px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
         <img
-          src={images.blogHero}
-          alt="Mulher digitando em um notebook"
-          width={1600}
-          height={900}
-          className="absolute right-0 top-0 h-[112%] w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_45%)]"
+          src={fotosJessica.blog}
+          alt="Jéssica Pelissari, neuropsicóloga da Clínica Evoluta"
+          width={720}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[70%_30%]"
         />
         {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
         <div className="absolute inset-0 bg-gradient-to-r from-deep from-[10%] via-deep/65 via-[55%] to-transparent to-[95%]" />
