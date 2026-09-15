@@ -17,7 +17,7 @@ export const brandShareImage =
   "https://id-preview--deb759cf-cdb0-4e38-afae-699e1737adb9.lovable.app/__l5e/assets-v1/50c90749-1ebe-4ab2-a6d1-8badb534742a/logo-social.jpg";
 
 export const images = {
-  hero: jessicaAsset.url,
+  hero: jessicaHeroMesa.url,
   sobre: sobreImg,
   jessica: jessicaAsset.url,
   cta: ctaImg,
