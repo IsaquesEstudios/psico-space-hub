@@ -35,13 +35,17 @@ function AtendimentoPage() {
   const { item } = Route.useLoaderData();
 
   switch (item.slug) {
-    case "tdah-e-atencao":
-      return <LayoutFaixa item={item} />;
-    case "dislexia-e-leitura":
-      return <LayoutZigueZague item={item} />;
-    case "avaliacao-de-aprendizagem":
+    case "neuropsicologia":
+    case "neuropsicopedagogia":
       return <LayoutEtapas item={item} />;
-    case "orientacao-a-pais-e-escolas":
+    case "tdah":
+    case "fonoaudiologia":
+      return <LayoutFaixa item={item} />;
+    case "psicopedagogia":
+    case "aba":
+      return <LayoutZigueZague item={item} />;
+    case "orientacao-familiar-e-escolar":
+    case "psicoterapia":
       return <LayoutEditorial item={item} />;
     default:
       return <LayoutLateral item={item} />;
@@ -354,7 +358,7 @@ function LayoutEditorial({ item }: { item: Atendimento }) {
           <Eyebrow>{item.etiqueta}</Eyebrow>
           <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
           <blockquote className="mt-10 font-display text-2xl leading-snug text-primary sm:text-3xl lg:text-4xl">
-            “Nenhuma criança aprende sozinha — o entorno também aprende.”
+            “{item.resumo}”
           </blockquote>
         </div>
       </Section>

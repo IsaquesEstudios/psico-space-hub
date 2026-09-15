@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import { Eyebrow, Section } from "@/components/site/bits";
-import { atendimentos, brandShareImage } from "@/data/site";
+import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
+import { atendimentos, brandShareImage, site } from "@/data/site";
 
 export const Route = createFileRoute("/atendimentos/")({
   head: () => ({
@@ -32,11 +32,12 @@ function AtendimentosIndex() {
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Atendimentos</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Cinco frentes de trabalho, um mesmo cuidado
+            Cuidado especializado para compreender cada pessoa em sua singularidade
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-deep-foreground/70">
-            Escolha a especialidade para ver como o processo acontece, para quem é indicado e quais são
-            as informações práticas de duração e formato.
+            Na Clínica Evoluta, acreditamos que cada pessoa possui uma história, um ritmo e necessidades
+            únicas. Nossa equipe multidisciplinar atua na avaliação, intervenção e acompanhamento,
+            considerando aspectos cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
           </p>
         </div>
       </section>
@@ -68,6 +69,22 @@ function AtendimentosIndex() {
               <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
             </Link>
           ))}
+        </div>
+      </Section>
+
+      <Section className="bg-deep text-deep-foreground">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_auto] lg:items-end">
+          <div>
+            <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">
+              Não sabe qual atendimento procurar?
+            </h2>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-deep-foreground/70">
+              Você não precisa saber exatamente qual profissional procurar. Nossa equipe pode ajudar você
+              a compreender qual avaliação ou especialidade é mais adequada para a sua necessidade.
+            </p>
+          </div>
+          <WhatsAppButton href={site.whatsapp} label="Falar com a equipe da Evoluta" />
         </div>
       </Section>
     </>
