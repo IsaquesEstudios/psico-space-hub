@@ -358,7 +358,7 @@ function LayoutEditorial({ item }: { item: Atendimento }) {
           <Eyebrow>{item.etiqueta}</Eyebrow>
           <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">{item.titulo}</h1>
           <blockquote className="mt-10 font-display text-2xl leading-snug text-primary sm:text-3xl lg:text-4xl">
-            “Nenhuma criança aprende sozinha — o entorno também aprende.”
+            “{item.resumo}”
           </blockquote>
         </div>
       </Section>

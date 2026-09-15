@@ -15,6 +15,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as NovidadesRouteImport } from './routes/novidades'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -50,6 +51,11 @@ const CursosRoute = CursosRouteImport.update({
 const NovidadesRoute = NovidadesRouteImport.update({
   id: '/novidades',
   path: '/novidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AtendimentosIndexRoute = AtendimentosIndexRouteImport.update({
@@ -90,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
   '/novidades': typeof NovidadesRoute
+  '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/novidades': typeof NovidadesRoute
+  '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
   '/novidades': typeof NovidadesRoute
+  '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
@@ -132,6 +141,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cursos'
     | '/novidades'
+    | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contato'
     | '/novidades'
+    | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cursos'
     | '/novidades'
+    | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
@@ -172,6 +184,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRouteWithChildren
   NovidadesRoute: typeof NovidadesRoute
+  SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -216,6 +229,13 @@ declare module '@tanstack/react-router' {
       path: '/novidades'
       fullPath: '/novidades'
       preLoaderRoute: typeof NovidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atendimentos/': {
@@ -309,6 +329,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRouteWithChildren,
   NovidadesRoute: NovidadesRoute,
+  SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

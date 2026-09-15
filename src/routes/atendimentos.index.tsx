@@ -32,11 +32,12 @@ function AtendimentosIndex() {
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Atendimentos</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Cinco frentes de trabalho, um mesmo cuidado
+            Cuidado especializado para compreender cada pessoa em sua singularidade
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-deep-foreground/70">
-            Escolha a especialidade para ver como o processo acontece, para quem é indicado e quais são
-            as informações práticas de duração e formato.
+            Na Clínica Evoluta, acreditamos que cada pessoa possui uma história, um ritmo e necessidades
+            únicas. Nossa equipe multidisciplinar atua na avaliação, intervenção e acompanhamento,
+            considerando aspectos cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
           </p>
         </div>
       </section>
