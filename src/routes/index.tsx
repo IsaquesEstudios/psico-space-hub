@@ -207,7 +207,7 @@ function Inicio() {
       </Section>
 
       {/* Chamada para WhatsApp */}
-      <section className="relative overflow-hidden bg-deep text-deep-foreground">
+      <section className="relative overflow-hidden bg-deep px-5 text-deep-foreground lg:px-10">
         <img
           src={images.cta}
           alt="Mesa de trabalho com caderno e laptop"
@@ -217,7 +217,7 @@ function Inicio() {
           className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-auto max-w-none object-cover [mask-image:linear-gradient(to_right,transparent_0%,black_45%)] lg:block"
         />
         <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2">
-          <div className="px-5 py-16 lg:px-10 lg:py-20">
+          <div className="py-16 lg:py-20">
             <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl">
               Entre em contato conosco
@@ -242,7 +242,7 @@ function Inicio() {
             loading="lazy"
             width={1400}
             height={900}
-            className="h-64 w-full object-cover lg:hidden"
+            className="-mx-5 h-64 w-[calc(100%+2.5rem)] max-w-none object-cover lg:hidden"
           />
         </div>
       </section>
