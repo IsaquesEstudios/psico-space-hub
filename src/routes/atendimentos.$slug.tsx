@@ -58,6 +58,7 @@ function AtendimentoPage() {
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} />
+      <ImagemDoAcompanhamento item={item} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
       <OutrosAtendimentos item={item} />
@@ -114,12 +115,20 @@ function Apresentacao({
 }) {
   return (
     <Section>
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
         <div>
           <Eyebrow>Sobre o atendimento</Eyebrow>
           <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
             Um olhar completo para cada história
           </h2>
+          <img
+            src={item.imagem}
+            alt={`Atividade relacionada ao atendimento de ${item.titulo}`}
+            loading="lazy"
+            width={1200}
+            height={800}
+            className="mt-9 aspect-[4/3] w-full object-cover"
+          />
         </div>
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
           {item.texto.map((paragrafo) => (
@@ -212,6 +221,29 @@ function Etapas({ item }: { item: Atendimento }) {
         ))}
       </ol>
     </Section>
+  );
+}
+
+function ImagemDoAcompanhamento({ item }: { item: Atendimento }) {
+  return (
+    <section className="overflow-hidden bg-background px-5 pb-16 sm:pb-20 lg:px-10 lg:pb-28">
+      <div className="mx-auto grid max-w-7xl items-end gap-8 lg:grid-cols-[1.45fr_0.55fr] lg:gap-12">
+        <img
+          src={item.imagemSecundaria}
+          alt={`Momento de acompanhamento em ${item.titulo}`}
+          loading="lazy"
+          width={1200}
+          height={800}
+          className="aspect-[3/2] min-h-72 w-full object-cover sm:min-h-96"
+        />
+        <div className="border-l-2 border-primary pb-2 pl-6 lg:mb-8">
+          <p className="eyebrow text-primary">Acompanhamento individualizado</p>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            Cada encontro considera a rotina, as potencialidades e as necessidades observadas ao longo do percurso.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
 

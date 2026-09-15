@@ -10,6 +10,16 @@ import atendimentoPsicopedagogia from "@/assets/atendimento-psicopedagogia.jpg";
 import atendimentoPsicoterapia from "@/assets/atendimento-psicoterapia.jpg";
 import atendimentoTdah from "@/assets/atendimento-tdah.jpg";
 import atendimentoTea from "@/assets/atendimento-tea.jpg";
+import atendimentoAbaAmbiente from "@/assets/atendimento-aba-ambiente.jpg";
+import atendimentoAprendizagemAmbiente from "@/assets/atendimento-aprendizagem-ambiente.jpg";
+import atendimentoFonoaudiologiaAmbiente from "@/assets/atendimento-fonoaudiologia-ambiente.jpg";
+import atendimentoNeuropsicologiaAmbiente from "@/assets/atendimento-neuropsicologia-ambiente.jpg";
+import atendimentoNeuropsicopedagogiaAmbiente from "@/assets/atendimento-neuropsicopedagogia-ambiente.jpg";
+import atendimentoOrientacaoFamiliarAmbiente from "@/assets/atendimento-orientacao-familiar-ambiente.jpg";
+import atendimentoPsicopedagogiaAmbiente from "@/assets/atendimento-psicopedagogia-ambiente.jpg";
+import atendimentoPsicoterapiaAmbiente from "@/assets/atendimento-psicoterapia-ambiente.jpg";
+import atendimentoTdahAmbiente from "@/assets/atendimento-tdah-ambiente.jpg";
+import atendimentoTeaAmbiente from "@/assets/atendimento-tea-ambiente.jpg";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
@@ -81,6 +91,7 @@ export type Atendimento = {
   etiqueta: string;
   resumo: string;
   imagem: string;
+  imagemSecundaria: string;
   paraQuem: string[];
   comoFunciona: { titulo: string; texto: string }[];
   info: { rotulo: string; valor: string }[];
@@ -95,6 +106,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Avaliar para compreender. Compreender para intervir: investigação do funcionamento cognitivo, emocional e comportamental.",
     imagem: atendimentoNeuropsicologia,
+    imagemSecundaria: atendimentoNeuropsicologiaAmbiente,
     paraQuem: [
       "TDAH, TEA e Deficiência Intelectual",
       "Transtornos de aprendizagem e dificuldades escolares",
@@ -145,6 +157,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
     imagem: atendimentoTea,
+    imagemSecundaria: atendimentoTeaAmbiente,
     paraQuem: [
       "Famílias com suspeita de TEA em qualquer idade",
       "Pessoas já diagnosticadas que buscam acompanhamento",
@@ -184,6 +197,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Compreender a origem das dificuldades de atenção, impulsividade e organização para direcionar as melhores estratégias.",
     imagem: atendimentoTdah,
+    imagemSecundaria: atendimentoTdahAmbiente,
     paraQuem: [
       "Crianças e adolescentes com queixas de atenção e agitação",
       "Adultos com impacto na rotina, no trabalho e nos relacionamentos",
@@ -224,6 +238,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem — investigamos o que está dificultando o aprender.",
     imagem: atendimentoAprendizagem,
+    imagemSecundaria: atendimentoAprendizagemAmbiente,
     paraQuem: [
       "Crianças com queixas persistentes de leitura, escrita ou matemática",
       "Estudantes com dificuldades de compreensão, atenção e memória",
@@ -264,6 +279,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Um espaço de acolhimento, escuta e desenvolvimento para crianças, adolescentes e adultos.",
     imagem: atendimentoPsicoterapia,
+    imagemSecundaria: atendimentoPsicoterapiaAmbiente,
     paraQuem: [
       "Crianças e adolescentes com questões emocionais e comportamentais",
       "Adultos em momentos de mudança, sofrimento ou adoecimento emocional",
@@ -302,6 +318,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Intervenções focadas no desenvolvimento de habilidades, autonomia, comunicação e qualidade de vida.",
     imagem: atendimentoAba,
+    imagemSecundaria: atendimentoAbaAmbiente,
     paraQuem: [
       "Pessoas com TEA e Deficiência Intelectual",
       "Famílias que buscam desenvolvimento de autonomia e comunicação",
@@ -340,6 +357,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Compreender como cada pessoa aprende e quais fatores podem estar interferindo nesse processo.",
     imagem: atendimentoPsicopedagogia,
+    imagemSecundaria: atendimentoPsicopedagogiaAmbiente,
     paraQuem: [
       "Crianças e adolescentes com dificuldades escolares",
       "Estudantes que precisam organizar rotina e estratégias de estudo",
@@ -379,6 +397,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Intervenção nos processos de aprendizagem considerando a relação entre cérebro, cognição, comportamento e educação.",
     imagem: atendimentoNeuropsicopedagogia,
+    imagemSecundaria: atendimentoNeuropsicopedagogiaAmbiente,
     paraQuem: [
       "Estudantes com dificuldades persistentes de aprendizagem",
       "Casos que envolvem atenção, memória e funções executivas",
@@ -417,6 +436,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Avaliação e intervenção nas funções de fala, linguagem, comunicação, voz e aprendizagem.",
     imagem: atendimentoFonoaudiologia,
+    imagemSecundaria: atendimentoFonoaudiologiaAmbiente,
     paraQuem: [
       "Crianças com trocas na fala e atraso de linguagem",
       "Estudantes com dificuldades de leitura, escrita e compreensão",
@@ -455,6 +475,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "O desenvolvimento acontece em diferentes ambientes — construímos estratégias junto à família, à escola e a outros profissionais.",
     imagem: atendimentoOrientacaoFamiliar,
+    imagemSecundaria: atendimentoOrientacaoFamiliarAmbiente,
     paraQuem: [
       "Famílias que precisam de estratégias para a rotina diária",
       "Escolas e educadores que buscam adaptações viáveis",
