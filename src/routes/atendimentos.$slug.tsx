@@ -82,7 +82,7 @@ function AtendimentoHero({
         alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta — ${item.titulo}`}
         width={1080}
         height={720}
-        className="absolute inset-0 h-full w-full object-cover object-top lg:object-center"
+        className="absolute inset-0 h-full w-full object-cover object-top lg:object-contain lg:object-right"
       />
       <div className="absolute inset-0 bg-deep/65 lg:hidden" />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/80 via-[48%] to-deep/15 to-[100%] lg:block" />
