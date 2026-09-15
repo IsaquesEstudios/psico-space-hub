@@ -80,25 +80,26 @@ function Inicio() {
           <div>
             <Eyebrow>Sobre a clínica</Eyebrow>
             <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-              Atendimento
+              Cada pessoa tem
               <br />
-              com olhar clínico
+              uma história, um ritmo
               <br />
-              e prática de escola
+              e necessidades únicas
             </h2>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Ajudo crianças e adolescentes a construírem estratégias próprias de aprendizagem,
-              respeitando o ritmo de cada um e sem transformar o estudo em punição.
+              A Clínica Evoluta — Desenvolvimento Infantil reúne uma equipe multidisciplinar que atua na
+              avaliação, intervenção e acompanhamento de crianças, adolescentes e adultos.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              São mais de 10 anos entre consultório e sala de aula, acompanhando famílias em processos
-              de avaliação, intervenção e orientação escolar.
+              Cuidar, compreender e transformar através da ciência, do acolhimento e da atuação
+              multidisciplinar — considerando aspectos cognitivos, emocionais, comportamentais, sociais e
+              de aprendizagem.
             </p>
             <Link
-              to="/contato"
+              to="/sobre"
               className="eyebrow mt-8 inline-block border border-border px-7 py-4 transition-colors hover:border-primary hover:text-primary"
             >
-              Falar comigo
+              Conhecer a Jéssica
             </Link>
           </div>
 
