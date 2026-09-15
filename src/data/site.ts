@@ -455,6 +455,278 @@ export const atendimentos: Atendimento[] = [
   },
 ];
 
+export type ConteudoAtendimento = {
+  chamada: string;
+  introducao: string;
+  sinais: string[];
+  objetivos: string[];
+  participacao: { titulo: string; texto: string };
+  perguntas: { pergunta: string; resposta: string }[];
+};
+
+export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
+  neuropsicologia: {
+    chamada: "Uma investigação cuidadosa para transformar dúvidas em compreensão e direcionamento.",
+    introducao:
+      "A avaliação considera a história de vida, os contextos e o modo como cada pessoa pensa, aprende, sente e se relaciona. Testes e escalas fazem parte do processo, mas os resultados são sempre interpretados de forma integrada e individualizada.",
+    sinais: [
+      "Dificuldades persistentes de atenção, memória ou organização",
+      "Mudanças no desempenho escolar, acadêmico ou profissional",
+      "Dúvidas relacionadas ao desenvolvimento ou a condições neurológicas",
+      "Necessidade de compreender potencialidades e pontos de apoio",
+    ],
+    objetivos: [
+      "Descrever o perfil cognitivo, emocional e comportamental",
+      "Identificar habilidades preservadas e dificuldades que exigem suporte",
+      "Contribuir para hipóteses diagnósticas quando pertinente",
+      "Orientar intervenções, adaptações e encaminhamentos",
+    ],
+    participacao: {
+      titulo: "Uma leitura que considera todos os contextos",
+      texto:
+        "Com autorização, informações da família, da escola e de outros profissionais podem complementar a avaliação. Essa integração ajuda a compreender como as dificuldades aparecem na vida real e torna as orientações mais úteis.",
+    },
+    perguntas: [
+      { pergunta: "A avaliação é apenas para crianças?", resposta: "Não. O processo pode ser realizado com crianças, adolescentes e adultos, sempre com instrumentos adequados à idade e à demanda." },
+      { pergunta: "O resultado é somente um diagnóstico?", resposta: "Não. A devolutiva apresenta o perfil avaliado, as potencialidades, as dificuldades observadas e os próximos passos possíveis." },
+    ],
+  },
+  "transtorno-do-espectro-autista": {
+    chamada: "Compreender particularidades para construir caminhos de desenvolvimento possíveis e respeitosos.",
+    introducao:
+      "Cada pessoa no espectro apresenta uma combinação própria de características, habilidades e necessidades. Por isso, a investigação e o acompanhamento partem da escuta da pessoa e de quem participa de sua rotina, evitando modelos prontos.",
+    sinais: [
+      "Diferenças na comunicação verbal ou não verbal",
+      "Dificuldades nas interações e na reciprocidade social",
+      "Interesses intensos, repetição de comportamentos ou necessidade de previsibilidade",
+      "Sensibilidades a sons, texturas, luzes ou mudanças de rotina",
+    ],
+    objetivos: [
+      "Compreender o perfil de desenvolvimento e comunicação",
+      "Fortalecer autonomia e participação nas atividades cotidianas",
+      "Desenvolver habilidades funcionais respeitando singularidades",
+      "Orientar os diferentes ambientes de convivência",
+    ],
+    participacao: {
+      titulo: "Família e escola como parte do cuidado",
+      texto:
+        "As estratégias ganham sentido quando podem ser incorporadas à rotina. A comunicação entre clínica, família e escola favorece objetivos coerentes e ajuda a generalizar habilidades para diferentes ambientes.",
+    },
+    perguntas: [
+      { pergunta: "É preciso ter diagnóstico para iniciar?", resposta: "Não necessariamente. A primeira conversa ajuda a compreender a demanda e a definir se o caminho indicado é investigação, acompanhamento ou outro encaminhamento." },
+      { pergunta: "O plano é igual para todas as pessoas?", resposta: "Não. Objetivos, recursos e ritmo são definidos a partir das necessidades e potencialidades de cada pessoa." },
+    ],
+  },
+  tdah: {
+    chamada: "Atenção, impulsividade e organização precisam ser compreendidas dentro da vida cotidiana.",
+    introducao:
+      "Dificuldades de atenção podem ter diferentes origens. A investigação observa quando elas começaram, em quais ambientes aparecem e como afetam aprendizagem, rotina, trabalho, relações e bem-estar emocional.",
+    sinais: [
+      "Esquecimentos frequentes e dificuldade para concluir tarefas",
+      "Desorganização com materiais, horários e compromissos",
+      "Impulsividade ou inquietação que interfere na rotina",
+      "Oscilações importantes de rendimento e dificuldade para manter o foco",
+    ],
+    objetivos: [
+      "Diferenciar TDAH de outras condições com manifestações semelhantes",
+      "Reconhecer situações que facilitam ou dificultam a atenção",
+      "Construir estratégias de planejamento e autorregulação",
+      "Reduzir impactos na aprendizagem, no trabalho e nas relações",
+    ],
+    participacao: {
+      titulo: "Estratégias que funcionam fora da sessão",
+      texto:
+        "Quando indicado, família e escola recebem orientações sobre organização do ambiente, divisão de tarefas, previsibilidade e formas de comunicação. O objetivo é tornar a rotina mais possível, não apenas exigir mais esforço.",
+    },
+    perguntas: [
+      { pergunta: "Desatenção sempre significa TDAH?", resposta: "Não. Sono, ansiedade, dificuldades de aprendizagem, sobrecarga e outras condições também podem afetar a atenção; por isso, a avaliação precisa ser ampla." },
+      { pergunta: "Adultos também podem buscar avaliação?", resposta: "Sim. O atendimento considera os impactos na organização, no trabalho, nos estudos, nos relacionamentos e na vida diária." },
+    ],
+  },
+  "dificuldades-de-aprendizagem": {
+    chamada: "Quando aprender se torna difícil, é preciso investigar o caminho — não responsabilizar o estudante.",
+    introducao:
+      "A queixa escolar é analisada de forma ampla, considerando oportunidades de aprendizagem, aspectos pedagógicos, emocionais, cognitivos e o histórico de desenvolvimento. O foco é entender o que sustenta a dificuldade e quais apoios podem favorecer avanços.",
+    sinais: [
+      "Leitura lenta, com trocas ou pouca compreensão",
+      "Dificuldades persistentes na escrita ou na ortografia",
+      "Problemas para compreender quantidades e operações matemáticas",
+      "Desempenho abaixo do esperado apesar de apoio e ensino adequados",
+    ],
+    objetivos: [
+      "Mapear habilidades acadêmicas e processos envolvidos no aprender",
+      "Distinguir dificuldade circunstancial de transtorno específico",
+      "Identificar estratégias de ensino mais adequadas",
+      "Orientar família e escola sobre apoios e adaptações possíveis",
+    ],
+    participacao: {
+      titulo: "Escola e família no mesmo percurso",
+      texto:
+        "Cadernos, atividades, avaliações e relatos escolares ajudam a compreender como o estudante responde às propostas pedagógicas. As orientações são construídas para serem viáveis na rotina e acompanhadas ao longo do processo.",
+    },
+    perguntas: [
+      { pergunta: "Toda dificuldade é um transtorno?", resposta: "Não. Questões pedagógicas, emocionais, ambientais e cognitivas podem interferir na aprendizagem. A investigação ajuda a diferenciar essas possibilidades." },
+      { pergunta: "A escola participa?", resposta: "Quando necessário e autorizado pela família, o diálogo com a escola contribui com informações e permite orientar estratégias mais consistentes." },
+    ],
+  },
+  psicoterapia: {
+    chamada: "Um espaço seguro para compreender emoções, relações e formas de lidar com os desafios.",
+    introducao:
+      "A psicoterapia oferece escuta qualificada e recursos para reconhecer pensamentos, emoções e comportamentos. O processo é construído de acordo com a fase da vida, as necessidades apresentadas e os objetivos combinados nos primeiros encontros.",
+    sinais: [
+      "Ansiedade, tristeza, irritabilidade ou mudanças de comportamento",
+      "Dificuldades nos relacionamentos ou na expressão das emoções",
+      "Medos, inseguranças e baixa autoestima",
+      "Momentos de perda, transição, sobrecarga ou sofrimento emocional",
+    ],
+    objetivos: [
+      "Ampliar a compreensão sobre emoções e padrões de comportamento",
+      "Desenvolver recursos de enfrentamento e autorregulação",
+      "Fortalecer autoestima, autonomia e habilidades sociais",
+      "Construir mudanças coerentes com os objetivos da pessoa",
+    ],
+    participacao: {
+      titulo: "Acompanhamento adequado a cada fase da vida",
+      texto:
+        "No atendimento de crianças e adolescentes, encontros de orientação com responsáveis podem fazer parte do processo. A participação é combinada com cuidado, respeitando o vínculo terapêutico e a confidencialidade.",
+    },
+    perguntas: [
+      { pergunta: "Como são definidos os objetivos?", resposta: "Eles são construídos em conjunto nos encontros iniciais e podem ser revistos conforme o processo avança e novas necessidades aparecem." },
+      { pergunta: "A família participa das sessões?", resposta: "A participação varia conforme a idade e a demanda. Quando indicada, acontece em encontros próprios e com objetivos previamente combinados." },
+    ],
+  },
+  aba: {
+    chamada: "Intervenções individualizadas para ampliar habilidades relevantes e participação na vida cotidiana.",
+    introducao:
+      "A Análise do Comportamento Aplicada utiliza observação, planejamento e acompanhamento de dados para ensinar habilidades e reduzir barreiras à autonomia. O trabalho parte das prioridades da pessoa e de sua família.",
+    sinais: [
+      "Dificuldades de comunicação funcional e interação",
+      "Baixa autonomia em atividades da rotina",
+      "Comportamentos que limitam participação, aprendizagem ou segurança",
+      "Necessidade de ensinar habilidades de forma estruturada e gradual",
+    ],
+    objetivos: [
+      "Desenvolver comunicação e habilidades sociais funcionais",
+      "Ampliar autonomia em atividades cotidianas",
+      "Ensinar novas habilidades em etapas possíveis",
+      "Acompanhar resultados e ajustar as estratégias continuamente",
+    ],
+    participacao: {
+      titulo: "Aprendizagem que se estende à rotina",
+      texto:
+        "Responsáveis e, quando pertinente, escola e outros profissionais recebem orientação para favorecer o uso das habilidades em ambientes diferentes. A consistência entre os contextos fortalece os avanços.",
+    },
+    perguntas: [
+      { pergunta: "Como são escolhidas as metas?", resposta: "As metas partem da avaliação do repertório, das necessidades funcionais e das prioridades compartilhadas pela pessoa e por sua família." },
+      { pergunta: "Como os avanços são acompanhados?", resposta: "Os objetivos são observados e registrados ao longo do processo, permitindo revisar estratégias e tomar decisões com base na evolução individual." },
+    ],
+  },
+  psicopedagogia: {
+    chamada: "Compreender o jeito de aprender para construir estratégias com sentido e autonomia.",
+    introducao:
+      "O acompanhamento psicopedagógico observa a relação da pessoa com a aprendizagem e investiga os recursos que ela já utiliza. A intervenção propõe experiências graduais para desenvolver habilidades acadêmicas, cognitivas e de organização.",
+    sinais: [
+      "Dificuldades recorrentes em leitura, escrita ou matemática",
+      "Evitação das tarefas e insegurança diante do aprender",
+      "Pouca autonomia para estudar e organizar materiais",
+      "Necessidade de estratégias personalizadas de aprendizagem",
+    ],
+    objetivos: [
+      "Fortalecer habilidades necessárias à leitura, escrita e matemática",
+      "Desenvolver planejamento, atenção e organização dos estudos",
+      "Resgatar confiança e participação no processo de aprendizagem",
+      "Construir estratégias que possam ser usadas com autonomia",
+    ],
+    participacao: {
+      titulo: "Intervenção conectada à experiência escolar",
+      texto:
+        "A troca com responsáveis e educadores ajuda a alinhar objetivos, acompanhar a aplicação das estratégias e compreender mudanças no cotidiano. O trabalho não substitui a escola: ele amplia os recursos para aprender.",
+    },
+    perguntas: [
+      { pergunta: "É reforço escolar?", resposta: "Não. O foco não é repetir conteúdos, mas compreender como a pessoa aprende e desenvolver os processos e estratégias envolvidos na aprendizagem." },
+      { pergunta: "Quanto tempo dura o acompanhamento?", resposta: "A duração varia conforme a demanda, os objetivos definidos e a evolução observada. O percurso é revisto periodicamente." },
+    ],
+  },
+  neuropsicopedagogia: {
+    chamada: "Cérebro, cognição e educação reunidos para compreender e favorecer a aprendizagem.",
+    introducao:
+      "A Neuropsicopedagogia integra conhecimentos sobre funções cognitivas e processos educacionais. O acompanhamento considera como atenção, memória, linguagem e funções executivas participam das tarefas de leitura, escrita e matemática.",
+    sinais: [
+      "Dificuldade para manter informações e seguir etapas",
+      "Baixo rendimento associado à atenção ou à memória",
+      "Problemas de planejamento, flexibilidade e organização",
+      "Dificuldades acadêmicas persistentes que exigem intervenção direcionada",
+    ],
+    objetivos: [
+      "Estimular funções cognitivas relacionadas à aprendizagem",
+      "Desenvolver estratégias para lidar com tarefas complexas",
+      "Favorecer leitura, escrita e raciocínio matemático",
+      "Transferir os recursos construídos para a rotina de estudos",
+    ],
+    participacao: {
+      titulo: "Da sessão para situações reais de aprendizagem",
+      texto:
+        "As atividades são conectadas às demandas vividas pelo estudante. A família e a escola podem receber orientações para apoiar o uso das estratégias sem retirar a autonomia da pessoa.",
+    },
+    perguntas: [
+      { pergunta: "Qual a diferença para a Psicopedagogia?", resposta: "As duas áreas olham para a aprendizagem. A Neuropsicopedagogia enfatiza também a relação entre funções cognitivas, cérebro, comportamento e desempenho acadêmico." },
+      { pergunta: "O atendimento substitui uma avaliação?", resposta: "Não. Quando há necessidade de investigação diagnóstica ou de outro cuidado especializado, o encaminhamento adequado é conversado com a família." },
+    ],
+  },
+  fonoaudiologia: {
+    chamada: "Comunicação, fala e linguagem cuidadas em todas as etapas da vida.",
+    introducao:
+      "A avaliação fonoaudiológica observa como a pessoa compreende, expressa e organiza a comunicação. A partir desse perfil, são definidos objetivos terapêuticos voltados às necessidades de fala, linguagem, voz, fluência ou aprendizagem.",
+    sinais: [
+      "Atraso no desenvolvimento da fala ou da linguagem",
+      "Trocas, omissões ou dificuldade para articular sons",
+      "Dificuldades de compreensão, expressão, leitura ou escrita",
+      "Alterações de voz, fluência ou comunicação no adulto",
+    ],
+    objetivos: [
+      "Favorecer comunicação funcional e participação social",
+      "Desenvolver compreensão e expressão da linguagem",
+      "Trabalhar fala, articulação, voz ou fluência conforme a demanda",
+      "Apoiar habilidades de leitura e escrita quando indicado",
+    ],
+    participacao: {
+      titulo: "Orientações incorporadas ao cotidiano",
+      texto:
+        "Atividades simples e possíveis podem ser orientadas para casa e escola. A participação dos contextos amplia as oportunidades de comunicação e ajuda a consolidar as habilidades trabalhadas.",
+    },
+    perguntas: [
+      { pergunta: "Quando procurar uma avaliação?", resposta: "Quando dificuldades de fala, linguagem, compreensão, voz, fluência, leitura ou escrita persistem ou interferem na comunicação e na participação cotidiana." },
+      { pergunta: "O acompanhamento envolve exercícios em casa?", resposta: "Quando indicado, são propostas orientações compatíveis com a rotina, para ampliar as oportunidades de prática sem gerar sobrecarga." },
+    ],
+  },
+  "orientacao-familiar-e-escolar": {
+    chamada: "Alinhar os adultos e os ambientes também é uma forma de cuidar do desenvolvimento.",
+    introducao:
+      "A orientação organiza informações, prioridades e estratégias para situações vividas em casa ou na escola. O encontro ajuda a transformar recomendações amplas em ações possíveis, coerentes com a realidade de cada contexto.",
+    sinais: [
+      "Dificuldade para organizar rotinas, limites e combinados",
+      "Necessidade de adaptações e estratégias no ambiente escolar",
+      "Desalinhamento entre orientações de diferentes profissionais",
+      "Mudanças de comportamento ou aprendizagem que exigem ação conjunta",
+    ],
+    objetivos: [
+      "Compreender a situação a partir de diferentes perspectivas",
+      "Definir prioridades e estratégias práticas para cada ambiente",
+      "Favorecer comunicação entre família, escola e equipe",
+      "Acompanhar resultados e ajustar os combinados",
+    ],
+    participacao: {
+      titulo: "Uma construção feita com quem vive a rotina",
+      texto:
+        "Os encontros podem envolver responsáveis, educadores e profissionais, conforme a necessidade. Cada orientação considera recursos, limites e possibilidades reais, para que os combinados possam ser sustentados.",
+    },
+    perguntas: [
+      { pergunta: "A criança ou o adolescente precisa participar?", resposta: "Nem sempre. A composição do encontro depende do objetivo e é definida para preservar a pessoa e tornar a conversa produtiva." },
+      { pergunta: "É necessário já realizar outro acompanhamento na clínica?", resposta: "Não. A orientação pode apoiar demandas específicas ou complementar um acompanhamento já existente, após a compreensão inicial do caso." },
+    ],
+  },
+};
+
 export const destaques = [
   {
     titulo: "Equipe multidisciplinar",
