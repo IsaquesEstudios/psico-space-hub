@@ -34,15 +34,15 @@ const horarios = [
 function Contato() {
   return (
     <>
-      <section className="relative flex min-h-[440px] items-center overflow-hidden bg-deep px-5 py-20 text-deep-foreground lg:min-h-[520px] lg:px-10 lg:py-24">
+      <section className="relative flex min-h-[600px] items-center overflow-hidden bg-deep px-5 py-24 text-deep-foreground lg:min-h-[720px] lg:px-10 lg:py-28">
         <img
           src={fotosJessica.contato}
           alt="Jéssica Pelissari, da Clínica Evoluta"
           width={720}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_28%]"
+          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[74%_18%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[0%] via-deep/85 via-[58%] to-deep/20 to-[100%]" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
         <div className="absolute inset-0 bg-deep/50 lg:hidden" />
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Contato</p>
