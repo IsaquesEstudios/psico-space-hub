@@ -35,13 +35,17 @@ function AtendimentoPage() {
   const { item } = Route.useLoaderData();
 
   switch (item.slug) {
-    case "tdah-e-atencao":
-      return <LayoutFaixa item={item} />;
-    case "dislexia-e-leitura":
-      return <LayoutZigueZague item={item} />;
-    case "avaliacao-de-aprendizagem":
+    case "neuropsicologia":
+    case "neuropsicopedagogia":
       return <LayoutEtapas item={item} />;
-    case "orientacao-a-pais-e-escolas":
+    case "tdah":
+    case "fonoaudiologia":
+      return <LayoutFaixa item={item} />;
+    case "psicopedagogia":
+    case "aba":
+      return <LayoutZigueZague item={item} />;
+    case "orientacao-familiar-e-escolar":
+    case "psicoterapia":
       return <LayoutEditorial item={item} />;
     default:
       return <LayoutLateral item={item} />;
