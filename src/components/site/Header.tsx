@@ -40,10 +40,11 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-10 xl:flex xl:justify-between xl:gap-8">
+      <div className="px-5 lg:px-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 xl:flex xl:justify-between xl:gap-8">
         <Link to="/" className="flex min-w-0 items-center gap-3 leading-tight" aria-label={`${site.nome} — Início`}>
-          <img src={logoAsset.url} alt="" width="56" height="51" className="h-12 w-auto shrink-0 object-contain" />
-          <span className="min-w-0 truncate font-display text-xl font-semibold sm:text-2xl">{site.nome}</span>
+          <img src={logoAsset.url} alt="" width="56" height="51" className="h-10 w-auto shrink-0 object-contain" />
+          <span className="min-w-0 truncate font-display text-lg font-semibold sm:text-xl">{site.nome}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 xl:flex 2xl:gap-8">
@@ -111,6 +112,7 @@ export function Header() {
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+        </div>
       </div>
 
       {open && (
