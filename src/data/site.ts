@@ -1,10 +1,15 @@
 import sobreImg from "@/assets/sobre.jpg";
 import ctaImg from "@/assets/cta-conversa.jpg";
-import atendAprendizagem from "@/assets/atend-aprendizagem.jpg";
-import atendTdah from "@/assets/atend-tdah.jpg";
-import atendDislexia from "@/assets/atend-dislexia.jpg";
-import atendAvaliacao from "@/assets/atend-avaliacao.jpg";
-import atendOrientacao from "@/assets/atend-orientacao.jpg";
+import atendimentoAba from "@/assets/atendimento-aba.jpg";
+import atendimentoAprendizagem from "@/assets/atendimento-aprendizagem.jpg";
+import atendimentoFonoaudiologia from "@/assets/atendimento-fonoaudiologia.jpg";
+import atendimentoNeuropsicologia from "@/assets/atendimento-neuropsicologia.jpg";
+import atendimentoNeuropsicopedagogia from "@/assets/atendimento-neuropsicopedagogia.jpg";
+import atendimentoOrientacaoFamiliar from "@/assets/atendimento-orientacao-familiar.jpg";
+import atendimentoPsicopedagogia from "@/assets/atendimento-psicopedagogia.jpg";
+import atendimentoPsicoterapia from "@/assets/atendimento-psicoterapia.jpg";
+import atendimentoTdah from "@/assets/atendimento-tdah.jpg";
+import atendimentoTea from "@/assets/atendimento-tea.jpg";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import blogLeitura from "@/assets/blog-leitura.jpg";
@@ -56,7 +61,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Avaliação neuropsicológica",
     resumo:
       "Avaliar para compreender. Compreender para intervir: investigação do funcionamento cognitivo, emocional e comportamental.",
-    imagem: atendAvaliacao,
+    imagem: atendimentoNeuropsicologia,
     paraQuem: [
       "TDAH, TEA e Deficiência Intelectual",
       "Transtornos de aprendizagem e dificuldades escolares",
@@ -106,7 +111,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Neurodesenvolvimento",
     resumo:
       "Investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
-    imagem: atendOrientacao,
+    imagem: atendimentoTea,
     paraQuem: [
       "Famílias com suspeita de TEA em qualquer idade",
       "Pessoas já diagnosticadas que buscam acompanhamento",
@@ -145,7 +150,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Atenção e funções executivas",
     resumo:
       "Compreender a origem das dificuldades de atenção, impulsividade e organização para direcionar as melhores estratégias.",
-    imagem: atendTdah,
+    imagem: atendimentoTdah,
     paraQuem: [
       "Crianças e adolescentes com queixas de atenção e agitação",
       "Adultos com impacto na rotina, no trabalho e nos relacionamentos",
@@ -185,7 +190,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Aprendizagem",
     resumo:
       "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem — investigamos o que está dificultando o aprender.",
-    imagem: atendAprendizagem,
+    imagem: atendimentoAprendizagem,
     paraQuem: [
       "Crianças com queixas persistentes de leitura, escrita ou matemática",
       "Estudantes com dificuldades de compreensão, atenção e memória",
@@ -225,7 +230,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Terapia Cognitivo-Comportamental",
     resumo:
       "Um espaço de acolhimento, escuta e desenvolvimento para crianças, adolescentes e adultos.",
-    imagem: sobreImg,
+    imagem: atendimentoPsicoterapia,
     paraQuem: [
       "Crianças e adolescentes com questões emocionais e comportamentais",
       "Adultos em momentos de mudança, sofrimento ou adoecimento emocional",
@@ -263,7 +268,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Intervenção comportamental",
     resumo:
       "Intervenções focadas no desenvolvimento de habilidades, autonomia, comunicação e qualidade de vida.",
-    imagem: atendOrientacao,
+    imagem: atendimentoAba,
     paraQuem: [
       "Pessoas com TEA e Deficiência Intelectual",
       "Famílias que buscam desenvolvimento de autonomia e comunicação",
@@ -301,7 +306,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Processos de aprendizagem",
     resumo:
       "Compreender como cada pessoa aprende e quais fatores podem estar interferindo nesse processo.",
-    imagem: atendDislexia,
+    imagem: atendimentoPsicopedagogia,
     paraQuem: [
       "Crianças e adolescentes com dificuldades escolares",
       "Estudantes que precisam organizar rotina e estratégias de estudo",
@@ -340,7 +345,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Cérebro e aprendizagem",
     resumo:
       "Intervenção nos processos de aprendizagem considerando a relação entre cérebro, cognição, comportamento e educação.",
-    imagem: atendAvaliacao,
+    imagem: atendimentoNeuropsicopedagogia,
     paraQuem: [
       "Estudantes com dificuldades persistentes de aprendizagem",
       "Casos que envolvem atenção, memória e funções executivas",
@@ -378,7 +383,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Fala, linguagem e comunicação",
     resumo:
       "Avaliação e intervenção nas funções de fala, linguagem, comunicação, voz e aprendizagem.",
-    imagem: atendDislexia,
+    imagem: atendimentoFonoaudiologia,
     paraQuem: [
       "Crianças com trocas na fala e atraso de linguagem",
       "Estudantes com dificuldades de leitura, escrita e compreensão",
@@ -416,7 +421,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Parceria com os contextos",
     resumo:
       "O desenvolvimento acontece em diferentes ambientes — construímos estratégias junto à família, à escola e a outros profissionais.",
-    imagem: atendOrientacao,
+    imagem: atendimentoOrientacaoFamiliar,
     paraQuem: [
       "Famílias que precisam de estratégias para a rotina diária",
       "Escolas e educadores que buscam adaptações viáveis",
