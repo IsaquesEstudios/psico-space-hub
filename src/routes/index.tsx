@@ -37,11 +37,11 @@ function Inicio() {
           alt="Jéssica, da Clínica Evoluta, em seu consultório"
           width={1080}
           height={720}
-          className="absolute right-0 top-0 h-full w-auto min-w-[68%] max-w-none object-cover object-center [mask-image:linear-gradient(to_right,transparent_0%,black_58%)]"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        {/* Marrom sólido à esquerda dissolvendo suavemente na foto */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[14%] via-deep/80 via-[55%] to-deep/25 to-[95%]" />
-        <div className="absolute inset-0 bg-deep/75 lg:hidden" />
+        {/* Marrom por cima da foto, dissolvendo da esquerda para a direita */}
+        <div className="absolute inset-0 bg-gradient-to-r from-deep from-[0%] via-deep/70 via-[45%] to-deep/10 to-[100%]" />
+        <div className="absolute inset-0 bg-deep/60 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
             <h1 className="font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
