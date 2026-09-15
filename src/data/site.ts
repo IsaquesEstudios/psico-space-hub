@@ -18,6 +18,7 @@ export const brandShareImage =
 export const images = {
   hero: jessicaAsset.url,
   sobre: sobreImg,
+  jessica: jessicaAsset.url,
   cta: ctaImg,
   blogHero,
   novidadesHero,
@@ -25,12 +26,14 @@ export const images = {
 
 export const site = {
   nome: "Clínica Evoluta",
-  slogan: "Aprender com acolhimento, no tempo de cada criança",
+  subtitulo: "Desenvolvimento Infantil",
+  slogan:
+    "Cuidar, compreender e transformar através da ciência, acolhimento e atuação multidisciplinar",
   whatsapp: "https://wa.me/5500000000000",
   telefone: "+55 (00) 00000-0000",
   email: "contato@clinicaevoluta.com.br",
   instagram: "@clinicaevoluta",
-  cidade: "Atendimento presencial e online",
+  cidade: "São Gabriel da Palha/ES — presencial e online",
 } as const;
 
 export type Atendimento = {
@@ -47,204 +50,462 @@ export type Atendimento = {
 
 export const atendimentos: Atendimento[] = [
   {
-    slug: "dificuldades-de-aprendizagem",
-    titulo: "Dificuldades de aprendizagem",
-    etiqueta: "Crianças e adolescentes",
+    slug: "neuropsicologia",
+    titulo: "Neuropsicologia",
+    etiqueta: "Avaliação neuropsicológica",
     resumo:
-      "Intervenção individual para quem apresenta defasagem escolar, desmotivação ou queixas recorrentes de professores.",
-    imagem: atendAprendizagem,
-    paraQuem: [
-      "Crianças com notas em queda ou recusa em fazer as tarefas",
-      "Adolescentes que se dizem incapazes de aprender",
-      "Famílias que já ouviram da escola que “falta esforço”",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Escuta inicial",
-        texto: "Primeiro encontro com os responsáveis para entender a história escolar e o que já foi tentado.",
-      },
-      {
-        titulo: "Sessões individuais",
-        texto: "Atividades lúdicas e mediadas que devolvem a confiança e reorganizam a forma de estudar.",
-      },
-      {
-        titulo: "Ponte com a escola",
-        texto: "Conversas periódicas com professores para alinhar adaptações simples em sala de aula.",
-      },
-    ],
-    info: [
-      { rotulo: "Duração", valor: "50 minutos por sessão" },
-      { rotulo: "Frequência", valor: "1 a 2 encontros por semana" },
-      { rotulo: "Formato", valor: "Presencial ou online" },
-      { rotulo: "Idades", valor: "6 a 17 anos" },
-    ],
-    texto: [
-      "A dificuldade de aprendizagem raramente aparece sozinha: ela vem acompanhada de vergonha, cansaço e de uma história de tentativas frustradas. O trabalho começa devolvendo à criança a sensação de que é possível aprender.",
-      "Cada plano é construído a partir do que essa criança já sabe fazer bem. A partir daí, ampliamos repertório de leitura, escrita, cálculo e organização em pequenos passos observáveis.",
-    ],
-  },
-  {
-    slug: "tdah-e-atencao",
-    titulo: "TDAH e atenção",
-    etiqueta: "Foco e organização",
-    resumo:
-      "Estratégias práticas de atenção, planejamento e autorregulação para o dia a dia da escola e de casa.",
-    imagem: atendTdah,
-    paraQuem: [
-      "Crianças com diagnóstico de TDAH em acompanhamento multiprofissional",
-      "Estudantes que perdem prazos, materiais e instruções",
-      "Adolescentes que precisam de método de estudo próprio",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Mapa da rotina",
-        texto: "Observamos como o tempo é usado hoje, do despertador até a lição da noite.",
-      },
-      {
-        titulo: "Treino de funções executivas",
-        texto: "Jogos e tarefas que exercitam foco sustentado, memória de trabalho e planejamento.",
-      },
-      {
-        titulo: "Combinados visuais",
-        texto: "Quadros, listas e lembretes construídos junto com a criança — não impostos a ela.",
-      },
-    ],
-    info: [
-      { rotulo: "Duração", valor: "50 minutos por sessão" },
-      { rotulo: "Frequência", valor: "Semanal" },
-      { rotulo: "Formato", valor: "Presencial ou online" },
-      { rotulo: "Extras", valor: "Devolutiva mensal aos responsáveis" },
-    ],
-    texto: [
-      "Atenção não se resolve com bronca. Ela se organiza com previsibilidade, ambiente adequado e ferramentas que a criança aprende a usar sozinha.",
-      "O acompanhamento caminha junto com médicos, terapeutas e escola, para que todos falem a mesma língua sobre o que funciona.",
-    ],
-  },
-  {
-    slug: "dislexia-e-leitura",
-    titulo: "Dislexia e leitura",
-    etiqueta: "Linguagem escrita",
-    resumo:
-      "Trabalho estruturado de consciência fonológica, fluência de leitura e produção de texto.",
-    imagem: atendDislexia,
-    paraQuem: [
-      "Crianças que trocam, omitem ou inventam letras ao ler",
-      "Estudantes com leitura muito lenta para a idade",
-      "Adolescentes que evitam qualquer atividade de escrita",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Sondagem da leitura",
-        texto: "Avaliação de decodificação, fluência e compreensão para saber exatamente onde apoiar.",
-      },
-      {
-        titulo: "Programa estruturado",
-        texto: "Sequência multissensorial de sons, sílabas e palavras, com material concreto.",
-      },
-      {
-        titulo: "Leitura com sentido",
-        texto: "Textos escolhidos com a criança, para que a leitura volte a ter propósito e prazer.",
-      },
-    ],
-    info: [
-      { rotulo: "Duração", valor: "50 minutos por sessão" },
-      { rotulo: "Frequência", valor: "2 encontros por semana" },
-      { rotulo: "Formato", valor: "Preferencialmente presencial" },
-      { rotulo: "Materiais", valor: "Inclusos no acompanhamento" },
-    ],
-    texto: [
-      "A dislexia não impede o aprendizado da leitura: ela exige um caminho mais explícito, mais repetido e mais visível para quem aprende.",
-      "Com método estruturado e constância, a leitura deixa de ser um teste diário de coragem e passa a ser uma habilidade que a criança reconhece em si.",
-    ],
-  },
-  {
-    slug: "avaliacao-de-aprendizagem",
-    titulo: "Avaliação de aprendizagem",
-    etiqueta: "Processo diagnóstico",
-    resumo:
-      "Investigação completa das funções envolvidas na aprendizagem, com relatório e plano de intervenção.",
+      "Avaliar para compreender. Compreender para intervir: investigação do funcionamento cognitivo, emocional e comportamental.",
     imagem: atendAvaliacao,
     paraQuem: [
-      "Famílias que precisam entender a origem da dificuldade",
-      "Escolas que solicitaram um olhar especializado",
-      "Casos que exigem relatório para adaptações formais",
+      "TDAH, TEA e Deficiência Intelectual",
+      "Transtornos de aprendizagem e dificuldades escolares",
+      "Atenção, memória e funções executivas",
+      "Alterações cognitivas e questões relacionadas ao envelhecimento",
     ],
     comoFunciona: [
-      { titulo: "1. Anamnese", texto: "Entrevista detalhada com os responsáveis sobre desenvolvimento e história escolar." },
-      { titulo: "2. Sessões de investigação", texto: "De 6 a 8 encontros com provas pedagógicas, jogos e observação clínica." },
-      { titulo: "3. Escuta da escola", texto: "Contato com professores e análise de cadernos e produções." },
-      { titulo: "4. Relatório", texto: "Documento escrito com hipóteses, conclusões e recomendações." },
-      { titulo: "5. Devolutiva", texto: "Encontro com a família e, quando possível, com a equipe escolar." },
-      { titulo: "6. Plano de intervenção", texto: "Definição dos próximos passos, dentro ou fora do consultório." },
+      {
+        titulo: "1. Anamnese",
+        texto:
+          "Entrevista detalhada sobre história de desenvolvimento, saúde, rotina e percurso escolar ou profissional.",
+      },
+      {
+        titulo: "2. Sessões de testagem",
+        texto:
+          "Instrumentos padronizados e observação clínica para investigar cognição, emoção e comportamento.",
+      },
+      {
+        titulo: "3. Escuta dos contextos",
+        texto:
+          "Quando necessário, contato com escola, família e outros profissionais que acompanham o caso.",
+      },
+      {
+        titulo: "4. Integração dos dados",
+        texto: "Análise dos resultados à luz da história de vida, e não apenas dos números.",
+      },
+      {
+        titulo: "5. Laudo e devolutiva",
+        texto:
+          "Documento em linguagem clara e encontro de devolutiva com orientações e direcionamentos.",
+      },
     ],
     info: [
-      { rotulo: "Duração total", valor: "6 a 8 semanas" },
-      { rotulo: "Encontros", valor: "8 sessões em média" },
-      { rotulo: "Entrega", valor: "Relatório completo + devolutiva" },
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Encontros", valor: "Definidos conforme a demanda" },
+      { rotulo: "Entrega", valor: "Laudo + devolutiva" },
       { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "Avaliar é organizar informação: o que a criança já domina, o que ainda não se estabeleceu e o que atrapalha o processo.",
-      "O relatório é escrito em linguagem clara, para servir tanto à família quanto à escola.",
+      "A avaliação neuropsicológica investiga o funcionamento cognitivo, emocional e comportamental, identificando potencialidades e dificuldades.",
+      "Mais do que confirmar ou descartar um diagnóstico, o processo organiza informações para direcionar intervenções mais assertivas em casa, na escola e na clínica.",
     ],
   },
   {
-    slug: "orientacao-a-pais-e-escolas",
-    titulo: "Orientação a pais e escolas",
-    etiqueta: "Consultoria",
+    slug: "transtorno-do-espectro-autista",
+    titulo: "Transtorno do Espectro Autista — TEA",
+    etiqueta: "Neurodesenvolvimento",
     resumo:
-      "Encontros de orientação para famílias e formações para equipes pedagógicas que querem incluir de verdade.",
+      "Investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
     imagem: atendOrientacao,
     paraQuem: [
-      "Pais exaustos com o conflito diário da lição de casa",
-      "Escolas que desejam formar sua equipe em inclusão",
-      "Educadores que buscam adaptações viáveis na prática",
+      "Famílias com suspeita de TEA em qualquer idade",
+      "Pessoas já diagnosticadas que buscam acompanhamento",
+      "Casos que exigem orientação à família e à escola",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Investigação especializada",
+        texto:
+          "Avaliação que considera comunicação, interação social, comportamento e processamento das informações.",
+      },
+      {
+        titulo: "Plano individualizado",
+        texto:
+          "Definição de objetivos a partir do perfil de cada pessoa, e não de um protocolo único.",
+      },
+      {
+        titulo: "Acompanhamento contínuo",
+        texto: "Intervenção e reavaliação de metas, em parceria com família, escola e equipe.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Abordagem", valor: "Multidisciplinar" },
+      { rotulo: "Parcerias", valor: "Família, escola e profissionais" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "O TEA é uma condição do neurodesenvolvimento que pode envolver diferenças na comunicação, interação social, comportamento e processamento das informações.",
+      "Na Evoluta, realizamos investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
+    ],
+  },
+  {
+    slug: "tdah",
+    titulo: "TDAH",
+    etiqueta: "Atenção e funções executivas",
+    resumo:
+      "Compreender a origem das dificuldades de atenção, impulsividade e organização para direcionar as melhores estratégias.",
+    imagem: atendTdah,
+    paraQuem: [
+      "Crianças e adolescentes com queixas de atenção e agitação",
+      "Adultos com impacto na rotina, no trabalho e nos relacionamentos",
+      "Casos que precisam diferenciar TDAH de outras condições",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Compreender a queixa",
+        texto:
+          "Levantamento de como as dificuldades aparecem na escola, em casa, no trabalho e nas relações.",
+      },
+      {
+        titulo: "Avaliação adequada",
+        texto:
+          "Investigação de atenção, impulsividade, hiperatividade e funções executivas com instrumentos apropriados.",
+      },
+      {
+        titulo: "Estratégias de intervenção",
+        texto:
+          "Direcionamento terapêutico, orientações práticas de rotina e organização, e parceria com a escola.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Foco", valor: "Atenção e funções executivas" },
+      { rotulo: "Entrega", valor: "Compreensão + plano de intervenção" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "O TDAH pode afetar atenção, impulsividade, hiperatividade e funções executivas, trazendo impactos para a aprendizagem, rotina, relacionamentos e vida profissional.",
+      "Uma avaliação adequada ajuda a compreender a origem das dificuldades e direcionar as melhores estratégias de intervenção.",
+    ],
+  },
+  {
+    slug: "dificuldades-de-aprendizagem",
+    titulo: "Dificuldades e Transtornos de Aprendizagem",
+    etiqueta: "Aprendizagem",
+    resumo:
+      "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem — investigamos o que está dificultando o aprender.",
+    imagem: atendAprendizagem,
+    paraQuem: [
+      "Crianças com queixas persistentes de leitura, escrita ou matemática",
+      "Estudantes com dificuldades de compreensão, atenção e memória",
+      "Famílias e escolas que buscam entender a origem da dificuldade",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Mapear a dificuldade",
+        texto:
+          "Investigação de leitura, escrita, matemática, compreensão, atenção, memória, organização e funções executivas.",
+      },
+      {
+        titulo: "Compreender a origem",
+        texto:
+          "Diferenciar defasagem escolar, questões emocionais e transtornos específicos de aprendizagem.",
+      },
+      {
+        titulo: "Definir estratégias",
+        texto:
+          "Indicação das intervenções e adaptações que podem favorecer o desenvolvimento em cada caso.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Áreas", valor: "Leitura, escrita e matemática" },
+      { rotulo: "Parceria", valor: "Família e escola" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem. Investigamos dificuldades relacionadas a leitura, escrita, matemática, compreensão, atenção, memória, organização e funções executivas.",
+      "O objetivo é compreender o que está dificultando a aprendizagem e quais estratégias podem favorecer o desenvolvimento.",
+    ],
+  },
+  {
+    slug: "psicoterapia",
+    titulo: "Psicoterapia",
+    etiqueta: "Terapia Cognitivo-Comportamental",
+    resumo:
+      "Um espaço de acolhimento, escuta e desenvolvimento para crianças, adolescentes e adultos.",
+    imagem: sobreImg,
+    paraQuem: [
+      "Crianças e adolescentes com questões emocionais e comportamentais",
+      "Adultos em momentos de mudança, sofrimento ou adoecimento emocional",
+      "Famílias que buscam apoio nos desafios de cada fase da vida",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Acolhimento inicial",
+        texto: "Primeiros encontros para entender a demanda e combinar objetivos do processo.",
+      },
+      {
+        titulo: "Atendimento em TCC",
+        texto:
+          "Sessões com abordagem baseada na Terapia Cognitivo-Comportamental, adaptadas à faixa etária.",
+      },
+      {
+        titulo: "Revisão de objetivos",
+        texto: "Acompanhamento do que já mudou e ajuste das metas ao longo do processo.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Abordagem", valor: "Terapia Cognitivo-Comportamental" },
+      { rotulo: "Frequência", valor: "Combinada em cada caso" },
+      { rotulo: "Formato", valor: "Presencial ou online" },
+    ],
+    texto: [
+      "Um espaço de acolhimento, escuta e desenvolvimento. Atendimento psicológico para crianças, adolescentes e adultos, com abordagem baseada na Terapia Cognitivo-Comportamental (TCC).",
+      "Trabalhamos questões emocionais, comportamentais, relacionais e desafios presentes em diferentes fases da vida.",
+    ],
+  },
+  {
+    slug: "aba",
+    titulo: "ABA — Análise do Comportamento Aplicada",
+    etiqueta: "Intervenção comportamental",
+    resumo:
+      "Intervenções focadas no desenvolvimento de habilidades, autonomia, comunicação e qualidade de vida.",
+    imagem: atendOrientacao,
+    paraQuem: [
+      "Pessoas com TEA e Deficiência Intelectual",
+      "Famílias que buscam desenvolvimento de autonomia e comunicação",
+      "Casos que precisam de plano de intervenção individualizado",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Avaliação de repertório",
+        texto: "Levantamento das habilidades já presentes e das prioridades de desenvolvimento.",
+      },
+      {
+        titulo: "Plano individualizado",
+        texto:
+          "Programas construídos de acordo com as necessidades de cada pessoa e de sua família.",
+      },
+      {
+        titulo: "Registro e ajuste",
+        texto: "Acompanhamento dos dados de cada objetivo para ajustar o que funciona na prática.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Base", valor: "Análise do Comportamento Aplicada" },
+      { rotulo: "Foco", valor: "Habilidades, autonomia e comunicação" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "Intervenções baseadas em princípios da Análise do Comportamento Aplicada, com foco no desenvolvimento de habilidades, autonomia, comunicação e qualidade de vida.",
+      "O trabalho é individualizado e construído de acordo com as necessidades de cada pessoa.",
+    ],
+  },
+  {
+    slug: "psicopedagogia",
+    titulo: "Psicopedagogia",
+    etiqueta: "Processos de aprendizagem",
+    resumo:
+      "Compreender como cada pessoa aprende e quais fatores podem estar interferindo nesse processo.",
+    imagem: atendDislexia,
+    paraQuem: [
+      "Crianças e adolescentes com dificuldades escolares",
+      "Estudantes que precisam organizar rotina e estratégias de estudo",
+      "Adultos retomando processos de aprendizagem",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Investigação pedagógica",
+        texto:
+          "Observação de leitura, escrita, matemática, atenção e organização dos estudos na prática.",
+      },
+      {
+        titulo: "Intervenção",
+        texto:
+          "Atividades que desenvolvem estratégias de aprendizagem e habilidades cognitivas envolvidas no aprender.",
+      },
+      {
+        titulo: "Orientação",
+        texto: "Combinados com a família e com a escola para sustentar os avanços fora da sessão.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Áreas", valor: "Leitura, escrita e matemática" },
+      { rotulo: "Foco", valor: "Estratégias de aprendizagem" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "A Psicopedagogia busca compreender como cada pessoa aprende e quais fatores podem estar interferindo nesse processo.",
+      "O atendimento pode auxiliar crianças, adolescentes e adultos com dificuldades de leitura e escrita, matemática, atenção e concentração, organização dos estudos, estratégias de aprendizagem e desenvolvimento de habilidades cognitivas.",
+    ],
+  },
+  {
+    slug: "neuropsicopedagogia",
+    titulo: "Neuropsicopedagogia",
+    etiqueta: "Cérebro e aprendizagem",
+    resumo:
+      "Intervenção nos processos de aprendizagem considerando a relação entre cérebro, cognição, comportamento e educação.",
+    imagem: atendAvaliacao,
+    paraQuem: [
+      "Estudantes com dificuldades persistentes de aprendizagem",
+      "Casos que envolvem atenção, memória e funções executivas",
+      "Famílias que buscam intervenção com base no funcionamento cognitivo",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Compreender o funcionamento",
+        texto:
+          "Análise de como atenção, memória e funções executivas participam da aprendizagem dessa pessoa.",
+      },
+      {
+        titulo: "Intervenção dirigida",
+        texto: "Atividades voltadas a leitura, escrita, matemática e estratégias de aprendizagem.",
+      },
+      {
+        titulo: "Transferência para a rotina",
+        texto: "Adaptação das estratégias ao estudo diário, em casa e na escola.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Habilidades", valor: "Atenção, memória e funções executivas" },
+      { rotulo: "Foco", valor: "Aprendizagem e cognição" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "Uma área voltada à compreensão e intervenção nos processos de aprendizagem, considerando a relação entre cérebro, cognição, comportamento e educação.",
+      "Podem ser trabalhadas habilidades como atenção, memória, funções executivas, leitura, escrita, matemática e estratégias de aprendizagem.",
+    ],
+  },
+  {
+    slug: "fonoaudiologia",
+    titulo: "Fonoaudiologia",
+    etiqueta: "Fala, linguagem e comunicação",
+    resumo:
+      "Avaliação e intervenção nas funções de fala, linguagem, comunicação, voz e aprendizagem.",
+    imagem: atendDislexia,
+    paraQuem: [
+      "Crianças com trocas na fala e atraso de linguagem",
+      "Estudantes com dificuldades de leitura, escrita e compreensão",
+      "Adultos com demandas de voz, fluência e comunicação",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Avaliação",
+        texto:
+          "Investigação de fala e articulação, linguagem oral, compreensão, expressão, voz e fluência.",
+      },
+      {
+        titulo: "Plano terapêutico",
+        texto: "Definição de objetivos de acordo com a necessidade de cada paciente.",
+      },
+      {
+        titulo: "Intervenção e orientação",
+        texto: "Sessões terapêuticas com orientações para a rotina de casa e da escola.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Áreas", valor: "Fala, linguagem, voz e fluência" },
+      { rotulo: "Também", valor: "Dificuldades de aprendizagem" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "A Fonoaudiologia atua na avaliação e intervenção das funções relacionadas à fala, linguagem, comunicação, voz e aprendizagem, de acordo com a necessidade de cada paciente.",
+      "Atendemos demandas de fala e articulação, linguagem oral, comunicação, compreensão e expressão, leitura e escrita, voz, fluência, comunicação no adulto e dificuldades relacionadas à aprendizagem.",
+    ],
+  },
+  {
+    slug: "orientacao-familiar-e-escolar",
+    titulo: "Orientação Familiar e Escolar",
+    etiqueta: "Parceria com os contextos",
+    resumo:
+      "O desenvolvimento acontece em diferentes ambientes — construímos estratégias junto à família, à escola e a outros profissionais.",
+    imagem: atendOrientacao,
+    paraQuem: [
+      "Famílias que precisam de estratégias para a rotina diária",
+      "Escolas e educadores que buscam adaptações viáveis",
+      "Casos acompanhados por mais de um profissional",
     ],
     comoFunciona: [
       {
         titulo: "Escuta do contexto",
-        texto: "Entendemos a rotina, os combinados atuais e o que já gera desgaste.",
+        texto: "Entendimento da rotina, dos combinados atuais e do que já gera desgaste.",
       },
       {
-        titulo: "Orientação prática",
-        texto: "Poucas mudanças por vez, escolhidas com a família ou com a equipe.",
+        titulo: "Estratégias conjuntas",
+        texto:
+          "Construção de orientações práticas com família, escola e demais profissionais envolvidos.",
       },
       {
         titulo: "Acompanhamento",
-        texto: "Retornos para ajustar o que funcionou e abandonar o que não sustentou.",
+        texto: "Retornos para ajustar o que funcionou e rever o que não se sustentou.",
       },
     ],
     info: [
-      { rotulo: "Duração", valor: "60 minutos por encontro" },
-      { rotulo: "Frequência", valor: "Quinzenal ou mensal" },
-      { rotulo: "Formato", valor: "Online ou na escola" },
-      { rotulo: "Grupos", valor: "Formações para até 30 educadores" },
+      { rotulo: "Público", valor: "Famílias, escolas e equipes" },
+      { rotulo: "Objetivo", valor: "Desenvolvimento e autonomia" },
+      { rotulo: "Frequência", valor: "Conforme a necessidade" },
+      { rotulo: "Formato", valor: "Presencial ou online" },
     ],
     texto: [
-      "Nenhuma criança aprende sozinha. Quando os adultos ao redor mudam a forma de olhar e de combinar, o comportamento muda também.",
-      "As orientações são sempre concretas: o que dizer, quando parar, como dividir a tarefa, como registrar o progresso.",
+      "O desenvolvimento acontece em diferentes ambientes. Por isso, quando necessário, trabalhamos em parceria com família, escola e outros profissionais.",
+      "A proposta é construir estratégias que favoreçam o desenvolvimento e a autonomia em cada contexto de vida.",
     ],
   },
 ];
 
 export const destaques = [
   {
-    titulo: "Escuta antes do método",
-    texto: "Cada plano começa pela história da criança e pelas queixas reais da família.",
+    titulo: "Equipe multidisciplinar",
+    texto:
+      "Psicologia, neuropsicologia, psicopedagogia, fonoaudiologia e ABA atuando de forma integrada.",
   },
   {
-    titulo: "Intervenção lúdica",
-    texto: "Jogos, materiais concretos e desafios ajustados ao nível de cada aprendiz.",
+    titulo: "Avaliar para compreender",
+    texto:
+      "A avaliação organiza informações sobre cognição, emoção, comportamento e aprendizagem.",
   },
   {
-    titulo: "Parceria com a escola",
-    texto: "Contato com professores para que as adaptações aconteçam em sala de aula.",
+    titulo: "Cada pessoa é única",
+    texto: "Planos individualizados, construídos a partir da história e do ritmo de cada pessoa.",
   },
   {
-    titulo: "Devolutiva clara",
-    texto: "Relatórios e conversas em linguagem simples, com próximos passos definidos.",
+    titulo: "Parceria com os contextos",
+    texto: "Família, escola e outros profissionais participam da construção das estratégias.",
   },
 ];
+
+export const fundadora = {
+  nome: "Jéssica Pelissari",
+  papel: "Psicóloga • Neuropsicóloga • Fundadora e Diretora da Clínica Evoluta",
+  imagem: jessicaAsset.url,
+  proposito:
+    "Minha trajetória profissional é construída a partir de um propósito: compreender cada pessoa em sua singularidade e transformar conhecimento científico em possibilidades reais de desenvolvimento.",
+  intro: [
+    "Sou psicóloga e neuropsicóloga, com formação e experiência voltadas especialmente para neurodesenvolvimento, aprendizagem, avaliação neuropsicológica e saúde mental.",
+    "Ao longo da minha trajetória, busquei unir conhecimento científico, experiência clínica e um olhar humanizado para compreender as dificuldades, identificar potencialidades e contribuir para intervenções mais assertivas.",
+  ],
+  formacao: [
+    "Graduação em Psicologia",
+    "Pós-graduação em Neuropsicologia",
+    "Pós-graduação em Terapia Cognitivo-Comportamental na Infância e Adolescência",
+    "Pós-graduação em Intervenção ABA aplicada ao Transtorno do Espectro Autista e à Deficiência Intelectual",
+    "Especialista em Neuropsicologia pelo Conselho Federal de Psicologia",
+  ],
+  atuacao: [
+    "Idealizadora, fundadora e diretora da Clínica Evoluta — Desenvolvimento Infantil, em São Gabriel da Palha/ES",
+    "Atuação em avaliação neuropsicológica, com experiência em diferentes fases do desenvolvimento",
+    "Atuação com transtornos do neurodesenvolvimento, dificuldades de aprendizagem e demandas cognitivas, emocionais e comportamentais",
+    "Supervisora e mentora de profissionais da área de Neuropsicologia",
+  ],
+  obras: [
+    { titulo: "Vozes da Neurodiversidade", nota: "Coautoria" },
+    { titulo: "Psicologia Clínica: O que não te ensinaram na universidade", nota: "Lançamento 2026" },
+    { titulo: "TDAH na Escola", nota: "Lançamento 2026" },
+  ],
+  manifesto: [
+    "Acredito que uma avaliação neuropsicológica não deve se resumir a números, testes ou diagnósticos.",
+    "Por trás de cada resultado existe uma pessoa, uma história, uma família e um contexto que precisam ser compreendidos.",
+  ],
+  citacao:
+    "Meu trabalho é transformar avaliação em compreensão, compreensão em direcionamento e conhecimento em possibilidades de desenvolvimento.",
+  assinatura: "Ciência, experiência e acolhimento em cada etapa.",
+};
 
 export const depoimentos = [
   {
@@ -283,26 +544,26 @@ export type Curso = {
 
 export const cursos: Curso[] = [
   {
-    slug: "alfabetizacao-sem-sofrimento",
-    titulo: "Alfabetização sem sofrimento",
+    slug: "avaliacao-neuropsicologica-na-pratica",
+    titulo: "Avaliação neuropsicológica na prática",
     etiqueta: "Turma aberta",
     resumo:
-      "Como conduzir a entrada na leitura e na escrita com método estruturado e sem brigas diárias.",
+      "Do encaminhamento ao laudo: como conduzir um processo de avaliação com raciocínio clínico e devolutivas claras.",
     imagem: jessicaAsset.url,
     duracao: "8 encontros de 1h30",
     formato: "Online, ao vivo, com gravações",
     investimento: "Sob consulta",
-    publico: "Professores, terapeutas e famílias",
+    publico: "Psicólogos e estudantes de Psicologia",
     conteudo: [
-      "Consciência fonológica na prática",
-      "Sequência de sons e sílabas passo a passo",
-      "Como corrigir sem desmotivar",
-      "Materiais concretos de baixo custo",
-      "Registro simples de progresso",
+      "Entrevista inicial e levantamento de hipóteses",
+      "Escolha e aplicação dos instrumentos",
+      "Integração dos dados e raciocínio clínico",
+      "Escrita de laudo em linguagem acessível",
+      "Devolutiva para família e escola",
     ],
     texto: [
-      "Um curso para quem acompanha crianças no início da leitura e sente que falta um caminho claro entre uma atividade e a próxima.",
-      "Cada encontro traz uma prática para aplicar já na semana seguinte, com espaço para trazer casos reais.",
+      "Um curso voltado a quem já atua ou quer atuar em avaliação neuropsicológica e sente falta de um caminho claro entre a coleta dos dados e a conclusão do caso.",
+      "Cada encontro traz discussão de casos e material de apoio para usar no próprio consultório.",
     ],
   },
   {
@@ -310,7 +571,7 @@ export const cursos: Curso[] = [
     titulo: "Funções executivas na prática",
     etiqueta: "Novo",
     resumo:
-      "Atenção, planejamento e autorregulação com atividades aplicáveis em consultório e sala de aula.",
+      "Atenção, planejamento e autorregulação com atividades aplicáveis em consultório e em sala de aula.",
     imagem: jessicaAsset.url,
     duracao: "6 encontros de 2h",
     formato: "Online, ao vivo",
@@ -319,8 +580,8 @@ export const cursos: Curso[] = [
     conteudo: [
       "O que são funções executivas, sem jargão",
       "Como observar e registrar dificuldades",
-      "Jogos de foco e memória de trabalho",
-      "Rotinas visuais que a criança ajuda a criar",
+      "Atividades de foco e memória de trabalho",
+      "Rotinas visuais construídas com a pessoa atendida",
       "Casos comentados em grupo",
     ],
     texto: [
@@ -329,26 +590,26 @@ export const cursos: Curso[] = [
     ],
   },
   {
-    slug: "familia-que-apoia",
-    titulo: "Família que apoia",
-    etiqueta: "Para pais",
+    slug: "tdah-na-escola",
+    titulo: "TDAH na escola",
+    etiqueta: "Para escolas",
     resumo:
-      "Um percurso curto para transformar a lição de casa em um momento possível — e às vezes até leve.",
+      "Como compreender o TDAH em sala de aula e aplicar adaptações viáveis, sem sobrecarregar o professor.",
     imagem: jessicaAsset.url,
-    duracao: "4 encontros de 1h",
+    duracao: "4 encontros de 1h30",
     formato: "Online, ao vivo",
     investimento: "Sob consulta",
-    publico: "Pais e responsáveis",
+    publico: "Professores, coordenadores e famílias",
     conteudo: [
-      "Ambiente e horário que favorecem o estudo",
-      "Como dividir tarefas grandes em partes",
-      "O que fazer quando a criança trava",
-      "Elogio que ensina, elogio que atrapalha",
-      "Conversas produtivas com a escola",
+      "O que o TDAH afeta na aprendizagem",
+      "Atenção, impulsividade e funções executivas na prática",
+      "Adaptações simples de rotina e avaliação",
+      "Combinados entre escola e família",
+      "Quando encaminhar para avaliação",
     ],
     texto: [
-      "Feito para famílias cansadas do conflito diário, com orientações simples e realistas.",
-      "Sem receitas mágicas: combinados possíveis, testados com muitas famílias.",
+      "Um percurso curto para equipes escolares que convivem diariamente com estudantes desatentos, agitados ou desorganizados.",
+      "As orientações são concretas: o que dizer, como dividir a tarefa e como registrar o progresso.",
     ],
   },
 ];
@@ -366,51 +627,51 @@ export type Post = {
 
 export const posts: Post[] = [
   {
-    slug: "sinais-de-dificuldade-de-leitura",
-    titulo: "Sete sinais de que a leitura merece atenção",
-    categoria: "Leitura",
+    slug: "quando-buscar-avaliacao-neuropsicologica",
+    titulo: "Quando buscar uma avaliação neuropsicológica",
+    categoria: "Neuropsicologia",
     data: "12 de agosto de 2026",
     leitura: "5 min de leitura",
     resumo:
-      "Trocar letras é esperado até certa idade. Veja quais sinais indicam que é hora de investigar com cuidado.",
+      "Nem toda dificuldade precisa de avaliação — e nem toda avaliação precisa esperar anos. Veja o que costuma indicar o momento.",
     imagem: blogLeitura,
     paragrafos: [
-      "Toda criança comete erros ao aprender a ler. O que diferencia um erro esperado de um sinal de alerta é a persistência: quando a mesma dificuldade continua depois de muito ensino e muita prática, vale investigar.",
-      "Entre os sinais mais frequentes estão a leitura muito lenta para a idade, a troca de letras com sons parecidos, a perda constante da linha do texto, a dificuldade de contar o que acabou de ler e a recusa em ler em voz alta.",
-      "Também observamos o cansaço: crianças que leem decodificando cada sílaba gastam tanta energia no processo que sobra pouca atenção para compreender o sentido.",
-      "Investigar cedo não é rotular. É evitar anos de esforço na direção errada e devolver à criança a chance de ler com autonomia.",
+      "A avaliação neuropsicológica investiga o funcionamento cognitivo, emocional e comportamental. Ela é indicada quando há dúvidas persistentes sobre a origem de uma dificuldade, e não apenas diante de um episódio isolado.",
+      "Entre os motivos mais frequentes de encaminhamento estão queixas de atenção e memória, dificuldades escolares que não cedem com apoio, suspeita de TDAH ou TEA e mudanças cognitivas relacionadas ao envelhecimento.",
+      "O processo reúne entrevista, instrumentos padronizados, observação clínica e, quando necessário, escuta da escola e de outros profissionais que acompanham o caso.",
+      "O resultado não é um número: é uma compreensão organizada, que orienta intervenções mais assertivas em casa, na escola e na clínica.",
     ],
   },
   {
-    slug: "licao-de-casa-sem-briga",
-    titulo: "Lição de casa sem briga: por onde começar",
-    categoria: "Rotina",
+    slug: "nem-toda-dificuldade-escolar-e-transtorno",
+    titulo: "Nem toda dificuldade escolar é transtorno",
+    categoria: "Aprendizagem",
     data: "28 de julho de 2026",
     leitura: "4 min de leitura",
     resumo:
-      "Três ajustes de ambiente e combinado que reduzem o conflito antes de mexer no conteúdo.",
+      "Antes de nomear, é preciso investigar: o que diferencia uma defasagem escolar de um transtorno de aprendizagem.",
     imagem: blogRotina,
     paragrafos: [
-      "Antes de cobrar mais empenho, vale olhar para as condições: onde a criança estuda, a que hora, com quantos estímulos por perto e por quanto tempo seguido.",
-      "Um lugar fixo, sem tela ligada, e blocos curtos de trabalho com pausas previsíveis costumam mudar mais o resultado do que qualquer discurso sobre responsabilidade.",
-      "O segundo ajuste é o tamanho da tarefa. Uma lista de dez exercícios assusta; a mesma lista dividida em três partes visíveis parece possível.",
-      "O terceiro é o papel do adulto: acompanhar por perto no começo e ir se afastando, em vez de sentar junto até o fim todos os dias.",
+      "Uma dificuldade escolar pode ter muitas origens: método de ensino, faltas, questões emocionais, sono, contexto familiar ou, sim, um transtorno específico de aprendizagem.",
+      "Investigar significa observar leitura, escrita, matemática, compreensão, atenção, memória, organização e funções executivas — e comparar esse desempenho com o que se espera para a idade e a escolaridade.",
+      "Quando a dificuldade persiste mesmo depois de ensino adequado e apoio consistente, vale aprofundar a investigação.",
+      "O objetivo nunca é rotular. É compreender o que está dificultando a aprendizagem e quais estratégias podem favorecer o desenvolvimento.",
     ],
   },
   {
-    slug: "matematica-nao-e-dom",
-    titulo: "Matemática não é dom, é construção",
-    categoria: "Aprendizagem",
+    slug: "rotina-e-funcoes-executivas-em-casa",
+    titulo: "Rotina e funções executivas: por onde começar em casa",
+    categoria: "Rotina",
     data: "9 de julho de 2026",
     leitura: "6 min de leitura",
     resumo:
-      "Por que pular a fase concreta cria buracos que aparecem anos depois, e como retomar esse caminho.",
+      "Pequenos ajustes de ambiente, tempo e combinados que ajudam quem tem dificuldade de se organizar.",
     imagem: blogMatematica,
     paragrafos: [
-      "A frase “não levo jeito para números” quase sempre esconde uma etapa não construída: a relação entre quantidade, símbolo e operação.",
-      "Quando a criança avança para a conta no papel sem ter manipulado quantidades, ela memoriza procedimentos que desmoronam no primeiro problema diferente.",
-      "Retomar o concreto não é retrocesso. Material dourado, fichas, dinheiro de brinquedo e situações do dia a dia reconstroem o sentido do número em poucas semanas.",
-      "Depois disso, o algoritmo volta a fazer sentido — e a criança passa a saber por que a conta funciona, não apenas como repeti-la.",
+      "Funções executivas são as habilidades que nos permitem planejar, iniciar, sustentar e concluir uma tarefa. Quando elas estão em construção — ou comprometidas —, cobrar esforço não resolve.",
+      "O primeiro ajuste é o ambiente: um lugar fixo, sem tela ligada, e blocos curtos de trabalho com pausas previsíveis.",
+      "O segundo é o tamanho da tarefa. Uma lista longa assusta; a mesma lista dividida em partes visíveis parece possível.",
+      "O terceiro é o papel do adulto: acompanhar de perto no começo e ir se afastando aos poucos, sustentando a autonomia em vez de substituí-la.",
     ],
   },
 ];
@@ -418,30 +679,30 @@ export const posts: Post[] = [
 export const novidades = [
   {
     data: "Setembro de 2026",
-    titulo: "Novas vagas para avaliação de aprendizagem",
+    titulo: "Novas vagas para avaliação neuropsicológica",
     texto:
-      "Abertura de quatro vagas para processos de avaliação com início em setembro, nos períodos da manhã e tarde.",
+      "Abertura de vagas para processos de avaliação com início em setembro, nos períodos da manhã e da tarde.",
     etiqueta: "Agenda",
   },
   {
     data: "Agosto de 2026",
-    titulo: "Turma de “Alfabetização sem sofrimento”",
+    titulo: "Turma de “Avaliação neuropsicológica na prática”",
     texto:
-      "Inscrições abertas para a nova turma online, com encontros ao vivo às terças e gravações liberadas por seis meses.",
+      "Inscrições abertas para a nova turma online, com encontros ao vivo e gravações liberadas por seis meses.",
     etiqueta: "Cursos",
   },
   {
     data: "Julho de 2026",
-    titulo: "Formação para equipe pedagógica",
+    titulo: "Lançamentos de 2026",
     texto:
-      "Encontro de formação sobre adaptações em sala de aula realizado com a equipe de uma escola parceira.",
-    etiqueta: "Escolas",
+      "Duas novas obras em coautoria: “Psicologia Clínica: o que não te ensinaram na universidade” e “TDAH na Escola”.",
+    etiqueta: "Publicações",
   },
   {
     data: "Junho de 2026",
-    titulo: "Roda de conversa com famílias",
+    titulo: "Orientação para equipes escolares",
     texto:
-      "Encontro gratuito e online sobre rotina de estudos, com espaço para perguntas ao final.",
-    etiqueta: "Evento",
+      "Encontro de orientação sobre adaptações em sala de aula realizado com a equipe de uma escola parceira.",
+    etiqueta: "Escolas",
   },
 ];
