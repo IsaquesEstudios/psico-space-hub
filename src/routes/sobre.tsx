@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BookOpen } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, fundadora, site } from "@/data/site";
+import { brandShareImage, fotosJessica, fundadora, site } from "@/data/site";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -32,10 +32,10 @@ function SobrePage() {
       {/* Abertura */}
       <section className="relative overflow-hidden bg-deep text-deep-foreground">
         <img
-          src={fundadora.imagem}
+          src={fotosJessica.sobre}
           alt={fundadora.nome}
-          width={594}
-          height={721}
+          width={720}
+          height={1080}
           className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-auto max-w-none object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_52%)] lg:block"
         />
         <div className="relative mx-auto max-w-7xl px-5 py-16 lg:grid lg:grid-cols-2 lg:px-10 lg:py-24">
@@ -51,12 +51,11 @@ function SobrePage() {
           </div>
         </div>
         <img
-          src={fundadora.imagem}
-          alt=""
-          aria-hidden
+          src={fotosJessica.sobre}
+          alt={fundadora.nome}
           loading="lazy"
-          width={594}
-          height={721}
+          width={720}
+          height={1080}
           className="h-80 w-full object-cover object-top lg:hidden"
         />
       </section>

@@ -2,7 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, cursos, site } from "@/data/site";
+import { brandShareImage, cursos, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
   loader: ({ params }) => {
@@ -32,15 +32,17 @@ export const Route = createFileRoute("/cursos/$slug")({
 
 function CursoPage() {
   const { curso } = Route.useLoaderData();
+  const indice = cursos.findIndex((item) => item.slug === curso.slug);
+  const fotoJessica = fotosJessica.cursosDetalhes[indice] ?? fotosJessica.cursos;
 
   return (
     <>
       <img
-        src={curso.imagem}
+        src={fotoJessica}
         alt={`Jéssica, da Clínica Evoluta — ${curso.titulo}`}
-        width={1200}
-        height={800}
-        className="h-64 w-full object-cover lg:h-[420px]"
+        width={1080}
+        height={720}
+        className="h-72 w-full object-cover object-center lg:h-[500px]"
       />
 
       <Section>
