@@ -6,6 +6,7 @@ import atendDislexia from "@/assets/atend-dislexia.jpg";
 import atendAvaliacao from "@/assets/atend-avaliacao.jpg";
 import atendOrientacao from "@/assets/atend-orientacao.jpg";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
+import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import blogLeitura from "@/assets/blog-leitura.jpg";
 import blogRotina from "@/assets/blog-rotina.jpg";
 import blogMatematica from "@/assets/blog-matematica.jpg";
