@@ -45,13 +45,15 @@ function Inicio() {
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
             <h1 className="font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
-              Escuta. Método.
+              Cuidar.
               <br />
-              Aprendizagem.
+              Compreender.
+              <br />
+              Transformar.
             </h1>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/80">
-              Acompanhamento para crianças e adolescentes que precisam reencontrar a
-              confiança de aprender — com a família e a escola junto no processo.
+              Equipe multidisciplinar em avaliação, intervenção e acompanhamento — considerando aspectos
+              cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
             </p>
             <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:items-center">
               <Link

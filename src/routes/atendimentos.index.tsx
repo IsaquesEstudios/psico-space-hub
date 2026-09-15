@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import { Eyebrow, Section } from "@/components/site/bits";
-import { atendimentos, brandShareImage } from "@/data/site";
+import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
+import { atendimentos, brandShareImage, site } from "@/data/site";
 
 export const Route = createFileRoute("/atendimentos/")({
   head: () => ({
