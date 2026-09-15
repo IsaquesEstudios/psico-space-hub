@@ -71,6 +71,22 @@ function AtendimentosIndex() {
           ))}
         </div>
       </Section>
+
+      <Section className="bg-deep text-deep-foreground">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_auto] lg:items-end">
+          <div>
+            <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">
+              Não sabe qual atendimento procurar?
+            </h2>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-deep-foreground/70">
+              Você não precisa saber exatamente qual profissional procurar. Nossa equipe pode ajudar você
+              a compreender qual avaliação ou especialidade é mais adequada para a sua necessidade.
+            </p>
+          </div>
+          <WhatsAppButton href={site.whatsapp} label="Falar com a equipe da Evoluta" />
+        </div>
+      </Section>
     </>
   );
 }
