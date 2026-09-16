@@ -54,7 +54,7 @@ function AtendimentoPage() {
 
   return (
     <>
-      <AtendimentoHero item={item} conteudo={conteudo} fotoJessica={fotoJessica} />
+      <AtendimentoHero item={item} conteudo={conteudo} fotoJessica={item.imagemHero ?? fotoJessica} />
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} />
@@ -77,13 +77,13 @@ function AtendimentoHero({
   fotoJessica: string;
 }) {
   return (
-    <section className="relative flex min-h-[640px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[780px] xl:min-h-[820px]">
+    <section className="relative flex min-h-[640px] items-end overflow-hidden bg-deep text-deep-foreground lg:aspect-[18/9] lg:min-h-0">
       <img
         src={fotoJessica}
         alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta — ${item.titulo}`}
-        width={1080}
-        height={720}
-        className="absolute inset-0 h-full w-full object-cover object-top lg:object-[78%_20%]"
+        width={item.imagemHero ? 1536 : 1080}
+        height={item.imagemHero ? 768 : 720}
+        className={`absolute inset-0 h-full w-full object-cover object-top ${item.imagemHero ? "lg:object-center" : "lg:object-[78%_20%]"}`}
       />
       <div className="absolute inset-0 bg-deep/65 lg:hidden" />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
@@ -98,7 +98,7 @@ function AtendimentoHero({
             {conteudo.chamada}
           </p>
           <div className="mt-8">
-            <WhatsAppButton href={site.whatsapp} label="Conversar com a equipe" />
+            <WhatsAppButton href={site.whatsapp} label="Falar com equipe Evoluta" />
           </div>
         </div>
       </div>
@@ -375,7 +375,7 @@ function Fechamento({ item }: { item: Atendimento }) {
           className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-deep px-6 py-4 text-center text-deep-foreground transition-opacity hover:opacity-90"
         >
           <MessageCircle className="h-5 w-5" aria-hidden="true" />
-          Falar com a Clínica Evoluta
+          Falar com equipe Evoluta
         </a>
       </div>
     </Section>

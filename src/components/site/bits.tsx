@@ -20,7 +20,7 @@ export function Section({
   );
 }
 
-export function WhatsAppButton({ href, label = "Falar no WhatsApp" }: { href: string; label?: string }) {
+export function WhatsAppButton({ href, label = "Falar com equipe Evoluta" }: { href: string; label?: string }) {
   return (
     <a
       href={href}
