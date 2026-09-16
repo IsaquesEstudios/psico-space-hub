@@ -126,9 +126,24 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function IndicadorCarregamento() {
+  const isPending = useRouterState({ select: (s) => s.status === "pending" });
+  return (
+    <div
+      aria-hidden={!isPending}
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[70] h-[3px] transition-opacity duration-150 ${
+        isPending ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div className="nav-progress h-full w-full bg-primary" />
+    </div>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isPending = useRouterState({ select: (s) => s.status === "pending" });
   // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
   // precisa de um respiro no topo para não ficar escondido sob o menu.
   const isHome = pathname === "/";
@@ -136,9 +151,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
+        <IndicadorCarregamento />
         <Header />
         {!isHome && <div className="h-[88px] bg-deep" aria-hidden />}
-        <main className="flex-1">
+        <main
+          className={`flex-1 transition-opacity duration-200 ${
+            isPending ? "opacity-80" : "opacity-100"
+          }`}
+        >
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
