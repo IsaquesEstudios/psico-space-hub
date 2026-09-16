@@ -35,9 +35,9 @@ function BlogIndex() {
         <img
           src={fotosJessica.blog}
           alt="Jéssica Pelissari, neuropsicóloga da Clínica Evoluta"
-          width={720}
-          height={1080}
-          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_20%]"
+          width={1080}
+          height={720}
+          className="absolute inset-0 h-full w-full object-cover object-[50%_28%]"
         />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
