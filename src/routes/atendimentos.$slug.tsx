@@ -32,9 +32,10 @@ export const Route = createFileRoute("/atendimentos/$slug")({
       };
     }
 
-    const { item } = loaderData;
+    const { item, conteudo } = loaderData;
     const termo = h1Atendimentos[item.slug] ?? item.titulo;
     const titulo = `${termo} | Clínica Evoluta`;
+    const url = `https://psico-space-hub.lovable.app/atendimentos/${item.slug}`;
 
     return {
       meta: [
@@ -44,11 +45,28 @@ export const Route = createFileRoute("/atendimentos/$slug")({
         { property: "og:description", content: item.resumo },
         { property: "og:image", content: brandShareImage },
         { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: brandShareImage },
       ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: conteudo.perguntas.map((p) => ({
+              "@type": "Question",
+              name: p.pergunta,
+              acceptedAnswer: { "@type": "Answer", text: p.resposta },
+            })),
+          }),
+        },
+      ],
     };
   },
+
   component: AtendimentoPage,
 });
 
