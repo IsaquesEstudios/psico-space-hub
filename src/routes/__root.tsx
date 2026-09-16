@@ -168,10 +168,8 @@ function IndicadorCarregamento() {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isPending = useRouterState({
-    select: (s) =>
-      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
-  });
+
+
 
 
   // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
