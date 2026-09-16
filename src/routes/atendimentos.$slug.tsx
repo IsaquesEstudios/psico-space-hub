@@ -359,6 +359,49 @@ function OutrosAtendimentos({ item }: { item: Atendimento }) {
   );
 }
 
+function SobreJessica() {
+  return (
+    <Section>
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <img
+            src={jessicaBio.foto}
+            alt="Jéssica Pelissari, psicóloga e neuropsicóloga, fundadora da Clínica Evoluta"
+            loading="lazy"
+            width={720}
+            height={1080}
+            className="aspect-[2/3] w-full object-cover"
+          />
+        </div>
+
+        <div>
+          <Eyebrow>Quem acompanha você</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">{jessicaBio.nome}</h2>
+          <p className="mt-3 text-sm font-semibold text-primary">{jessicaBio.credenciais}</p>
+
+          <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
+            {jessicaBio.paragrafos.map((paragrafo) => (
+              <p key={paragrafo}>{paragrafo}</p>
+            ))}
+          </div>
+
+          <div className="mt-10 border-t border-border pt-8">
+            <h3 className="font-display text-2xl">{jessicaBio.formacaoTitulo}</h3>
+            <ul className="mt-6 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+              {jessicaBio.formacao.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-relaxed">
+                  <span className="mt-2 h-2 w-2 shrink-0 bg-primary" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 function Fechamento({ item }: { item: Atendimento }) {
   return (
     <Section className="bg-primary text-primary-foreground">
