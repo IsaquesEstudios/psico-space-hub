@@ -4,6 +4,31 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
 
+const meses = [
+  "janeiro",
+  "fevereiro",
+  "março",
+  "abril",
+  "maio",
+  "junho",
+  "julho",
+  "agosto",
+  "setembro",
+  "outubro",
+  "novembro",
+  "dezembro",
+];
+
+// "12 de agosto de 2026" -> "2026-08-12"
+function paraIso(data: string): string | null {
+  const partes = data.toLowerCase().match(/^(\d{1,2}) de ([a-zç]+) de (\d{4})$/);
+  if (!partes) return null;
+  const mes = meses.indexOf(partes[2]);
+  if (mes < 0) return null;
+  return `${partes[3]}-${String(mes + 1).padStart(2, "0")}-${partes[1].padStart(2, "0")}`;
+}
+
+
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const post = posts.find((p) => p.slug === params.slug);
