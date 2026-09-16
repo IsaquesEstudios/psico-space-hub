@@ -62,7 +62,7 @@ export const fotosJessica = {
   contato: jessicaSorrindo.url,
   cursos: jessicaSofa.url,
   cursosDetalhes: [jessicaEscrevendo.url, jessicaMesaAmpla.url, jessicaConversa.url],
-  blog: jessicaEntrevista.url,
+  blog: jessicaBlogHero.url,
   blogArtigos: [jessicaRetratoLateral.url, jessicaEscrevendo.url, jessicaConversa.url],
   novidades: jessicaMesaHorizontal.url,
   atendimentosDetalhes: [
