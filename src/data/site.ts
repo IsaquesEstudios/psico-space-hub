@@ -36,6 +36,7 @@ import jessicaJanela from "@/assets/GHR06712.jpg.asset.json";
 import jessicaMesaAmpla from "@/assets/GHR06849-2.jpg.asset.json";
 import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
+import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogLeitura from "@/assets/blog-leitura.jpg";
 import blogRotina from "@/assets/blog-rotina.jpg";
 import blogMatematica from "@/assets/blog-matematica.jpg";
@@ -74,6 +75,29 @@ export const fotosJessica = {
     jessicaConversa.url,
     jessicaRetratoFrontal.url,
     jessicaEntrevista.url,
+  ],
+};
+
+export const jessicaBio = {
+  nome: "Jéssica Pelissari",
+  credenciais: "Psicóloga • Neuropsicóloga • Fundadora e Diretora da Clínica Evoluta",
+  foto: jessicaRetratoBio.url,
+  paragrafos: [
+    "Minha trajetória profissional é construída a partir de um propósito: compreender cada pessoa em sua singularidade e transformar conhecimento científico em possibilidades reais de desenvolvimento.",
+    "Sou psicóloga e neuropsicóloga, com formação e experiência voltadas especialmente para neurodesenvolvimento, aprendizagem, avaliação neuropsicológica e saúde mental.",
+    "Ao longo da minha trajetória, busquei unir conhecimento científico, experiência clínica e um olhar humanizado para compreender as dificuldades, identificar potencialidades e contribuir para intervenções mais assertivas.",
+  ],
+  formacaoTitulo: "Formação e especializações",
+  formacao: [
+    "Graduação em Psicologia",
+    "Pós-graduação em Neuropsicologia",
+    "Pós-graduação em Terapia Cognitivo-Comportamental na Infância e Adolescência",
+    "Pós-graduação em Intervenção ABA aplicada ao Transtorno do Espectro Autista e à Deficiência Intelectual",
+    "Especialista em Neuropsicologia pelo Conselho Federal de Psicologia",
+    "Idealizadora, fundadora e diretora da Clínica Evoluta — Desenvolvimento Infantil, em São Gabriel da Palha/ES",
+    "Atuação em avaliação neuropsicológica, com experiência em diferentes fases do desenvolvimento",
+    "Atuação com transtornos do neurodesenvolvimento, dificuldades de aprendizagem e demandas cognitivas, emocionais e comportamentais",
+    "Supervisora e mentora de profissionais da área de Neuropsicologia",
   ],
 };
 
