@@ -58,7 +58,7 @@ export function Footer() {
             </li>
             <li>
               <Link to="/novidades" className="transition-colors hover:text-primary">
-                Novidades
+                Notícias
               </Link>
             </li>
             <li>

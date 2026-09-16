@@ -10,7 +10,7 @@ const links = [
   { to: "/sobre", label: "Sobre" },
   { to: "/cursos", label: "Cursos" },
   { to: "/blog", label: "Blog" },
-  { to: "/novidades", label: "Novidades" },
+  { to: "/novidades", label: "Notícias" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
