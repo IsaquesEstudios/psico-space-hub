@@ -63,6 +63,7 @@ function AtendimentoPage() {
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
       <OutrosAtendimentos item={item} />
+      <SobreJessica />
       <Fechamento item={item} />
     </>
   );
