@@ -5,6 +5,7 @@ import { Eyebrow, Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
 
 export const Route = createFileRoute("/blog/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Blog | Clínica Evoluta" },

@@ -5,6 +5,7 @@ import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
 import { atendimentos, brandShareImage, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/atendimentos/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Atendimentos | Clínica Evoluta" },

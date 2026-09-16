@@ -16,6 +16,7 @@ import {
 
 
 export const Route = createFileRoute("/atendimentos/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const item = atendimentos.find((atendimento) => atendimento.slug === params.slug);
     const conteudo = conteudosAtendimentos[params.slug];

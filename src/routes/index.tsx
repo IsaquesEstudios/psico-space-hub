@@ -5,6 +5,7 @@ import { Eyebrow, Section } from "@/components/site/bits";
 import { atendimentos, brandShareImage, cursos, destaques, images, posts, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Clínica Evoluta | Apoio à aprendizagem para crianças e adolescentes" },

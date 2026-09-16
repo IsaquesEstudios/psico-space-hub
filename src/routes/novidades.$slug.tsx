@@ -5,6 +5,7 @@ import { Section, WhatsAppButton } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, novidades, site } from "@/data/site";
 
 export const Route = createFileRoute("/novidades/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const novidade = novidades.find((n) => n.slug === params.slug);
     if (!novidade) throw notFound();

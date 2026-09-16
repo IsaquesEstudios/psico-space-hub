@@ -5,6 +5,7 @@ import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, fundadora, site } from "@/data/site";
 
 export const Route = createFileRoute("/sobre")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Jéssica Pelissari | Clínica Evoluta" },
