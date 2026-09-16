@@ -184,11 +184,8 @@ function RootComponent() {
         <IndicadorCarregamento />
         <Header />
         {!isHome && <div className="h-[88px] bg-deep" aria-hidden />}
-        <main
-          className={`flex-1 transition-opacity duration-200 ${
-            isPending ? "opacity-80" : "opacity-100"
-          }`}
-        >
+        <main className="flex-1">
+
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
