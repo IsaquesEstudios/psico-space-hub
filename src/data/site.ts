@@ -21,6 +21,7 @@ import atendimentoPsicoterapiaAmbiente from "@/assets/atendimento-psicoterapia-a
 import atendimentoTdahAmbiente from "@/assets/atendimento-tdah-ambiente.jpg";
 import atendimentoTeaAmbiente from "@/assets/atendimento-tea-ambiente.jpg";
 import heroAtendimentoAprendizagem from "@/assets/hero-atendimento-aprendizagem.jpg";
+import heroAtendimentoOrientacaoEscolar from "@/assets/hero-atendimento-orientacao-escolar.jpg";
 import heroAtendimentoTdah from "@/assets/hero-atendimento-tdah.jpg";
 import heroAtendimentoTea from "@/assets/hero-atendimento-tea-final.png";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
@@ -483,6 +484,7 @@ export const atendimentos: Atendimento[] = [
       "O desenvolvimento acontece em diferentes ambientes — construímos estratégias junto à família, à escola e a outros profissionais.",
     imagem: atendimentoOrientacaoFamiliar,
     imagemSecundaria: atendimentoOrientacaoFamiliarAmbiente,
+    imagemHero: heroAtendimentoOrientacaoEscolar,
     paraQuem: [
       "Famílias que precisam de estratégias para a rotina diária",
       "Escolas e educadores que buscam adaptações viáveis",
