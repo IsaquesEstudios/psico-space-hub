@@ -14,7 +14,6 @@ import { Route as AtendimentosRouteImport } from './routes/atendimentos'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CursosRouteImport } from './routes/cursos'
-import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
@@ -22,6 +21,7 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CursosIndexRouteImport } from './routes/cursos.index'
 import { Route as CursosSlugRouteImport } from './routes/cursos.$slug'
+import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,11 +46,6 @@ const ContatoRoute = ContatoRouteImport.update({
 const CursosRoute = CursosRouteImport.update({
   id: '/cursos',
   path: '/cursos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NovidadesRoute = NovidadesRouteImport.update({
-  id: '/novidades',
-  path: '/novidades',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SobreRoute = SobreRouteImport.update({
@@ -88,6 +83,11 @@ const CursosSlugRoute = CursosSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => CursosRoute,
 } as any)
+const NovidadesIndexRoute = NovidadesIndexRouteImport.update({
+  id: '/novidades/',
+  path: '/novidades/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,7 +95,6 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
-  '/novidades': typeof NovidadesRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -103,11 +102,11 @@ export interface FileRoutesByFullPath {
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
+  '/novidades/': typeof NovidadesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
-  '/novidades': typeof NovidadesRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -115,6 +114,7 @@ export interface FileRoutesByTo {
   '/atendimentos': typeof AtendimentosIndexRoute
   '/blog': typeof BlogIndexRoute
   '/cursos': typeof CursosIndexRoute
+  '/novidades': typeof NovidadesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -123,7 +123,6 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
-  '/novidades': typeof NovidadesRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -131,6 +130,7 @@ export interface FileRoutesById {
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
+  '/novidades/': typeof NovidadesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,7 +140,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/cursos'
-    | '/novidades'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -148,11 +147,11 @@ export interface FileRouteTypes {
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
+    | '/novidades/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contato'
-    | '/novidades'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -160,6 +159,7 @@ export interface FileRouteTypes {
     | '/atendimentos'
     | '/blog'
     | '/cursos'
+    | '/novidades'
   id:
     | '__root__'
     | '/'
@@ -167,7 +167,6 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/cursos'
-    | '/novidades'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -175,6 +174,7 @@ export interface FileRouteTypes {
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
+    | '/novidades/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -183,8 +183,8 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRouteWithChildren
-  NovidadesRoute: typeof NovidadesRoute
   SobreRoute: typeof SobreRoute
+  NovidadesIndexRoute: typeof NovidadesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -222,13 +222,6 @@ declare module '@tanstack/react-router' {
       path: '/cursos'
       fullPath: '/cursos'
       preLoaderRoute: typeof CursosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/novidades': {
-      id: '/novidades'
-      path: '/novidades'
-      fullPath: '/novidades'
-      preLoaderRoute: typeof NovidadesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sobre': {
@@ -280,6 +273,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CursosSlugRouteImport
       parentRoute: typeof CursosRoute
     }
+    '/novidades/': {
+      id: '/novidades/'
+      path: '/novidades'
+      fullPath: '/novidades/'
+      preLoaderRoute: typeof NovidadesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -328,8 +328,8 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRouteWithChildren,
-  NovidadesRoute: NovidadesRoute,
   SobreRoute: SobreRoute,
+  NovidadesIndexRoute: NovidadesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
