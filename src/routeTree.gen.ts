@@ -23,6 +23,7 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CursosIndexRouteImport } from './routes/cursos.index'
 import { Route as CursosSlugRouteImport } from './routes/cursos.$slug'
 import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
+import { Route as NovidadesSlugRouteImport } from './routes/novidades.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -94,6 +95,11 @@ const NovidadesIndexRoute = NovidadesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => NovidadesRoute,
 } as any)
+const NovidadesSlugRoute = NovidadesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => NovidadesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
+  '/novidades/$slug': typeof NovidadesSlugRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
@@ -118,6 +125,7 @@ export interface FileRoutesByTo {
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
+  '/novidades/$slug': typeof NovidadesSlugRoute
   '/atendimentos': typeof AtendimentosIndexRoute
   '/blog': typeof BlogIndexRoute
   '/cursos': typeof CursosIndexRoute
@@ -135,6 +143,7 @@ export interface FileRoutesById {
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
+  '/novidades/$slug': typeof NovidadesSlugRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
+    | '/novidades/$slug'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
@@ -165,6 +175,7 @@ export interface FileRouteTypes {
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
+    | '/novidades/$slug'
     | '/atendimentos'
     | '/blog'
     | '/cursos'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
+    | '/novidades/$slug'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
@@ -297,6 +309,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovidadesIndexRouteImport
       parentRoute: typeof NovidadesRoute
     }
+    '/novidades/$slug': {
+      id: '/novidades/$slug'
+      path: '/$slug'
+      fullPath: '/novidades/$slug'
+      preLoaderRoute: typeof NovidadesSlugRouteImport
+      parentRoute: typeof NovidadesRoute
+    }
   }
 }
 
@@ -340,10 +359,12 @@ const CursosRouteWithChildren =
   CursosRoute._addFileChildren(CursosRouteChildren)
 
 interface NovidadesRouteChildren {
+  NovidadesSlugRoute: typeof NovidadesSlugRoute
   NovidadesIndexRoute: typeof NovidadesIndexRoute
 }
 
 const NovidadesRouteChildren: NovidadesRouteChildren = {
+  NovidadesSlugRoute: NovidadesSlugRoute,
   NovidadesIndexRoute: NovidadesIndexRoute,
 }
 

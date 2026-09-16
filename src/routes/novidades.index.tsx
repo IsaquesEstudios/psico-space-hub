@@ -48,20 +48,29 @@ function Novidades() {
       <Section>
         <div className="mx-auto max-w-4xl">
           {novidades.map((n) => (
-            <article
-              key={n.titulo}
-              className="grid gap-4 border-b border-border py-10 sm:grid-cols-[10rem_1fr] sm:gap-10"
+            <Link
+              key={n.slug}
+              to="/novidades/$slug"
+              params={{ slug: n.slug }}
+              className="group grid gap-4 border-b border-border py-10 sm:grid-cols-[10rem_1fr] sm:gap-10"
             >
               <div>
                 <p className="eyebrow text-primary">{n.etiqueta}</p>
                 <p className="mt-2 text-xs text-muted-foreground">{n.data}</p>
               </div>
               <div className="min-w-0">
-                <h2 className="font-display text-3xl leading-snug">{n.titulo}</h2>
+                <h2 className="font-display text-3xl leading-snug transition-colors group-hover:text-primary">
+                  {n.titulo}
+                </h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{n.texto}</p>
+                <span className="eyebrow mt-4 inline-flex items-center gap-2 text-primary">
+                  Ler a notícia
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
+
 
           <div className="mt-14 bg-muted p-6 text-center sm:p-10">
             <h2 className="font-display text-3xl">Quer ser avisada das próximas turmas?</h2>
