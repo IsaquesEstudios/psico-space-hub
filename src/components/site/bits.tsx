@@ -1,4 +1,8 @@
 import type { ReactNode } from "react";
+import { MapPin } from "lucide-react";
+
+import { mapaEmbedUrl, mapaLinkUrl, site } from "@/data/site";
+
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return <p className="eyebrow text-primary">{children}</p>;
