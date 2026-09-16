@@ -77,7 +77,7 @@ function AtendimentoHero({
   fotoJessica: string;
 }) {
   return (
-    <section className="relative flex min-h-[640px] items-end overflow-hidden bg-deep text-deep-foreground lg:aspect-[18/9] lg:min-h-0">
+    <section className="relative flex min-h-[640px] items-end overflow-hidden bg-deep text-deep-foreground lg:aspect-[18/8] lg:min-h-0">
       <img
         src={fotoJessica}
         alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta — ${item.titulo}`}
@@ -88,17 +88,19 @@ function AtendimentoHero({
       <div className="absolute inset-0 bg-deep/65 lg:hidden" />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-16 pt-40 lg:px-10 lg:pb-28 lg:pt-48">
-        <div className="max-w-3xl">
-          <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
-          <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            {item.titulo}
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
-            {conteudo.chamada}
-          </p>
-          <div className="mt-8">
-            <WhatsAppButton href={site.whatsapp} label="Falar com equipe Evoluta" />
+      <div className="relative w-full px-5 pb-16 pt-40 lg:px-10 lg:pb-28 lg:pt-48">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
+            <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              {item.titulo}
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
+              {conteudo.chamada}
+            </p>
+            <div className="mt-8">
+              <WhatsAppButton href={site.whatsapp} label="Falar com equipe Evoluta" />
+            </div>
           </div>
         </div>
       </div>
