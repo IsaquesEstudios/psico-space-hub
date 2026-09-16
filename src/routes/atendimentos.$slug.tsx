@@ -362,7 +362,7 @@ function OutrosAtendimentos({ item }: { item: Atendimento }) {
 function SobreJessica() {
   return (
     <Section>
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
         <div>
           <img
             src={jessicaBio.foto}
