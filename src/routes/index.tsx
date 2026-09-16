@@ -44,13 +44,11 @@ function Inicio() {
         <div className="absolute inset-0 bg-deep/60 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
-            <h1 className="font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
-              Cuidar.
-              <br />
-              Compreender.
-              <br />
-              Transformar.
+            <p className="eyebrow text-primary">Cuidar. Compreender. Transformar.</p>
+            <h1 className="mt-5 font-display text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
+              Clínica Evoluta — avaliação e desenvolvimento infantil em São Gabriel da Palha
             </h1>
+
             <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/80">
               Equipe multidisciplinar em avaliação, intervenção e acompanhamento — considerando aspectos
               cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
