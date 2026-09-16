@@ -1,6 +1,6 @@
 import sobreImg from "@/assets/sobre.jpg";
 import ctaImg from "@/assets/cta-conversa.jpg";
-import atendimentoAba from "@/assets/atendimento-aba.jpg";
+import atendimentoAba from "@/assets/atendimento-aba-corrigido.png";
 import atendimentoAprendizagem from "@/assets/atendimento-aprendizagem.jpg";
 import atendimentoFonoaudiologia from "@/assets/atendimento-fonoaudiologia.jpg";
 import atendimentoNeuropsicologia from "@/assets/atendimento-neuropsicologia.jpg";
