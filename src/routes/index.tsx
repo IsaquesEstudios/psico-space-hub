@@ -135,7 +135,7 @@ function Inicio() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {atendimentos.map((a) => (
+          {atendimentos.slice(0, 9).map((a) => (
             <Link
               key={a.slug}
               to="/atendimentos/$slug"
@@ -223,7 +223,7 @@ function Inicio() {
               Entre em contato conosco
             </h2>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70">
-              Fale pelo WhatsApp para tirar dúvidas, conhecer os atendimentos e encontrar o melhor caminho
+              Fale com a equipe Evoluta para tirar dúvidas, conhecer os atendimentos e encontrar o melhor caminho
               para você e sua família.
             </p>
             <a
@@ -232,7 +232,7 @@ function Inicio() {
               rel="noreferrer"
               className="eyebrow mt-10 inline-block bg-primary px-8 py-4 text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Falar no WhatsApp
+              Falar com equipe Evoluta
             </a>
           </div>
           <img

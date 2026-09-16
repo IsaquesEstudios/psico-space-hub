@@ -150,7 +150,7 @@ function SobrePage() {
               compreender qual avaliação ou especialidade é mais adequada para a sua necessidade.
             </p>
           </div>
-          <WhatsAppButton href={site.whatsapp} label="Falar com a equipe" />
+          <WhatsAppButton href={site.whatsapp} label="Falar com equipe Evoluta" />
         </div>
       </Section>
     </>

@@ -20,6 +20,9 @@ import atendimentoPsicopedagogiaAmbiente from "@/assets/atendimento-psicopedagog
 import atendimentoPsicoterapiaAmbiente from "@/assets/atendimento-psicoterapia-ambiente.jpg";
 import atendimentoTdahAmbiente from "@/assets/atendimento-tdah-ambiente.jpg";
 import atendimentoTeaAmbiente from "@/assets/atendimento-tea-ambiente.jpg";
+import heroAtendimentoAprendizagem from "@/assets/hero-atendimento-aprendizagem.jpg";
+import heroAtendimentoTdah from "@/assets/hero-atendimento-tdah.jpg";
+import heroAtendimentoTea from "@/assets/hero-atendimento-tea.jpg";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
@@ -82,7 +85,7 @@ export const site = {
   telefone: "+55 (00) 00000-0000",
   email: "contato@clinicaevoluta.com.br",
   instagram: "@clinicaevoluta",
-  cidade: "São Gabriel da Palha/ES — presencial e online",
+  cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",
 } as const;
 
 export type Atendimento = {
@@ -92,6 +95,7 @@ export type Atendimento = {
   resumo: string;
   imagem: string;
   imagemSecundaria: string;
+  imagemHero?: string;
   paraQuem: string[];
   comoFunciona: { titulo: string; texto: string }[];
   info: { rotulo: string; valor: string }[];
@@ -158,6 +162,7 @@ export const atendimentos: Atendimento[] = [
       "Investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
     imagem: atendimentoTea,
     imagemSecundaria: atendimentoTeaAmbiente,
+    imagemHero: heroAtendimentoTea,
     paraQuem: [
       "Famílias com suspeita de TEA em qualquer idade",
       "Pessoas já diagnosticadas que buscam acompanhamento",
@@ -198,6 +203,7 @@ export const atendimentos: Atendimento[] = [
       "Compreender a origem das dificuldades de atenção, impulsividade e organização para direcionar as melhores estratégias.",
     imagem: atendimentoTdah,
     imagemSecundaria: atendimentoTdahAmbiente,
+    imagemHero: heroAtendimentoTdah,
     paraQuem: [
       "Crianças e adolescentes com queixas de atenção e agitação",
       "Adultos com impacto na rotina, no trabalho e nos relacionamentos",
@@ -239,6 +245,7 @@ export const atendimentos: Atendimento[] = [
       "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem — investigamos o que está dificultando o aprender.",
     imagem: atendimentoAprendizagem,
     imagemSecundaria: atendimentoAprendizagemAmbiente,
+    imagemHero: heroAtendimentoAprendizagem,
     paraQuem: [
       "Crianças com queixas persistentes de leitura, escrita ou matemática",
       "Estudantes com dificuldades de compreensão, atenção e memória",
