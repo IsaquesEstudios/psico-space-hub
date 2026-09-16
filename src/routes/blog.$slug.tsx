@@ -23,9 +23,11 @@ const meses = [
 function paraIso(data: string): string | null {
   const partes = data.toLowerCase().match(/^(\d{1,2}) de ([a-zç]+) de (\d{4})$/);
   if (!partes) return null;
-  const mes = meses.indexOf(partes[2]);
+  const [, dia = "", nomeMes = "", ano = ""] = partes;
+  const mes = meses.indexOf(nomeMes);
   if (mes < 0) return null;
-  return `${partes[3]}-${String(mes + 1).padStart(2, "0")}-${partes[1].padStart(2, "0")}`;
+  return `${ano}-${String(mes + 1).padStart(2, "0")}-${dia.padStart(2, "0")}`;
+
 }
 
 
