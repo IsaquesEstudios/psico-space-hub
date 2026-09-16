@@ -153,6 +153,8 @@ function Contato() {
           </aside>
         </div>
       </Section>
+      <MapaLocalizacao />
     </>
+
   );
 }
