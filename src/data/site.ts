@@ -20,7 +20,7 @@ import atendimentoPsicopedagogiaAmbiente from "@/assets/atendimento-psicopedagog
 import atendimentoPsicoterapiaAmbiente from "@/assets/atendimento-psicoterapia-ambiente.jpg";
 import atendimentoTdahAmbiente from "@/assets/atendimento-tdah-ambiente.jpg";
 import atendimentoTeaAmbiente from "@/assets/atendimento-tea-ambiente.jpg";
-import heroAtendimentoAprendizagem from "@/assets/hero-atendimento-aprendizagem.jpg";
+import heroAtendimentoAprendizagem from "@/assets/hero-atendimento-aprendizagem-corrigido.png";
 import heroAtendimentoOrientacaoEscolar from "@/assets/hero-atendimento-orientacao-escolar.jpg";
 import heroAtendimentoTdah from "@/assets/hero-atendimento-tdah.jpg";
 import heroAtendimentoTea from "@/assets/hero-atendimento-tea-final.png";
