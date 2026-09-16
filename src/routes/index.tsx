@@ -20,8 +20,35 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:image", content: brandShareImage },
       { name: "twitter:image", content: brandShareImage },
+      { property: "og:url", content: "https://psico-space-hub.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://psico-space-hub.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "Clínica Evoluta — Desenvolvimento Infantil",
+          description:
+            "Equipe multidisciplinar em avaliação neuropsicológica, intervenção e acompanhamento de crianças, adolescentes e adultos.",
+          url: "https://psico-space-hub.lovable.app/",
+          image: brandShareImage,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Rua Antônio Borgo, 230",
+            addressLocality: "São Gabriel da Palha",
+            addressRegion: "ES",
+            postalCode: "29780-000",
+            addressCountry: "BR",
+          },
+          areaServed: "São Gabriel da Palha - ES",
+          medicalSpecialty: "Psychiatric",
+        }),
+      },
     ],
   }),
+
   component: Inicio,
 });
 
