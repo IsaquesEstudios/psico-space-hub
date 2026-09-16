@@ -24,6 +24,7 @@ import heroAtendimentoAprendizagem from "@/assets/hero-atendimento-aprendizagem-
 import heroAtendimentoOrientacaoEscolar from "@/assets/hero-atendimento-orientacao-escolar.jpg";
 import heroAtendimentoTdah from "@/assets/hero-atendimento-tdah.jpg";
 import heroAtendimentoTea from "@/assets/hero-atendimento-tea-final.png";
+import heroAtendimentoFonoaudiologia from "@/assets/hero-atendimento-fonoaudiologia.jpg";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
@@ -495,6 +496,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Avaliação e intervenção nas funções de fala, linguagem, comunicação, voz e aprendizagem.",
     imagem: atendimentoFonoaudiologia,
+    imagemHero: heroAtendimentoFonoaudiologia,
     imagemSecundaria: atendimentoFonoaudiologiaAmbiente,
     paraQuem: [
       "Crianças com trocas na fala e atraso de linguagem",
