@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contato")({
       {
         name: "description",
         content:
-          "Agende uma primeira conversa: atendimento presencial e online, com horários de segunda a sábado.",
+          "Agende uma primeira conversa: atendimento presencial e online, de segunda a sexta, das 07h às 19h. Ligue (27) 99938-5386 ou fale pelo WhatsApp.",
       },
       { property: "og:title", content: "Contato | Clínica Evoluta" },
       {
@@ -120,7 +120,9 @@ function Contato() {
               <ul className="mt-5 space-y-4 text-sm">
                 <li className="flex items-center gap-3">
                   <Phone className="h-4 w-4 shrink-0 text-primary" />
-                  {site.telefone}
+                  <a href={site.telefoneLink} className="transition-colors hover:text-primary">
+                    {site.telefone}
+                  </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-4 w-4 shrink-0 text-primary" />
