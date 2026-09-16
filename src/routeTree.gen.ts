@@ -14,6 +14,7 @@ import { Route as AtendimentosRouteImport } from './routes/atendimentos'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CursosRouteImport } from './routes/cursos'
+import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
@@ -46,6 +47,11 @@ const ContatoRoute = ContatoRouteImport.update({
 const CursosRoute = CursosRouteImport.update({
   id: '/cursos',
   path: '/cursos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovidadesRoute = NovidadesRouteImport.update({
+  id: '/novidades',
+  path: '/novidades',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SobreRoute = SobreRouteImport.update({
@@ -84,9 +90,9 @@ const CursosSlugRoute = CursosSlugRouteImport.update({
   getParentRoute: () => CursosRoute,
 } as any)
 const NovidadesIndexRoute = NovidadesIndexRouteImport.update({
-  id: '/novidades/',
-  path: '/novidades/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => NovidadesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
+  '/novidades': typeof NovidadesRouteWithChildren
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -123,6 +130,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
+  '/novidades': typeof NovidadesRouteWithChildren
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -140,6 +148,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/cursos'
+    | '/novidades'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/cursos'
+    | '/novidades'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -183,8 +193,8 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRouteWithChildren
+  NovidadesRoute: typeof NovidadesRouteWithChildren
   SobreRoute: typeof SobreRoute
-  NovidadesIndexRoute: typeof NovidadesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -222,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/cursos'
       fullPath: '/cursos'
       preLoaderRoute: typeof CursosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novidades': {
+      id: '/novidades'
+      path: '/novidades'
+      fullPath: '/novidades'
+      preLoaderRoute: typeof NovidadesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sobre': {
@@ -275,10 +292,10 @@ declare module '@tanstack/react-router' {
     }
     '/novidades/': {
       id: '/novidades/'
-      path: '/novidades'
+      path: '/'
       fullPath: '/novidades/'
       preLoaderRoute: typeof NovidadesIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof NovidadesRoute
     }
   }
 }
@@ -322,14 +339,26 @@ const CursosRouteChildren: CursosRouteChildren = {
 const CursosRouteWithChildren =
   CursosRoute._addFileChildren(CursosRouteChildren)
 
+interface NovidadesRouteChildren {
+  NovidadesIndexRoute: typeof NovidadesIndexRoute
+}
+
+const NovidadesRouteChildren: NovidadesRouteChildren = {
+  NovidadesIndexRoute: NovidadesIndexRoute,
+}
+
+const NovidadesRouteWithChildren = NovidadesRoute._addFileChildren(
+  NovidadesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtendimentosRoute: AtendimentosRouteWithChildren,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRouteWithChildren,
+  NovidadesRoute: NovidadesRouteWithChildren,
   SobreRoute: SobreRoute,
-  NovidadesIndexRoute: NovidadesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
