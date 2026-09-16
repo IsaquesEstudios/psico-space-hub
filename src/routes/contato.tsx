@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 
-import { Section, WhatsAppButton } from "@/components/site/bits";
+import { MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import { atendimentos, brandShareImage, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/contato")({
@@ -153,6 +153,8 @@ function Contato() {
           </aside>
         </div>
       </Section>
+      <MapaLocalizacao />
     </>
+
   );
 }

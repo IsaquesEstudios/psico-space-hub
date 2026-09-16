@@ -1,17 +1,19 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
-import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
+import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import {
   atendimentos,
   brandShareImage,
   conteudosAtendimentos,
   fotosJessica,
+  h1Atendimentos,
   jessicaBio,
   site,
   type Atendimento,
   type ConteudoAtendimento,
 } from "@/data/site";
+
 
 export const Route = createFileRoute("/atendimentos/$slug")({
   loader: ({ params }) => {
@@ -31,7 +33,9 @@ export const Route = createFileRoute("/atendimentos/$slug")({
     }
 
     const { item } = loaderData;
-    const titulo = `${item.titulo} | Clínica Evoluta`;
+    const termo = h1Atendimentos[item.slug] ?? item.titulo;
+    const titulo = `${termo} | Clínica Evoluta`;
+
     return {
       meta: [
         { title: titulo },
@@ -64,7 +68,9 @@ function AtendimentoPage() {
       <Perguntas conteudo={conteudo} />
       <SobreJessica />
       <OutrosAtendimentos item={item} />
+      <MapaLocalizacao />
       <Fechamento item={item} />
+
     </>
   );
 }
@@ -95,8 +101,9 @@ function AtendimentoHero({
           <div className="max-w-3xl">
             <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
             <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              {item.titulo}
+              {h1Atendimentos[item.slug] ?? item.titulo}
             </h1>
+
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
               {conteudo.chamada}
             </p>

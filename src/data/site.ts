@@ -112,7 +112,33 @@ export const site = {
   email: "contato@clinicaevoluta.com.br",
   instagram: "@clinicaevoluta",
   cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",
+  enderecoMapa: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha - ES, 29780-000",
 } as const;
+
+export const mapaEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+  site.enderecoMapa,
+)}&hl=pt-BR&z=17&output=embed`;
+
+export const mapaLinkUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  site.enderecoMapa,
+)}`;
+
+/** Termos de busca usados como H1 das páginas de atendimento (SEO local). */
+export const h1Atendimentos: Record<string, string> = {
+  neuropsicologia: "Avaliação neuropsicológica em São Gabriel da Palha",
+  "transtorno-do-espectro-autista": "Atendimento para autismo (TEA) em São Gabriel da Palha",
+  tdah: "Atendimento para TDAH em São Gabriel da Palha",
+  "dificuldades-de-aprendizagem":
+    "Atendimento para dificuldades de aprendizagem em São Gabriel da Palha",
+  psicoterapia: "Psicoterapia infantil e para adolescentes em São Gabriel da Palha",
+  aba: "Terapia ABA para autismo em São Gabriel da Palha",
+  psicopedagogia: "Atendimento psicopedagógico em São Gabriel da Palha",
+  neuropsicopedagogia: "Atendimento neuropsicopedagógico em São Gabriel da Palha",
+  fonoaudiologia: "Fonoaudiologia infantil em São Gabriel da Palha",
+  "orientacao-familiar-e-escolar": "Orientação familiar e escolar em São Gabriel da Palha",
+};
+
+
 
 export type Atendimento = {
   slug: string;
