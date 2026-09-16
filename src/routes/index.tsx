@@ -177,7 +177,7 @@ function Inicio() {
           </Link>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {cursos.slice(0, 3).map((curso, index) => (
+          {cursos.slice(0, 3).map((curso) => (
             <Link
               key={curso.slug}
               to="/cursos/$slug"
