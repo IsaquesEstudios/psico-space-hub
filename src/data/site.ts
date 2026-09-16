@@ -29,6 +29,7 @@ import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
 import jessicaRetratoLateral from "@/assets/GHR06700.jpg.asset.json";
 import jessicaMesaHorizontal from "@/assets/GHR06849_1.jpg.asset.json";
+import jessicaBlogHero from "@/assets/jessica-blog.jpg.asset.json";
 import jessicaEntrevista from "@/assets/GHR07165.jpg.asset.json";
 import jessicaEscrevendo from "@/assets/GHR06764.jpg.asset.json";
 import jessicaSorrindo from "@/assets/GHR07265.jpg.asset.json";
@@ -61,7 +62,7 @@ export const fotosJessica = {
   contato: jessicaSorrindo.url,
   cursos: jessicaSofa.url,
   cursosDetalhes: [jessicaEscrevendo.url, jessicaMesaAmpla.url, jessicaConversa.url],
-  blog: jessicaEntrevista.url,
+  blog: jessicaBlogHero.url,
   blogArtigos: [jessicaRetratoLateral.url, jessicaEscrevendo.url, jessicaConversa.url],
   novidades: jessicaMesaHorizontal.url,
   atendimentosDetalhes: [
