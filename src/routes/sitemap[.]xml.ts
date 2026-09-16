@@ -36,8 +36,9 @@ export const Route = createFileRoute("/sitemap.xml")({
         ];
 
         for (const colecao of colecoes) {
-          const rota = (router.routesById as Record<string, unknown>)[colecao.routeId];
+          const rota = (router.routesById as unknown as Record<string, unknown>)[colecao.routeId];
           if (!isSitemapRouteIncluded(rota as never)) continue;
+
 
           for (const slug of colecao.slugs) {
             const location = router.buildLocation({
