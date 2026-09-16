@@ -101,8 +101,9 @@ function AtendimentoHero({
           <div className="max-w-3xl">
             <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
             <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              {item.titulo}
+              {h1Atendimentos[item.slug] ?? item.titulo}
             </h1>
+
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
               {conteudo.chamada}
             </p>
