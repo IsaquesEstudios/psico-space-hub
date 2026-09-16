@@ -62,8 +62,8 @@ function AtendimentoPage() {
       <ImagemDoAcompanhamento item={item} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
-      <OutrosAtendimentos item={item} />
       <SobreJessica />
+      <OutrosAtendimentos item={item} />
       <Fechamento item={item} />
     </>
   );
