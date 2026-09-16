@@ -41,7 +41,7 @@ function Contato() {
           alt="Jéssica Pelissari, da Clínica Evoluta"
           width={720}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[74%_18%]"
+          className="absolute inset-0 h-full w-full object-cover object-top lg:object-[62%_20%]"
         />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
         <div className="absolute inset-0 bg-deep/50 lg:hidden" />

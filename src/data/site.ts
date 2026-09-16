@@ -60,7 +60,7 @@ export const images = {
 export const fotosJessica = {
   atendimentos: jessicaJanela.url,
   sobre: jessicaRetratoFrontal.url,
-  contato: jessicaSorrindo.url,
+  contato: jessicaEntrevista.url,
   cursos: jessicaSofa.url,
   cursosDetalhes: [jessicaEscrevendo.url, jessicaMesaAmpla.url, jessicaConversa.url],
   blog: jessicaBlogHero.url,
