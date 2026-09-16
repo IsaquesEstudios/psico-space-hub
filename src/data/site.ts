@@ -108,12 +108,13 @@ export const site = {
   subtitulo: "Desenvolvimento Infantil",
   slogan:
     "Cuidar, compreender e transformar através da ciência, acolhimento e atuação multidisciplinar",
-  whatsapp: "https://wa.me/5500000000000",
-  telefone: "+55 (00) 00000-0000",
+  whatsapp: "https://wa.me/5527999385386",
+  telefone: "(27) 99938-5386",
+  telefoneLink: "tel:+5527999385386",
   email: "contato@clinicaevoluta.com.br",
   instagram: "@clinicaevoluta",
   cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",
-  enderecoMapa: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha - ES, 29780-000",
+  enderecoMapa: "R. Antônio Borgo, 230 - Centro, São Gabriel da Palha - ES, 29780-000",
 } as const;
 
 export const mapaEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
