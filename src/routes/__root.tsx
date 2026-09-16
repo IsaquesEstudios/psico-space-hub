@@ -126,16 +126,38 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-const isNavegando = (s: { location: { pathname: string }; resolvedLocation: { pathname: string } | null; status: string }) =>
-  s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending";
-
 function IndicadorCarregamento() {
-  const isPending = useRouterState({ select: isNavegando });
+  const isPending = useRouterState({
+    select: (s) =>
+      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
+  });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [aguardandoImagens, setAguardandoImagens] = useState(true);
+
+  // A cada troca de página (e no primeiro carregamento) espera as imagens
+  // principais (sem lazy) terminarem antes de esconder o indicador.
+  useEffect(() => {
+    setAguardandoImagens(true);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!aguardandoImagens) return;
+    const inicio = Date.now();
+    const id = window.setInterval(() => {
+      const pendentes = Array.from(document.images).some(
+        (img) => img.loading !== "lazy" && (!img.complete || img.naturalWidth === 0),
+      );
+      if (!pendentes || Date.now() - inicio > 4000) setAguardandoImagens(false);
+    }, 120);
+    return () => window.clearInterval(id);
+  }, [aguardandoImagens]);
+
+  const ativo = isPending || aguardandoImagens;
   return (
     <div
-      aria-hidden={!isPending}
-      className={`pointer-events-none fixed inset-x-0 top-0 z-[70] h-[3px] transition-opacity duration-150 ${
-        isPending ? "opacity-100" : "opacity-0"
+      aria-hidden={!ativo}
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[70] h-[3px] transition-opacity duration-200 ${
+        ativo ? "opacity-100" : "opacity-0"
       }`}
     >
       <div className="nav-progress h-full w-full bg-primary" />
@@ -146,7 +168,11 @@ function IndicadorCarregamento() {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isPending = useRouterState({ select: isNavegando });
+  const isPending = useRouterState({
+    select: (s) =>
+      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
+  });
+
 
   // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
   // precisa de um respiro no topo para não ficar escondido sob o menu.
