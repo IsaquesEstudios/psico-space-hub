@@ -126,8 +126,11 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const isNavegando = (s: { location: { pathname: string }; resolvedLocation: { pathname: string } | null; status: string }) =>
+  s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending";
+
 function IndicadorCarregamento() {
-  const isPending = useRouterState({ select: (s) => s.status === "pending" });
+  const isPending = useRouterState({ select: isNavegando });
   return (
     <div
       aria-hidden={!isPending}
