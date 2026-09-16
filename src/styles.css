@@ -157,3 +157,19 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
+
+@keyframes nav-progress-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@utility nav-progress {
+  animation: nav-progress-slide 1s ease-in-out infinite;
+}

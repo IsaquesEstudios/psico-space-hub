@@ -8,7 +8,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -126,9 +126,54 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function IndicadorCarregamento() {
+  const isPending = useRouterState({
+    select: (s) =>
+      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
+  });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const [aguardandoImagens, setAguardandoImagens] = useState(true);
+
+  // A cada troca de página (e no primeiro carregamento) espera as imagens
+  // principais (sem lazy) terminarem antes de esconder o indicador.
+  useEffect(() => {
+    setAguardandoImagens(true);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!aguardandoImagens) return;
+    const inicio = Date.now();
+    const id = window.setInterval(() => {
+      const pendentes = Array.from(document.images).some(
+        (img) => img.loading !== "lazy" && (!img.complete || img.naturalWidth === 0),
+      );
+      if (!pendentes || Date.now() - inicio > 4000) setAguardandoImagens(false);
+    }, 120);
+    return () => window.clearInterval(id);
+  }, [aguardandoImagens]);
+
+  const ativo = isPending || aguardandoImagens;
+  return (
+    <div
+      aria-hidden={!ativo}
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[70] h-[3px] transition-opacity duration-200 ${
+        ativo ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div className="nav-progress h-full w-full bg-primary" />
+    </div>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isPending = useRouterState({
+    select: (s) =>
+      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
+  });
+
+
   // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
   // precisa de um respiro no topo para não ficar escondido sob o menu.
   const isHome = pathname === "/";
@@ -136,9 +181,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
+        <IndicadorCarregamento />
         <Header />
         {!isHome && <div className="h-[88px] bg-deep" aria-hidden />}
-        <main className="flex-1">
+        <main
+          className={`flex-1 transition-opacity duration-200 ${
+            isPending ? "opacity-80" : "opacity-100"
+          }`}
+        >
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
