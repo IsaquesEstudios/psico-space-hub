@@ -85,7 +85,7 @@ export const site = {
   telefone: "+55 (00) 00000-0000",
   email: "contato@clinicaevoluta.com.br",
   instagram: "@clinicaevoluta",
-  cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha/ES — CEP 29780-000",
+  cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",
 } as const;
 
 export type Atendimento = {
