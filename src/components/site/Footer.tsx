@@ -100,7 +100,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-10">
           <span>
-            © {new Date().getFullYear()} {site.nome}. Conteúdo de demonstração.
+            © {new Date().getFullYear()} {site.nome}. Todos os direitos reservados.
           </span>
           <span>{site.cidade}</span>
         </div>
