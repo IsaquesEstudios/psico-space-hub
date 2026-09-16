@@ -7,6 +7,7 @@ import {
   brandShareImage,
   conteudosAtendimentos,
   fotosJessica,
+  jessicaBio,
   site,
   type Atendimento,
   type ConteudoAtendimento,
