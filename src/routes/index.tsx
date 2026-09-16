@@ -187,7 +187,7 @@ function Inicio() {
               <div className="overflow-hidden">
                 <img
                   src={curso.imagem}
-                 alt={`Jéssica, da Clínica Evoluta — Curso ${index + 1}`}
+                  alt={curso.titulo}
                   loading="lazy"
                   width={1200}
                   height={800}
@@ -195,7 +195,8 @@ function Inicio() {
                 />
               </div>
               <p className="eyebrow mt-5 text-primary">{curso.etiqueta}</p>
-              <h3 className="mt-3 font-display text-3xl">Curso {index + 1}</h3>
+              <h3 className="mt-3 font-display text-3xl">{curso.titulo}</h3>
+
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{curso.resumo}</p>
               <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
                 Conhecer o curso
