@@ -22,7 +22,7 @@ import atendimentoTdahAmbiente from "@/assets/atendimento-tdah-ambiente.jpg";
 import atendimentoTeaAmbiente from "@/assets/atendimento-tea-ambiente.jpg";
 import heroAtendimentoAprendizagem from "@/assets/hero-atendimento-aprendizagem.jpg";
 import heroAtendimentoTdah from "@/assets/hero-atendimento-tdah.jpg";
-import heroAtendimentoTea from "@/assets/hero-atendimento-tea-corrigido.png";
+import heroAtendimentoTea from "@/assets/hero-atendimento-tea-final.png";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
