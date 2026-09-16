@@ -27,9 +27,9 @@ export const Route = createFileRoute("/contato")({
 });
 
 const horarios = [
-  { dia: "Segunda a quinta", hora: "08h às 18h" },
-  { dia: "Sexta", hora: "08h às 13h" },
-  { dia: "Sábado", hora: "Avaliações agendadas" },
+  { dia: "Segunda a sexta", hora: "07h às 19h" },
+  { dia: "Sábado", hora: "Fechado" },
+  { dia: "Domingo", hora: "Fechado" },
 ];
 
 function Contato() {
