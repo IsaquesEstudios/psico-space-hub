@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, WhatsAppButton } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, novidades, site } from "@/data/site";
 
-export const Route = createFileRoute("/novidades")({
+export const Route = createFileRoute("/novidades/")({
   head: () => ({
     meta: [
       { title: "Novidades | Clínica Evoluta" },
