@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://psico-space-hub.lovable.app/sitemap.xml

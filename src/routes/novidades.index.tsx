@@ -6,6 +6,7 @@ import { brandShareImage, fotosJessica, novidades, site } from "@/data/site";
 
 
 export const Route = createFileRoute("/novidades/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Novidades | Clínica Evoluta" },

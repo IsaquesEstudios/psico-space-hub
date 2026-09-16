@@ -5,6 +5,7 @@ import { Eyebrow, Section } from "@/components/site/bits";
 import { atendimentos, brandShareImage, cursos, destaques, images, posts, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Clínica Evoluta | Apoio à aprendizagem para crianças e adolescentes" },
@@ -20,8 +21,35 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:image", content: brandShareImage },
       { name: "twitter:image", content: brandShareImage },
+      { property: "og:url", content: "https://psico-space-hub.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://psico-space-hub.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "Clínica Evoluta — Desenvolvimento Infantil",
+          description:
+            "Equipe multidisciplinar em avaliação neuropsicológica, intervenção e acompanhamento de crianças, adolescentes e adultos.",
+          url: "https://psico-space-hub.lovable.app/",
+          image: brandShareImage,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Rua Antônio Borgo, 230",
+            addressLocality: "São Gabriel da Palha",
+            addressRegion: "ES",
+            postalCode: "29780-000",
+            addressCountry: "BR",
+          },
+          areaServed: "São Gabriel da Palha - ES",
+          medicalSpecialty: "Psychiatric",
+        }),
+      },
     ],
   }),
+
   component: Inicio,
 });
 
@@ -44,13 +72,11 @@ function Inicio() {
         <div className="absolute inset-0 bg-deep/60 lg:hidden" />
         <div className="relative w-full mx-auto max-w-7xl px-5 pt-24 pb-16 sm:pb-20 lg:px-10 lg:pt-32 lg:pb-24">
           <div className="max-w-xl">
-            <h1 className="font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
-              Cuidar.
-              <br />
-              Compreender.
-              <br />
-              Transformar.
+            <p className="eyebrow text-primary">Cuidar. Compreender. Transformar.</p>
+            <h1 className="mt-5 font-display text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
+              Clínica Evoluta — avaliação e desenvolvimento infantil em São Gabriel da Palha
             </h1>
+
             <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/80">
               Equipe multidisciplinar em avaliação, intervenção e acompanhamento — considerando aspectos
               cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
@@ -177,7 +203,7 @@ function Inicio() {
           </Link>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {cursos.slice(0, 3).map((curso, index) => (
+          {cursos.slice(0, 3).map((curso) => (
             <Link
               key={curso.slug}
               to="/cursos/$slug"
@@ -187,7 +213,7 @@ function Inicio() {
               <div className="overflow-hidden">
                 <img
                   src={curso.imagem}
-                 alt={`Jéssica, da Clínica Evoluta — Curso ${index + 1}`}
+                  alt={curso.titulo}
                   loading="lazy"
                   width={1200}
                   height={800}
@@ -195,7 +221,8 @@ function Inicio() {
                 />
               </div>
               <p className="eyebrow mt-5 text-primary">{curso.etiqueta}</p>
-              <h3 className="mt-3 font-display text-3xl">Curso {index + 1}</h3>
+              <h3 className="mt-3 font-display text-3xl">{curso.titulo}</h3>
+
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{curso.resumo}</p>
               <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
                 Conhecer o curso

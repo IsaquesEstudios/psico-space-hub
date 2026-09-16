@@ -5,6 +5,7 @@ import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/
 import { brandShareImage, cursos, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const curso = cursos.find((c) => c.slug === params.slug);
     if (!curso) throw notFound();
@@ -16,17 +17,48 @@ export const Route = createFileRoute("/cursos/$slug")({
     }
     const { curso } = loaderData;
     const titulo = `${curso.titulo} | Cursos`;
+    const url = `https://psico-space-hub.lovable.app/cursos/${curso.slug}`;
     return {
       meta: [
         { title: titulo },
         { name: "description", content: curso.resumo },
         { property: "og:title", content: titulo },
         { property: "og:description", content: curso.resumo },
+        { property: "og:url", content: url },
         { property: "og:image", content: brandShareImage },
         { name: "twitter:image", content: brandShareImage },
       ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: curso.titulo,
+            description: curso.resumo,
+            url,
+            timeRequired: curso.duracao,
+            audience: { "@type": "Audience", audienceType: curso.publico },
+            provider: {
+              "@type": "Organization",
+              name: `${site.nome} — ${site.subtitulo}`,
+              url: "https://psico-space-hub.lovable.app",
+            },
+            hasCourseInstance: [
+              {
+                "@type": "CourseInstance",
+                courseMode: "online",
+                courseWorkload: curso.duracao,
+                description: curso.formato,
+              },
+            ],
+          }),
+        },
+      ],
     };
   },
+
   component: CursoPage,
 });
 

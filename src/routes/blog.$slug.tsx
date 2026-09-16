@@ -4,7 +4,35 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
 
+const meses = [
+  "janeiro",
+  "fevereiro",
+  "março",
+  "abril",
+  "maio",
+  "junho",
+  "julho",
+  "agosto",
+  "setembro",
+  "outubro",
+  "novembro",
+  "dezembro",
+];
+
+// "12 de agosto de 2026" -> "2026-08-12"
+function paraIso(data: string): string | null {
+  const partes = data.toLowerCase().match(/^(\d{1,2}) de ([a-zç]+) de (\d{4})$/);
+  if (!partes) return null;
+  const [, dia = "", nomeMes = "", ano = ""] = partes;
+  const mes = meses.indexOf(nomeMes);
+  if (mes < 0) return null;
+  return `${ano}-${String(mes + 1).padStart(2, "0")}-${dia.padStart(2, "0")}`;
+
+}
+
+
 export const Route = createFileRoute("/blog/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const post = posts.find((p) => p.slug === params.slug);
     if (!post) throw notFound();
@@ -15,6 +43,8 @@ export const Route = createFileRoute("/blog/$slug")({
       return { meta: [{ title: "Texto não encontrado" }, { name: "robots", content: "noindex" }] };
     }
     const { post } = loaderData;
+    const url = `https://psico-space-hub.lovable.app/blog/${post.slug}`;
+    const dataIso = paraIso(post.data);
     return {
       meta: [
         { title: `${post.titulo} | Blog` },
@@ -22,11 +52,30 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.titulo },
         { property: "og:description", content: post.resumo },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { property: "og:image", content: brandShareImage },
         { name: "twitter:image", content: brandShareImage },
       ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.titulo,
+            description: post.resumo,
+            url,
+            articleSection: post.categoria,
+            ...(dataIso ? { datePublished: dataIso, dateModified: dataIso } : {}),
+            author: { "@type": "Person", name: "Jéssica Pelissari" },
+            publisher: { "@type": "Organization", name: "Clínica Evoluta" },
+          }),
+        },
+      ],
     };
   },
+
   component: PostPage,
 });
 

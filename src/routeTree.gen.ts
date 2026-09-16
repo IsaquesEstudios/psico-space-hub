@@ -15,6 +15,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as NovidadesRouteImport } from './routes/novidades'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
@@ -53,6 +54,11 @@ const CursosRoute = CursosRouteImport.update({
 const NovidadesRoute = NovidadesRouteImport.update({
   id: '/novidades',
   path: '/novidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SobreRoute = SobreRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
   '/novidades': typeof NovidadesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
   '/novidades': typeof NovidadesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -158,6 +167,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cursos'
     | '/novidades'
+    | '/sitemap.xml'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -171,6 +181,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contato'
+    | '/sitemap.xml'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cursos'
     | '/novidades'
+    | '/sitemap.xml'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRouteWithChildren
   NovidadesRoute: typeof NovidadesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
 }
 
@@ -251,6 +264,13 @@ declare module '@tanstack/react-router' {
       path: '/novidades'
       fullPath: '/novidades'
       preLoaderRoute: typeof NovidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sobre': {
@@ -379,6 +399,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRouteWithChildren,
   NovidadesRoute: NovidadesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
