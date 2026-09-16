@@ -68,7 +68,9 @@ function AtendimentoPage() {
       <Perguntas conteudo={conteudo} />
       <SobreJessica />
       <OutrosAtendimentos item={item} />
+      <MapaLocalizacao />
       <Fechamento item={item} />
+
     </>
   );
 }
