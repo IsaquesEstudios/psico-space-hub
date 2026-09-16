@@ -168,10 +168,8 @@ function IndicadorCarregamento() {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isPending = useRouterState({
-    select: (s) =>
-      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
-  });
+
+
 
 
   // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
@@ -184,11 +182,8 @@ function RootComponent() {
         <IndicadorCarregamento />
         <Header />
         {!isHome && <div className="h-[88px] bg-deep" aria-hidden />}
-        <main
-          className={`flex-1 transition-opacity duration-200 ${
-            isPending ? "opacity-80" : "opacity-100"
-          }`}
-        >
+        <main className="flex-1">
+
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
