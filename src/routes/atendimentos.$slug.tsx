@@ -33,7 +33,9 @@ export const Route = createFileRoute("/atendimentos/$slug")({
     }
 
     const { item } = loaderData;
-    const titulo = `${item.titulo} | Clínica Evoluta`;
+    const termo = h1Atendimentos[item.slug] ?? item.titulo;
+    const titulo = `${termo} | Clínica Evoluta`;
+
     return {
       meta: [
         { title: titulo },
