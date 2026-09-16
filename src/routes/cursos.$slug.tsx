@@ -104,6 +104,8 @@ function CursoPage() {
           </aside>
         </div>
       </Section>
+      <MapaLocalizacao />
     </>
+
   );
 }
