@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check } from "lucide-react";
 
-import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
+import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import { brandShareImage, cursos, fotosJessica, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
