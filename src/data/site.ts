@@ -1044,31 +1044,56 @@ export const posts: Post[] = [
 
 export const novidades = [
   {
+    slug: "novas-vagas-avaliacao-neuropsicologica",
     data: "Setembro de 2026",
     titulo: "Novas vagas para avaliação neuropsicológica",
     texto:
       "Abertura de vagas para processos de avaliação com início em setembro, nos períodos da manhã e da tarde.",
     etiqueta: "Agenda",
+    paragrafos: [
+      "A agenda de avaliação neuropsicológica foi ampliada e novas vagas estão disponíveis para início em setembro, com horários nos períodos da manhã e da tarde.",
+      "O processo acontece em encontros sequenciais, com entrevista inicial, aplicação de instrumentos, conversa com a escola quando necessário e devolutiva às famílias.",
+      "Para verificar a disponibilidade de horários e entender como funciona cada etapa, fale com a equipe Evoluta.",
+    ],
   },
   {
+    slug: "turma-avaliacao-neuropsicologica-na-pratica",
     data: "Agosto de 2026",
     titulo: "Turma de “Avaliação neuropsicológica na prática”",
     texto:
       "Inscrições abertas para a nova turma online, com encontros ao vivo e gravações liberadas por seis meses.",
     etiqueta: "Cursos",
+    paragrafos: [
+      "Estão abertas as inscrições para a nova turma online do curso “Avaliação neuropsicológica na prática”, voltada a profissionais que desejam estruturar seus processos de avaliação.",
+      "Os encontros são ao vivo, com espaço para discussão de casos, e as gravações ficam liberadas por seis meses após o término da turma.",
+      "As vagas são limitadas para garantir a troca entre os participantes. Entre em contato para receber o conteúdo completo e as datas.",
+    ],
   },
   {
+    slug: "lancamentos-de-2026",
     data: "Julho de 2026",
     titulo: "Lançamentos de 2026",
     texto:
       "Duas novas obras em coautoria: “Psicologia Clínica: o que não te ensinaram na universidade” e “TDAH na Escola”.",
     etiqueta: "Publicações",
+    paragrafos: [
+      "Duas novas obras em coautoria chegam em 2026: “Psicologia Clínica: o que não te ensinaram na universidade” e “TDAH na Escola”.",
+      "Os textos reúnem prática clínica e pesquisa, com foco em situações reais de atendimento e no cotidiano escolar de crianças e adolescentes.",
+      "Assim que as informações de venda estiverem confirmadas, elas serão divulgadas por aqui e nas redes da clínica.",
+    ],
   },
   {
+    slug: "orientacao-para-equipes-escolares",
     data: "Junho de 2026",
     titulo: "Orientação para equipes escolares",
     texto:
       "Encontro de orientação sobre adaptações em sala de aula realizado com a equipe de uma escola parceira.",
     etiqueta: "Escolas",
+    paragrafos: [
+      "Um encontro de orientação foi realizado com a equipe pedagógica de uma escola parceira, com foco em adaptações possíveis dentro da sala de aula.",
+      "Foram discutidas estratégias de organização das atividades, formas de apoiar a atenção e o uso de combinados simples que ajudam alunos com diferentes perfis de aprendizagem.",
+      "Escolas interessadas em receber um encontro semelhante podem entrar em contato para conhecer os formatos disponíveis.",
+    ],
   },
 ];
+
