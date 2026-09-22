@@ -697,7 +697,7 @@ export const destaques = [
   {
     titulo: "Equipe multidisciplinar",
     texto:
-      "Psicologia, neuropsicologia, psicopedagogia, fonoaudiologia e ABA atuando de forma integrada.",
+      "Psicologia, neuropsicologia, neuropsicopedagogia, fonoaudiologia e ABA atuando de forma integrada.",
   },
   {
     titulo: "Avaliar para compreender",

@@ -1,4 +1,4 @@
-import { createFileRoute, notFound, Link } from "@tanstack/react-router";
+import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
@@ -18,6 +18,28 @@ import {
 export const Route = createFileRoute("/atendimentos/$slug")({
   staticData: { sitemap: true },
   loader: ({ params }) => {
+    const redirecionamentosAntigos: Record<string, string> = {
+      neuropsicologia: "avaliacao-neuropsicologica",
+      "transtorno-do-espectro-autista": "avaliacao-neuropsicologica",
+      tdah: "avaliacao-neuropsicologica",
+      "dificuldades-de-aprendizagem": "avaliacao-neuropsicopedagogica",
+      psicoterapia: "psicologia-infantil-tcc",
+      aba: "intervencao-aba",
+      psicopedagogia: "avaliacao-neuropsicopedagogica",
+      neuropsicopedagogia: "avaliacao-neuropsicopedagogica",
+      fonoaudiologia: "fonoaudiologia-infantil",
+      "orientacao-familiar-e-escolar": "avaliacao-neuropsicopedagogica",
+    };
+
+    const slugAtual = redirecionamentosAntigos[params.slug];
+    if (slugAtual) {
+      throw redirect({
+        to: "/atendimentos/$slug",
+        params: { slug: slugAtual },
+        replace: true,
+      });
+    }
+
     const item = atendimentos.find((atendimento) => atendimento.slug === params.slug);
     const conteudo = conteudosAtendimentos[params.slug];
     if (!item || !conteudo) throw notFound();
