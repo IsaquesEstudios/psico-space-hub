@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Phone, Youtube } from "lucide-react";
+import { TikTokIcon } from "./TikTokIcon";
 
 import logoAsset from "@/assets/logo-l.png.asset.json";
 import { atendimentos, site } from "@/data/site";
@@ -89,7 +90,36 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Instagram className="h-4 w-4 shrink-0 text-primary" />
-              <span>{site.instagram}</span>
+              <a
+                href={site.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-primary"
+              >
+                {site.instagram}
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Youtube className="h-4 w-4 shrink-0 text-primary" />
+              <a
+                href={site.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-primary"
+              >
+                {site.youtube}
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <TikTokIcon className="h-4 w-4 shrink-0 text-primary" />
+              <a
+                href={site.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-primary"
+              >
+                {site.tiktok}
+              </a>
             </li>
             <li className="flex items-center gap-3">
               <MessageCircle className="h-4 w-4 shrink-0 text-primary" />

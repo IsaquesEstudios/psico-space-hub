@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
+import { TikTokIcon } from "@/components/site/TikTokIcon";
 
 import { MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import { atendimentos, brandShareImage, fotosJessica, site } from "@/data/site";
@@ -130,7 +131,36 @@ function Contato() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Instagram className="h-4 w-4 shrink-0 text-primary" />
-                  {site.instagram}
+                  <a
+                    href={site.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-primary"
+                  >
+                    {site.instagram}
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Youtube className="h-4 w-4 shrink-0 text-primary" />
+                  <a
+                    href={site.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-primary"
+                  >
+                    {site.youtube}
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <TikTokIcon className="h-4 w-4 shrink-0 text-primary" />
+                  <a
+                    href={site.tiktokUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-primary"
+                  >
+                    {site.tiktok}
+                  </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 shrink-0 text-primary" />
