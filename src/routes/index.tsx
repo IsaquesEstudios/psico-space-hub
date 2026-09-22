@@ -259,8 +259,8 @@ function Inicio() {
                   src={livro.imagem}
                   alt={livro.titulo}
                   loading="lazy"
-                  width={606}
-                  height={828}
+                  width={1280}
+                  height={2080}
                   className="h-[420px] w-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

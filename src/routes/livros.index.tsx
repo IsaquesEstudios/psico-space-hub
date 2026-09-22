@@ -60,8 +60,8 @@ function LivrosIndex() {
                 src={livro.imagem}
                 alt={livro.titulo}
                 loading="lazy"
-                width={606}
-                height={828}
+                width={1280}
+                height={2080}
                 className="h-[430px] w-full object-contain p-5"
               />
               <div className="flex flex-1 flex-col p-6 sm:p-8">
