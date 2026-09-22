@@ -68,14 +68,6 @@ function CursoPage() {
   const { curso } = Route.useLoaderData();
   return (
     <>
-      <img
-        src={curso.imagem}
-        alt={curso.titulo}
-        width={1373}
-        height={1146}
-        className="h-72 w-full bg-muted object-contain object-center lg:h-[560px]"
-      />
-
       <Section>
         <Link
           to="/cursos"
@@ -115,7 +107,13 @@ function CursoPage() {
             </ul>
           </div>
 
-          <aside className="self-start bg-muted p-6 sm:p-8">
+          <aside className="self-start">
+            <img
+              src={curso.imagem}
+              alt={curso.titulo}
+              className="w-full max-w-md bg-muted"
+            />
+            <div className="mt-8 bg-muted p-6 sm:p-8">
             <p className="eyebrow text-muted-foreground">Informações</p>
             <dl className="mt-5 space-y-5">
               <div>
@@ -148,6 +146,7 @@ function CursoPage() {
             <p className="mt-4 text-xs text-muted-foreground">
               A compra é realizada em uma plataforma externa segura.
             </p>
+            </div>
           </aside>
         </div>
       </Section>

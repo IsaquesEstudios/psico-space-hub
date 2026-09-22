@@ -1059,7 +1059,7 @@ export const cursos: Curso[] = [
     imagem: cursoDesenvolvimentoInfantil.url,
     duracao: "Acesso online pela plataforma",
     formato: "Curso online",
-    investimento: "R$ 97,00",
+    investimento: "R$ 47,00",
     publico: "Pais, professores e profissionais da saúde",
     compraUrl: "https://pay.kiwify.com.br/nPM8b7k",
     secoes: [
