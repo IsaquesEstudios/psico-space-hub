@@ -143,7 +143,6 @@ export type Atendimento = {
   slug: string;
   titulo: string;
   etiqueta: string;
-  publicoDestaque: string;
   resumo: string;
   imagem: string;
   imagemSecundaria: string;
@@ -159,7 +158,6 @@ export const atendimentos: Atendimento[] = [
     slug: "avaliacao-neuropsicologica",
     titulo: "Avaliação Neuropsicológica",
     etiqueta: "Método Evoluta",
-    publicoDestaque: "Crianças, adolescentes, adultos e idosos",
     resumo:
       "Avaliação individualizada para compreender atenção, memória, aprendizagem, comportamento e orientar próximos passos com clareza.",
     imagem: atendimentoNeuropsicologia,
@@ -214,7 +212,6 @@ export const atendimentos: Atendimento[] = [
     slug: "psicologia-infantil-tcc",
     titulo: "Psicologia Infantil – Terapia Cognitivo-Comportamental",
     etiqueta: "Psicoterapia infantil",
-    publicoDestaque: "Crianças e adolescentes",
     resumo:
       "Atendimento acolhedor para ajudar crianças e adolescentes a compreender emoções, pensamentos, comportamentos e relações.",
     imagem: atendimentoPsicoterapia,
@@ -269,8 +266,6 @@ export const atendimentos: Atendimento[] = [
     slug: "intervencao-aba",
     titulo: "Psicologia com Intervenção Baseada em ABA",
     etiqueta: "Análise do Comportamento Aplicada",
-    publicoDestaque:
-      "Pessoas com TEA e outras demandas do desenvolvimento e do comportamento, conforme avaliação individual",
     resumo:
       "Intervenção individualizada para desenvolver comunicação, autonomia, habilidades sociais, aprendizagem e participação na rotina.",
     imagem: atendimentoAba,
@@ -325,7 +320,6 @@ export const atendimentos: Atendimento[] = [
     slug: "avaliacao-neuropsicopedagogica",
     titulo: "Avaliação Neuropsicopedagógica",
     etiqueta: "Aprendizagem escolar",
-    publicoDestaque: "Principalmente crianças e adolescentes",
     resumo:
       "Avaliação para compreender leitura, escrita, matemática, atenção, memória e fatores que interferem na aprendizagem.",
     imagem: atendimentoNeuropsicopedagogia,
@@ -380,7 +374,6 @@ export const atendimentos: Atendimento[] = [
     slug: "fonoaudiologia-infantil",
     titulo: "Fonoaudiologia Infantil",
     etiqueta: "Fala e linguagem",
-    publicoDestaque: "Bebês, crianças e adolescentes",
     resumo:
       "Atendimento para desenvolvimento da fala, linguagem, comunicação, voz, motricidade orofacial e alimentação na infância.",
     imagem: atendimentoFonoaudiologia,
@@ -436,7 +429,6 @@ export const atendimentos: Atendimento[] = [
     slug: "fonoaudiologia-adolescentes-adultos-idosos",
     titulo: "Fonoaudiologia para Adolescentes, Adultos e Idosos",
     etiqueta: "Comunicação em diferentes fases da vida",
-    publicoDestaque: "Adolescentes, adultos e idosos",
     resumo:
       "Acompanhamento para fala, linguagem, comunicação, voz, motricidade orofacial e deglutição em diferentes fases da vida.",
     imagem: atendimentoFonoaudiologiaAmbiente,
@@ -492,7 +484,6 @@ export const atendimentos: Atendimento[] = [
     slug: "estimulacao-cognitiva-idosos",
     titulo: "Estimulação Cognitiva para Idosos",
     etiqueta: "Cognição e autonomia",
-    publicoDestaque: "Público idoso",
     resumo:
       "Atividades planejadas para estimular memória, atenção, linguagem, raciocínio e autonomia no envelhecimento.",
     imagem: atendimentoNeuropsicologiaAmbiente,
@@ -610,7 +601,7 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   },
   "psicologia-infantil-tcc": {
     chamada:
-      "Um acompanhamento psicológico infantil para acolher emoções, compreender comportamentos e construir habilidades que façam diferença na rotina da criança.",
+      "Indicado para crianças e adolescentes, este acompanhamento psicológico acolhe emoções, ajuda a compreender comportamentos e desenvolve habilidades que fazem diferença na rotina.",
     tituloApresentacao: "Terapia infantil com acolhimento, vínculo e estratégia",
     introducao:
       "Na Terapia Cognitivo-Comportamental, a criança é ajudada a perceber relações entre pensamentos, emoções e comportamentos de uma forma compatível com sua idade. O atendimento utiliza recursos lúdicos, conversas, histórias, jogos e atividades estruturadas para favorecer expressão, compreensão emocional e aprendizagem de novas formas de lidar com desafios.",
@@ -698,7 +689,7 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   },
   "avaliacao-neuropsicopedagogica": {
     chamada:
-      "Uma avaliação para entender como a criança ou adolescente aprende, quais habilidades precisam de apoio e quais estratégias podem orientar família e escola.",
+      "Indicada principalmente para crianças e adolescentes, esta avaliação ajuda a entender como o estudante aprende, quais habilidades precisam de apoio e quais estratégias podem orientar família e escola.",
     tituloApresentacao: "Antes de intervir, é preciso compreender o aprender",
     introducao:
       "A Avaliação Neuropsicopedagógica investiga dificuldades relacionadas ao processo de aprendizagem a partir de aspectos cognitivos e pedagógicos. O processo observa leitura, escrita, compreensão, raciocínio lógico-matemático, atenção, memória, estratégias de aprendizagem e habilidades acadêmicas, conectando essas informações à história escolar do estudante.",
@@ -742,7 +733,7 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   },
   "fonoaudiologia-infantil": {
     chamada:
-      "Atendimento fonoaudiológico infantil para estimular fala, linguagem, comunicação, voz, motricidade orofacial e alimentação com propostas adequadas à idade.",
+      "Indicado para bebês, crianças e adolescentes, o atendimento fonoaudiológico estimula fala, linguagem, comunicação, voz, motricidade orofacial e alimentação com propostas adequadas à idade.",
     tituloApresentacao: "Comunicação, fala e linguagem desde as primeiras fases",
     introducao:
       "A Fonoaudiologia Infantil acompanha bebês, crianças e adolescentes em demandas relacionadas à comunicação e às habilidades de fala, linguagem, voz, motricidade orofacial e alimentação. A avaliação inicial identifica habilidades já adquiridas e áreas que precisam de intervenção, permitindo um plano terapêutico adequado à idade e à necessidade de cada criança.",
@@ -786,7 +777,7 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   },
   "fonoaudiologia-adolescentes-adultos-idosos": {
     chamada:
-      "Acompanhamento fonoaudiológico para comunicação, fala, voz, linguagem, motricidade orofacial e deglutição em diferentes fases da vida.",
+      "Indicado para adolescentes, adultos e idosos, o acompanhamento fonoaudiológico trabalha comunicação, fala, voz, linguagem, motricidade orofacial e deglutição conforme as necessidades de cada fase da vida.",
     tituloApresentacao: "Comunicação e funcionalidade ao longo da vida",
     introducao:
       "A Fonoaudiologia para adolescentes, adultos e idosos considera as demandas de cada fase da vida e acompanha alterações de fala, linguagem, comunicação, voz, motricidade orofacial e deglutição. O atendimento começa com uma avaliação individualizada, observando história, rotina, queixas atuais e objetivos do paciente.",
@@ -830,7 +821,7 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   },
   "estimulacao-cognitiva-idosos": {
     chamada:
-      "Atividades planejadas para estimular memória, atenção, linguagem, raciocínio e autonomia, respeitando história, ritmo e interesses do idoso.",
+      "Voltado ao público idoso, este acompanhamento reúne atividades planejadas para estimular memória, atenção, linguagem, raciocínio e autonomia, respeitando história, ritmo e interesses de cada pessoa.",
     tituloApresentacao: "Estimulação cognitiva com significado, vínculo e respeito",
     introducao:
       "A Estimulação Cognitiva é um acompanhamento voltado ao público idoso, com atividades planejadas para estimular diferentes funções cognitivas e favorecer a manutenção da autonomia e da funcionalidade. As propostas são escolhidas de acordo com idade, história, interesses, rotina e necessidades de cada paciente.",

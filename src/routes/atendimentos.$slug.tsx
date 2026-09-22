@@ -1,5 +1,5 @@
 import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, MessageCircle, UsersRound } from "lucide-react";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import {
@@ -141,13 +141,6 @@ function AtendimentoHero({
         <div className="mx-auto w-full max-w-7xl">
           <div className="max-w-3xl">
             <p className="eyebrow text-deep-foreground/70">{item.etiqueta}</p>
-            <div className="mt-5 flex max-w-2xl items-start gap-3 border-l-2 border-primary bg-deep-foreground/10 px-4 py-3 backdrop-blur-sm sm:items-center">
-              <UsersRound className="mt-0.5 h-5 w-5 shrink-0 text-primary sm:mt-0" aria-hidden="true" />
-              <p className="text-sm leading-relaxed text-deep-foreground sm:text-base">
-                <span className="font-semibold">Público indicado:</span>{" "}
-                {item.publicoDestaque}
-              </p>
-            </div>
             <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
               {h1Atendimentos[item.slug] ?? item.titulo}
             </h1>
