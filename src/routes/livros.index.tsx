@@ -60,9 +60,9 @@ function LivrosIndex() {
                 src={livro.imagem}
                 alt={livro.titulo}
                 loading="lazy"
-                width={1280}
-                height={2080}
-                className="h-[430px] w-full object-contain p-5"
+                width={1171}
+                height={1682}
+                className="h-[420px] w-full object-contain p-4"
               />
               <div className="flex flex-1 flex-col p-6 sm:p-8">
                 <Eyebrow>{livro.etiqueta}</Eyebrow>
