@@ -103,7 +103,7 @@ function AtendimentoPage() {
       <AtendimentoHero item={item} conteudo={conteudo} fotoJessica={item.imagemHero ?? fotoJessica} />
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
-      <Etapas item={item} />
+      <Etapas item={item} conteudo={conteudo} />
       <ImagemDoAcompanhamento item={item} conteudo={conteudo} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
@@ -289,7 +289,7 @@ function ImagemDoAcompanhamento({ item, conteudo }: { item: Atendimento; conteud
           className="aspect-[3/2] min-h-72 w-full object-cover sm:min-h-96"
         />
         <div className="border-l-2 border-primary pb-2 pl-6 lg:mb-8">
-          <p className="eyebrow text-primary">Acompanhamento individualizado</p>
+          <p className="eyebrow text-primary">{conteudo.tituloImagem}</p>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             {conteudo.textoImagem}
           </p>
