@@ -86,8 +86,8 @@ function LivroPage() {
           <img
             src={livro.imagem}
             alt={livro.titulo}
-            width={1280}
-            height={2080}
+            width={1171}
+            height={1682}
             className="w-full object-contain lg:sticky lg:top-32"
           />
           <div>
