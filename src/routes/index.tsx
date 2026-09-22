@@ -359,6 +359,7 @@ function Inicio() {
         </div>
       </Section>
 
+      <Avaliacoes className="bg-background" />
     </>
   );
 }
