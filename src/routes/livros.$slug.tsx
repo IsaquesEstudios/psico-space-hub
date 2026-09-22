@@ -49,13 +49,17 @@ export const Route = createFileRoute("/livros/$slug")({
               "@type": "Organization",
               name: `${site.nome} — ${site.subtitulo}`,
             },
-            offers: {
-              "@type": "Offer",
-              price: livro.investimento.replace("R$", "").trim().replace(",", "."),
-              priceCurrency: "BRL",
-              url: livro.compraUrl,
-              availability: "https://schema.org/InStock",
-            },
+            ...(livro.investimento.includes("R$")
+              ? {
+                  offers: {
+                    "@type": "Offer",
+                    price: livro.investimento.replace("R$", "").trim().replace(",", "."),
+                    priceCurrency: "BRL",
+                    url: livro.compraUrl,
+                    availability: "https://schema.org/InStock",
+                  },
+                }
+              : {}),
           }),
         },
       ],
@@ -117,9 +121,11 @@ function LivroPage() {
                 rel="noreferrer"
                 className="eyebrow mt-8 inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
               >
-                Comprar e-book
+                {livro.compraTexto ?? "Comprar e-book"}
               </a>
-              <p className="mt-4 text-xs text-muted-foreground">A compra é realizada em uma plataforma externa segura.</p>
+              <p className="mt-4 text-xs text-muted-foreground">
+                {livro.compraNota ?? "A compra é realizada em uma plataforma externa segura."}
+              </p>
             </div>
 
             <h2 className="mt-12 font-display text-3xl">O que você encontra no material</h2>
