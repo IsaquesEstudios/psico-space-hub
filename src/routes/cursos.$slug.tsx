@@ -146,6 +146,7 @@ function CursoPage() {
             <p className="mt-4 text-xs text-muted-foreground">
               A compra é realizada em uma plataforma externa segura.
             </p>
+            </div>
           </aside>
         </div>
       </Section>
