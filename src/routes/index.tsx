@@ -292,7 +292,7 @@ function Inicio() {
           className="absolute inset-0 bg-deep/55 lg:bg-gradient-to-r lg:from-deep/85 lg:via-deep/40 lg:to-deep/10"
         />
         <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2">
-          <div className="py-16 lg:py-24">
+          <div className="py-20 lg:py-32">
             <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl">
               Venha conhecer nossa clínica
