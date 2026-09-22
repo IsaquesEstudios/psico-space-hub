@@ -55,14 +55,14 @@ function LivrosIndex() {
       <Section>
         <div className="grid gap-10 lg:grid-cols-3">
           {livros.map((livro) => (
-            <article key={livro.slug} className="flex flex-col bg-muted">
+            <article key={livro.slug} className="flex flex-col bg-muted/60">
               <img
                 src={livro.imagem}
                 alt={livro.titulo}
                 loading="lazy"
                 width={606}
                 height={828}
-                className="h-[430px] w-full bg-background object-contain p-5"
+                className="h-[430px] w-full object-contain p-5"
               />
               <div className="flex flex-1 flex-col p-6 sm:p-8">
                 <Eyebrow>{livro.etiqueta}</Eyebrow>

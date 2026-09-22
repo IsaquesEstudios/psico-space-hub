@@ -254,7 +254,7 @@ function Inicio() {
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {livros.map((livro) => (
             <Link key={livro.slug} to="/livros/$slug" params={{ slug: livro.slug }} className="group block">
-              <div className="overflow-hidden bg-background">
+              <div className="overflow-hidden">
                 <img
                   src={livro.imagem}
                   alt={livro.titulo}
