@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide-react";
 
+import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, Section } from "@/components/site/bits";
 import { atendimentos, brandShareImage, cursos, destaques, images, livros, posts, site } from "@/data/site";
 
