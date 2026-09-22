@@ -14,6 +14,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { MapaLocalizacao } from "../components/site/bits";
+
 
 function NotFoundComponent() {
   return (
@@ -188,7 +190,9 @@ function RootComponent() {
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
+        <MapaLocalizacao />
         <Footer />
+
       </div>
     </QueryClientProvider>
   );
