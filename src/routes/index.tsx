@@ -285,11 +285,11 @@ function Inicio() {
           loading="lazy"
           width={1920}
           height={1275}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[center_25%]"
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-deep/85 lg:bg-gradient-to-r lg:from-deep lg:via-deep/90 lg:to-deep/50"
+          className="absolute inset-0 bg-deep/55 lg:bg-gradient-to-r lg:from-deep/85 lg:via-deep/40 lg:to-deep/10"
         />
         <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2">
           <div className="py-16 lg:py-24">
