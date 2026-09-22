@@ -110,10 +110,12 @@ function LivroPage() {
                   <dt className="text-xs text-muted-foreground">Público</dt>
                   <dd className="font-display text-xl">{livro.publico}</dd>
                 </div>
-                <div>
-                  <dt className="text-xs text-muted-foreground">Investimento</dt>
-                  <dd className="font-display text-xl">{livro.investimento}</dd>
-                </div>
+                {livro.investimento !== "Sob consulta" && (
+                  <div>
+                    <dt className="text-xs text-muted-foreground">Investimento</dt>
+                    <dd className="font-display text-xl">{livro.investimento}</dd>
+                  </div>
+                )}
               </dl>
               <a
                 href={livro.compraUrl}

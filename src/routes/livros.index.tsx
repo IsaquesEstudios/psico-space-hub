@@ -73,10 +73,12 @@ function LivrosIndex() {
                     <dt>Formato:</dt>
                     <dd className="text-foreground">{livro.formato}</dd>
                   </div>
-                  <div className="flex gap-2">
-                    <dt>Valor:</dt>
-                    <dd className="text-foreground">{livro.investimento}</dd>
-                  </div>
+                  {livro.investimento !== "Sob consulta" && (
+                    <div className="flex gap-2">
+                      <dt>Valor:</dt>
+                      <dd className="text-foreground">{livro.investimento}</dd>
+                    </div>
+                  )}
                 </dl>
                 <div className="mt-8 flex flex-wrap items-center gap-5 pt-2">
                   <a
