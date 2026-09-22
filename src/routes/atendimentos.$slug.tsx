@@ -148,6 +148,11 @@ function AtendimentoHero({
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
               {conteudo.chamada}
             </p>
+            {conteudo.chamadaComplementar && (
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-deep-foreground/85 sm:text-lg">
+                {conteudo.chamadaComplementar}
+              </p>
+            )}
             <div className="mt-8">
               <WhatsAppButton href={site.whatsapp} label="Falar com equipe Evoluta" />
             </div>
@@ -225,7 +230,7 @@ function SituacoesEObjetivos({
       <div className="mt-16 border-t border-border pt-12">
         <p className="eyebrow text-muted-foreground">Indicado para</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {item.paraQuem.map((perfil) => (
+          {item.paraQuem.slice(item.slug === "avaliacao-neuropsicologica" ? 1 : 0).map((perfil) => (
             <div key={perfil} className="flex gap-4 border-l-2 border-primary bg-background p-5">
               <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
               <p className="text-sm leading-relaxed">{perfil}</p>

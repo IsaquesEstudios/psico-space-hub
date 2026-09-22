@@ -43,7 +43,7 @@ export function Footer() {
             </li>
             <li>
               <Link to="/sobre" className="transition-colors hover:text-primary">
-                Sobre
+                Sobre nós
               </Link>
             </li>
             <li>

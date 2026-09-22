@@ -7,7 +7,7 @@ import psicologiaInfantilImg from "@/assets/servico-psicologia-infantil-1.jpg";
 import psicologiaInfantilImg2 from "@/assets/servico-psicologia-infantil-2.jpg";
 import psicologiaInfantilHero from "@/assets/hero-servico-psicologia-infantil.jpg";
 import intervencaoAbaImg from "@/assets/servico-intervencao-aba-1.jpg";
-import intervencaoAbaImg2 from "@/assets/servico-intervencao-aba-2.jpg";
+import intervencaoAbaImg2 from "@/assets/servico-intervencao-aba-2-corrigida.png";
 import intervencaoAbaHero from "@/assets/hero-servico-intervencao-aba.jpg";
 import avaliacaoNeuropsicopedagogicaImg from "@/assets/servico-avaliacao-neuropsicopedagogica-1.jpg";
 import avaliacaoNeuropsicopedagogicaImg2 from "@/assets/servico-avaliacao-neuropsicopedagogica-2.jpg";
@@ -539,6 +539,7 @@ export const atendimentos: Atendimento[] = [
 
 export type ConteudoAtendimento = {
   chamada: string;
+  chamadaComplementar?: string;
   tituloApresentacao: string;
   introducao: string;
   tituloSituacoes: string;
@@ -559,6 +560,8 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   "avaliacao-neuropsicologica": {
     chamada:
       "Uma avaliação para entender o funcionamento cognitivo, emocional e comportamental com profundidade — e transformar dúvidas sobre aprendizagem, atenção, memória ou desenvolvimento em direcionamentos mais claros.",
+    chamadaComplementar:
+      "Crianças, adolescentes, adultos e idosos com dúvidas sobre atenção, memória, aprendizagem, comportamento ou desenvolvimento.",
     tituloApresentacao: "O Método Evoluta olha para além do teste",
     introducao:
       "O Método de Avaliação Neuropsicológica Evoluta combina entrevista clínica, escolha criteriosa de instrumentos, análise do histórico e integração dos resultados. Essa combinação permite compreender não apenas o desempenho em cada tarefa, mas o que esse desempenho revela sobre o dia a dia do paciente.",
@@ -889,13 +892,12 @@ export const destaques = [
 
 export const fundadora = {
   nome: "Jéssica Pelissari",
-  papel: "Psicóloga • Neuropsicóloga • Fundadora e Diretora da Clínica Evoluta",
+  papel: "Psicóloga • Neuropsicóloga • Especialista em Neuropsicologia • Fundadora da Clínica Evoluta",
   imagem: jessicaAsset.url,
   proposito:
-    "Minha trajetória profissional é construída a partir de um propósito: compreender cada pessoa em sua singularidade e transformar conhecimento científico em possibilidades reais de desenvolvimento.",
+    "Psicóloga, neuropsicóloga, especialista em Neuropsicologia e fundadora da Clínica Evoluta — Desenvolvimento Infantil.",
   intro: [
-    "Sou psicóloga e neuropsicóloga, com formação e experiência voltadas especialmente para neurodesenvolvimento, aprendizagem, avaliação neuropsicológica e saúde mental.",
-    "Ao longo da minha trajetória, busquei unir conhecimento científico, experiência clínica e um olhar humanizado para compreender as dificuldades, identificar potencialidades e contribuir para intervenções mais assertivas.",
+    "Sua trajetória profissional é marcada pela atuação clínica, avaliação neuropsicológica, desenvolvimento infantil, transtornos do neurodesenvolvimento, aprendizagem e formação de profissionais da área.",
   ],
   formacao: [
     "Graduação em Psicologia",
@@ -903,26 +905,54 @@ export const fundadora = {
     "Pós-graduação em Terapia Cognitivo-Comportamental na Infância e Adolescência",
     "Pós-graduação em Intervenção ABA aplicada ao Transtorno do Espectro Autista e à Deficiência Intelectual",
     "Especialista em Neuropsicologia pelo Conselho Federal de Psicologia",
-  ],
-  atuacao: [
     "Idealizadora, fundadora e diretora da Clínica Evoluta — Desenvolvimento Infantil, em São Gabriel da Palha/ES",
-    "Atuação em avaliação neuropsicológica, com experiência em diferentes fases do desenvolvimento",
-    "Atuação com transtornos do neurodesenvolvimento, dificuldades de aprendizagem e demandas cognitivas, emocionais e comportamentais",
+    "Atuação em avaliação neuropsicológica em diferentes fases do desenvolvimento",
+    "Experiência com transtornos do neurodesenvolvimento, dificuldades de aprendizagem e demandas cognitivas, emocionais e comportamentais",
     "Supervisora e mentora de profissionais da área de Neuropsicologia",
+    "Criadora do Método de Avaliação Neuropsicológica Evoluta, desenvolvido a partir de sua experiência clínica",
   ],
   obras: [
-    { titulo: "Vozes da Neurodiversidade", nota: "Coautoria" },
-    { titulo: "Psicologia Clínica: O que não te ensinaram na universidade", nota: "Lançamento 2026" },
-    { titulo: "TDAH na Escola", nota: "Lançamento 2026" },
+    {
+      titulo: "Vozes da Neurodiversidade",
+      nota: "Uma obra que reúne diferentes perspectivas sobre neurodiversidade, desenvolvimento e inclusão.",
+    },
+    {
+      titulo: "TDAH na Escola",
+      nota: "Lançamento em 2026 — compreensão do TDAH no contexto escolar, da identificação ao acompanhamento.",
+    },
+    {
+      titulo: "Psicologia Clínica: o que não te ensinaram na universidade",
+      nota: "Lançamento em 2026 — desafios, aprendizados e reflexões que ultrapassam a formação acadêmica.",
+    },
   ],
-  manifesto: [
-    "Acredito que uma avaliação neuropsicológica não deve se resumir a números, testes ou diagnósticos.",
-    "Por trás de cada resultado existe uma pessoa, uma história, uma família e um contexto que precisam ser compreendidos.",
-  ],
-  citacao:
-    "Meu trabalho é transformar avaliação em compreensão, compreensão em direcionamento e conhecimento em possibilidades de desenvolvimento.",
-  assinatura: "Ciência, experiência e acolhimento em cada etapa.",
+  autoriaIntroducao:
+    "Além da atuação clínica, Jéssica Pelissari também participa da produção e disseminação de conhecimento na área da Psicologia e Neuropsicologia.",
+  fechamento:
+    "Sua atuação une ciência, prática clínica, experiência e formação, com o propósito de contribuir para uma Psicologia cada vez mais qualificada, individualizada e conectada às necessidades reais das pessoas.",
 };
+
+export const sobreClinica = [
+  {
+    titulo: "Equipe multidisciplinar",
+    texto:
+      "Psicologia, Neuropsicologia, Neuropsicopedagogia, Fonoaudiologia e ABA trabalham de forma integrada para oferecer um cuidado completo.",
+  },
+  {
+    titulo: "Avaliar para compreender",
+    texto:
+      "As avaliações neuropsicológicas são realizadas por meio do Método de Avaliação Neuropsicológica Evoluta, integrando cognição, aprendizagem, emoções e comportamento para compreender cada caso e direcionar as melhores estratégias.",
+  },
+  {
+    titulo: "Cada pessoa é única",
+    texto:
+      "O atendimento é individualizado e respeita a história, as necessidades, as potencialidades e o ritmo de cada paciente, a partir de uma avaliação cuidadosa e personalizada.",
+  },
+  {
+    titulo: "Cuidado que se conecta",
+    texto:
+      "Quando necessário, integramos família, escola e outros profissionais. Nossa equipe é supervisionada para construir estratégias alinhadas e promover um cuidado integrado em diferentes contextos.",
+  },
+];
 
 export const depoimentos = [
   {
