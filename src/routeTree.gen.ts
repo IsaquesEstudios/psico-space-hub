@@ -14,6 +14,7 @@ import { Route as AtendimentosRouteImport } from './routes/atendimentos'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CursosRouteImport } from './routes/cursos'
+import { Route as LivrosRouteImport } from './routes/livros'
 import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
@@ -23,6 +24,8 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CursosIndexRouteImport } from './routes/cursos.index'
 import { Route as CursosSlugRouteImport } from './routes/cursos.$slug'
+import { Route as LivrosIndexRouteImport } from './routes/livros.index'
+import { Route as LivrosSlugRouteImport } from './routes/livros.$slug'
 import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
 import { Route as NovidadesSlugRouteImport } from './routes/novidades.$slug'
 
@@ -49,6 +52,11 @@ const ContatoRoute = ContatoRouteImport.update({
 const CursosRoute = CursosRouteImport.update({
   id: '/cursos',
   path: '/cursos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LivrosRoute = LivrosRouteImport.update({
+  id: '/livros',
+  path: '/livros',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NovidadesRoute = NovidadesRouteImport.update({
@@ -96,6 +104,16 @@ const CursosSlugRoute = CursosSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => CursosRoute,
 } as any)
+const LivrosIndexRoute = LivrosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LivrosRoute,
+} as any)
+const LivrosSlugRoute = LivrosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => LivrosRoute,
+} as any)
 const NovidadesIndexRoute = NovidadesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -113,16 +131,19 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
+  '/livros': typeof LivrosRouteWithChildren
   '/novidades': typeof NovidadesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
+  '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
+  '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -133,10 +154,12 @@ export interface FileRoutesByTo {
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
+  '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
   '/atendimentos': typeof AtendimentosIndexRoute
   '/blog': typeof BlogIndexRoute
   '/cursos': typeof CursosIndexRoute
+  '/livros': typeof LivrosIndexRoute
   '/novidades': typeof NovidadesIndexRoute
 }
 export interface FileRoutesById {
@@ -146,16 +169,19 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
+  '/livros': typeof LivrosRouteWithChildren
   '/novidades': typeof NovidadesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
+  '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
+  '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
 }
 export interface FileRouteTypes {
@@ -166,16 +192,19 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/cursos'
+    | '/livros'
     | '/novidades'
     | '/sitemap.xml'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
+    | '/livros/$slug'
     | '/novidades/$slug'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
+    | '/livros/'
     | '/novidades/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -186,10 +215,12 @@ export interface FileRouteTypes {
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
+    | '/livros/$slug'
     | '/novidades/$slug'
     | '/atendimentos'
     | '/blog'
     | '/cursos'
+    | '/livros'
     | '/novidades'
   id:
     | '__root__'
@@ -198,16 +229,19 @@ export interface FileRouteTypes {
     | '/blog'
     | '/contato'
     | '/cursos'
+    | '/livros'
     | '/novidades'
     | '/sitemap.xml'
     | '/sobre'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
+    | '/livros/$slug'
     | '/novidades/$slug'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
+    | '/livros/'
     | '/novidades/'
   fileRoutesById: FileRoutesById
 }
@@ -217,6 +251,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRouteWithChildren
+  LivrosRoute: typeof LivrosRouteWithChildren
   NovidadesRoute: typeof NovidadesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
@@ -257,6 +292,13 @@ declare module '@tanstack/react-router' {
       path: '/cursos'
       fullPath: '/cursos'
       preLoaderRoute: typeof CursosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/livros': {
+      id: '/livros'
+      path: '/livros'
+      fullPath: '/livros'
+      preLoaderRoute: typeof LivrosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/novidades': {
@@ -322,6 +364,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CursosSlugRouteImport
       parentRoute: typeof CursosRoute
     }
+    '/livros/': {
+      id: '/livros/'
+      path: '/'
+      fullPath: '/livros/'
+      preLoaderRoute: typeof LivrosIndexRouteImport
+      parentRoute: typeof LivrosRoute
+    }
+    '/livros/$slug': {
+      id: '/livros/$slug'
+      path: '/$slug'
+      fullPath: '/livros/$slug'
+      preLoaderRoute: typeof LivrosSlugRouteImport
+      parentRoute: typeof LivrosRoute
+    }
     '/novidades/': {
       id: '/novidades/'
       path: '/'
@@ -378,6 +434,19 @@ const CursosRouteChildren: CursosRouteChildren = {
 const CursosRouteWithChildren =
   CursosRoute._addFileChildren(CursosRouteChildren)
 
+interface LivrosRouteChildren {
+  LivrosSlugRoute: typeof LivrosSlugRoute
+  LivrosIndexRoute: typeof LivrosIndexRoute
+}
+
+const LivrosRouteChildren: LivrosRouteChildren = {
+  LivrosSlugRoute: LivrosSlugRoute,
+  LivrosIndexRoute: LivrosIndexRoute,
+}
+
+const LivrosRouteWithChildren =
+  LivrosRoute._addFileChildren(LivrosRouteChildren)
+
 interface NovidadesRouteChildren {
   NovidadesSlugRoute: typeof NovidadesSlugRoute
   NovidadesIndexRoute: typeof NovidadesIndexRoute
@@ -398,6 +467,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRouteWithChildren,
+  LivrosRoute: LivrosRouteWithChildren,
   NovidadesRoute: NovidadesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,

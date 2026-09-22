@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check } from "lucide-react";
 
-import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
+import { Eyebrow, MapaLocalizacao, Section } from "@/components/site/bits";
 import { brandShareImage, cursos, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
@@ -24,8 +24,10 @@ export const Route = createFileRoute("/cursos/$slug")({
         { name: "description", content: curso.resumo },
         { property: "og:title", content: titulo },
         { property: "og:description", content: curso.resumo },
+        { property: "og:type", content: "website" },
         { property: "og:url", content: url },
         { property: "og:image", content: brandShareImage },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: brandShareImage },
       ],
       links: [{ rel: "canonical", href: url }],
