@@ -97,12 +97,14 @@ export function Header() {
         </nav>
 
         <div className="hidden shrink-0 xl:block">
-          <Link
-            to="/contato"
+          <a
+            href={site.whatsapp}
+            target="_blank"
+            rel="noreferrer"
             className="eyebrow border border-deep-foreground/25 px-5 py-3 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
           >
             Agendar conversa
-          </Link>
+          </a>
         </div>
 
         <button

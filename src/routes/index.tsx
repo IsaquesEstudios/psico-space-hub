@@ -82,12 +82,14 @@ function Inicio() {
               cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
             </p>
             <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                to="/contato"
+              <a
+                href={site.whatsapp}
+                target="_blank"
+                rel="noreferrer"
                 className="eyebrow bg-primary px-8 py-4 text-primary-foreground transition-opacity hover:opacity-90"
               >
                 Agendar conversa
-              </Link>
+              </a>
               <Link
                 to="/atendimentos"
                 className="eyebrow inline-flex items-center gap-2 text-deep-foreground/75 transition-colors hover:text-primary"
