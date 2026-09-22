@@ -114,7 +114,12 @@ export const site = {
   telefone: "(27) 99938-6386",
   telefoneLink: "tel:+5527999386386",
   email: "contato@clinicaevoluta.com.br",
-  instagram: "@clinicaevoluta",
+  instagram: "@evolutaclinica",
+  instagramUrl: "https://www.instagram.com/evolutaclinica/",
+  youtube: "@neuropsicologajessicapelissari",
+  youtubeUrl: "https://www.youtube.com/@neuropsicologajessicapelissari",
+  tiktok: "@evoluta.clinica",
+  tiktokUrl: "https://www.tiktok.com/@evoluta.clinica",
   cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",
   enderecoMapa: "R. Antônio Borgo, 230 - Centro, São Gabriel da Palha - ES, 29780-000",
 } as const;
