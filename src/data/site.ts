@@ -41,6 +41,8 @@ import blogMatematica from "@/assets/blog-matematica.jpg";
 import blogHero from "@/assets/blog-hero.jpg";
 import novidadesHero from "@/assets/novidades-hero.jpg";
 import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.json";
+import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infantil-na-pratica.jpeg.asset.json";
+import ebookEntendendoTdah from "@/assets/ebook-entendendo-tdah.jpeg.asset.json";
 
 export const brandShareImage =
   "https://id-preview--deb759cf-cdb0-4e38-afae-699e1737adb9.lovable.app/__l5e/assets-v1/50c90749-1ebe-4ab2-a6d1-8badb534742a/logo-social.jpg";
@@ -988,78 +990,92 @@ export type Curso = {
   formato: string;
   investimento: string;
   publico: string;
+  compraUrl: string;
+  secoes: { titulo: string; texto: string }[];
   conteudo: string[];
   texto: string[];
 };
 
 export const cursos: Curso[] = [
   {
-    slug: "avaliacao-neuropsicologica-na-pratica",
-    titulo: "Avaliação neuropsicológica na prática",
-    etiqueta: "Turma aberta",
+    slug: "desenvolvimento-infantil-na-pratica",
+    titulo: "Desenvolvimento Infantil na Prática",
+    etiqueta: "Curso online",
     resumo:
-      "Do encaminhamento ao laudo: como conduzir um processo de avaliação com raciocínio clínico e devolutivas claras.",
-    imagem: jessicaAsset.url,
-    duracao: "8 encontros de 1h30",
-    formato: "Online, ao vivo, com gravações",
-    investimento: "Sob consulta",
-    publico: "Psicólogos e estudantes de Psicologia",
+      "Formação prática para compreender o desenvolvimento infantil, reconhecer sinais de alerta e fazer direcionamentos mais seguros.",
+    imagem: cursoDesenvolvimentoInfantil.url,
+    duracao: "Acesso online pela plataforma",
+    formato: "Curso online",
+    investimento: "R$ 97,00",
+    publico: "Pais, professores e profissionais da saúde",
+    compraUrl: "https://pay.kiwify.com.br/nPM8b7k",
+    secoes: [
+      {
+        titulo: "O que é?",
+        texto:
+          "Uma formação prática que apresenta os principais aspectos do desenvolvimento infantil e ensina a reconhecer sinais de alerta e possíveis dificuldades ao longo da infância.",
+      },
+      {
+        titulo: "Para que serve?",
+        texto:
+          "Para ampliar o conhecimento sobre o desenvolvimento infantil, facilitar a identificação de sinais que merecem atenção e orientar sobre quando e como buscar avaliação e acompanhamento especializado.",
+      },
+      {
+        titulo: "Para quem é?",
+        texto:
+          "Voltada para pais, professores e profissionais da saúde que desejam compreender melhor o desenvolvimento das crianças e ter mais segurança para identificar sinais de alerta e realizar os direcionamentos adequados.",
+      },
+    ],
     conteudo: [
-      "Entrevista inicial e levantamento de hipóteses",
-      "Escolha e aplicação dos instrumentos",
-      "Integração dos dados e raciocínio clínico",
-      "Escrita de laudo em linguagem acessível",
-      "Devolutiva para família e escola",
+      "Principais marcos e aspectos do desenvolvimento infantil",
+      "Sinais de alerta que merecem atenção ao longo da infância",
+      "Possíveis dificuldades que podem aparecer no desenvolvimento",
+      "Quando buscar avaliação e acompanhamento especializado",
+      "Direcionamentos mais seguros para família, escola e saúde",
     ],
     texto: [
-      "Um curso voltado a quem já atua ou quer atuar em avaliação neuropsicológica e sente falta de um caminho claro entre a coleta dos dados e a conclusão do caso.",
-      "Cada encontro traz discussão de casos e material de apoio para usar no próprio consultório.",
+      "A formação Desenvolvimento Infantil na Prática foi criada para transformar conhecimento técnico em orientações acessíveis e aplicáveis no cotidiano de quem convive com crianças.",
+      "O curso ajuda a observar o desenvolvimento com mais clareza, entender quando uma dificuldade precisa de atenção e saber como buscar apoio especializado sem esperar que os sinais se agravem.",
     ],
   },
+];
+
+export type Livro = {
+  slug: string;
+  titulo: string;
+  etiqueta: string;
+  resumo: string;
+  imagem: string;
+  formato: string;
+  investimento: string;
+  publico: string;
+  compraUrl: string;
+  texto: string[];
+  destaques: string[];
+};
+
+export const livros: Livro[] = [
   {
-    slug: "funcoes-executivas-na-pratica",
-    titulo: "Funções executivas na prática",
-    etiqueta: "Novo",
+    slug: "entendendo-o-tdah",
+    titulo: "Entendendo o TDAH",
+    etiqueta: "E-book",
     resumo:
-      "Atenção, planejamento e autorregulação com atividades aplicáveis em consultório e em sala de aula.",
-    imagem: jessicaAsset.url,
-    duracao: "6 encontros de 2h",
-    formato: "Online, ao vivo",
-    investimento: "Sob consulta",
-    publico: "Educadores, terapeutas e profissionais da saúde",
-    conteudo: [
-      "O que são funções executivas, sem jargão",
-      "Como observar e registrar dificuldades",
-      "Atividades de foco e memória de trabalho",
-      "Rotinas visuais construídas com a pessoa atendida",
-      "Casos comentados em grupo",
-    ],
+      "Um material em linguagem leve e acessível para compreender o TDAH na infância e adolescência com base em evidências e prática clínica.",
+    imagem: ebookEntendendoTdah.url,
+    formato: "E-book digital",
+    investimento: "R$ 27,90",
+    publico: "Famílias, educadores e profissionais que acompanham crianças com TDAH",
+    compraUrl: "https://pay.kiwify.com.br/5UPH5Xt",
     texto: [
-      "Focado em prática: cada aula termina com um protocolo pronto para usar no atendimento ou na aula.",
-      "Inclui material de apoio imprimível e encontro extra de supervisão em grupo.",
+      "Escrito pela psicóloga e neuropsicóloga Jéssica Pelissari, o e-book traduz a ciência do TDAH em uma linguagem leve, clara e acessível.",
+      "Com base em evidências e na prática clínica, o material reúne informações, reflexões e estratégias para compreender e apoiar o desenvolvimento emocional e cognitivo de crianças com TDAH.",
+      "A proposta é unir conhecimento técnico e sensibilidade humana para ajudar famílias, educadores e profissionais a enxergarem além da distração.",
     ],
-  },
-  {
-    slug: "tdah-na-escola",
-    titulo: "TDAH na escola",
-    etiqueta: "Para escolas",
-    resumo:
-      "Como compreender o TDAH em sala de aula e aplicar adaptações viáveis, sem sobrecarregar o professor.",
-    imagem: jessicaAsset.url,
-    duracao: "4 encontros de 1h30",
-    formato: "Online, ao vivo",
-    investimento: "Sob consulta",
-    publico: "Professores, coordenadores e famílias",
-    conteudo: [
-      "O que o TDAH afeta na aprendizagem",
-      "Atenção, impulsividade e funções executivas na prática",
-      "Adaptações simples de rotina e avaliação",
-      "Combinados entre escola e família",
-      "Quando encaminhar para avaliação",
-    ],
-    texto: [
-      "Um percurso curto para equipes escolares que convivem diariamente com estudantes desatentos, agitados ou desorganizados.",
-      "As orientações são concretas: o que dizer, como dividir a tarefa e como registrar o progresso.",
+    destaques: [
+      "Explicações acessíveis sobre TDAH na infância e adolescência",
+      "Reflexões para compreender comportamento, atenção e desenvolvimento",
+      "Estratégias de apoio para o cotidiano familiar e escolar",
+      "Conteúdo escrito por Jéssica Pelissari, psicóloga e neuropsicóloga",
     ],
   },
 ];

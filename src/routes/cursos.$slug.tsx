@@ -1,8 +1,8 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check } from "lucide-react";
 
-import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, cursos, fotosJessica, site } from "@/data/site";
+import { Eyebrow, MapaLocalizacao, Section } from "@/components/site/bits";
+import { brandShareImage, cursos, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
   staticData: { sitemap: true },
@@ -24,8 +24,10 @@ export const Route = createFileRoute("/cursos/$slug")({
         { name: "description", content: curso.resumo },
         { property: "og:title", content: titulo },
         { property: "og:description", content: curso.resumo },
+        { property: "og:type", content: "website" },
         { property: "og:url", content: url },
         { property: "og:image", content: brandShareImage },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: brandShareImage },
       ],
       links: [{ rel: "canonical", href: url }],
@@ -64,17 +66,14 @@ export const Route = createFileRoute("/cursos/$slug")({
 
 function CursoPage() {
   const { curso } = Route.useLoaderData();
-  const indice = cursos.findIndex((item) => item.slug === curso.slug);
-  const fotoJessica = fotosJessica.cursosDetalhes[indice] ?? fotosJessica.cursos;
-
   return (
     <>
       <img
-        src={fotoJessica}
-        alt={`Jéssica, da Clínica Evoluta — ${curso.titulo}`}
-        width={1080}
-        height={720}
-        className="h-72 w-full object-cover object-center lg:h-[500px]"
+        src={curso.imagem}
+        alt={curso.titulo}
+        width={1373}
+        height={1146}
+        className="h-72 w-full bg-muted object-contain object-center lg:h-[560px]"
       />
 
       <Section>
@@ -95,6 +94,15 @@ function CursoPage() {
                 {p}
               </p>
             ))}
+
+            <div className="mt-10 grid gap-px bg-border sm:grid-cols-3">
+              {curso.secoes.map((secao) => (
+                <div key={secao.titulo} className="bg-muted p-6">
+                  <h2 className="font-display text-2xl">{secao.titulo}</h2>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{secao.texto}</p>
+                </div>
+              ))}
+            </div>
 
             <h2 className="mt-12 font-display text-3xl">Conteúdo do curso</h2>
             <ul className="mt-6 space-y-3">
@@ -128,10 +136,17 @@ function CursoPage() {
               </div>
             </dl>
             <div className="mt-8">
-              <WhatsAppButton href={site.whatsapp} label="Quero me inscrever" />
+              <a
+                href={curso.compraUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
+              >
+                Comprar curso
+              </a>
             </div>
             <p className="mt-4 text-xs text-muted-foreground">
-              Respondo com datas, valores e forma de pagamento.
+              A compra é realizada em uma plataforma externa segura.
             </p>
           </aside>
         </div>

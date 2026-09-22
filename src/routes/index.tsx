@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide-react";
 
 import { Eyebrow, Section } from "@/components/site/bits";
-import { atendimentos, brandShareImage, cursos, destaques, images, posts, site } from "@/data/site";
+import { atendimentos, brandShareImage, cursos, destaques, images, livros, posts, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -203,7 +203,7 @@ function Inicio() {
           </Link>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {cursos.slice(0, 3).map((curso) => (
+          {cursos.map((curso) => (
             <Link
               key={curso.slug}
               to="/cursos/$slug"
@@ -226,6 +226,46 @@ function Inicio() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{curso.resumo}</p>
               <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
                 Conhecer o curso
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Livros */}
+      <Section className="bg-muted">
+        <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+          <div className="min-w-0">
+            <Eyebrow>Livros</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">E-books para aprofundar o cuidado</h2>
+          </div>
+          <Link
+            to="/livros"
+            className="eyebrow inline-flex items-center gap-2 transition-colors hover:text-primary sm:pb-2"
+          >
+            Ver todos
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {livros.map((livro) => (
+            <Link key={livro.slug} to="/livros/$slug" params={{ slug: livro.slug }} className="group block">
+              <div className="overflow-hidden bg-background">
+                <img
+                  src={livro.imagem}
+                  alt={livro.titulo}
+                  loading="lazy"
+                  width={606}
+                  height={828}
+                  className="h-[420px] w-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <p className="eyebrow mt-5 text-primary">{livro.etiqueta}</p>
+              <h3 className="mt-3 font-display text-3xl">{livro.titulo}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{livro.resumo}</p>
+              <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
+                Conhecer o e-book
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
