@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Phone, Youtube } from "lucide-react";
+import { TikTokIcon } from "./TikTokIcon";
 
 import logoAsset from "@/assets/logo-l.png.asset.json";
 import { atendimentos, site } from "@/data/site";
