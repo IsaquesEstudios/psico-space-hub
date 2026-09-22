@@ -129,7 +129,7 @@ export const mapaLinkUrl = `https://www.google.com/maps/search/?api=1&query=${en
 export const h1Atendimentos: Record<string, string> = {
   "avaliacao-neuropsicologica": "Avaliação neuropsicológica em São Gabriel da Palha",
   "psicologia-infantil-tcc": "Psicologia infantil com TCC em São Gabriel da Palha",
-  "intervencao-aba": "Intervenção baseada em ABA em São Gabriel da Palha",
+  "intervencao-aba": "Intervenção ABA em São Gabriel da Palha",
   "avaliacao-neuropsicopedagogica": "Avaliação neuropsicopedagógica em São Gabriel da Palha",
   "fonoaudiologia-infantil": "Fonoaudiologia infantil em São Gabriel da Palha",
   "fonoaudiologia-adolescentes-adultos-idosos":
