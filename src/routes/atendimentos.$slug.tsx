@@ -1,6 +1,7 @@
 import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
+import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import {
   atendimentos,
