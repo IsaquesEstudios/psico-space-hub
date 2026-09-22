@@ -1,6 +1,7 @@
 import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
+import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
 import {
   atendimentos,
@@ -107,6 +108,7 @@ function AtendimentoPage() {
       <ImagemDoAcompanhamento item={item} conteudo={conteudo} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
+      <Avaliacoes className="bg-background" />
       <SobreJessica />
       <OutrosAtendimentos item={item} />
       <MapaLocalizacao />

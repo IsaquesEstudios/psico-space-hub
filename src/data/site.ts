@@ -126,6 +126,59 @@ export const mapaLinkUrl = `https://www.google.com/maps/search/?api=1&query=${en
   site.enderecoMapa,
 )}`;
 
+/** Link público da ficha da clínica no Google, com todas as avaliações. */
+export const googleAvaliacoesUrl = "https://share.google/pnsxvT8kh2ZHiSSsz";
+
+export type Avaliacao = {
+  nome: string;
+  quando: string;
+  nota: number;
+  texto: string;
+};
+
+/** Avaliações publicadas por pacientes e familiares no Google. */
+export const avaliacoes: Avaliacao[] = [
+  {
+    nome: "Isabel Natividade",
+    quando: "7 meses atrás",
+    nota: 5,
+    texto:
+      "Meu filho é autista e eu estava desesperada com a situação, foi quando me indicaram a clínica. Pensa numa profissional competente, dedicada. Se for falar tudo ficaria horas... estou maravilhada com a evolução do comportamento do Augusto. Super indico.",
+  },
+  {
+    nome: "Marina Caran",
+    quando: "6 meses atrás",
+    nota: 5,
+    texto:
+      "Minha filha Lunna passou por atendimento com a neuropsicóloga Natália Broziguini Dalcim e tivemos uma experiência muito positiva. Ela foi muito acolhedora, paciente e demonstrou muito carinho no atendimento com minha filha. Agradeço muito a ela pelo atendimento da minha filha.",
+  },
+  {
+    nome: "Gisele Mauri Bettin",
+    quando: "1 mês atrás",
+    nota: 5,
+    texto:
+      "Até agora estamos adorando, está sendo ótimo. Geovana também está gostando muito e já obteve alguns resultados positivos.",
+  },
+  {
+    nome: "Stefani Santos",
+    quando: "6 meses atrás",
+    nota: 5,
+    texto: "Estou tendo uma boa experiência realizando minha avaliação, com uma ótima profissional.",
+  },
+  {
+    nome: "Andressa Sabadini",
+    quando: "4 semanas atrás",
+    nota: 5,
+    texto: "Excelente atendimento, excelentes profissionais. Nota 1000.",
+  },
+  {
+    nome: "Silvani Oliveira Mattos",
+    quando: "um mês atrás",
+    nota: 5,
+    texto: "São profissionais excelentes. Ótima clínica.",
+  },
+];
+
 /** Termos de busca usados como H1 das páginas de atendimento (SEO local). */
 export const h1Atendimentos: Record<string, string> = {
   "avaliacao-neuropsicologica": "Avaliação neuropsicológica em São Gabriel da Palha",
