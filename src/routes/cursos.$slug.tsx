@@ -107,7 +107,13 @@ function CursoPage() {
             </ul>
           </div>
 
-          <aside className="self-start bg-muted p-6 sm:p-8">
+          <aside className="self-start">
+            <img
+              src={curso.imagem}
+              alt={curso.titulo}
+              className="aspect-[9/16] w-full max-w-xs bg-muted object-cover"
+            />
+            <div className="mt-8 bg-muted p-6 sm:p-8">
             <p className="eyebrow text-muted-foreground">Informações</p>
             <dl className="mt-5 space-y-5">
               <div>
