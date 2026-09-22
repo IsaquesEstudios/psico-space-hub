@@ -85,7 +85,7 @@ function LivrosIndex() {
                     rel="noreferrer"
                     className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
                   >
-                    Comprar e-book
+                    {livro.compraTexto ?? "Comprar e-book"}
                   </a>
                   <Link
                     to="/livros/$slug"
