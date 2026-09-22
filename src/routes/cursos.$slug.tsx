@@ -111,7 +111,7 @@ function CursoPage() {
             <img
               src={curso.imagem}
               alt={curso.titulo}
-              className="aspect-[9/16] w-full max-w-xs bg-muted object-cover"
+              className="aspect-[9/16] w-full max-w-xs bg-muted object-contain"
             />
             <div className="mt-8 bg-muted p-6 sm:p-8">
             <p className="eyebrow text-muted-foreground">Informações</p>
