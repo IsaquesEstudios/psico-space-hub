@@ -1057,7 +1057,7 @@ export type Livro = {
 export const livros: Livro[] = [
   {
     slug: "entendendo-o-tdah",
-    titulo: "Entendendo o TDAH",
+    titulo: "Além da Distração: Entendendo o TDAH na Infância e Adolescência",
     etiqueta: "E-book",
     resumo:
       "Um material em linguagem leve e acessível para compreender o TDAH na infância e adolescência com base em evidências e prática clínica.",

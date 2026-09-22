@@ -238,7 +238,7 @@ function Inicio() {
         <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
           <div className="min-w-0">
             <Eyebrow>Livros</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">E-books para aprofundar o cuidado</h2>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Livros para aprofundar o cuidado</h2>
           </div>
           <Link
             to="/livros"
@@ -265,7 +265,7 @@ function Inicio() {
               <h3 className="mt-3 font-display text-3xl">{livro.titulo}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{livro.resumo}</p>
               <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
-                Conhecer o e-book
+                Conhecer o livro
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
