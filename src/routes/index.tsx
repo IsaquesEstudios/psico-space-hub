@@ -276,25 +276,29 @@ function Inicio() {
         </div>
       </Section>
 
-      {/* Chamada para WhatsApp */}
+      {/* Convite para conhecer a clínica */}
       <section className="relative overflow-hidden bg-deep px-5 text-deep-foreground lg:px-10">
         <img
-          src={images.cta}
-          alt="Mesa de trabalho com caderno e laptop"
+          src={clinicaRecepcao.url}
+          alt="Recepção da Clínica Evoluta"
           loading="lazy"
-          width={1400}
-          height={900}
-          className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-auto max-w-none object-cover [mask-image:linear-gradient(to_right,transparent_0%,black_45%)] lg:block"
+          width={1920}
+          height={1275}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-deep/85 lg:bg-[linear-gradient(to_right,hsl(var(--deep)/0.95)_0%,hsl(var(--deep)/0.9)_45%,hsl(var(--deep)/0.55)_100%)]"
         />
         <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2">
-          <div className="py-16 lg:py-20">
+          <div className="py-16 lg:py-24">
             <p className="eyebrow text-deep-foreground/60">Estamos por perto</p>
             <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl">
-              Entre em contato conosco
+              Venha conhecer nossa clínica
             </h2>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70">
-              Fale com a equipe Evoluta para tirar dúvidas, conhecer os atendimentos e encontrar o melhor caminho
-              para você e sua família.
+              Um espaço pensado para acolher crianças, adolescentes, adultos e idosos. Fale com a equipe
+              Evoluta para agendar sua visita e conhecer os atendimentos.
             </p>
             <a
               href={site.whatsapp}
@@ -305,17 +309,9 @@ function Inicio() {
               Falar com equipe Evoluta
             </a>
           </div>
-          <img
-            src={images.cta}
-            alt=""
-            aria-hidden
-            loading="lazy"
-            width={1400}
-            height={900}
-            className="-mx-5 h-64 w-[calc(100%+2.5rem)] max-w-none object-cover lg:hidden"
-          />
         </div>
       </section>
+
 
       {/* Blog */}
       <Section className="bg-muted">
