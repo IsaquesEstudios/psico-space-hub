@@ -143,6 +143,7 @@ export type Atendimento = {
   slug: string;
   titulo: string;
   etiqueta: string;
+  publicoDestaque: string;
   resumo: string;
   imagem: string;
   imagemSecundaria: string;
@@ -158,6 +159,7 @@ export const atendimentos: Atendimento[] = [
     slug: "avaliacao-neuropsicologica",
     titulo: "Avaliação Neuropsicológica",
     etiqueta: "Método Evoluta",
+    publicoDestaque: "Crianças, adolescentes, adultos e idosos",
     resumo:
       "Avaliação individualizada para compreender atenção, memória, aprendizagem, comportamento e orientar próximos passos com clareza.",
     imagem: atendimentoNeuropsicologia,
@@ -212,6 +214,7 @@ export const atendimentos: Atendimento[] = [
     slug: "psicologia-infantil-tcc",
     titulo: "Psicologia Infantil – Terapia Cognitivo-Comportamental",
     etiqueta: "Psicoterapia infantil",
+    publicoDestaque: "Crianças e adolescentes",
     resumo:
       "Atendimento acolhedor para ajudar crianças e adolescentes a compreender emoções, pensamentos, comportamentos e relações.",
     imagem: atendimentoPsicoterapia,
@@ -266,6 +269,8 @@ export const atendimentos: Atendimento[] = [
     slug: "intervencao-aba",
     titulo: "Psicologia com Intervenção Baseada em ABA",
     etiqueta: "Análise do Comportamento Aplicada",
+    publicoDestaque:
+      "Pessoas com TEA e outras demandas do desenvolvimento e do comportamento, conforme avaliação individual",
     resumo:
       "Intervenção individualizada para desenvolver comunicação, autonomia, habilidades sociais, aprendizagem e participação na rotina.",
     imagem: atendimentoAba,
@@ -320,6 +325,7 @@ export const atendimentos: Atendimento[] = [
     slug: "avaliacao-neuropsicopedagogica",
     titulo: "Avaliação Neuropsicopedagógica",
     etiqueta: "Aprendizagem escolar",
+    publicoDestaque: "Principalmente crianças e adolescentes",
     resumo:
       "Avaliação para compreender leitura, escrita, matemática, atenção, memória e fatores que interferem na aprendizagem.",
     imagem: atendimentoNeuropsicopedagogia,
@@ -374,6 +380,7 @@ export const atendimentos: Atendimento[] = [
     slug: "fonoaudiologia-infantil",
     titulo: "Fonoaudiologia Infantil",
     etiqueta: "Fala e linguagem",
+    publicoDestaque: "Bebês, crianças e adolescentes",
     resumo:
       "Atendimento para desenvolvimento da fala, linguagem, comunicação, voz, motricidade orofacial e alimentação na infância.",
     imagem: atendimentoFonoaudiologia,
@@ -429,6 +436,7 @@ export const atendimentos: Atendimento[] = [
     slug: "fonoaudiologia-adolescentes-adultos-idosos",
     titulo: "Fonoaudiologia para Adolescentes, Adultos e Idosos",
     etiqueta: "Comunicação em diferentes fases da vida",
+    publicoDestaque: "Adolescentes, adultos e idosos",
     resumo:
       "Acompanhamento para fala, linguagem, comunicação, voz, motricidade orofacial e deglutição em diferentes fases da vida.",
     imagem: atendimentoFonoaudiologiaAmbiente,
@@ -484,6 +492,7 @@ export const atendimentos: Atendimento[] = [
     slug: "estimulacao-cognitiva-idosos",
     titulo: "Estimulação Cognitiva para Idosos",
     etiqueta: "Cognição e autonomia",
+    publicoDestaque: "Público idoso",
     resumo:
       "Atividades planejadas para estimular memória, atenção, linguagem, raciocínio e autonomia no envelhecimento.",
     imagem: atendimentoNeuropsicologiaAmbiente,
