@@ -3,6 +3,7 @@ import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide
 
 import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, Section } from "@/components/site/bits";
+import clinicaRecepcao from "@/assets/clinica-evoluta-recepcao.jpg.asset.json";
 import { atendimentos, brandShareImage, cursos, destaques, images, livros, posts, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -288,7 +289,7 @@ function Inicio() {
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-deep/85 lg:bg-[linear-gradient(to_right,hsl(var(--deep)/0.95)_0%,hsl(var(--deep)/0.9)_45%,hsl(var(--deep)/0.55)_100%)]"
+          className="absolute inset-0 bg-deep/85 lg:bg-gradient-to-r lg:from-deep lg:via-deep/90 lg:to-deep/50"
         />
         <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2">
           <div className="py-16 lg:py-24">
