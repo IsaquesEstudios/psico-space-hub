@@ -109,9 +109,9 @@ export const site = {
   subtitulo: "Desenvolvimento Infantil",
   slogan:
     "Cuidar, compreender e transformar através da ciência, acolhimento e atuação multidisciplinar",
-  whatsapp: "https://wa.me/5527999385386",
-  telefone: "(27) 99938-5386",
-  telefoneLink: "tel:+5527999385386",
+  whatsapp: "https://api.whatsapp.com/message/OMXN2X3IIFAWJ1?autoload=1&app_absent=0",
+  telefone: "(27) 99938-6386",
+  telefoneLink: "tel:+5527999386386",
   email: "contato@clinicaevoluta.com.br",
   instagram: "@clinicaevoluta",
   cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",

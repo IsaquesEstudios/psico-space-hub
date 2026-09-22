@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contato")({
       {
         name: "description",
         content:
-          "Agende uma primeira conversa: atendimento presencial e online, de segunda a sexta, das 07h às 19h. Ligue (27) 99938-5386 ou fale pelo WhatsApp.",
+          "Agende uma primeira conversa: atendimento presencial e online, de segunda a sexta, das 07h às 19h. Ligue (27) 99938-6386 ou fale pelo WhatsApp.",
       },
       { property: "og:title", content: "Contato | Clínica Evoluta" },
       {
