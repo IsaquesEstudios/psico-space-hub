@@ -1,23 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Check } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, fotosJessica, fundadora, site } from "@/data/site";
+import { brandShareImage, fotosJessica, fundadora, site, sobreClinica } from "@/data/site";
 
 export const Route = createFileRoute("/sobre")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Jéssica Pelissari | Clínica Evoluta" },
+      { title: "Sobre nós | Clínica Evoluta" },
       {
         name: "description",
         content:
-          "Psicóloga e neuropsicóloga, fundadora e diretora da Clínica Evoluta. Formação, atuação e obras em coautoria.",
+          "Conheça a Clínica Evoluta, sua equipe multidisciplinar e a trajetória da psicóloga e neuropsicóloga Jéssica Pelissari.",
       },
-      { property: "og:title", content: "Jéssica Pelissari | Clínica Evoluta" },
+      { property: "og:title", content: "Sobre nós | Clínica Evoluta" },
       {
         property: "og:description",
-        content: "Mais do que avaliar, compreender: ciência, experiência e acolhimento em cada etapa.",
+         content: "Cuidado multidisciplinar, avaliação individualizada e a trajetória de Jéssica Pelissari.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:image", content: brandShareImage },
@@ -43,98 +43,103 @@ function SobrePage() {
         <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-24 lg:grid lg:grid-cols-2 lg:px-10 lg:py-28">
           <div>
-            <p className="eyebrow text-deep-foreground/60">Quem conduz</p>
+            <p className="eyebrow text-deep-foreground/60">Clínica Evoluta</p>
             <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              {fundadora.nome}
+              Sobre nós
             </h1>
-            <p className="mt-4 text-sm text-primary">{fundadora.papel}</p>
-            <p className="mt-8 max-w-lg text-sm leading-relaxed text-deep-foreground/80">
-              {fundadora.proposito}
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-deep-foreground/80">
+              Uma equipe multidisciplinar que une ciência, escuta e diferentes especialidades para compreender cada pessoa em sua singularidade.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Trajetória */}
+      {/* Clínica */}
       <Section>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <div className="max-w-3xl">
+          <Eyebrow>A Clínica Evoluta</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            Diferentes especialidades, um cuidado conectado
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-px bg-border md:grid-cols-2">
+          {sobreClinica.map((item, index) => (
+            <article key={item.titulo} className="bg-background p-7 sm:p-9">
+              <span className="font-display text-3xl text-primary">{String(index + 1).padStart(2, "0")}</span>
+              <h3 className="mt-6 font-display text-2xl">{item.titulo}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.texto}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* Trajetória */}
+      <Section className="bg-muted">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
+          <img
+            src={fotosJessica.sobre}
+            alt={fundadora.nome}
+            width={720}
+            height={900}
+            loading="lazy"
+            className="aspect-[4/5] w-full object-cover object-top"
+          />
           <div>
-            <Eyebrow>Trajetória</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-              Ciência, prática clínica
-              <br />
-              e olhar humanizado
-            </h2>
+            <Eyebrow>Fundadora</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">{fundadora.nome}</h2>
+            <p className="mt-4 text-sm font-semibold leading-relaxed text-primary">{fundadora.papel}</p>
+            <p className="mt-7 text-base leading-relaxed text-muted-foreground">{fundadora.proposito}</p>
             {fundadora.intro.map((p) => (
-              <p key={p} className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                {p}
-              </p>
+              <p key={p} className="mt-5 text-base leading-relaxed text-muted-foreground">{p}</p>
             ))}
           </div>
-          <div className="space-y-10">
-            <div>
-              <p className="eyebrow text-muted-foreground">Formação e especializações</p>
-              <ul className="mt-5 space-y-3">
-                {fundadora.formacao.map((f) => (
-                  <li key={f} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-primary" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border-t border-border pt-8">
-              <p className="eyebrow text-muted-foreground">Atuação</p>
-              <ul className="mt-5 space-y-3">
-                {fundadora.atuacao.map((a) => (
-                  <li key={a} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-primary" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+          <div>
+            <Eyebrow>Formação e especializações</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl">Uma trajetória dedicada à Neuropsicologia</h2>
           </div>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {fundadora.formacao.map((item) => (
+              <li key={item} className="flex gap-3 border-l-2 border-primary bg-muted p-5 text-sm leading-relaxed">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
       {/* Obras */}
-      <Section className="bg-muted">
+      <Section className="bg-deep text-deep-foreground">
         <div className="max-w-2xl">
-          <Eyebrow>Autora e coautora</Eyebrow>
+          <p className="eyebrow text-primary">Autora</p>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">
             Compartilhar conhecimento também transforma vidas
           </h2>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            Escrever é uma forma de fortalecer a Psicologia e levar ciência a mais pessoas.
-          </p>
+          <p className="mt-5 text-sm leading-relaxed text-deep-foreground/70">{fundadora.autoriaIntroducao}</p>
         </div>
-        <div className="mt-12 grid gap-px bg-border sm:grid-cols-3">
+        <div className="mt-12 grid gap-px bg-deep-foreground/15 sm:grid-cols-3">
           {fundadora.obras.map((o) => (
-            <div key={o.titulo} className="bg-background p-8">
+            <div key={o.titulo} className="bg-deep p-8">
               <BookOpen className="h-6 w-6 text-primary" strokeWidth={1.4} />
               <p className="mt-6 font-display text-2xl leading-snug">{o.titulo}</p>
-              <p className="eyebrow mt-4 text-muted-foreground">{o.nota}</p>
+              <p className="mt-4 text-sm leading-relaxed text-deep-foreground/65">{o.nota}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* Manifesto */}
+      {/* Fechamento da trajetória */}
       <Section>
         <div className="mx-auto max-w-3xl text-center">
-          <Eyebrow>Mais do que avaliar, compreender</Eyebrow>
-          {fundadora.manifesto.map((p) => (
-            <p key={p} className="mt-6 text-base leading-relaxed text-muted-foreground">
-              {p}
-            </p>
-          ))}
-          <blockquote className="mt-10 font-display text-2xl leading-snug text-primary sm:text-3xl lg:text-4xl">
-            “{fundadora.citacao}”
-          </blockquote>
-          <p className="mt-8 text-sm text-muted-foreground">{fundadora.assinatura}</p>
-          <p className="mt-10 font-display text-2xl">{fundadora.nome}</p>
-          <p className="mt-2 text-xs text-muted-foreground">{fundadora.papel}</p>
+          <Eyebrow>Ciência e prática clínica</Eyebrow>
+          <p className="mt-7 font-display text-2xl leading-relaxed text-foreground sm:text-3xl lg:text-4xl">
+            {fundadora.fechamento}
+          </p>
         </div>
       </Section>
 

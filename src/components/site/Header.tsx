@@ -7,7 +7,7 @@ import { atendimentos, site } from "@/data/site";
 
 const links = [
   { to: "/", label: "Início" },
-  { to: "/sobre", label: "Sobre" },
+  { to: "/sobre", label: "Sobre nós" },
   { to: "/cursos", label: "Cursos" },
   { to: "/blog", label: "Blog" },
   { to: "/novidades", label: "Notícias" },
