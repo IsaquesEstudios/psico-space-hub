@@ -82,9 +82,9 @@ function LivroPage() {
           <img
             src={livro.imagem}
             alt={livro.titulo}
-            width={606}
-            height={828}
-            className="w-full bg-muted object-contain p-5 lg:sticky lg:top-32"
+            width={1280}
+            height={2080}
+            className="w-full object-contain lg:sticky lg:top-32"
           />
           <div>
             <Eyebrow>{livro.etiqueta}</Eyebrow>
