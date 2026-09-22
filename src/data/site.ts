@@ -40,6 +40,7 @@ import blogRotina from "@/assets/blog-rotina.jpg";
 import blogMatematica from "@/assets/blog-matematica.jpg";
 import blogHero from "@/assets/blog-hero.jpg";
 import novidadesHero from "@/assets/novidades-hero.jpg";
+import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.json";
 
 export const brandShareImage =
   "https://id-preview--deb759cf-cdb0-4e38-afae-699e1737adb9.lovable.app/__l5e/assets-v1/50c90749-1ebe-4ab2-a6d1-8badb534742a/logo-social.jpg";
@@ -75,6 +76,8 @@ export const fotosJessica = {
     jessicaEntrevista.url,
   ],
 };
+
+export const fotoClinica = clinicaInauguracao.url;
 
 export const jessicaBio = {
   nome: "Jéssica Pelissari",

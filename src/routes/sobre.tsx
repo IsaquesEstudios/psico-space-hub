@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BookOpen, Check } from "lucide-react";
 
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, fotosJessica, fundadora, site, sobreClinica } from "@/data/site";
+import { brandShareImage, fotoClinica, fotosJessica, fundadora, site, sobreClinica } from "@/data/site";
 
 export const Route = createFileRoute("/sobre")({
   staticData: { sitemap: true },
@@ -56,11 +56,21 @@ function SobrePage() {
 
       {/* Clínica */}
       <Section>
-        <div className="max-w-3xl">
-          <Eyebrow>A Clínica Evoluta</Eyebrow>
-          <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-            Diferentes especialidades, um cuidado conectado
-          </h2>
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+          <div>
+            <Eyebrow>A Clínica Evoluta</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+              Diferentes especialidades, um cuidado conectado
+            </h2>
+          </div>
+          <img
+            src={fotoClinica}
+            alt="Entrada da Clínica Evoluta, em São Gabriel da Palha"
+            width={1920}
+            height={1272}
+            loading="lazy"
+            className="aspect-[3/2] w-full object-cover"
+          />
         </div>
         <div className="mt-12 grid gap-px bg-border md:grid-cols-2">
           {sobreClinica.map((item, index) => (
