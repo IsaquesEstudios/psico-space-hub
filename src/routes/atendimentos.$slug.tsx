@@ -104,7 +104,7 @@ function AtendimentoPage() {
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} />
-      <ImagemDoAcompanhamento item={item} />
+      <ImagemDoAcompanhamento item={item} conteudo={conteudo} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
       <SobreJessica />
@@ -171,7 +171,7 @@ function Apresentacao({
         <div>
           <Eyebrow>Sobre o atendimento</Eyebrow>
           <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-            Um olhar completo para cada história
+              {conteudo.tituloApresentacao}
           </h2>
           <img
             src={item.imagem}
@@ -205,18 +205,18 @@ function SituacoesEObjetivos({
       <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Eyebrow>Quando buscar</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Situações que merecem atenção</h2>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">{conteudo.tituloSituacoes}</h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            A busca pode acontecer diante de dúvidas, mudanças ou dificuldades persistentes. A conversa inicial ajuda a compreender se este é o atendimento mais indicado.
+            {conteudo.textoSituacoes}
           </p>
           <ListaComMarcador itens={conteudo.sinais} className="mt-8" />
         </div>
 
         <div className="border-t border-border pt-10 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
           <Eyebrow>O que buscamos</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl">Objetivos do acompanhamento</h2>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">{conteudo.tituloObjetivos}</h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Os objetivos são definidos de forma individualizada e podem ser ajustados ao longo do percurso, conforme as necessidades e os avanços observados.
+            {conteudo.textoObjetivos}
           </p>
           <ListaComMarcador itens={conteudo.objetivos} className="mt-8" />
         </div>
@@ -250,14 +250,14 @@ function ListaComMarcador({ itens, className = "" }: { itens: string[]; classNam
   );
 }
 
-function Etapas({ item }: { item: Atendimento }) {
+function Etapas({ item, conteudo }: { item: Atendimento; conteudo: ConteudoAtendimento }) {
   return (
     <Section>
       <div className="max-w-2xl">
         <Eyebrow>Como acontece</Eyebrow>
-        <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Etapas construídas com clareza</h2>
+        <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">{conteudo.tituloEtapas}</h2>
         <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-          O percurso é explicado desde o início. A quantidade de encontros e a participação de outras pessoas dependem da demanda apresentada.
+          {conteudo.textoEtapas}
         </p>
       </div>
 
@@ -276,7 +276,7 @@ function Etapas({ item }: { item: Atendimento }) {
   );
 }
 
-function ImagemDoAcompanhamento({ item }: { item: Atendimento }) {
+function ImagemDoAcompanhamento({ item, conteudo }: { item: Atendimento; conteudo: ConteudoAtendimento }) {
   return (
     <section className="overflow-hidden bg-background px-5 pb-16 sm:pb-20 lg:px-10 lg:pb-28">
       <div className="mx-auto grid max-w-7xl items-end gap-8 lg:grid-cols-[1.45fr_0.55fr] lg:gap-12">
@@ -291,7 +291,7 @@ function ImagemDoAcompanhamento({ item }: { item: Atendimento }) {
         <div className="border-l-2 border-primary pb-2 pl-6 lg:mb-8">
           <p className="eyebrow text-primary">Acompanhamento individualizado</p>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Cada encontro considera a rotina, as potencialidades e as necessidades observadas ao longo do percurso.
+            {conteudo.textoImagem}
           </p>
         </div>
       </div>
