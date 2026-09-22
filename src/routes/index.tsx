@@ -8,16 +8,16 @@ export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Clínica Evoluta | Apoio à aprendizagem para crianças e adolescentes" },
+      { title: "Clínica Evoluta | Atendimentos multidisciplinares em São Gabriel da Palha" },
       {
         name: "description",
         content:
-          "Atendimento com escuta e método: dificuldades de aprendizagem, TDAH, dislexia, avaliação e orientação a famílias e escolas.",
+          "Atendimentos individualizados em avaliação neuropsicológica, psicologia infantil, ABA, neuropsicopedagogia, fonoaudiologia e estimulação cognitiva.",
       },
-      { property: "og:title", content: "Clínica Evoluta | Acompanhamento à aprendizagem" },
+      { property: "og:title", content: "Clínica Evoluta | Atendimentos multidisciplinares" },
       {
         property: "og:description",
-        content: "Aprender com acolhimento, no tempo de cada criança.",
+        content: "Avaliação, intervenção e acompanhamento em diferentes fases da vida.",
       },
       { property: "og:image", content: brandShareImage },
       { name: "twitter:image", content: brandShareImage },
@@ -149,7 +149,7 @@ function Inicio() {
         <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
           <div className="min-w-0">
             <Eyebrow>Atendimentos</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Especialidades</h2>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl">Nossos atendimentos</h2>
           </div>
           <Link
             to="/atendimentos"
