@@ -2,7 +2,7 @@ import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-route
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 import { Avaliacoes } from "@/components/site/Avaliacoes";
-import { Eyebrow, MapaLocalizacao, Section, WhatsAppButton } from "@/components/site/bits";
+import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
 import {
   atendimentos,
   brandShareImage,
@@ -111,7 +111,6 @@ function AtendimentoPage() {
       <Avaliacoes className="bg-background" />
       <SobreJessica />
       <OutrosAtendimentos item={item} />
-      <MapaLocalizacao />
       <Fechamento item={item} />
 
     </>
