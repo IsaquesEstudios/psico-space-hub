@@ -42,6 +42,7 @@ import blogHero from "@/assets/blog-hero.jpg";
 import novidadesHero from "@/assets/novidades-hero.jpg";
 import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.json";
 import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infantil-na-pratica.jpeg.asset.json";
+import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
 import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.png";
 
 export const brandShareImage =
@@ -1103,6 +1104,8 @@ export type Livro = {
   investimento: string;
   publico: string;
   compraUrl: string;
+  compraTexto?: string;
+  compraNota?: string;
   texto: string[];
   destaques: string[];
 };
