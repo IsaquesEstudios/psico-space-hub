@@ -68,14 +68,6 @@ function CursoPage() {
   const { curso } = Route.useLoaderData();
   return (
     <>
-      <img
-        src={curso.imagem}
-        alt={curso.titulo}
-        width={1373}
-        height={1146}
-        className="h-72 w-full bg-muted object-contain object-center lg:h-[560px]"
-      />
-
       <Section>
         <Link
           to="/cursos"
