@@ -12,7 +12,7 @@ export const Route = createFileRoute("/atendimentos/")({
       {
         name: "description",
         content:
-          "Cinco frentes de atendimento: dificuldades de aprendizagem, TDAH, dislexia, avaliação e orientação a pais e escolas.",
+          "Conheça os atendimentos da Clínica Evoluta: avaliação neuropsicológica, psicologia infantil, ABA, neuropsicopedagogia, fonoaudiologia e estimulação cognitiva.",
       },
       { property: "og:title", content: "Atendimentos | Clínica Evoluta" },
       {
@@ -20,6 +20,8 @@ export const Route = createFileRoute("/atendimentos/")({
         content: "Conheça as especialidades de atendimento e como cada processo funciona.",
       },
       { property: "og:image", content: brandShareImage },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: brandShareImage },
     ],
   }),
@@ -91,7 +93,7 @@ function AtendimentosIndex() {
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-deep-foreground/70">
               Você não precisa saber exatamente qual profissional procurar. Nossa equipe pode ajudar você
-              a compreender qual avaliação ou especialidade é mais adequada para a sua necessidade.
+              a compreender qual atendimento é mais adequado para a sua necessidade.
             </p>
           </div>
           <WhatsAppButton href={site.whatsapp} label="Falar com equipe Evoluta" />

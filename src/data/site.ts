@@ -127,17 +127,14 @@ export const mapaLinkUrl = `https://www.google.com/maps/search/?api=1&query=${en
 
 /** Termos de busca usados como H1 das páginas de atendimento (SEO local). */
 export const h1Atendimentos: Record<string, string> = {
-  neuropsicologia: "Avaliação neuropsicológica em São Gabriel da Palha",
-  "transtorno-do-espectro-autista": "Atendimento para autismo (TEA) em São Gabriel da Palha",
-  tdah: "Atendimento para TDAH em São Gabriel da Palha",
-  "dificuldades-de-aprendizagem":
-    "Atendimento para dificuldades de aprendizagem em São Gabriel da Palha",
-  psicoterapia: "Psicoterapia infantil e para adolescentes em São Gabriel da Palha",
-  aba: "Terapia ABA para autismo em São Gabriel da Palha",
-  psicopedagogia: "Atendimento psicopedagógico em São Gabriel da Palha",
-  neuropsicopedagogia: "Atendimento neuropsicopedagógico em São Gabriel da Palha",
-  fonoaudiologia: "Fonoaudiologia infantil em São Gabriel da Palha",
-  "orientacao-familiar-e-escolar": "Orientação familiar e escolar em São Gabriel da Palha",
+  "avaliacao-neuropsicologica": "Avaliação neuropsicológica em São Gabriel da Palha",
+  "psicologia-infantil-tcc": "Psicologia infantil com TCC em São Gabriel da Palha",
+  "intervencao-aba": "Intervenção baseada em ABA em São Gabriel da Palha",
+  "avaliacao-neuropsicopedagogica": "Avaliação neuropsicopedagógica em São Gabriel da Palha",
+  "fonoaudiologia-infantil": "Fonoaudiologia infantil em São Gabriel da Palha",
+  "fonoaudiologia-adolescentes-adultos-idosos":
+    "Fonoaudiologia para adolescentes, adultos e idosos em São Gabriel da Palha",
+  "estimulacao-cognitiva-idosos": "Estimulação cognitiva para idosos em São Gabriel da Palha",
 };
 
 
@@ -158,246 +155,138 @@ export type Atendimento = {
 
 export const atendimentos: Atendimento[] = [
   {
-    slug: "neuropsicologia",
-    titulo: "Neuropsicologia",
-    etiqueta: "Avaliação neuropsicológica",
+    slug: "avaliacao-neuropsicologica",
+    titulo: "Avaliação Neuropsicológica",
+    etiqueta: "Método Evoluta",
     resumo:
-      "Avaliar para compreender. Compreender para intervir: investigação do funcionamento cognitivo, emocional e comportamental.",
+      "Processo individualizado para compreender como a pessoa pensa, aprende, memoriza, presta atenção e se comporta.",
     imagem: atendimentoNeuropsicologia,
     imagemSecundaria: atendimentoNeuropsicologiaAmbiente,
     paraQuem: [
-      "TDAH, TEA e Deficiência Intelectual",
-      "Transtornos de aprendizagem e dificuldades escolares",
-      "Atenção, memória e funções executivas",
-      "Alterações cognitivas e questões relacionadas ao envelhecimento",
+      "Crianças, adolescentes, adultos e idosos, conforme a demanda apresentada",
+      "Pessoas com dúvidas sobre desenvolvimento, aprendizagem, atenção, memória ou comportamento",
+      "Famílias que precisam compreender melhor dificuldades cognitivas, emocionais ou escolares",
+      "Casos que exigem orientações e encaminhamentos para próximos passos",
     ],
     comoFunciona: [
       {
-        titulo: "1. Anamnese",
+        titulo: "Entrevista detalhada",
         texto:
-          "Entrevista detalhada sobre história de desenvolvimento, saúde, rotina e percurso escolar ou profissional.",
+          "O processo começa com uma conversa sobre história de desenvolvimento, rotina, escolaridade, contexto familiar, principais dificuldades e motivo da avaliação.",
       },
       {
-        titulo: "2. Sessões de testagem",
+        titulo: "Escolha dos instrumentos",
         texto:
-          "Instrumentos padronizados e observação clínica para investigar cognição, emoção e comportamento.",
+          "A partir da investigação inicial, são definidos os testes, escalas e procedimentos mais adequados para cada caso.",
       },
       {
-        titulo: "3. Escuta dos contextos",
+        titulo: "Avaliação das funções",
         texto:
-          "Quando necessário, contato com escola, família e outros profissionais que acompanham o caso.",
+          "Podem ser observadas atenção, memória, linguagem, raciocínio, aprendizagem, funções executivas, velocidade de processamento e aspectos emocionais.",
       },
       {
-        titulo: "4. Integração dos dados",
-        texto: "Análise dos resultados à luz da história de vida, e não apenas dos números.",
+        titulo: "Integração dos resultados",
+        texto:
+          "Os dados são analisados de forma integrada, considerando a história da pessoa e os diferentes contextos em que ela vive.",
       },
       {
-        titulo: "5. Laudo e devolutiva",
+        titulo: "Devolutiva e orientações",
         texto:
-          "Documento em linguagem clara e encontro de devolutiva com orientações e direcionamentos.",
+          "Ao final, a família ou o paciente recebe uma devolutiva individualizada, com orientações e possíveis encaminhamentos.",
       },
     ],
     info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Encontros", valor: "Definidos conforme a demanda" },
-      { rotulo: "Entrega", valor: "Laudo + devolutiva" },
+      { rotulo: "Público", valor: "Crianças, adolescentes, adultos e idosos" },
+      { rotulo: "Método", valor: "Avaliação Neuropsicológica Evoluta" },
+      { rotulo: "Entrega", valor: "Devolutiva individualizada" },
       { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "A avaliação neuropsicológica investiga o funcionamento cognitivo, emocional e comportamental, identificando potencialidades e dificuldades.",
-      "Mais do que confirmar ou descartar um diagnóstico, o processo organiza informações para direcionar intervenções mais assertivas em casa, na escola e na clínica.",
+      "Na Clínica Evoluta, a Avaliação Neuropsicológica é realizada por meio do Método de Avaliação Neuropsicológica Evoluta, metodologia própria desenvolvida por Jéssica Pelissari a partir de sua experiência clínica.",
+      "Mais do que aplicar testes, o atendimento busca compreender como a pessoa pensa, aprende, memoriza, presta atenção, resolve problemas, se comporta e lida com diferentes situações.",
     ],
   },
   {
-    slug: "transtorno-do-espectro-autista",
-    titulo: "Transtorno do Espectro Autista — TEA",
-    etiqueta: "Neurodesenvolvimento",
+    slug: "psicologia-infantil-tcc",
+    titulo: "Psicologia Infantil – Terapia Cognitivo-Comportamental",
+    etiqueta: "Psicoterapia infantil",
     resumo:
-      "Investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
-    imagem: atendimentoTea,
-    imagemSecundaria: atendimentoTeaAmbiente,
-    imagemHero: heroAtendimentoTea,
-    paraQuem: [
-      "Famílias com suspeita de TEA em qualquer idade",
-      "Pessoas já diagnosticadas que buscam acompanhamento",
-      "Casos que exigem orientação à família e à escola",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Investigação especializada",
-        texto:
-          "Avaliação que considera comunicação, interação social, comportamento e processamento das informações.",
-      },
-      {
-        titulo: "Plano individualizado",
-        texto:
-          "Definição de objetivos a partir do perfil de cada pessoa, e não de um protocolo único.",
-      },
-      {
-        titulo: "Acompanhamento contínuo",
-        texto: "Intervenção e reavaliação de metas, em parceria com família, escola e equipe.",
-      },
-    ],
-    info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Abordagem", valor: "Multidisciplinar" },
-      { rotulo: "Parcerias", valor: "Família, escola e profissionais" },
-      { rotulo: "Formato", valor: "Presencial" },
-    ],
-    texto: [
-      "O TEA é uma condição do neurodesenvolvimento que pode envolver diferenças na comunicação, interação social, comportamento e processamento das informações.",
-      "Na Evoluta, realizamos investigação especializada e acompanhamento individualizado, respeitando o perfil e as necessidades de cada pessoa.",
-    ],
-  },
-  {
-    slug: "tdah",
-    titulo: "TDAH",
-    etiqueta: "Atenção e funções executivas",
-    resumo:
-      "Compreender a origem das dificuldades de atenção, impulsividade e organização para direcionar as melhores estratégias.",
-    imagem: atendimentoTdah,
-    imagemSecundaria: atendimentoTdahAmbiente,
-    imagemHero: heroAtendimentoTdah,
-    paraQuem: [
-      "Crianças e adolescentes com queixas de atenção e agitação",
-      "Adultos com impacto na rotina, no trabalho e nos relacionamentos",
-      "Casos que precisam diferenciar TDAH de outras condições",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Compreender a queixa",
-        texto:
-          "Levantamento de como as dificuldades aparecem na escola, em casa, no trabalho e nas relações.",
-      },
-      {
-        titulo: "Avaliação adequada",
-        texto:
-          "Investigação de atenção, impulsividade, hiperatividade e funções executivas com instrumentos apropriados.",
-      },
-      {
-        titulo: "Estratégias de intervenção",
-        texto:
-          "Direcionamento terapêutico, orientações práticas de rotina e organização, e parceria com a escola.",
-      },
-    ],
-    info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Foco", valor: "Atenção e funções executivas" },
-      { rotulo: "Entrega", valor: "Compreensão + plano de intervenção" },
-      { rotulo: "Formato", valor: "Presencial" },
-    ],
-    texto: [
-      "O TDAH pode afetar atenção, impulsividade, hiperatividade e funções executivas, trazendo impactos para a aprendizagem, rotina, relacionamentos e vida profissional.",
-      "Uma avaliação adequada ajuda a compreender a origem das dificuldades e direcionar as melhores estratégias de intervenção.",
-    ],
-  },
-  {
-    slug: "dificuldades-de-aprendizagem",
-    titulo: "Dificuldades e Transtornos de Aprendizagem",
-    etiqueta: "Aprendizagem",
-    resumo:
-      "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem — investigamos o que está dificultando o aprender.",
-    imagem: atendimentoAprendizagem,
-    imagemSecundaria: atendimentoAprendizagemAmbiente,
-    imagemHero: heroAtendimentoAprendizagem,
-    paraQuem: [
-      "Crianças com queixas persistentes de leitura, escrita ou matemática",
-      "Estudantes com dificuldades de compreensão, atenção e memória",
-      "Famílias e escolas que buscam entender a origem da dificuldade",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Mapear a dificuldade",
-        texto:
-          "Investigação de leitura, escrita, matemática, compreensão, atenção, memória, organização e funções executivas.",
-      },
-      {
-        titulo: "Compreender a origem",
-        texto:
-          "Diferenciar defasagem escolar, questões emocionais e transtornos específicos de aprendizagem.",
-      },
-      {
-        titulo: "Definir estratégias",
-        texto:
-          "Indicação das intervenções e adaptações que podem favorecer o desenvolvimento em cada caso.",
-      },
-    ],
-    info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Áreas", valor: "Leitura, escrita e matemática" },
-      { rotulo: "Parceria", valor: "Família e escola" },
-      { rotulo: "Formato", valor: "Presencial" },
-    ],
-    texto: [
-      "Nem toda dificuldade escolar significa TDAH, autismo ou transtorno de aprendizagem. Investigamos dificuldades relacionadas a leitura, escrita, matemática, compreensão, atenção, memória, organização e funções executivas.",
-      "O objetivo é compreender o que está dificultando a aprendizagem e quais estratégias podem favorecer o desenvolvimento.",
-    ],
-  },
-  {
-    slug: "psicoterapia",
-    titulo: "Psicoterapia",
-    etiqueta: "Terapia Cognitivo-Comportamental",
-    resumo:
-      "Um espaço de acolhimento, escuta e desenvolvimento para crianças, adolescentes e adultos.",
+      "Espaço seguro e acolhedor para a criança compreender emoções, pensamentos e comportamentos.",
     imagem: atendimentoPsicoterapia,
     imagemSecundaria: atendimentoPsicoterapiaAmbiente,
     paraQuem: [
-      "Crianças e adolescentes com questões emocionais e comportamentais",
-      "Adultos em momentos de mudança, sofrimento ou adoecimento emocional",
-      "Famílias que buscam apoio nos desafios de cada fase da vida",
+      "Crianças e adolescentes com dificuldades emocionais, comportamentais ou sociais",
+      "Famílias que observam ansiedade, medos, insegurança, irritabilidade ou baixa autoestima",
+      "Crianças com dificuldades de adaptação, socialização ou mudanças de comportamento",
+      "Responsáveis que precisam de orientação para aplicar estratégias no cotidiano",
     ],
     comoFunciona: [
       {
-        titulo: "Acolhimento inicial",
-        texto: "Primeiros encontros para entender a demanda e combinar objetivos do processo.",
-      },
-      {
-        titulo: "Atendimento em TCC",
+        titulo: "Compreensão inicial",
         texto:
-          "Sessões com abordagem baseada na Terapia Cognitivo-Comportamental, adaptadas à faixa etária.",
+          "Nos primeiros encontros, são compreendidas as principais dificuldades da criança e os contextos em que elas aparecem.",
       },
       {
-        titulo: "Revisão de objetivos",
-        texto: "Acompanhamento do que já mudou e ajuste das metas ao longo do processo.",
+        titulo: "Atendimento adaptado à idade",
+        texto:
+          "As sessões utilizam recursos lúdicos e estratégias terapêuticas adequadas ao nível de desenvolvimento da criança.",
+      },
+      {
+        titulo: "Trabalho de habilidades",
+        texto:
+          "Podem ser trabalhadas regulação emocional, comunicação, habilidades sociais, autoestima, tolerância à frustração e resolução de problemas.",
+      },
+      {
+        titulo: "Orientação aos responsáveis",
+        texto:
+          "A participação dos responsáveis ajuda a levar as estratégias para a rotina familiar, escolar e social.",
       },
     ],
     info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
+      { rotulo: "Público", valor: "Crianças e adolescentes" },
       { rotulo: "Abordagem", valor: "Terapia Cognitivo-Comportamental" },
-      { rotulo: "Frequência", valor: "Combinada em cada caso" },
-      { rotulo: "Formato", valor: "Presencial ou online" },
+      { rotulo: "Recursos", valor: "Estratégias terapêuticas e lúdicas" },
+      { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "Um espaço de acolhimento, escuta e desenvolvimento. Atendimento psicológico para crianças, adolescentes e adultos, com abordagem baseada na Terapia Cognitivo-Comportamental (TCC).",
-      "Trabalhamos questões emocionais, comportamentais, relacionais e desafios presentes em diferentes fases da vida.",
+      "A Psicoterapia Infantil, com abordagem baseada na Terapia Cognitivo-Comportamental, oferece à criança um espaço seguro e acolhedor para compreender suas emoções, pensamentos e comportamentos.",
+      "O atendimento é adaptado à idade e ao nível de desenvolvimento, utilizando recursos lúdicos e estratégias que facilitam a expressão e a aprendizagem de novas habilidades.",
     ],
   },
   {
-    slug: "aba",
-    titulo: "ABA — Análise do Comportamento Aplicada",
-    etiqueta: "Intervenção comportamental",
+    slug: "intervencao-aba",
+    titulo: "Psicologia com Intervenção Baseada em ABA",
+    etiqueta: "Análise do Comportamento Aplicada",
     resumo:
-      "Intervenções focadas no desenvolvimento de habilidades, autonomia, comunicação e qualidade de vida.",
+      "Intervenção individualizada para favorecer aquisição de habilidades, autonomia, comunicação e participação nas atividades.",
     imagem: atendimentoAba,
     imagemSecundaria: atendimentoAbaAmbiente,
     paraQuem: [
-      "Pessoas com TEA e Deficiência Intelectual",
-      "Famílias que buscam desenvolvimento de autonomia e comunicação",
-      "Casos que precisam de plano de intervenção individualizado",
+      "Pessoas com Transtorno do Espectro Autista e outras demandas do desenvolvimento",
+      "Crianças e adolescentes que precisam ampliar comunicação, autonomia e interação social",
+      "Famílias que buscam um plano individualizado de intervenção comportamental",
+      "Casos que exigem orientação aos responsáveis e alinhamento com outros ambientes",
     ],
     comoFunciona: [
       {
-        titulo: "Avaliação de repertório",
-        texto: "Levantamento das habilidades já presentes e das prioridades de desenvolvimento.",
+        titulo: "Identificação do repertório",
+        texto:
+          "Primeiramente, são observadas as habilidades já desenvolvidas e aquelas que precisam ser ampliadas.",
       },
       {
         titulo: "Plano individualizado",
         texto:
-          "Programas construídos de acordo com as necessidades de cada pessoa e de sua família.",
+          "Os objetivos são definidos de acordo com o repertório atual, as necessidades e as prioridades de cada pessoa.",
       },
       {
-        titulo: "Registro e ajuste",
-        texto: "Acompanhamento dos dados de cada objetivo para ajustar o que funciona na prática.",
+        titulo: "Intervenção estruturada",
+        texto:
+          "O atendimento pode trabalhar comunicação, interação social, autonomia, brincadeiras, seguimento de instruções e habilidades acadêmicas.",
+      },
+      {
+        titulo: "Orientação e alinhamento",
+        texto:
+          "Quando necessário, são feitas orientações aos responsáveis e alinhamentos com outros profissionais e ambientes frequentados pelo paciente.",
       },
     ],
     info: [
@@ -407,167 +296,198 @@ export const atendimentos: Atendimento[] = [
       { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "Intervenções baseadas em princípios da Análise do Comportamento Aplicada, com foco no desenvolvimento de habilidades, autonomia, comunicação e qualidade de vida.",
-      "O trabalho é individualizado e construído de acordo com as necessidades de cada pessoa.",
+      "A intervenção baseada em Análise do Comportamento Aplicada utiliza princípios da ciência do comportamento para favorecer a aquisição de habilidades e aumentar a autonomia do paciente.",
+      "O planejamento é individualizado, considerando o repertório atual, os objetivos de cada pessoa e as demandas que aparecem em sua rotina.",
     ],
   },
   {
-    slug: "psicopedagogia",
-    titulo: "Psicopedagogia",
-    etiqueta: "Processos de aprendizagem",
+    slug: "avaliacao-neuropsicopedagogica",
+    titulo: "Avaliação Neuropsicopedagógica",
+    etiqueta: "Aprendizagem escolar",
     resumo:
-      "Compreender como cada pessoa aprende e quais fatores podem estar interferindo nesse processo.",
-    imagem: atendimentoPsicopedagogia,
-    imagemSecundaria: atendimentoPsicopedagogiaAmbiente,
-    paraQuem: [
-      "Crianças e adolescentes com dificuldades escolares",
-      "Estudantes que precisam organizar rotina e estratégias de estudo",
-      "Adultos retomando processos de aprendizagem",
-    ],
-    comoFunciona: [
-      {
-        titulo: "Investigação pedagógica",
-        texto:
-          "Observação de leitura, escrita, matemática, atenção e organização dos estudos na prática.",
-      },
-      {
-        titulo: "Intervenção",
-        texto:
-          "Atividades que desenvolvem estratégias de aprendizagem e habilidades cognitivas envolvidas no aprender.",
-      },
-      {
-        titulo: "Orientação",
-        texto: "Combinados com a família e com a escola para sustentar os avanços fora da sessão.",
-      },
-    ],
-    info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Áreas", valor: "Leitura, escrita e matemática" },
-      { rotulo: "Foco", valor: "Estratégias de aprendizagem" },
-      { rotulo: "Formato", valor: "Presencial" },
-    ],
-    texto: [
-      "A Psicopedagogia busca compreender como cada pessoa aprende e quais fatores podem estar interferindo nesse processo.",
-      "O atendimento pode auxiliar crianças, adolescentes e adultos com dificuldades de leitura e escrita, matemática, atenção e concentração, organização dos estudos, estratégias de aprendizagem e desenvolvimento de habilidades cognitivas.",
-    ],
-  },
-  {
-    slug: "neuropsicopedagogia",
-    titulo: "Neuropsicopedagogia",
-    etiqueta: "Cérebro e aprendizagem",
-    resumo:
-      "Intervenção nos processos de aprendizagem considerando a relação entre cérebro, cognição, comportamento e educação.",
+      "Avaliação para compreender dificuldades relacionadas ao processo de aprendizagem e orientar estratégias de intervenção.",
     imagem: atendimentoNeuropsicopedagogia,
-    imagemSecundaria: atendimentoNeuropsicopedagogiaAmbiente,
+    imagemSecundaria: atendimentoAprendizagemAmbiente,
     paraQuem: [
-      "Estudantes com dificuldades persistentes de aprendizagem",
-      "Casos que envolvem atenção, memória e funções executivas",
-      "Famílias que buscam intervenção com base no funcionamento cognitivo",
+      "Crianças e adolescentes com dificuldades escolares ou baixo rendimento",
+      "Estudantes com atraso na aquisição de habilidades acadêmicas",
+      "Famílias que precisam compreender melhor o perfil de aprendizagem",
+      "Casos relacionados a leitura, escrita, matemática, atenção ou estratégias de estudo",
     ],
     comoFunciona: [
       {
-        titulo: "Compreender o funcionamento",
+        titulo: "Investigação da história",
         texto:
-          "Análise de como atenção, memória e funções executivas participam da aprendizagem dessa pessoa.",
+          "O processo considera a história de desenvolvimento, a escolaridade e as dificuldades percebidas pela família e pela escola.",
       },
       {
-        titulo: "Intervenção dirigida",
-        texto: "Atividades voltadas a leitura, escrita, matemática e estratégias de aprendizagem.",
+        titulo: "Avaliação das habilidades",
+        texto:
+          "São observadas habilidades relacionadas a atenção, memória, leitura, escrita, compreensão, raciocínio lógico-matemático e estratégias de aprendizagem.",
       },
       {
-        titulo: "Transferência para a rotina",
-        texto: "Adaptação das estratégias ao estudo diário, em casa e na escola.",
+        titulo: "Análise dos fatores",
+        texto:
+          "Os resultados ajudam a identificar quais habilidades estão desenvolvidas, quais apresentam dificuldade e o que pode estar interferindo no desempenho escolar.",
+      },
+      {
+        titulo: "Orientações para intervenção",
+        texto:
+          "Após a avaliação, as informações são usadas para orientar estratégias, adaptações e possíveis acompanhamentos.",
       },
     ],
     info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Habilidades", valor: "Atenção, memória e funções executivas" },
-      { rotulo: "Foco", valor: "Aprendizagem e cognição" },
+      { rotulo: "Público", valor: "Crianças e adolescentes" },
+      { rotulo: "Áreas", valor: "Leitura, escrita e matemática" },
+      { rotulo: "Objetivo", valor: "Compreender o perfil de aprendizagem" },
       { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "Uma área voltada à compreensão e intervenção nos processos de aprendizagem, considerando a relação entre cérebro, cognição, comportamento e educação.",
-      "Podem ser trabalhadas habilidades como atenção, memória, funções executivas, leitura, escrita, matemática e estratégias de aprendizagem.",
+      "A Avaliação Neuropsicopedagógica busca compreender as dificuldades relacionadas ao processo de aprendizagem, considerando aspectos cognitivos e pedagógicos.",
+      "O objetivo é identificar quais habilidades estão desenvolvidas, quais apresentam dificuldades e quais fatores podem estar interferindo no desempenho escolar.",
     ],
   },
   {
-    slug: "fonoaudiologia",
-    titulo: "Fonoaudiologia",
-    etiqueta: "Fala, linguagem e comunicação",
+    slug: "fonoaudiologia-infantil",
+    titulo: "Fonoaudiologia Infantil",
+    etiqueta: "Fala e linguagem",
     resumo:
-      "Avaliação e intervenção nas funções de fala, linguagem, comunicação, voz e aprendizagem.",
+      "Atendimento voltado ao desenvolvimento da comunicação, fala, linguagem, voz, motricidade orofacial e alimentação.",
     imagem: atendimentoFonoaudiologia,
     imagemHero: heroAtendimentoFonoaudiologia,
     imagemSecundaria: atendimentoFonoaudiologiaAmbiente,
     paraQuem: [
-      "Crianças com trocas na fala e atraso de linguagem",
-      "Estudantes com dificuldades de leitura, escrita e compreensão",
-      "Adultos com demandas de voz, fluência e comunicação",
+      "Bebês, crianças e adolescentes com atrasos ou dificuldades de comunicação",
+      "Crianças com atraso de fala e linguagem ou dificuldades de articulação dos sons",
+      "Demandas de motricidade orofacial, alimentação, fala, voz ou linguagem",
+      "Casos associados a transtornos do neurodesenvolvimento, quando houver necessidade fonoaudiológica",
     ],
     comoFunciona: [
       {
-        titulo: "Avaliação",
+        titulo: "Avaliação inicial",
         texto:
-          "Investigação de fala e articulação, linguagem oral, compreensão, expressão, voz e fluência.",
+          "O atendimento começa com uma avaliação para compreender habilidades já adquiridas e identificar áreas que precisam de intervenção.",
       },
       {
         titulo: "Plano terapêutico",
-        texto: "Definição de objetivos de acordo com a necessidade de cada paciente.",
+        texto:
+          "A terapia é planejada de forma individualizada, considerando a idade e as necessidades específicas da criança.",
       },
       {
-        titulo: "Intervenção e orientação",
-        texto: "Sessões terapêuticas com orientações para a rotina de casa e da escola.",
+        titulo: "Atividades adequadas à idade",
+        texto:
+          "São utilizados recursos lúdicos e propostas terapêuticas para estimular comunicação, fala, linguagem e desenvolvimento.",
+      },
+      {
+        titulo: "Orientações para a rotina",
+        texto:
+          "Quando indicado, a família recebe orientações para ampliar as oportunidades de comunicação no cotidiano.",
       },
     ],
     info: [
-      { rotulo: "Público", valor: "Crianças, adolescentes e adultos" },
-      { rotulo: "Áreas", valor: "Fala, linguagem, voz e fluência" },
-      { rotulo: "Também", valor: "Dificuldades de aprendizagem" },
+      { rotulo: "Público", valor: "Bebês, crianças e adolescentes" },
+      { rotulo: "Áreas", valor: "Fala, linguagem, voz e alimentação" },
+      { rotulo: "Recursos", valor: "Atividades adequadas à idade" },
       { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "A Fonoaudiologia atua na avaliação e intervenção das funções relacionadas à fala, linguagem, comunicação, voz e aprendizagem, de acordo com a necessidade de cada paciente.",
-      "Atendemos demandas de fala e articulação, linguagem oral, comunicação, compreensão e expressão, leitura e escrita, voz, fluência, comunicação no adulto e dificuldades relacionadas à aprendizagem.",
+      "A Fonoaudiologia Infantil atua no desenvolvimento da comunicação e das habilidades relacionadas à fala, linguagem, voz, motricidade orofacial e alimentação, conforme as necessidades de cada criança.",
+      "O atendimento é planejado a partir de uma avaliação individualizada e utiliza atividades adequadas à idade, incluindo recursos lúdicos para estimular a comunicação e o desenvolvimento.",
     ],
   },
   {
-    slug: "orientacao-familiar-e-escolar",
-    titulo: "Orientação Familiar e Escolar",
-    etiqueta: "Parceria com os contextos",
+    slug: "fonoaudiologia-adolescentes-adultos-idosos",
+    titulo: "Fonoaudiologia para Adolescentes, Adultos e Idosos",
+    etiqueta: "Comunicação em diferentes fases da vida",
     resumo:
-      "O desenvolvimento acontece em diferentes ambientes — construímos estratégias junto à família, à escola e a outros profissionais.",
-    imagem: atendimentoOrientacaoFamiliar,
-    imagemSecundaria: atendimentoOrientacaoFamiliarAmbiente,
-    imagemHero: heroAtendimentoOrientacaoEscolar,
+      "Acompanhamento fonoaudiológico para demandas de fala, linguagem, comunicação, voz, motricidade orofacial e deglutição.",
+    imagem: atendimentoFonoaudiologiaAmbiente,
+    imagemHero: heroAtendimentoFonoaudiologia,
+    imagemSecundaria: atendimentoFonoaudiologia,
     paraQuem: [
-      "Famílias que precisam de estratégias para a rotina diária",
-      "Escolas e educadores que buscam adaptações viáveis",
-      "Casos acompanhados por mais de um profissional",
+      "Adolescentes, adultos e idosos com alterações de fala, linguagem ou comunicação",
+      "Pessoas com demandas de voz, motricidade orofacial ou deglutição",
+      "Adultos e idosos com mudanças relacionadas ao envelhecimento ou a condições neurológicas",
+      "Pacientes que precisam de um plano terapêutico direcionado à sua rotina",
     ],
     comoFunciona: [
       {
-        titulo: "Escuta do contexto",
-        texto: "Entendimento da rotina, dos combinados atuais e do que já gera desgaste.",
-      },
-      {
-        titulo: "Estratégias conjuntas",
+        titulo: "Avaliação individualizada",
         texto:
-          "Construção de orientações práticas com família, escola e demais profissionais envolvidos.",
+          "O atendimento começa com uma avaliação que considera história, rotina, queixas e dificuldades apresentadas pelo paciente.",
       },
       {
-        titulo: "Acompanhamento",
-        texto: "Retornos para ajustar o que funcionou e rever o que não se sustentou.",
+        titulo: "Plano terapêutico direcionado",
+        texto:
+          "A partir da avaliação, é elaborado um plano terapêutico voltado às necessidades específicas de cada pessoa.",
+      },
+      {
+        titulo: "Acompanhamento das funções",
+        texto:
+          "O trabalho pode envolver fala, linguagem, comunicação, voz, motricidade orofacial e deglutição.",
+      },
+      {
+        titulo: "Adaptação à rotina",
+        texto:
+          "As orientações consideram as atividades, objetivos e possibilidades de cada fase da vida.",
       },
     ],
     info: [
-      { rotulo: "Público", valor: "Famílias, escolas e equipes" },
-      { rotulo: "Objetivo", valor: "Desenvolvimento e autonomia" },
-      { rotulo: "Frequência", valor: "Conforme a necessidade" },
-      { rotulo: "Formato", valor: "Presencial ou online" },
+      { rotulo: "Público", valor: "Adolescentes, adultos e idosos" },
+      { rotulo: "Áreas", valor: "Fala, voz, linguagem e deglutição" },
+      { rotulo: "Plano", valor: "Direcionado à necessidade do paciente" },
+      { rotulo: "Formato", valor: "Presencial" },
     ],
     texto: [
-      "O desenvolvimento acontece em diferentes ambientes. Por isso, quando necessário, trabalhamos em parceria com família, escola e outros profissionais.",
-      "A proposta é construir estratégias que favoreçam o desenvolvimento e a autonomia em cada contexto de vida.",
+      "A Fonoaudiologia também atua em diferentes fases da vida, acompanhando adolescentes, adultos e idosos em demandas relacionadas à fala, linguagem, comunicação, voz, motricidade orofacial e deglutição.",
+      "O atendimento começa com uma avaliação individualizada, considerando a história, a rotina e as dificuldades apresentadas pelo paciente.",
+    ],
+  },
+  {
+    slug: "estimulacao-cognitiva-idosos",
+    titulo: "Estimulação Cognitiva para Idosos",
+    etiqueta: "Cognição e autonomia",
+    resumo:
+      "Acompanhamento com atividades planejadas para estimular funções cognitivas e favorecer autonomia e funcionalidade.",
+    imagem: atendimentoNeuropsicologiaAmbiente,
+    imagemSecundaria: atendimentoNeuropsicopedagogiaAmbiente,
+    paraQuem: [
+      "Idosos que desejam manter a mente ativa e estimular habilidades cognitivas",
+      "Pessoas com queixas de memória, atenção, organização ou mudanças cognitivas",
+      "Famílias que buscam acompanhamento para preservar autonomia e funcionalidade",
+      "Casos em que a estimulação precisa estar associada à investigação e acompanhamento adequado",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Compreensão da história",
+        texto:
+          "As atividades são escolhidas de acordo com idade, história, interesses, rotina e necessidades de cada paciente.",
+      },
+      {
+        titulo: "Estimulação das funções",
+        texto:
+          "Podem ser estimuladas memória, atenção, linguagem, raciocínio, orientação temporal e espacial, planejamento e resolução de problemas.",
+      },
+      {
+        titulo: "Atividades significativas",
+        texto:
+          "O acompanhamento busca oferecer estímulos cognitivos de maneira adequada e conectada à rotina do idoso.",
+      },
+      {
+        titulo: "Acompanhamento contínuo",
+        texto:
+          "Quando existem sinais de alterações importantes, a estimulação deve caminhar junto à investigação e aos cuidados profissionais necessários.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Idosos" },
+      { rotulo: "Habilidades", valor: "Memória, atenção e linguagem" },
+      { rotulo: "Objetivo", valor: "Autonomia e funcionalidade" },
+      { rotulo: "Formato", valor: "Presencial" },
+    ],
+    texto: [
+      "A Estimulação Cognitiva é um acompanhamento voltado ao público idoso, com atividades planejadas para estimular diferentes funções cognitivas e favorecer a manutenção da autonomia e da funcionalidade.",
+      "O atendimento considera idade, história, interesses e necessidades de cada paciente, buscando proporcionar estímulos de maneira significativa e adequada à rotina.",
     ],
   },
 ];
@@ -582,264 +502,193 @@ export type ConteudoAtendimento = {
 };
 
 export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
-  neuropsicologia: {
-    chamada: "Uma investigação cuidadosa para transformar dúvidas em compreensão e direcionamento.",
+  "avaliacao-neuropsicologica": {
+    chamada:
+      "Um processo cuidadoso para compreender o funcionamento cognitivo, emocional e comportamental de forma individualizada.",
     introducao:
-      "A avaliação considera a história de vida, os contextos e o modo como cada pessoa pensa, aprende, sente e se relaciona. Testes e escalas fazem parte do processo, mas os resultados são sempre interpretados de forma integrada e individualizada.",
+      "A avaliação integra entrevistas, instrumentos e observação clínica para compreender como a pessoa aprende, memoriza, presta atenção, resolve problemas e lida com diferentes situações. Os resultados são apresentados com orientações que ajudam a organizar os próximos passos.",
     sinais: [
-      "Dificuldades persistentes de atenção, memória ou organização",
-      "Mudanças no desempenho escolar, acadêmico ou profissional",
-      "Dúvidas relacionadas ao desenvolvimento ou a condições neurológicas",
-      "Necessidade de compreender potencialidades e pontos de apoio",
+      "Dúvidas sobre desenvolvimento infantil, aprendizagem escolar ou desempenho profissional",
+      "Queixas de atenção, concentração, memória, linguagem ou funções executivas",
+      "Mudanças cognitivas, comportamentais ou emocionais que precisam ser compreendidas",
+      "Necessidade de investigar condições do neurodesenvolvimento ou alterações cognitivas",
     ],
     objetivos: [
-      "Descrever o perfil cognitivo, emocional e comportamental",
-      "Identificar habilidades preservadas e dificuldades que exigem suporte",
-      "Contribuir para hipóteses diagnósticas quando pertinente",
-      "Orientar intervenções, adaptações e encaminhamentos",
+      "Compreender o perfil cognitivo, emocional e comportamental da pessoa",
+      "Identificar habilidades preservadas, dificuldades e pontos de apoio",
+      "Integrar resultados à história de vida e aos contextos familiar, escolar ou profissional",
+      "Oferecer orientações e encaminhamentos úteis para os próximos passos",
     ],
     participacao: {
-      titulo: "Uma leitura que considera todos os contextos",
+      titulo: "Informações integradas para orientar melhor",
       texto:
-        "Com autorização, informações da família, da escola e de outros profissionais podem complementar a avaliação. Essa integração ajuda a compreender como as dificuldades aparecem na vida real e torna as orientações mais úteis.",
+        "Com autorização, relatos da família, escola e outros profissionais podem complementar a avaliação. Essa integração ajuda a observar a pessoa em diferentes contextos e torna as orientações mais precisas.",
     },
     perguntas: [
-      { pergunta: "A avaliação é apenas para crianças?", resposta: "Não. O processo pode ser realizado com crianças, adolescentes e adultos, sempre com instrumentos adequados à idade e à demanda." },
-      { pergunta: "O resultado é somente um diagnóstico?", resposta: "Não. A devolutiva apresenta o perfil avaliado, as potencialidades, as dificuldades observadas e os próximos passos possíveis." },
+      { pergunta: "A avaliação é igual para todos?", resposta: "Não. Os instrumentos e procedimentos são escolhidos conforme idade, história, rotina e motivo da avaliação." },
+      { pergunta: "O atendimento entrega apenas um diagnóstico?", resposta: "Não. O objetivo é compreender o funcionamento da pessoa e orientar caminhos possíveis, com devolutiva individualizada." },
     ],
   },
-  "transtorno-do-espectro-autista": {
-    chamada: "Compreender particularidades para construir caminhos de desenvolvimento possíveis e respeitosos.",
+  "psicologia-infantil-tcc": {
+    chamada:
+      "Um espaço seguro para a criança compreender emoções, pensamentos e comportamentos com recursos adequados à infância.",
     introducao:
-      "Cada pessoa no espectro apresenta uma combinação própria de características, habilidades e necessidades. Por isso, a investigação e o acompanhamento partem da escuta da pessoa e de quem participa de sua rotina, evitando modelos prontos.",
+      "A psicoterapia infantil com base na Terapia Cognitivo-Comportamental trabalha dificuldades emocionais, comportamentais e sociais de forma acolhedora. O atendimento utiliza recursos lúdicos e estratégias terapêuticas para facilitar expressão, compreensão e aprendizagem de novas habilidades.",
     sinais: [
-      "Diferenças na comunicação verbal ou não verbal",
-      "Dificuldades nas interações e na reciprocidade social",
-      "Interesses intensos, repetição de comportamentos ou necessidade de previsibilidade",
-      "Sensibilidades a sons, texturas, luzes ou mudanças de rotina",
+      "Ansiedade, medos, insegurança ou baixa autoestima",
+      "Irritabilidade, dificuldades de adaptação ou mudanças de comportamento",
+      "Dificuldades de socialização, comunicação ou habilidades sociais",
+      "Emoções e comportamentos que interferem na rotina familiar, escolar ou social",
     ],
     objetivos: [
-      "Compreender o perfil de desenvolvimento e comunicação",
-      "Fortalecer autonomia e participação nas atividades cotidianas",
-      "Desenvolver habilidades funcionais respeitando singularidades",
-      "Orientar os diferentes ambientes de convivência",
+      "Ajudar a criança a reconhecer emoções, pensamentos e comportamentos",
+      "Desenvolver estratégias de enfrentamento e regulação emocional",
+      "Fortalecer autoestima, comunicação, habilidades sociais e resolução de problemas",
+      "Orientar responsáveis para que as estratégias façam sentido no cotidiano",
     ],
     participacao: {
-      titulo: "Família e escola como parte do cuidado",
+      titulo: "Responsáveis como parte do processo",
       texto:
-        "As estratégias ganham sentido quando podem ser incorporadas à rotina. A comunicação entre clínica, família e escola favorece objetivos coerentes e ajuda a generalizar habilidades para diferentes ambientes.",
+        "A participação da família é combinada de acordo com a demanda e a idade da criança. As orientações ajudam a sustentar, em casa e na escola, habilidades trabalhadas nas sessões.",
     },
     perguntas: [
-      { pergunta: "É preciso ter diagnóstico para iniciar?", resposta: "Não necessariamente. A primeira conversa ajuda a compreender a demanda e a definir se o caminho indicado é investigação, acompanhamento ou outro encaminhamento." },
-      { pergunta: "O plano é igual para todas as pessoas?", resposta: "Não. Objetivos, recursos e ritmo são definidos a partir das necessidades e potencialidades de cada pessoa." },
+      { pergunta: "A criança precisa saber explicar o que sente?", resposta: "Não. O atendimento utiliza recursos compatíveis com a idade para favorecer expressão, vínculo e compreensão das emoções." },
+      { pergunta: "Os responsáveis participam de todas as sessões?", resposta: "A participação é definida conforme a necessidade. Em geral, há momentos de orientação e alinhamento com a família." },
     ],
   },
-  tdah: {
-    chamada: "Atenção, impulsividade e organização precisam ser compreendidas dentro da vida cotidiana.",
+  "intervencao-aba": {
+    chamada:
+      "Planejamento individualizado para desenvolver habilidades, autonomia e participação na rotina.",
     introducao:
-      "Dificuldades de atenção podem ter diferentes origens. A investigação observa quando elas começaram, em quais ambientes aparecem e como afetam aprendizagem, rotina, trabalho, relações e bem-estar emocional.",
+      "A intervenção baseada em ABA utiliza princípios da ciência do comportamento para favorecer aquisição de habilidades e ampliar autonomia. O planejamento considera o repertório atual, os objetivos de cada pessoa e as necessidades vividas pela família.",
     sinais: [
-      "Esquecimentos frequentes e dificuldade para concluir tarefas",
-      "Desorganização com materiais, horários e compromissos",
-      "Impulsividade ou inquietação que interfere na rotina",
-      "Oscilações importantes de rendimento e dificuldade para manter o foco",
+      "Dificuldades de comunicação funcional, interação social ou autonomia",
+      "Necessidade de ensinar habilidades de vida diária, brincadeiras ou seguimento de instruções",
+      "Comportamentos que dificultam aprendizagem, participação ou segurança",
+      "Demandas do desenvolvimento que precisam de objetivos claros e acompanhamento contínuo",
     ],
     objetivos: [
-      "Diferenciar TDAH de outras condições com manifestações semelhantes",
-      "Reconhecer situações que facilitam ou dificultam a atenção",
-      "Construir estratégias de planejamento e autorregulação",
-      "Reduzir impactos na aprendizagem, no trabalho e nas relações",
+      "Ampliar comunicação, interação social e habilidades adaptativas",
+      "Favorecer autonomia em atividades da rotina",
+      "Ensinar novas habilidades em etapas possíveis e mensuráveis",
+      "Orientar responsáveis e alinhar estratégias com outros ambientes quando necessário",
     ],
     participacao: {
-      titulo: "Estratégias que funcionam fora da sessão",
+      titulo: "Estratégias conectadas aos ambientes da pessoa",
       texto:
-        "Quando indicado, família e escola recebem orientações sobre organização do ambiente, divisão de tarefas, previsibilidade e formas de comunicação. O objetivo é tornar a rotina mais possível, não apenas exigir mais esforço.",
+        "Quando indicado, responsáveis, escola e outros profissionais recebem orientações para que as habilidades trabalhadas possam ser praticadas em diferentes contextos da vida cotidiana.",
     },
     perguntas: [
-      { pergunta: "Desatenção sempre significa TDAH?", resposta: "Não. Sono, ansiedade, dificuldades de aprendizagem, sobrecarga e outras condições também podem afetar a atenção; por isso, a avaliação precisa ser ampla." },
-      { pergunta: "Adultos também podem buscar avaliação?", resposta: "Sim. O atendimento considera os impactos na organização, no trabalho, nos estudos, nos relacionamentos e na vida diária." },
+      { pergunta: "ABA é apenas para autismo?", resposta: "É amplamente utilizada no acompanhamento de pessoas com TEA, mas pode ser indicada para outras demandas do desenvolvimento e comportamento após avaliação individual." },
+      { pergunta: "Como as metas são definidas?", resposta: "As metas partem da avaliação do repertório atual, das prioridades funcionais e dos objetivos compartilhados com a família." },
     ],
   },
-  "dificuldades-de-aprendizagem": {
-    chamada: "Quando aprender se torna difícil, é preciso investigar o caminho — não responsabilizar o estudante.",
+  "avaliacao-neuropsicopedagogica": {
+    chamada:
+      "Uma avaliação para compreender o processo de aprendizagem e orientar estratégias possíveis.",
     introducao:
-      "A queixa escolar é analisada de forma ampla, considerando oportunidades de aprendizagem, aspectos pedagógicos, emocionais, cognitivos e o histórico de desenvolvimento. O foco é entender o que sustenta a dificuldade e quais apoios podem favorecer avanços.",
+      "A avaliação neuropsicopedagógica considera aspectos cognitivos e pedagógicos para identificar habilidades desenvolvidas, dificuldades presentes e fatores que podem interferir no desempenho escolar.",
     sinais: [
-      "Leitura lenta, com trocas ou pouca compreensão",
-      "Dificuldades persistentes na escrita ou na ortografia",
-      "Problemas para compreender quantidades e operações matemáticas",
-      "Desempenho abaixo do esperado apesar de apoio e ensino adequados",
+      "Dificuldades escolares persistentes ou baixo rendimento",
+      "Atraso na aquisição de leitura, escrita, compreensão ou matemática",
+      "Dificuldades de atenção, memória, organização ou estratégias de aprendizagem",
+      "Necessidade de compreender melhor o perfil de aprendizagem da criança ou adolescente",
     ],
     objetivos: [
-      "Mapear habilidades acadêmicas e processos envolvidos no aprender",
-      "Distinguir dificuldade circunstancial de transtorno específico",
-      "Identificar estratégias de ensino mais adequadas",
-      "Orientar família e escola sobre apoios e adaptações possíveis",
+      "Mapear habilidades acadêmicas e cognitivas envolvidas no aprender",
+      "Compreender fatores que podem estar interferindo no desempenho escolar",
+      "Orientar estratégias e intervenções adequadas ao perfil do estudante",
+      "Apoiar família e escola com direcionamentos claros e viáveis",
     ],
     participacao: {
-      titulo: "Escola e família no mesmo percurso",
+      titulo: "Família e escola ajudam a compreender o aprender",
       texto:
-        "Cadernos, atividades, avaliações e relatos escolares ajudam a compreender como o estudante responde às propostas pedagógicas. As orientações são construídas para serem viáveis na rotina e acompanhadas ao longo do processo.",
+        "Relatos, cadernos, atividades e informações escolares podem compor a avaliação. Esse diálogo ajuda a transformar os resultados em estratégias aplicáveis à rotina.",
     },
     perguntas: [
-      { pergunta: "Toda dificuldade é um transtorno?", resposta: "Não. Questões pedagógicas, emocionais, ambientais e cognitivas podem interferir na aprendizagem. A investigação ajuda a diferenciar essas possibilidades." },
-      { pergunta: "A escola participa?", resposta: "Quando necessário e autorizado pela família, o diálogo com a escola contribui com informações e permite orientar estratégias mais consistentes." },
+      { pergunta: "A avaliação é reforço escolar?", resposta: "Não. O objetivo é compreender habilidades e dificuldades relacionadas ao processo de aprendizagem, e não apenas repetir conteúdos escolares." },
+      { pergunta: "Ela pode ajudar em suspeitas de dislexia ou discalculia?", resposta: "Pode contribuir para a investigação de dificuldades de leitura, escrita, matemática e outras condições que impactam o desempenho escolar." },
     ],
   },
-  psicoterapia: {
-    chamada: "Um espaço seguro para compreender emoções, relações e formas de lidar com os desafios.",
+  "fonoaudiologia-infantil": {
+    chamada:
+      "Cuidado individualizado para o desenvolvimento da fala, linguagem, comunicação e alimentação na infância.",
     introducao:
-      "A psicoterapia oferece escuta qualificada e recursos para reconhecer pensamentos, emoções e comportamentos. O processo é construído de acordo com a fase da vida, as necessidades apresentadas e os objetivos combinados nos primeiros encontros.",
+      "A Fonoaudiologia Infantil começa com uma avaliação para compreender as habilidades já adquiridas e as áreas que precisam de intervenção. A terapia utiliza propostas adequadas à idade para estimular comunicação e desenvolvimento.",
     sinais: [
-      "Ansiedade, tristeza, irritabilidade ou mudanças de comportamento",
-      "Dificuldades nos relacionamentos ou na expressão das emoções",
-      "Medos, inseguranças e baixa autoestima",
-      "Momentos de perda, transição, sobrecarga ou sofrimento emocional",
+      "Atrasos ou dificuldades no desenvolvimento da fala e da linguagem",
+      "Trocas, omissões ou dificuldades de articulação dos sons",
+      "Dificuldades de comunicação, compreensão, expressão ou alimentação",
+      "Demandas de motricidade orofacial ou associadas ao neurodesenvolvimento",
     ],
     objetivos: [
-      "Ampliar a compreensão sobre emoções e padrões de comportamento",
-      "Desenvolver recursos de enfrentamento e autorregulação",
-      "Fortalecer autoestima, autonomia e habilidades sociais",
-      "Construir mudanças coerentes com os objetivos da pessoa",
+      "Estimular fala, linguagem e comunicação funcional",
+      "Trabalhar articulação dos sons, compreensão e expressão conforme a necessidade",
+      "Apoiar habilidades relacionadas à alimentação e motricidade orofacial quando indicado",
+      "Orientar a família para ampliar oportunidades de comunicação no cotidiano",
     ],
     participacao: {
-      titulo: "Acompanhamento adequado a cada fase da vida",
+      titulo: "A comunicação também acontece fora da sessão",
       texto:
-        "No atendimento de crianças e adolescentes, encontros de orientação com responsáveis podem fazer parte do processo. A participação é combinada com cuidado, respeitando o vínculo terapêutico e a confidencialidade.",
+        "A família pode receber orientações simples e possíveis para favorecer fala, linguagem e comunicação na rotina. Quando necessário, a escola também pode ser orientada.",
     },
     perguntas: [
-      { pergunta: "Como são definidos os objetivos?", resposta: "Eles são construídos em conjunto nos encontros iniciais e podem ser revistos conforme o processo avança e novas necessidades aparecem." },
-      { pergunta: "A família participa das sessões?", resposta: "A participação varia conforme a idade e a demanda. Quando indicada, acontece em encontros próprios e com objetivos previamente combinados." },
+      { pergunta: "Quando procurar fonoaudiologia infantil?", resposta: "Quando atrasos ou dificuldades de fala, linguagem, comunicação, alimentação ou articulação persistem ou interferem na participação da criança." },
+      { pergunta: "O atendimento usa brincadeiras?", resposta: "Sim. As atividades são planejadas conforme a idade e podem usar recursos lúdicos para estimular as habilidades necessárias." },
     ],
   },
-  aba: {
-    chamada: "Intervenções individualizadas para ampliar habilidades relevantes e participação na vida cotidiana.",
+  "fonoaudiologia-adolescentes-adultos-idosos": {
+    chamada:
+      "Acompanhamento fonoaudiológico para comunicação, voz, linguagem e funções relacionadas em diferentes fases da vida.",
     introducao:
-      "A Análise do Comportamento Aplicada utiliza observação, planejamento e acompanhamento de dados para ensinar habilidades e reduzir barreiras à autonomia. O trabalho parte das prioridades da pessoa e de sua família.",
+      "O atendimento considera história, rotina e dificuldades apresentadas pelo paciente. A partir da avaliação, é elaborado um plano terapêutico direcionado às necessidades específicas de cada pessoa.",
     sinais: [
-      "Dificuldades de comunicação funcional e interação",
-      "Baixa autonomia em atividades da rotina",
-      "Comportamentos que limitam participação, aprendizagem ou segurança",
-      "Necessidade de ensinar habilidades de forma estruturada e gradual",
+      "Alterações de fala, linguagem, comunicação ou voz",
+      "Dificuldades de motricidade orofacial ou deglutição",
+      "Mudanças na comunicação associadas ao envelhecimento",
+      "Demandas após condições neurológicas que afetem funções fonoaudiológicas",
     ],
     objetivos: [
-      "Desenvolver comunicação e habilidades sociais funcionais",
-      "Ampliar autonomia em atividades cotidianas",
-      "Ensinar novas habilidades em etapas possíveis",
-      "Acompanhar resultados e ajustar as estratégias continuamente",
+      "Compreender as dificuldades e necessidades comunicativas do paciente",
+      "Construir um plano terapêutico adequado à rotina e à fase da vida",
+      "Trabalhar fala, voz, linguagem, comunicação, motricidade orofacial ou deglutição",
+      "Favorecer funcionalidade, segurança e participação nas atividades cotidianas",
     ],
     participacao: {
-      titulo: "Aprendizagem que se estende à rotina",
+      titulo: "Plano terapêutico conectado à rotina",
       texto:
-        "Responsáveis e, quando pertinente, escola e outros profissionais recebem orientação para favorecer o uso das habilidades em ambientes diferentes. A consistência entre os contextos fortalece os avanços.",
+        "As orientações são construídas a partir das atividades e necessidades do paciente. Em adultos e idosos, o acompanhamento pode dialogar com outros cuidados de saúde quando necessário.",
     },
     perguntas: [
-      { pergunta: "Como são escolhidas as metas?", resposta: "As metas partem da avaliação do repertório, das necessidades funcionais e das prioridades compartilhadas pela pessoa e por sua família." },
-      { pergunta: "Como os avanços são acompanhados?", resposta: "Os objetivos são observados e registrados ao longo do processo, permitindo revisar estratégias e tomar decisões com base na evolução individual." },
+      { pergunta: "Adultos também podem fazer fonoaudiologia?", resposta: "Sim. A Fonoaudiologia acompanha adolescentes, adultos e idosos em demandas de fala, linguagem, comunicação, voz, motricidade orofacial e deglutição." },
+      { pergunta: "O atendimento é igual ao infantil?", resposta: "Não. A avaliação e o plano terapêutico consideram idade, história, rotina e objetivos de cada pessoa." },
     ],
   },
-  psicopedagogia: {
-    chamada: "Compreender o jeito de aprender para construir estratégias com sentido e autonomia.",
+  "estimulacao-cognitiva-idosos": {
+    chamada:
+      "Atividades planejadas para estimular funções cognitivas e favorecer autonomia no envelhecimento.",
     introducao:
-      "O acompanhamento psicopedagógico observa a relação da pessoa com a aprendizagem e investiga os recursos que ela já utiliza. A intervenção propõe experiências graduais para desenvolver habilidades acadêmicas, cognitivas e de organização.",
+      "A Estimulação Cognitiva é voltada ao público idoso e propõe atividades significativas para estimular memória, atenção, linguagem, raciocínio, orientação, planejamento e organização, sempre de acordo com a história e as necessidades do paciente.",
     sinais: [
-      "Dificuldades recorrentes em leitura, escrita ou matemática",
-      "Evitação das tarefas e insegurança diante do aprender",
-      "Pouca autonomia para estudar e organizar materiais",
-      "Necessidade de estratégias personalizadas de aprendizagem",
+      "Desejo de manter a mente ativa e estimular habilidades cognitivas",
+      "Queixas relacionadas à memória, atenção, linguagem ou organização",
+      "Mudanças cognitivas que exigem acompanhamento profissional",
+      "Necessidade de favorecer autonomia, funcionalidade e participação na rotina",
     ],
     objetivos: [
-      "Fortalecer habilidades necessárias à leitura, escrita e matemática",
-      "Desenvolver planejamento, atenção e organização dos estudos",
-      "Resgatar confiança e participação no processo de aprendizagem",
-      "Construir estratégias que possam ser usadas com autonomia",
+      "Estimular funções cognitivas de forma significativa e individualizada",
+      "Favorecer manutenção de autonomia e funcionalidade",
+      "Trabalhar memória, atenção, linguagem, raciocínio, planejamento e orientação",
+      "Acompanhar mudanças e indicar investigação adequada quando necessário",
     ],
     participacao: {
-      titulo: "Intervenção conectada à experiência escolar",
+      titulo: "Cuidado adequado à história de cada idoso",
       texto:
-        "A troca com responsáveis e educadores ajuda a alinhar objetivos, acompanhar a aplicação das estratégias e compreender mudanças no cotidiano. O trabalho não substitui a escola: ele amplia os recursos para aprender.",
+        "As atividades consideram interesses, rotina e possibilidades do paciente. Quando a família participa, as orientações ajudam a ampliar estímulos no cotidiano sem gerar sobrecarga.",
     },
     perguntas: [
-      { pergunta: "É reforço escolar?", resposta: "Não. O foco não é repetir conteúdos, mas compreender como a pessoa aprende e desenvolver os processos e estratégias envolvidos na aprendizagem." },
-      { pergunta: "Quanto tempo dura o acompanhamento?", resposta: "A duração varia conforme a demanda, os objetivos definidos e a evolução observada. O percurso é revisto periodicamente." },
-    ],
-  },
-  neuropsicopedagogia: {
-    chamada: "Cérebro, cognição e educação reunidos para compreender e favorecer a aprendizagem.",
-    introducao:
-      "A Neuropsicopedagogia integra conhecimentos sobre funções cognitivas e processos educacionais. O acompanhamento considera como atenção, memória, linguagem e funções executivas participam das tarefas de leitura, escrita e matemática.",
-    sinais: [
-      "Dificuldade para manter informações e seguir etapas",
-      "Baixo rendimento associado à atenção ou à memória",
-      "Problemas de planejamento, flexibilidade e organização",
-      "Dificuldades acadêmicas persistentes que exigem intervenção direcionada",
-    ],
-    objetivos: [
-      "Estimular funções cognitivas relacionadas à aprendizagem",
-      "Desenvolver estratégias para lidar com tarefas complexas",
-      "Favorecer leitura, escrita e raciocínio matemático",
-      "Transferir os recursos construídos para a rotina de estudos",
-    ],
-    participacao: {
-      titulo: "Da sessão para situações reais de aprendizagem",
-      texto:
-        "As atividades são conectadas às demandas vividas pelo estudante. A família e a escola podem receber orientações para apoiar o uso das estratégias sem retirar a autonomia da pessoa.",
-    },
-    perguntas: [
-      { pergunta: "Qual a diferença para a Psicopedagogia?", resposta: "As duas áreas olham para a aprendizagem. A Neuropsicopedagogia enfatiza também a relação entre funções cognitivas, cérebro, comportamento e desempenho acadêmico." },
-      { pergunta: "O atendimento substitui uma avaliação?", resposta: "Não. Quando há necessidade de investigação diagnóstica ou de outro cuidado especializado, o encaminhamento adequado é conversado com a família." },
-    ],
-  },
-  fonoaudiologia: {
-    chamada: "Comunicação, fala e linguagem cuidadas em todas as etapas da vida.",
-    introducao:
-      "A avaliação fonoaudiológica observa como a pessoa compreende, expressa e organiza a comunicação. A partir desse perfil, são definidos objetivos terapêuticos voltados às necessidades de fala, linguagem, voz, fluência ou aprendizagem.",
-    sinais: [
-      "Atraso no desenvolvimento da fala ou da linguagem",
-      "Trocas, omissões ou dificuldade para articular sons",
-      "Dificuldades de compreensão, expressão, leitura ou escrita",
-      "Alterações de voz, fluência ou comunicação no adulto",
-    ],
-    objetivos: [
-      "Favorecer comunicação funcional e participação social",
-      "Desenvolver compreensão e expressão da linguagem",
-      "Trabalhar fala, articulação, voz ou fluência conforme a demanda",
-      "Apoiar habilidades de leitura e escrita quando indicado",
-    ],
-    participacao: {
-      titulo: "Orientações incorporadas ao cotidiano",
-      texto:
-        "Atividades simples e possíveis podem ser orientadas para casa e escola. A participação dos contextos amplia as oportunidades de comunicação e ajuda a consolidar as habilidades trabalhadas.",
-    },
-    perguntas: [
-      { pergunta: "Quando procurar uma avaliação?", resposta: "Quando dificuldades de fala, linguagem, compreensão, voz, fluência, leitura ou escrita persistem ou interferem na comunicação e na participação cotidiana." },
-      { pergunta: "O acompanhamento envolve exercícios em casa?", resposta: "Quando indicado, são propostas orientações compatíveis com a rotina, para ampliar as oportunidades de prática sem gerar sobrecarga." },
-    ],
-  },
-  "orientacao-familiar-e-escolar": {
-    chamada: "Alinhar os adultos e os ambientes também é uma forma de cuidar do desenvolvimento.",
-    introducao:
-      "A orientação organiza informações, prioridades e estratégias para situações vividas em casa ou na escola. O encontro ajuda a transformar recomendações amplas em ações possíveis, coerentes com a realidade de cada contexto.",
-    sinais: [
-      "Dificuldade para organizar rotinas, limites e combinados",
-      "Necessidade de adaptações e estratégias no ambiente escolar",
-      "Desalinhamento entre orientações de diferentes profissionais",
-      "Mudanças de comportamento ou aprendizagem que exigem ação conjunta",
-    ],
-    objetivos: [
-      "Compreender a situação a partir de diferentes perspectivas",
-      "Definir prioridades e estratégias práticas para cada ambiente",
-      "Favorecer comunicação entre família, escola e equipe",
-      "Acompanhar resultados e ajustar os combinados",
-    ],
-    participacao: {
-      titulo: "Uma construção feita com quem vive a rotina",
-      texto:
-        "Os encontros podem envolver responsáveis, educadores e profissionais, conforme a necessidade. Cada orientação considera recursos, limites e possibilidades reais, para que os combinados possam ser sustentados.",
-    },
-    perguntas: [
-      { pergunta: "A criança ou o adolescente precisa participar?", resposta: "Nem sempre. A composição do encontro depende do objetivo e é definida para preservar a pessoa e tornar a conversa produtiva." },
-      { pergunta: "É necessário já realizar outro acompanhamento na clínica?", resposta: "Não. A orientação pode apoiar demandas específicas ou complementar um acompanhamento já existente, após a compreensão inicial do caso." },
+      { pergunta: "Estimulação cognitiva é indicada apenas quando há perda de memória?", resposta: "Não. Ela também pode ser procurada por idosos que desejam manter habilidades cognitivas ativas e preservar autonomia." },
+      { pergunta: "Ela substitui investigação médica ou neuropsicológica?", resposta: "Não. Quando existem sinais de alterações importantes, a estimulação deve estar associada à investigação e ao acompanhamento adequado." },
     ],
   },
 };
