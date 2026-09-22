@@ -1134,6 +1134,34 @@ export const livros: Livro[] = [
       "Conteúdo escrito por Jéssica Pelissari, psicóloga e neuropsicóloga",
     ],
   },
+  {
+    slug: "vozes-da-neurodiversidade",
+    titulo: "Vozes da Neurodiversidade: Atualizações e Descobertas sobre o Universo Neuroatípico",
+    etiqueta: "Livro",
+    resumo:
+      "Um convite a reconhecer, respeitar e honrar as diferentes formas de existir e pensar, com base científica e olhar humanizado sobre o universo neurodivergente.",
+    imagem: livroVozesDaNeurodiversidade.url,
+    formato: "Livro físico",
+    investimento: "Sob consulta",
+    publico: "Psicólogos, terapeutas, educadores, familiares e leitores interessados em neurodiversidade",
+    compraUrl: site.whatsapp,
+    compraTexto: "Falar com equipe Evoluta",
+    compraNota: "A compra do livro é feita pelo WhatsApp da clínica.",
+    texto: [
+      "Vozes da Neurodiversidade: Atualizações e Descobertas sobre o Universo Neuroatípico é um convite a reconhecer, respeitar e honrar as diferentes formas de existir e pensar.",
+      "Reunindo um time multidisciplinar de coautores e especialistas renomados, a obra aborda sob uma ótica científica, prática e humanizada as principais condições e vivências que compõem o ecossistema neurodivergente.",
+      "Com foco em acolhimento e inclusão baseada em evidências, o livro traz ferramentas práticas de autorregulação, estratégias para apoio escolar e familiar, nutrição aplicada e as principais políticas públicas e direitos vigentes.",
+    ],
+    destaques: [
+      "Transtorno do Espectro Autista (TEA), TDAH e Síndrome de Down (Trissomia 21)",
+      "Dislexia, dispraxia, processamento sensorial e altas habilidades/superdotação",
+      "Ferramentas práticas de autorregulação",
+      "Estratégias de apoio escolar e familiar",
+      "Nutrição aplicada ao universo neurodivergente",
+      "Políticas públicas e direitos vigentes",
+      "Time multidisciplinar de coautores e especialistas renomados",
+    ],
+  },
 ];
 
 export type Post = {
