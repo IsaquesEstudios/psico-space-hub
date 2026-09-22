@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getRouterInstance } from "@tanstack/react-start";
 
-import { atendimentos, cursos, novidades, posts } from "@/data/site";
+import { atendimentos, cursos, livros, novidades, posts } from "@/data/site";
 import {
   isSitemapRouteIncluded,
   sitemapPathForLocation,
@@ -27,6 +27,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             slugs: atendimentos.map((item) => item.slug),
           },
           { routeId: "/cursos/$slug", to: "/cursos/$slug", slugs: cursos.map((item) => item.slug) },
+          { routeId: "/livros/$slug", to: "/livros/$slug", slugs: livros.map((item) => item.slug) },
           { routeId: "/blog/$slug", to: "/blog/$slug", slugs: posts.map((item) => item.slug) },
           {
             routeId: "/novidades/$slug",
