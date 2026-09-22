@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowLeft, Check } from "lucide-react";
 
-import { Eyebrow, MapaLocalizacao, Section } from "@/components/site/bits";
+import { Eyebrow, Section } from "@/components/site/bits";
 import { brandShareImage, cursos, site } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/$slug")({
@@ -150,7 +150,6 @@ function CursoPage() {
           </aside>
         </div>
       </Section>
-      <MapaLocalizacao />
     </>
 
   );
