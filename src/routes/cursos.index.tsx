@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 
-import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
-import { brandShareImage, cursos, fotosJessica, site } from "@/data/site";
+import { Eyebrow, Section } from "@/components/site/bits";
+import { brandShareImage, cursos, fotosJessica } from "@/data/site";
 
 export const Route = createFileRoute("/cursos/")({
   staticData: { sitemap: true },
@@ -12,12 +12,12 @@ export const Route = createFileRoute("/cursos/")({
       {
         name: "description",
         content:
-          "Cursos online para educadores, terapeutas e famílias: alfabetização, funções executivas e apoio familiar.",
+          "Curso online Desenvolvimento Infantil na Prática, para pais, professores e profissionais da saúde.",
       },
       { property: "og:title", content: "Cursos | Clínica Evoluta" },
       {
         property: "og:description",
-        content: "Formações práticas com encontros ao vivo e material de apoio.",
+        content: "Formação online sobre desenvolvimento infantil, sinais de alerta e direcionamentos adequados.",
       },
       { property: "og:image", content: brandShareImage },
       { name: "twitter:image", content: brandShareImage },
@@ -42,11 +42,11 @@ function CursosIndex() {
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Cursos</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Formações práticas, para aplicar na semana seguinte
+            Formação online para compreender melhor o desenvolvimento infantil
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-deep-foreground/70">
-            Encontros ao vivo, material de apoio e espaço para trazer casos reais. Inscrições e valores
-            pelo WhatsApp.
+            Conteúdos práticos para pais, professores e profissionais da saúde reconhecerem sinais de alerta
+            e buscarem os direcionamentos adequados.
           </p>
         </div>
       </section>
@@ -78,7 +78,14 @@ function CursosIndex() {
                   </div>
                 </dl>
                 <div className="mt-8 flex flex-wrap items-center gap-5 pt-2">
-                  <WhatsAppButton href={site.whatsapp} label="Quero me inscrever" />
+                  <a
+                    href={c.compraUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
+                  >
+                    Comprar curso
+                  </a>
                   <Link
                     to="/cursos/$slug"
                     params={{ slug: c.slug }}
