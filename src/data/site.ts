@@ -494,9 +494,18 @@ export const atendimentos: Atendimento[] = [
 
 export type ConteudoAtendimento = {
   chamada: string;
+  tituloApresentacao: string;
   introducao: string;
+  tituloSituacoes: string;
+  textoSituacoes: string;
   sinais: string[];
+  tituloObjetivos: string;
+  textoObjetivos: string;
   objetivos: string[];
+  tituloEtapas: string;
+  textoEtapas: string;
+  tituloImagem: string;
+  textoImagem: string;
   participacao: { titulo: string; texto: string };
   perguntas: { pergunta: string; resposta: string }[];
 };
