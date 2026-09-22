@@ -17,7 +17,7 @@ export const Route = createFileRoute("/atendimentos/")({
       { property: "og:title", content: "Atendimentos | Clínica Evoluta" },
       {
         property: "og:description",
-        content: "Conheça as especialidades de atendimento e como cada processo funciona.",
+        content: "Conheça os atendimentos da Clínica Evoluta e como cada processo é planejado.",
       },
       { property: "og:image", content: brandShareImage },
       { property: "og:type", content: "website" },

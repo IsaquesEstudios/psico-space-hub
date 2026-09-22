@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Clínica Evoluta | Apoio à aprendizagem para crianças e adolescentes" },
+      { title: "Clínica Evoluta | Atendimentos multidisciplinares em São Gabriel da Palha" },
       {
         name: "description",
         content:
