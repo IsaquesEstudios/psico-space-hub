@@ -118,8 +118,19 @@ function Admin() {
               onChange={(e) => setSenha(e.target.value)}
               className="w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"
             />
-            <button type="submit" className="eyebrow mt-4 w-full bg-primary px-6 py-4 text-primary-foreground">
-              Entrar
+            <button
+              type="submit"
+              disabled={entrando}
+              className="eyebrow mt-4 flex w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-primary-foreground transition-transform duration-150 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-70 disabled:active:scale-100"
+            >
+              {entrando ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/40 border-t-primary-foreground" />
+                  Entrando…
+                </>
+              ) : (
+                "Entrar"
+              )}
             </button>
           </form>
         </div>
