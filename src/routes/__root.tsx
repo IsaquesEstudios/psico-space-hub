@@ -8,7 +8,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -131,32 +131,9 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function IndicadorCarregamento() {
-  const isPending = useRouterState({
-    select: (s) =>
-      s.location.pathname !== s.resolvedLocation?.pathname || s.status === "pending",
+  const ativo = useRouterState({
+    select: (s) => s.isTransitioning,
   });
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const [aguardandoImagens, setAguardandoImagens] = useState(true);
-
-  // A cada troca de página (e no primeiro carregamento) espera as imagens
-  // principais (sem lazy) terminarem antes de esconder o indicador.
-  useEffect(() => {
-    setAguardandoImagens(true);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (!aguardandoImagens) return;
-    const inicio = Date.now();
-    const id = window.setInterval(() => {
-      const pendentes = Array.from(document.images).some(
-        (img) => img.loading !== "lazy" && (!img.complete || img.naturalWidth === 0),
-      );
-      if (!pendentes || Date.now() - inicio > 4000) setAguardandoImagens(false);
-    }, 120);
-    return () => window.clearInterval(id);
-  }, [aguardandoImagens]);
-
-  const ativo = isPending || aguardandoImagens;
   return (
     <div
       aria-hidden={!ativo}
@@ -164,7 +141,7 @@ function IndicadorCarregamento() {
         ativo ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="nav-progress h-full w-full bg-primary" />
+      <div className={`h-full w-full origin-left bg-primary ${ativo ? "nav-progress" : "scale-x-0"}`} />
     </div>
   );
 }
