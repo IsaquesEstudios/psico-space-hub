@@ -1177,56 +1177,7 @@ export type Post = {
   paragrafos: string[];
 };
 
-export const posts: Post[] = [
-  {
-    slug: "quando-buscar-avaliacao-neuropsicologica",
-    titulo: "Quando buscar uma avaliação neuropsicológica",
-    categoria: "Neuropsicologia",
-    data: "12 de agosto de 2026",
-    leitura: "5 min de leitura",
-    resumo:
-      "Nem toda dificuldade precisa de avaliação — e nem toda avaliação precisa esperar anos. Veja o que costuma indicar o momento.",
-    imagem: blogLeitura,
-    paragrafos: [
-      "A avaliação neuropsicológica investiga o funcionamento cognitivo, emocional e comportamental. Ela é indicada quando há dúvidas persistentes sobre a origem de uma dificuldade, e não apenas diante de um episódio isolado.",
-      "Entre os motivos mais frequentes de encaminhamento estão queixas de atenção e memória, dificuldades escolares que não cedem com apoio, suspeita de TDAH ou TEA e mudanças cognitivas relacionadas ao envelhecimento.",
-      "O processo reúne entrevista, instrumentos padronizados, observação clínica e, quando necessário, escuta da escola e de outros profissionais que acompanham o caso.",
-      "O resultado não é um número: é uma compreensão organizada, que orienta intervenções mais assertivas em casa, na escola e na clínica.",
-    ],
-  },
-  {
-    slug: "nem-toda-dificuldade-escolar-e-transtorno",
-    titulo: "Nem toda dificuldade escolar é transtorno",
-    categoria: "Aprendizagem",
-    data: "28 de julho de 2026",
-    leitura: "4 min de leitura",
-    resumo:
-      "Antes de nomear, é preciso investigar: o que diferencia uma defasagem escolar de um transtorno de aprendizagem.",
-    imagem: blogRotina,
-    paragrafos: [
-      "Uma dificuldade escolar pode ter muitas origens: método de ensino, faltas, questões emocionais, sono, contexto familiar ou, sim, um transtorno específico de aprendizagem.",
-      "Investigar significa observar leitura, escrita, matemática, compreensão, atenção, memória, organização e funções executivas — e comparar esse desempenho com o que se espera para a idade e a escolaridade.",
-      "Quando a dificuldade persiste mesmo depois de ensino adequado e apoio consistente, vale aprofundar a investigação.",
-      "O objetivo nunca é rotular. É compreender o que está dificultando a aprendizagem e quais estratégias podem favorecer o desenvolvimento.",
-    ],
-  },
-  {
-    slug: "rotina-e-funcoes-executivas-em-casa",
-    titulo: "Rotina e funções executivas: por onde começar em casa",
-    categoria: "Rotina",
-    data: "9 de julho de 2026",
-    leitura: "6 min de leitura",
-    resumo:
-      "Pequenos ajustes de ambiente, tempo e combinados que ajudam quem tem dificuldade de se organizar.",
-    imagem: blogMatematica,
-    paragrafos: [
-      "Funções executivas são as habilidades que nos permitem planejar, iniciar, sustentar e concluir uma tarefa. Quando elas estão em construção — ou comprometidas —, cobrar esforço não resolve.",
-      "O primeiro ajuste é o ambiente: um lugar fixo, sem tela ligada, e blocos curtos de trabalho com pausas previsíveis.",
-      "O segundo é o tamanho da tarefa. Uma lista longa assusta; a mesma lista dividida em partes visíveis parece possível.",
-      "O terceiro é o papel do adulto: acompanhar de perto no começo e ir se afastando aos poucos, sustentando a autonomia em vez de substituí-la.",
-    ],
-  },
-];
+export const posts: Post[] = [];
 
 export const novidades = [
   {
