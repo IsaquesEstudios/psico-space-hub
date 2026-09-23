@@ -28,6 +28,7 @@ function Admin() {
   const [autenticado, setAutenticado] = useState(false);
   const [senhaConfigurada, setSenhaConfigurada] = useState(true);
   const [senha, setSenha] = useState("");
+  const [entrando, setEntrando] = useState(false);
   const [posts, setPosts] = useState<PostDb[]>([]);
 
   async function carregarLista() {
