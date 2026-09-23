@@ -43,11 +43,16 @@ function Admin() {
 
   useEffect(() => {
     void (async () => {
-      const status = await verificar();
-      setAutenticado(status.autenticado);
-      setSenhaConfigurada(status.senhaConfigurada);
-      if (status.autenticado) await carregarLista();
-      setCarregando(false);
+      try {
+        const status = await verificar();
+        setAutenticado(status.autenticado);
+        setSenhaConfigurada(status.senhaConfigurada);
+        if (status.autenticado) await carregarLista();
+      } catch (e) {
+        toast.error(e instanceof Error ? e.message : "Não foi possível abrir o painel.");
+      } finally {
+        setCarregando(false);
+      }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
