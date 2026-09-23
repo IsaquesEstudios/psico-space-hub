@@ -18,6 +18,9 @@ import { Route as LivrosRouteImport } from './routes/livros'
 import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminSlugRouteImport } from './routes/admin.$slug'
+import { Route as AdminNovoRouteImport } from './routes/admin.novo'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -28,6 +31,7 @@ import { Route as LivrosIndexRouteImport } from './routes/livros.index'
 import { Route as LivrosSlugRouteImport } from './routes/livros.$slug'
 import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
 import { Route as NovidadesSlugRouteImport } from './routes/novidades.$slug'
+import { Route as ApiPublicBlogImagemSplatRouteImport } from './routes/api/public/blog-imagem/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -72,6 +76,21 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSlugRoute = AdminSlugRouteImport.update({
+  id: '/admin/$slug',
+  path: '/admin/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminNovoRoute = AdminNovoRouteImport.update({
+  id: '/admin/novo',
+  path: '/admin/novo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AtendimentosIndexRoute = AtendimentosIndexRouteImport.update({
@@ -124,6 +143,12 @@ const NovidadesSlugRoute = NovidadesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NovidadesRoute,
 } as any)
+const ApiPublicBlogImagemSplatRoute =
+  ApiPublicBlogImagemSplatRouteImport.update({
+    id: '/api/public/blog-imagem/$',
+    path: '/api/public/blog-imagem/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -135,32 +160,40 @@ export interface FileRoutesByFullPath {
   '/novidades': typeof NovidadesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/admin/$slug': typeof AdminSlugRoute
+  '/admin/novo': typeof AdminNovoRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
   '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
+  '/admin/': typeof AdminIndexRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
+  '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contato': typeof ContatoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/admin/$slug': typeof AdminSlugRoute
+  '/admin/novo': typeof AdminNovoRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
   '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
+  '/admin': typeof AdminIndexRoute
   '/atendimentos': typeof AtendimentosIndexRoute
   '/blog': typeof BlogIndexRoute
   '/cursos': typeof CursosIndexRoute
   '/livros': typeof LivrosIndexRoute
   '/novidades': typeof NovidadesIndexRoute
+  '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -173,16 +206,20 @@ export interface FileRoutesById {
   '/novidades': typeof NovidadesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/admin/$slug': typeof AdminSlugRoute
+  '/admin/novo': typeof AdminNovoRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
   '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
+  '/admin/': typeof AdminIndexRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
+  '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -196,32 +233,40 @@ export interface FileRouteTypes {
     | '/novidades'
     | '/sitemap.xml'
     | '/sobre'
+    | '/admin/$slug'
+    | '/admin/novo'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
     | '/livros/$slug'
     | '/novidades/$slug'
+    | '/admin/'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
+    | '/api/public/blog-imagem/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contato'
     | '/sitemap.xml'
     | '/sobre'
+    | '/admin/$slug'
+    | '/admin/novo'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
     | '/livros/$slug'
     | '/novidades/$slug'
+    | '/admin'
     | '/atendimentos'
     | '/blog'
     | '/cursos'
     | '/livros'
     | '/novidades'
+    | '/api/public/blog-imagem/$'
   id:
     | '__root__'
     | '/'
@@ -233,16 +278,20 @@ export interface FileRouteTypes {
     | '/novidades'
     | '/sitemap.xml'
     | '/sobre'
+    | '/admin/$slug'
+    | '/admin/novo'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
     | '/livros/$slug'
     | '/novidades/$slug'
+    | '/admin/'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
+    | '/api/public/blog-imagem/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -255,6 +304,10 @@ export interface RootRouteChildren {
   NovidadesRoute: typeof NovidadesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  AdminSlugRoute: typeof AdminSlugRoute
+  AdminNovoRoute: typeof AdminNovoRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  ApiPublicBlogImagemSplatRoute: typeof ApiPublicBlogImagemSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -320,6 +373,27 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/$slug': {
+      id: '/admin/$slug'
+      path: '/admin/$slug'
+      fullPath: '/admin/$slug'
+      preLoaderRoute: typeof AdminSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/novo': {
+      id: '/admin/novo'
+      path: '/admin/novo'
+      fullPath: '/admin/novo'
+      preLoaderRoute: typeof AdminNovoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atendimentos/': {
@@ -391,6 +465,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/novidades/$slug'
       preLoaderRoute: typeof NovidadesSlugRouteImport
       parentRoute: typeof NovidadesRoute
+    }
+    '/api/public/blog-imagem/$': {
+      id: '/api/public/blog-imagem/$'
+      path: '/api/public/blog-imagem/$'
+      fullPath: '/api/public/blog-imagem/$'
+      preLoaderRoute: typeof ApiPublicBlogImagemSplatRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -471,6 +552,10 @@ const rootRouteChildren: RootRouteChildren = {
   NovidadesRoute: NovidadesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  AdminSlugRoute: AdminSlugRoute,
+  AdminNovoRoute: AdminNovoRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  ApiPublicBlogImagemSplatRoute: ApiPublicBlogImagemSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

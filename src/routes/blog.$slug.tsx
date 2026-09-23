@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 
 import { Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
+import { listarPostsPublicados } from "@/lib/blog.functions";
+import { paraPost } from "@/lib/blog-posts";
 
 const meses = [
   "janeiro",
@@ -33,10 +35,11 @@ function paraIso(data: string): string | null {
 
 export const Route = createFileRoute("/blog/$slug")({
   staticData: { sitemap: true },
-  loader: ({ params }) => {
-    const post = posts.find((p) => p.slug === params.slug);
+  loader: async ({ params }) => {
+    const dinamicos = (await listarPostsPublicados()).map(paraPost);
+    const post = [...dinamicos, ...posts].find((p) => p.slug === params.slug);
     if (!post) throw notFound();
-    return { post };
+    return { post, outros: [...dinamicos, ...posts].filter((p) => p.slug !== params.slug).slice(0, 2) };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -80,10 +83,10 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
-  const outros = posts.filter((p) => p.slug !== post.slug);
+  const { post, outros } = Route.useLoaderData();
   const indice = posts.findIndex((item) => item.slug === post.slug);
-  const fotoJessica = fotosJessica.blogArtigos[indice] ?? fotosJessica.blog;
+  const fotoJessica =
+    indice >= 0 ? (fotosJessica.blogArtigos[indice] ?? fotosJessica.blog) : post.imagem;
 
   return (
     <>
