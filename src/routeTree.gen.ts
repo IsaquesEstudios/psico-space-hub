@@ -31,6 +31,7 @@ import { Route as LivrosIndexRouteImport } from './routes/livros.index'
 import { Route as LivrosSlugRouteImport } from './routes/livros.$slug'
 import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
 import { Route as NovidadesSlugRouteImport } from './routes/novidades.$slug'
+import { Route as ApiPublicAdminProxyRouteImport } from './routes/api/public/admin-proxy'
 import { Route as ApiPublicBlogImagemSplatRouteImport } from './routes/api/public/blog-imagem/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -143,6 +144,11 @@ const NovidadesSlugRoute = NovidadesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NovidadesRoute,
 } as any)
+const ApiPublicAdminProxyRoute = ApiPublicAdminProxyRouteImport.update({
+  id: '/api/public/admin-proxy',
+  path: '/api/public/admin-proxy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicBlogImagemSplatRoute =
   ApiPublicBlogImagemSplatRouteImport.update({
     id: '/api/public/blog-imagem/$',
@@ -173,6 +179,7 @@ export interface FileRoutesByFullPath {
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
+  '/api/public/admin-proxy': typeof ApiPublicAdminProxyRoute
   '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesByTo {
@@ -193,6 +200,7 @@ export interface FileRoutesByTo {
   '/cursos': typeof CursosIndexRoute
   '/livros': typeof LivrosIndexRoute
   '/novidades': typeof NovidadesIndexRoute
+  '/api/public/admin-proxy': typeof ApiPublicAdminProxyRoute
   '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesById {
@@ -219,6 +227,7 @@ export interface FileRoutesById {
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
+  '/api/public/admin-proxy': typeof ApiPublicAdminProxyRoute
   '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRouteTypes {
@@ -246,6 +255,7 @@ export interface FileRouteTypes {
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
+    | '/api/public/admin-proxy'
     | '/api/public/blog-imagem/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -266,6 +276,7 @@ export interface FileRouteTypes {
     | '/cursos'
     | '/livros'
     | '/novidades'
+    | '/api/public/admin-proxy'
     | '/api/public/blog-imagem/$'
   id:
     | '__root__'
@@ -291,6 +302,7 @@ export interface FileRouteTypes {
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
+    | '/api/public/admin-proxy'
     | '/api/public/blog-imagem/$'
   fileRoutesById: FileRoutesById
 }
@@ -307,6 +319,7 @@ export interface RootRouteChildren {
   AdminSlugRoute: typeof AdminSlugRoute
   AdminNovoRoute: typeof AdminNovoRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  ApiPublicAdminProxyRoute: typeof ApiPublicAdminProxyRoute
   ApiPublicBlogImagemSplatRoute: typeof ApiPublicBlogImagemSplatRoute
 }
 
@@ -466,6 +479,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovidadesSlugRouteImport
       parentRoute: typeof NovidadesRoute
     }
+    '/api/public/admin-proxy': {
+      id: '/api/public/admin-proxy'
+      path: '/api/public/admin-proxy'
+      fullPath: '/api/public/admin-proxy'
+      preLoaderRoute: typeof ApiPublicAdminProxyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/blog-imagem/$': {
       id: '/api/public/blog-imagem/$'
       path: '/api/public/blog-imagem/$'
@@ -555,6 +575,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminSlugRoute: AdminSlugRoute,
   AdminNovoRoute: AdminNovoRoute,
   AdminIndexRoute: AdminIndexRoute,
+  ApiPublicAdminProxyRoute: ApiPublicAdminProxyRoute,
   ApiPublicBlogImagemSplatRoute: ApiPublicBlogImagemSplatRoute,
 }
 export const routeTree = rootRouteImport
