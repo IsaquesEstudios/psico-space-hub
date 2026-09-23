@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
-import { MapPin } from "lucide-react";
+import { Clock, Instagram, MapPin, Phone, Youtube } from "lucide-react";
 
 import { mapaEmbedUrl, mapaLinkUrl, site } from "@/data/site";
+import { TikTokIcon } from "@/components/site/TikTokIcon";
 
 
 export function Eyebrow({ children }: { children: ReactNode }) {
