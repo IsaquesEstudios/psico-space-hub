@@ -28,6 +28,7 @@ import { Route as LivrosIndexRouteImport } from './routes/livros.index'
 import { Route as LivrosSlugRouteImport } from './routes/livros.$slug'
 import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
 import { Route as NovidadesSlugRouteImport } from './routes/novidades.$slug'
+import { Route as ApiPublicBlogImagemSplatRouteImport } from './routes/api/public/blog-imagem/$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -124,6 +125,12 @@ const NovidadesSlugRoute = NovidadesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NovidadesRoute,
 } as any)
+const ApiPublicBlogImagemSplatRoute =
+  ApiPublicBlogImagemSplatRouteImport.update({
+    id: '/api/public/blog-imagem/$',
+    path: '/api/public/blog-imagem/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByFullPath {
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
+  '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -161,6 +169,7 @@ export interface FileRoutesByTo {
   '/cursos': typeof CursosIndexRoute
   '/livros': typeof LivrosIndexRoute
   '/novidades': typeof NovidadesIndexRoute
+  '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -183,6 +192,7 @@ export interface FileRoutesById {
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
+  '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
+    | '/api/public/blog-imagem/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -222,6 +233,7 @@ export interface FileRouteTypes {
     | '/cursos'
     | '/livros'
     | '/novidades'
+    | '/api/public/blog-imagem/$'
   id:
     | '__root__'
     | '/'
@@ -243,6 +255,7 @@ export interface FileRouteTypes {
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
+    | '/api/public/blog-imagem/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -255,6 +268,7 @@ export interface RootRouteChildren {
   NovidadesRoute: typeof NovidadesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  ApiPublicBlogImagemSplatRoute: typeof ApiPublicBlogImagemSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -392,6 +406,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovidadesSlugRouteImport
       parentRoute: typeof NovidadesRoute
     }
+    '/api/public/blog-imagem/$': {
+      id: '/api/public/blog-imagem/$'
+      path: '/api/public/blog-imagem/$'
+      fullPath: '/api/public/blog-imagem/$'
+      preLoaderRoute: typeof ApiPublicBlogImagemSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -471,6 +492,7 @@ const rootRouteChildren: RootRouteChildren = {
   NovidadesRoute: NovidadesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  ApiPublicBlogImagemSplatRoute: ApiPublicBlogImagemSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
