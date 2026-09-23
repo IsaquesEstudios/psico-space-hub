@@ -13,13 +13,13 @@ ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL \
 COPY package.json bun.lock* bunfig.toml ./
 RUN bun install --frozen-lockfile || bun install
 COPY . .
+ENV NITRO_PRESET=node-server
 RUN bun run build
 
 FROM node:22-slim
 WORKDIR /app
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
-# A montagem gera um módulo de servidor em dist e os arquivos públicos em dist/client.
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/docker/start.mjs ./docker/start.mjs
+# Fora da Lovable a montagem gera um servidor Node completo em .output
+COPY --from=build /app/.output ./.output
 EXPOSE 3000
-CMD ["node", "docker/start.mjs"]
+CMD ["node", ".output/server/index.mjs"]
