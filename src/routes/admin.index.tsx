@@ -53,22 +53,27 @@ function Admin() {
 
   async function fazerLogin(evento: React.FormEvent) {
     evento.preventDefault();
-    const resultado = await entrar({ data: { senha } });
-    if (!resultado.ok) {
-      toast.error(
-        resultado.motivo === "sem-senha"
-          ? "Senha ainda não configurada"
-          : resultado.motivo === "bloqueado"
-            ? `Muitas tentativas. Aguarde ${resultado.minutos} minutos e tente de novo.`
-            : resultado.restantes > 0
-              ? `Senha incorreta. Restam ${resultado.restantes} tentativas.`
-              : `Senha incorreta. Acesso bloqueado por 15 minutos.`,
-      );
-      return;
+    setEntrando(true);
+    try {
+      const resultado = await entrar({ data: { senha } });
+      if (!resultado.ok) {
+        toast.error(
+          resultado.motivo === "sem-senha"
+            ? "Senha ainda não configurada"
+            : resultado.motivo === "bloqueado"
+              ? `Muitas tentativas. Aguarde ${resultado.minutos} minutos e tente de novo.`
+              : resultado.restantes > 0
+                ? `Senha incorreta. Restam ${resultado.restantes} tentativas.`
+                : `Senha incorreta. Acesso bloqueado por 15 minutos.`,
+        );
+        return;
+      }
+      setSenha("");
+      setAutenticado(true);
+      await carregarLista();
+    } finally {
+      setEntrando(false);
     }
-    setSenha("");
-    setAutenticado(true);
-    await carregarLista();
   }
 
   async function fazerLogout() {
