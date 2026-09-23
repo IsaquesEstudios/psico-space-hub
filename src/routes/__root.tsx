@@ -184,7 +184,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
-        <IndicadorCarregamento />
+        {!isAdmin ? <IndicadorCarregamento /> : null}
         {!isAdmin ? <Header /> : null}
         {!isHome && !isAdmin ? <div className="h-[88px] bg-deep" aria-hidden /> : null}
         <main className="flex-1">
