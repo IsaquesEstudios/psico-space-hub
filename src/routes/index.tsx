@@ -4,10 +4,13 @@ import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide
 import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, Section } from "@/components/site/bits";
 import clinicaRecepcao from "@/assets/clinica-evoluta-recepcao.jpg.asset.json";
-import { atendimentos, brandShareImage, cursos, destaques, images, livros, posts, site } from "@/data/site";
+import { atendimentos, brandShareImage, cursos, destaques, images, livros, site } from "@/data/site";
+import { listarPostsPublicados } from "@/lib/blog.functions";
+import { paraPost } from "@/lib/blog-posts";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
+  loader: async () => ({ postsBlog: (await listarPostsPublicados()).map(paraPost) }),
   head: () => ({
     meta: [
       { title: "Clínica Evoluta | Atendimentos multidisciplinares em São Gabriel da Palha" },
@@ -58,6 +61,7 @@ export const Route = createFileRoute("/")({
 const icones = [Puzzle, HeartHandshake, Users, ClipboardList];
 
 function Inicio() {
+  const { postsBlog } = Route.useLoaderData();
   return (
     <>
       {/* Hero */}
@@ -315,46 +319,48 @@ function Inicio() {
 
 
       {/* Blog */}
-      <Section className="bg-muted">
-        <div className="max-w-2xl">
-          <Eyebrow>Blog</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-            Compartilhamos dicas para ajudar quem precisa
-          </h2>
-          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            Conteúdos simples e cuidadosos para apoiar famílias, educadores e crianças no caminho da
-            aprendizagem.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {posts.slice(0, 3).map((post) => (
-            <Link
-              key={post.slug}
-              to="/blog/$slug"
-              params={{ slug: post.slug }}
-              className="group block"
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={post.imagem}
-                  alt={post.titulo}
-                  loading="lazy"
-                  width={1200}
-                  height={800}
-                  className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <p className="eyebrow mt-5 text-primary">{post.categoria}</p>
-              <h3 className="mt-3 font-display text-2xl leading-snug">{post.titulo}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.resumo}</p>
-              <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
-                Ler postagem
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </Section>
+      {postsBlog.length > 0 ? (
+        <Section className="bg-muted">
+          <div className="max-w-2xl">
+            <Eyebrow>Blog</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+              Compartilhamos dicas para ajudar quem precisa
+            </h2>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              Conteúdos simples e cuidadosos para apoiar famílias, educadores e crianças no caminho da
+              aprendizagem.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {postsBlog.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                to="/blog/$slug"
+                params={{ slug: post.slug }}
+                className="group block"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={post.imagem}
+                    alt={post.titulo}
+                    loading="lazy"
+                    width={1200}
+                    height={800}
+                    className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <p className="eyebrow mt-5 text-primary">{post.categoria}</p>
+                <h3 className="mt-3 font-display text-2xl leading-snug">{post.titulo}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.resumo}</p>
+                <span className="eyebrow mt-6 inline-flex items-center gap-2 transition-colors group-hover:text-primary">
+                  Ler postagem
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      ) : null}
 
       <Avaliacoes className="bg-background" />
     </>
