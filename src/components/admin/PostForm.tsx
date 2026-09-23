@@ -4,18 +4,37 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 import { enviarCapa, salvarPost } from "@/lib/admin.functions";
-import type { PostDb } from "@/lib/blog-posts";
-import { dataHoje } from "@/lib/blog-posts";
+import type { Bloco, PostDb, TipoBloco } from "@/lib/blog-posts";
+import { codificarBloco, dataHoje, decodificarBlocos } from "@/lib/blog-posts";
 
 const campo =
   "mt-2 w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary";
 const rotulo = "eyebrow text-muted-foreground";
 
-function blocosIniciais(post?: PostDb | null) {
-  const blocos = post?.paragrafos && post.paragrafos.length > 0 ? [...post.paragrafos] : [""];
-  const ultimo = blocos[blocos.length - 1];
-  if (ultimo?.trim()) blocos.push("");
-  return blocos;
+const opcoes: { tipo: TipoBloco; nome: string }[] = [
+  { tipo: "h2", nome: "Título H2" },
+  { tipo: "h3", nome: "Título H3" },
+  { tipo: "paragrafo", nome: "Parágrafo" },
+  { tipo: "imagem", nome: "Imagem" },
+];
+
+function nomeDoBloco(tipo: TipoBloco) {
+  return opcoes.find((opcao) => opcao.tipo === tipo)?.nome ?? "Parágrafo";
+}
+
+function blocosIniciais(post?: PostDb | null): Bloco[] {
+  if (post?.paragrafos && post.paragrafos.length > 0) return decodificarBlocos(post.paragrafos);
+  return [{ tipo: "paragrafo", valor: "" }];
+}
+
+async function paraBase64(arquivo: File) {
+  const bytes = new Uint8Array(await arquivo.arrayBuffer());
+  let binario = "";
+  for (let i = 0; i < bytes.length; i += 1) {
+    const byte = bytes[i];
+    if (byte !== undefined) binario += String.fromCharCode(byte);
+  }
+  return btoa(binario);
 }
 
 export function PostForm({ post }: { post?: PostDb | null }) {
@@ -25,42 +44,52 @@ export function PostForm({ post }: { post?: PostDb | null }) {
 
   const [titulo, setTitulo] = useState(post?.titulo ?? "");
   const [imagem, setImagem] = useState<string | null>(post?.imagem ?? null);
-  const [blocos, setBlocos] = useState(() => blocosIniciais(post));
+  const [blocos, setBlocos] = useState<Bloco[]>(() => blocosIniciais(post));
+  const [menuAberto, setMenuAberto] = useState<number | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [salvando, setSalvando] = useState(false);
 
   function atualizarBloco(indice: number, valor: string) {
-    setBlocos((atuais) => {
-      const proximos = [...atuais];
-      proximos[indice] = valor;
-      const ultimo = proximos[proximos.length - 1];
-      if (ultimo?.trim()) proximos.push("");
-
-      while (proximos.length > 1) {
-        const fim = proximos[proximos.length - 1];
-        const anterior = proximos[proximos.length - 2];
-        if (fim?.trim() || anterior?.trim()) break;
-        proximos.pop();
-      }
-
-      return proximos;
-    });
+    setBlocos((atuais) => atuais.map((bloco, i) => (i === indice ? { ...bloco, valor } : bloco)));
   }
 
-  async function escolherImagem(arquivo: File) {
+  function adicionarBloco(indice: number, tipo: TipoBloco) {
+    setBlocos((atuais) => [
+      ...atuais.slice(0, indice + 1),
+      { tipo, valor: "" },
+      ...atuais.slice(indice + 1),
+    ]);
+    setMenuAberto(null);
+  }
+
+  function removerBloco(indice: number) {
+    setBlocos((atuais) => (atuais.length === 1 ? atuais : atuais.filter((_, i) => i !== indice)));
+  }
+
+  async function subirImagem(arquivo: File) {
+    const base64 = await paraBase64(arquivo);
+    const resultado = await upload({
+      data: { nome: arquivo.name, tipo: arquivo.type, base64 },
+    });
+    return resultado.url;
+  }
+
+  async function escolherCapa(arquivo: File) {
     setEnviando(true);
     try {
-      const buffer = await arquivo.arrayBuffer();
-      let binario = "";
-      const bytes = new Uint8Array(buffer);
-      for (let i = 0; i < bytes.length; i += 1) {
-        const byte = bytes[i];
-        if (byte !== undefined) binario += String.fromCharCode(byte);
-      }
-      const resultado = await upload({
-        data: { nome: arquivo.name, tipo: arquivo.type, base64: btoa(binario) },
-      });
-      setImagem(resultado.url);
+      setImagem(await subirImagem(arquivo));
+      toast.success("Imagem carregada");
+    } catch {
+      toast.error("Não foi possível carregar a imagem");
+    } finally {
+      setEnviando(false);
+    }
+  }
+
+  async function escolherImagemBloco(indice: number, arquivo: File) {
+    setEnviando(true);
+    try {
+      atualizarBloco(indice, await subirImagem(arquivo));
       toast.success("Imagem carregada");
     } catch {
       toast.error("Não foi possível carregar a imagem");
@@ -78,12 +107,14 @@ export function PostForm({ post }: { post?: PostDb | null }) {
       toast.error("Escolha a imagem da postagem");
       return;
     }
-    const paragrafos = blocos.filter((bloco) => bloco.trim().length > 0);
-    if (paragrafos.length === 0) {
+    const preenchidos = blocos.filter((bloco) => bloco.valor.trim().length > 0);
+    if (preenchidos.length === 0) {
       toast.error("Escreva pelo menos um parágrafo");
       return;
     }
-    const resumo = paragrafos[0]?.replace(/\s+/g, " ").trim().slice(0, 220) ?? "";
+    const paragrafos = preenchidos.map(codificarBloco);
+    const primeiroTexto = preenchidos.find((bloco) => bloco.tipo === "paragrafo")?.valor ?? "";
+    const resumo = primeiroTexto.replace(/\s+/g, " ").trim().slice(0, 220);
     setSalvando(true);
     try {
       await salvar({
@@ -125,7 +156,7 @@ export function PostForm({ post }: { post?: PostDb | null }) {
           className="mt-4 w-full text-xs"
           onChange={(e) => {
             const arquivo = e.target.files?.[0];
-            if (arquivo) void escolherImagem(arquivo);
+            if (arquivo) void escolherCapa(arquivo);
           }}
         />
         {enviando ? <p className="mt-2 text-xs text-muted-foreground">Carregando imagem…</p> : null}
@@ -137,17 +168,89 @@ export function PostForm({ post }: { post?: PostDb | null }) {
           <input className={campo} value={titulo} onChange={(e) => setTitulo(e.target.value)} />
         </label>
 
-        <div className="mt-8 space-y-8">
+        <div className="mt-8">
           {blocos.map((bloco, indice) => (
-            <label key={indice} className="block">
-              <span className={rotulo}>Parágrafo {indice + 1}</span>
-              <textarea
-                className={`${campo} whitespace-pre-wrap`}
-                rows={indice === blocos.length - 1 && !bloco.trim() ? 5 : 8}
-                value={bloco}
-                onChange={(e) => atualizarBloco(indice, e.target.value)}
-              />
-            </label>
+            <div key={indice} className="mt-8 first:mt-0">
+              <div className="flex items-center justify-between gap-4">
+                <span className={rotulo}>{nomeDoBloco(bloco.tipo)}</span>
+                {blocos.length > 1 ? (
+                  <button
+                    type="button"
+                    onClick={() => removerBloco(indice)}
+                    className="eyebrow text-destructive"
+                  >
+                    Remover
+                  </button>
+                ) : null}
+              </div>
+
+              {bloco.tipo === "imagem" ? (
+                <div>
+                  {bloco.valor ? (
+                    <img src={bloco.valor} alt="" className="mt-3 w-full object-contain" />
+                  ) : (
+                    <div className="mt-3 flex min-h-40 items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
+                      Escolha a imagem deste bloco.
+                    </div>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="mt-3 w-full text-xs"
+                    onChange={(e) => {
+                      const arquivo = e.target.files?.[0];
+                      if (arquivo) void escolherImagemBloco(indice, arquivo);
+                    }}
+                  />
+                </div>
+              ) : bloco.tipo === "paragrafo" ? (
+                <textarea
+                  className={`${campo} whitespace-pre-wrap`}
+                  rows={8}
+                  value={bloco.valor}
+                  onChange={(e) => atualizarBloco(indice, e.target.value)}
+                />
+              ) : (
+                <input
+                  className={campo}
+                  value={bloco.valor}
+                  onChange={(e) => atualizarBloco(indice, e.target.value)}
+                />
+              )}
+
+              <div className="mt-4">
+                {menuAberto === indice ? (
+                  <div className="flex flex-wrap gap-2">
+                    {opcoes.map((opcao) => (
+                      <button
+                        key={opcao.tipo}
+                        type="button"
+                        onClick={() => adicionarBloco(indice, opcao.tipo)}
+                        className="eyebrow border border-border px-4 py-2 hover:border-primary hover:text-primary"
+                      >
+                        {opcao.nome}
+                      </button>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => setMenuAberto(null)}
+                      className="eyebrow px-3 py-2 text-muted-foreground"
+                    >
+                      Cancelar
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setMenuAberto(indice)}
+                    aria-label="Adicionar bloco"
+                    className="flex h-9 w-9 items-center justify-center border border-border text-lg leading-none text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  >
+                    +
+                  </button>
+                )}
+              </div>
+            </div>
           ))}
         </div>
 
