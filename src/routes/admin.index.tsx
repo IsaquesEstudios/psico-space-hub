@@ -28,6 +28,7 @@ function Admin() {
   const [autenticado, setAutenticado] = useState(false);
   const [senhaConfigurada, setSenhaConfigurada] = useState(true);
   const [senha, setSenha] = useState("");
+  const [entrando, setEntrando] = useState(false);
   const [posts, setPosts] = useState<PostDb[]>([]);
 
   async function carregarLista() {
@@ -53,22 +54,27 @@ function Admin() {
 
   async function fazerLogin(evento: React.FormEvent) {
     evento.preventDefault();
-    const resultado = await entrar({ data: { senha } });
-    if (!resultado.ok) {
-      toast.error(
-        resultado.motivo === "sem-senha"
-          ? "Senha ainda não configurada"
-          : resultado.motivo === "bloqueado"
-            ? `Muitas tentativas. Aguarde ${resultado.minutos} minutos e tente de novo.`
-            : resultado.restantes > 0
-              ? `Senha incorreta. Restam ${resultado.restantes} tentativas.`
-              : `Senha incorreta. Acesso bloqueado por 15 minutos.`,
-      );
-      return;
+    setEntrando(true);
+    try {
+      const resultado = await entrar({ data: { senha } });
+      if (!resultado.ok) {
+        toast.error(
+          resultado.motivo === "sem-senha"
+            ? "Senha ainda não configurada"
+            : resultado.motivo === "bloqueado"
+              ? `Muitas tentativas. Aguarde ${resultado.minutos} minutos e tente de novo.`
+              : resultado.restantes > 0
+                ? `Senha incorreta. Restam ${resultado.restantes} tentativas.`
+                : `Senha incorreta. Acesso bloqueado por 15 minutos.`,
+        );
+        return;
+      }
+      setSenha("");
+      setAutenticado(true);
+      await carregarLista();
+    } finally {
+      setEntrando(false);
     }
-    setSenha("");
-    setAutenticado(true);
-    await carregarLista();
   }
 
   async function fazerLogout() {
@@ -112,8 +118,19 @@ function Admin() {
               onChange={(e) => setSenha(e.target.value)}
               className="w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"
             />
-            <button type="submit" className="eyebrow mt-4 w-full bg-primary px-6 py-4 text-primary-foreground">
-              Entrar
+            <button
+              type="submit"
+              disabled={entrando}
+              className="eyebrow mt-4 flex w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-primary-foreground transition-transform duration-150 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-70 disabled:active:scale-100"
+            >
+              {entrando ? (
+                <>
+                  <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/40 border-t-primary-foreground" />
+                  Entrando…
+                </>
+              ) : (
+                "Entrar"
+              )}
             </button>
           </form>
         </div>
