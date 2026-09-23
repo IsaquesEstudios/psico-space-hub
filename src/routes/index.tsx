@@ -4,10 +4,13 @@ import { ArrowRight, ClipboardList, HeartHandshake, Puzzle, Users } from "lucide
 import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, Section } from "@/components/site/bits";
 import clinicaRecepcao from "@/assets/clinica-evoluta-recepcao.jpg.asset.json";
-import { atendimentos, brandShareImage, cursos, destaques, images, livros, posts, site } from "@/data/site";
+import { atendimentos, brandShareImage, cursos, destaques, images, livros, site } from "@/data/site";
+import { listarPostsPublicados } from "@/lib/blog.functions";
+import { paraPost } from "@/lib/blog-posts";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
+  loader: async () => ({ postsBlog: (await listarPostsPublicados()).map(paraPost) }),
   head: () => ({
     meta: [
       { title: "Clínica Evoluta | Atendimentos multidisciplinares em São Gabriel da Palha" },
