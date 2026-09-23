@@ -131,7 +131,9 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function IndicadorCarregamento() {
-  const ativo = useRouterState({ select: (s) => s.status === "pending" });
+  const ativo = useRouterState({
+    select: (s) => s.location.href !== s.resolvedLocation?.href,
+  });
   return (
     <div
       aria-hidden={!ativo}
