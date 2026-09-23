@@ -150,6 +150,20 @@ export function PostForm({ post }: { post?: PostDb | null }) {
     }
   }
 
+  async function escolherImagemBloco(indice: number, arquivo: File) {
+    setEnviando(true);
+    try {
+      atualizarBloco(indice, await subirImagem(arquivo, 1200));
+      toast.success("Imagem carregada");
+    } catch {
+      toast.error("Não foi possível carregar a imagem");
+    } finally {
+      setEnviando(false);
+    }
+  }
+
+
+
   async function enviar(status: "draft" | "published") {
     if (!titulo.trim()) {
       toast.error("Escreva um título");
@@ -237,24 +251,13 @@ export function PostForm({ post }: { post?: PostDb | null }) {
               </div>
 
               {bloco.tipo === "imagem" ? (
-                <div>
-                  {bloco.valor ? (
-                    <img src={bloco.valor} alt="" className="mt-3 w-full object-contain" />
-                  ) : (
-                    <div className="mt-3 flex min-h-40 items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
-                      Escolha a imagem deste bloco.
-                    </div>
-                  )}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="mt-3 w-full text-xs"
-                    onChange={(e) => {
-                      const arquivo = e.target.files?.[0];
-                      if (arquivo) void escolherImagemBloco(indice, arquivo);
-                    }}
-                  />
-                </div>
+                <CampoImagem
+                  valor={bloco.valor || null}
+                  alto="min-h-40"
+                  vazio="Escolha a imagem deste bloco."
+                  recomendacao="Recomendado: 1200 × 800 px (JPG ou PNG)."
+                  onArquivo={(arquivo) => void escolherImagemBloco(indice, arquivo)}
+                />
               ) : bloco.tipo === "paragrafo" ? (
                 <textarea
                   className={`${campo} whitespace-pre-wrap`}
