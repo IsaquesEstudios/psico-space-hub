@@ -3,9 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 import { Eyebrow, Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
+import { listarPostsPublicados } from "@/lib/blog.functions";
+import { paraPost } from "@/lib/blog-posts";
 
 export const Route = createFileRoute("/blog/")({
   staticData: { sitemap: true },
+  loader: async () => ({ dinamicos: (await listarPostsPublicados()).map(paraPost) }),
   head: () => ({
     meta: [
       { title: "Blog | Clínica Evoluta" },
@@ -27,8 +30,10 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
-  const destaque = posts[0]!;
-  const restantes = posts.slice(1);
+  const { dinamicos } = Route.useLoaderData();
+  const todos = [...dinamicos, ...posts];
+  const destaque = todos[0]!;
+  const restantes = todos.slice(1);
 
   return (
     <>
