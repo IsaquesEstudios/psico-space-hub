@@ -31,7 +31,6 @@ import { Route as LivrosIndexRouteImport } from './routes/livros.index'
 import { Route as LivrosSlugRouteImport } from './routes/livros.$slug'
 import { Route as NovidadesIndexRouteImport } from './routes/novidades.index'
 import { Route as NovidadesSlugRouteImport } from './routes/novidades.$slug'
-import { Route as ApiPublicHealthRouteImport } from './routes/api/public/health'
 import { Route as ApiPublicBlogImagemSplatRouteImport } from './routes/api/public/blog-imagem/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -144,11 +143,6 @@ const NovidadesSlugRoute = NovidadesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NovidadesRoute,
 } as any)
-const ApiPublicHealthRoute = ApiPublicHealthRouteImport.update({
-  id: '/api/public/health',
-  path: '/api/public/health',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiPublicBlogImagemSplatRoute =
   ApiPublicBlogImagemSplatRouteImport.update({
     id: '/api/public/blog-imagem/$',
@@ -179,7 +173,6 @@ export interface FileRoutesByFullPath {
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
-  '/api/public/health': typeof ApiPublicHealthRoute
   '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesByTo {
@@ -200,7 +193,6 @@ export interface FileRoutesByTo {
   '/cursos': typeof CursosIndexRoute
   '/livros': typeof LivrosIndexRoute
   '/novidades': typeof NovidadesIndexRoute
-  '/api/public/health': typeof ApiPublicHealthRoute
   '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRoutesById {
@@ -227,7 +219,6 @@ export interface FileRoutesById {
   '/cursos/': typeof CursosIndexRoute
   '/livros/': typeof LivrosIndexRoute
   '/novidades/': typeof NovidadesIndexRoute
-  '/api/public/health': typeof ApiPublicHealthRoute
   '/api/public/blog-imagem/$': typeof ApiPublicBlogImagemSplatRoute
 }
 export interface FileRouteTypes {
@@ -255,7 +246,6 @@ export interface FileRouteTypes {
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
-    | '/api/public/health'
     | '/api/public/blog-imagem/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -276,7 +266,6 @@ export interface FileRouteTypes {
     | '/cursos'
     | '/livros'
     | '/novidades'
-    | '/api/public/health'
     | '/api/public/blog-imagem/$'
   id:
     | '__root__'
@@ -302,7 +291,6 @@ export interface FileRouteTypes {
     | '/cursos/'
     | '/livros/'
     | '/novidades/'
-    | '/api/public/health'
     | '/api/public/blog-imagem/$'
   fileRoutesById: FileRoutesById
 }
@@ -319,7 +307,6 @@ export interface RootRouteChildren {
   AdminSlugRoute: typeof AdminSlugRoute
   AdminNovoRoute: typeof AdminNovoRoute
   AdminIndexRoute: typeof AdminIndexRoute
-  ApiPublicHealthRoute: typeof ApiPublicHealthRoute
   ApiPublicBlogImagemSplatRoute: typeof ApiPublicBlogImagemSplatRoute
 }
 
@@ -479,13 +466,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovidadesSlugRouteImport
       parentRoute: typeof NovidadesRoute
     }
-    '/api/public/health': {
-      id: '/api/public/health'
-      path: '/api/public/health'
-      fullPath: '/api/public/health'
-      preLoaderRoute: typeof ApiPublicHealthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/public/blog-imagem/$': {
       id: '/api/public/blog-imagem/$'
       path: '/api/public/blog-imagem/$'
@@ -575,7 +555,6 @@ const rootRouteChildren: RootRouteChildren = {
   AdminSlugRoute: AdminSlugRoute,
   AdminNovoRoute: AdminNovoRoute,
   AdminIndexRoute: AdminIndexRoute,
-  ApiPublicHealthRoute: ApiPublicHealthRoute,
   ApiPublicBlogImagemSplatRoute: ApiPublicBlogImagemSplatRoute,
 }
 export const routeTree = rootRouteImport
