@@ -16,7 +16,8 @@ COPY . .
 # A montagem externa precisa ignorar os sinais do ambiente de pré-visualização
 # e gerar um servidor Node persistente em .output.
 RUN LOVABLE_SANDBOX=0 DEV_SERVER__PROJECT_PATH= NITRO_PRESET=node-server bun run build \
-    && test -f /app/.output/server/index.mjs
+    && test -f /app/.output/server/index.mjs \
+    && grep -rlZ "/__l5e/assets-v1/" /app/.output | xargs -0 -r sed -i 's#\([^a-z.]\)/__l5e/assets-v1/#\1https://psico-space-hub.lovable.app/__l5e/assets-v1/#g'
 
 FROM node:22-slim
 WORKDIR /app
