@@ -108,11 +108,11 @@ function PostPage() {
             alt={`Jéssica Pelissari — ${post.titulo}`}
             width={1080}
             height={720}
-            className="mt-10 h-80 w-full object-cover object-top lg:h-[480px]"
+            className="mt-10 w-full object-contain"
           />
           <div className="mt-10">
-            {post.paragrafos.map((p) => (
-              <p key={p} className="mb-6 text-base leading-relaxed text-muted-foreground">
+            {post.paragrafos.map((p, index) => (
+              <p key={`${post.slug}-${index}`} className="mb-6 whitespace-pre-wrap text-base leading-relaxed text-muted-foreground">
                 {p}
               </p>
             ))}

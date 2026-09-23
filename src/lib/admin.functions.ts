@@ -98,7 +98,7 @@ export const salvarPost = createServerFn({ method: "POST" })
     await exigirSessao();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
-    const paragrafos = data.paragrafos.map((p) => p.trim()).filter(Boolean);
+    const paragrafos = data.paragrafos.filter((p) => p.trim().length > 0);
     const slug = (data.slug?.trim() || gerarSlug(data.titulo)) || `post-${Date.now()}`;
 
     const registro = {

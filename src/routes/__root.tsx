@@ -179,20 +179,21 @@ function RootComponent() {
   // Na home o hero corre por baixo do menu fixo; nas outras páginas o conteúdo
   // precisa de um respiro no topo para não ficar escondido sob o menu.
   const isHome = pathname === "/";
+  const isAdmin = pathname.startsWith("/admin");
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
         <IndicadorCarregamento />
-        <Header />
-        {!isHome && <div className="h-[88px] bg-deep" aria-hidden />}
+        {!isAdmin ? <Header /> : null}
+        {!isHome && !isAdmin ? <div className="h-[88px] bg-deep" aria-hidden /> : null}
         <main className="flex-1">
 
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </main>
-        <MapaLocalizacao />
-        <Footer />
+        {!isAdmin ? <MapaLocalizacao /> : null}
+        {!isAdmin ? <Footer /> : null}
         <Toaster />
 
       </div>

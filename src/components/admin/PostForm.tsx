@@ -11,20 +11,41 @@ const campo =
   "mt-2 w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary";
 const rotulo = "eyebrow text-muted-foreground";
 
+function blocosIniciais(post?: PostDb | null) {
+  const blocos = post?.paragrafos && post.paragrafos.length > 0 ? [...post.paragrafos] : [""];
+  const ultimo = blocos[blocos.length - 1];
+  if (ultimo?.trim()) blocos.push("");
+  return blocos;
+}
+
 export function PostForm({ post }: { post?: PostDb | null }) {
   const navigate = useNavigate();
   const salvar = useServerFn(salvarPost);
   const upload = useServerFn(enviarCapa);
 
   const [titulo, setTitulo] = useState(post?.titulo ?? "");
-  const [categoria, setCategoria] = useState(post?.categoria ?? "Blog");
-  const [data, setData] = useState(post?.data ?? dataHoje());
-  const [resumo, setResumo] = useState(post?.resumo ?? "");
-  const [leitura, setLeitura] = useState(post?.leitura ?? "");
-  const [texto, setTexto] = useState((post?.paragrafos ?? []).join("\n\n"));
   const [imagem, setImagem] = useState<string | null>(post?.imagem ?? null);
+  const [blocos, setBlocos] = useState(() => blocosIniciais(post));
   const [enviando, setEnviando] = useState(false);
   const [salvando, setSalvando] = useState(false);
+
+  function atualizarBloco(indice: number, valor: string) {
+    setBlocos((atuais) => {
+      const proximos = [...atuais];
+      proximos[indice] = valor;
+      const ultimo = proximos[proximos.length - 1];
+      if (ultimo?.trim()) proximos.push("");
+
+      while (proximos.length > 1) {
+        const fim = proximos[proximos.length - 1];
+        const anterior = proximos[proximos.length - 2];
+        if (fim?.trim() || anterior?.trim()) break;
+        proximos.pop();
+      }
+
+      return proximos;
+    });
+  }
 
   async function escolherImagem(arquivo: File) {
     setEnviando(true);
@@ -32,7 +53,10 @@ export function PostForm({ post }: { post?: PostDb | null }) {
       const buffer = await arquivo.arrayBuffer();
       let binario = "";
       const bytes = new Uint8Array(buffer);
-      for (let i = 0; i < bytes.length; i += 1) binario += String.fromCharCode(bytes[i]!);
+      for (let i = 0; i < bytes.length; i += 1) {
+        const byte = bytes[i];
+        if (byte !== undefined) binario += String.fromCharCode(byte);
+      }
       const resultado = await upload({
         data: { nome: arquivo.name, tipo: arquivo.type, base64: btoa(binario) },
       });
@@ -50,18 +74,28 @@ export function PostForm({ post }: { post?: PostDb | null }) {
       toast.error("Escreva um título");
       return;
     }
+    if (!imagem) {
+      toast.error("Escolha a imagem da postagem");
+      return;
+    }
+    const paragrafos = blocos.filter((bloco) => bloco.trim().length > 0);
+    if (paragrafos.length === 0) {
+      toast.error("Escreva pelo menos um parágrafo");
+      return;
+    }
+    const resumo = paragrafos[0]?.replace(/\s+/g, " ").trim().slice(0, 220) ?? "";
     setSalvando(true);
     try {
       await salvar({
         data: {
           ...(post?.id ? { id: post.id, slug: post.slug } : {}),
           titulo,
-          categoria,
-          data,
-          leitura,
+          categoria: post?.categoria ?? "Blog",
+          data: post?.data ?? dataHoje(),
+          leitura: post?.leitura ?? "",
           resumo,
           imagem,
-          paragrafos: texto.split(/\n\s*\n/),
+          paragrafos,
           status,
         },
       });
@@ -75,70 +109,46 @@ export function PostForm({ post }: { post?: PostDb | null }) {
   }
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1.4fr_0.6fr]">
-      <div>
+    <div className="mx-auto max-w-3xl">
+      <div className="border-b border-border pb-8">
+        <span className={rotulo}>Imagem da postagem</span>
+        {imagem ? (
+          <img src={imagem} alt="Capa da postagem" className="mt-3 w-full object-contain" />
+        ) : (
+          <div className="mt-3 flex min-h-72 items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
+            Escolha a imagem que abre a postagem.
+          </div>
+        )}
+        <input
+          type="file"
+          accept="image/*"
+          className="mt-4 w-full text-xs"
+          onChange={(e) => {
+            const arquivo = e.target.files?.[0];
+            if (arquivo) void escolherImagem(arquivo);
+          }}
+        />
+        {enviando ? <p className="mt-2 text-xs text-muted-foreground">Carregando imagem…</p> : null}
+      </div>
+
+      <div className="mt-8">
         <label className="block">
-          <span className={rotulo}>Título</span>
+          <span className={rotulo}>Título H1</span>
           <input className={campo} value={titulo} onChange={(e) => setTitulo(e.target.value)} />
         </label>
 
-        <label className="mt-6 block">
-          <span className={rotulo}>Resumo</span>
-          <textarea
-            className={campo}
-            rows={3}
-            value={resumo}
-            onChange={(e) => setResumo(e.target.value)}
-          />
-        </label>
-
-        <label className="mt-6 block">
-          <span className={rotulo}>Texto (separe os parágrafos com uma linha em branco)</span>
-          <textarea
-            className={campo}
-            rows={18}
-            value={texto}
-            onChange={(e) => setTexto(e.target.value)}
-          />
-        </label>
-      </div>
-
-      <aside className="bg-muted p-6">
-        <label className="block">
-          <span className={rotulo}>Categoria</span>
-          <input className={campo} value={categoria} onChange={(e) => setCategoria(e.target.value)} />
-        </label>
-
-        <label className="mt-6 block">
-          <span className={rotulo}>Data</span>
-          <input className={campo} value={data} onChange={(e) => setData(e.target.value)} />
-        </label>
-
-        <label className="mt-6 block">
-          <span className={rotulo}>Tempo de leitura (opcional)</span>
-          <input
-            className={campo}
-            placeholder="calculado automaticamente"
-            value={leitura}
-            onChange={(e) => setLeitura(e.target.value)}
-          />
-        </label>
-
-        <div className="mt-6">
-          <span className={rotulo}>Imagem de capa</span>
-          {imagem ? (
-            <img src={imagem} alt="Capa da postagem" className="mt-3 h-40 w-full object-cover" />
-          ) : null}
-          <input
-            type="file"
-            accept="image/*"
-            className="mt-3 w-full text-xs"
-            onChange={(e) => {
-              const arquivo = e.target.files?.[0];
-              if (arquivo) void escolherImagem(arquivo);
-            }}
-          />
-          {enviando ? <p className="mt-2 text-xs text-muted-foreground">Carregando imagem…</p> : null}
+        <div className="mt-8 space-y-8">
+          {blocos.map((bloco, indice) => (
+            <label key={indice} className="block">
+              <span className={rotulo}>Parágrafo {indice + 1}</span>
+              <textarea
+                className={`${campo} whitespace-pre-wrap`}
+                rows={indice === blocos.length - 1 && !bloco.trim() ? 5 : 8}
+                value={bloco}
+                onChange={(e) => atualizarBloco(indice, e.target.value)}
+              />
+            </label>
+          ))}
         </div>
 
         <button
@@ -157,7 +167,7 @@ export function PostForm({ post }: { post?: PostDb | null }) {
         >
           Salvar como rascunho
         </button>
-      </aside>
+      </div>
     </div>
   );
 }
