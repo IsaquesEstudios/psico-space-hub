@@ -83,10 +83,10 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
-  const outros = posts.filter((p) => p.slug !== post.slug);
+  const { post, outros } = Route.useLoaderData();
   const indice = posts.findIndex((item) => item.slug === post.slug);
-  const fotoJessica = fotosJessica.blogArtigos[indice] ?? fotosJessica.blog;
+  const fotoJessica =
+    indice >= 0 ? (fotosJessica.blogArtigos[indice] ?? fotosJessica.blog) : post.imagem;
 
   return (
     <>
