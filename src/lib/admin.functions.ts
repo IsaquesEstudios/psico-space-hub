@@ -35,14 +35,50 @@ async function exigirSessao() {
   return session;
 }
 
+const LIMITE_IP = 5; // tentativas erradas por aparelho
+const LIMITE_GLOBAL = 30; // tentativas erradas no total
+const JANELA_MIN = 15;
+
 export const entrarAdmin = createServerFn({ method: "POST" })
-  .inputValidator((data: { senha: string }) => data)
+  .inputValidator((data: { senha: string }) => ({ senha: String(data?.senha ?? "").slice(0, 200) }))
   .handler(async ({ data }) => {
     const esperada = process.env["ADMIN_PASSWORD"];
     if (!esperada) return { ok: false as const, motivo: "sem-senha" as const };
-    if (!data.senha || !senhaConfere(data.senha, esperada)) {
-      return { ok: false as const, motivo: "invalida" as const };
+
+    const { getRequestHeader } = await import("@tanstack/react-start/server");
+    const ip =
+      getRequestHeader("cf-connecting-ip") ||
+      getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() ||
+      "desconhecido";
+    const ipHash = createHash("sha256")
+      .update(ip + (process.env["ADMIN_SESSION_SECRET"] ?? ""))
+      .digest("hex");
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const desde = new Date(Date.now() - JANELA_MIN * 60_000).toISOString();
+
+    const [porIp, total] = await Promise.all([
+      supabaseAdmin
+        .from("admin_login_attempts" as never)
+        .select("id", { count: "exact", head: true })
+        .eq("ip_hash", ipHash)
+        .gte("created_at", desde),
+      supabaseAdmin
+        .from("admin_login_attempts" as never)
+        .select("id", { count: "exact", head: true })
+        .gte("created_at", desde),
+    ]);
+    if ((porIp.count ?? 0) >= LIMITE_IP || (total.count ?? 0) >= LIMITE_GLOBAL) {
+      return { ok: false as const, motivo: "bloqueado" as const, minutos: JANELA_MIN };
     }
+
+    if (!data.senha || !senhaConfere(data.senha, esperada)) {
+      await supabaseAdmin.from("admin_login_attempts" as never).insert({ ip_hash: ipHash } as never);
+      await new Promise((r) => setTimeout(r, 800));
+      const restantes = Math.max(0, LIMITE_IP - (porIp.count ?? 0) - 1);
+      return { ok: false as const, motivo: "invalida" as const, restantes };
+    }
+
+    await supabaseAdmin.from("admin_login_attempts" as never).delete().eq("ip_hash", ipHash);
     const session = await useSession<AdminSession>(sessionConfig());
     await session.update({ unlocked: true });
     return { ok: true as const };

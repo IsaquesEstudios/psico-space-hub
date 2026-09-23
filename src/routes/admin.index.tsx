@@ -55,7 +55,15 @@ function Admin() {
     evento.preventDefault();
     const resultado = await entrar({ data: { senha } });
     if (!resultado.ok) {
-      toast.error(resultado.motivo === "sem-senha" ? "Senha ainda não configurada" : "Senha incorreta");
+      toast.error(
+        resultado.motivo === "sem-senha"
+          ? "Senha ainda não configurada"
+          : resultado.motivo === "bloqueado"
+            ? `Muitas tentativas. Aguarde ${resultado.minutos} minutos e tente de novo.`
+            : resultado.restantes > 0
+              ? `Senha incorreta. Restam ${resultado.restantes} tentativas.`
+              : `Senha incorreta. Acesso bloqueado por 15 minutos.`,
+      );
       return;
     }
     setSenha("");
