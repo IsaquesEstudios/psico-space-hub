@@ -13,13 +13,16 @@ ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL \
 COPY package.json bun.lock* bunfig.toml ./
 RUN bun install --frozen-lockfile || bun install
 COPY . .
-ENV NITRO_PRESET=node-server
-RUN bun run build
+# A montagem externa precisa ignorar os sinais do ambiente de pré-visualização
+# e gerar um servidor Node persistente em .output.
+RUN LOVABLE_SANDBOX=0 DEV_SERVER__PROJECT_PATH= NITRO_PRESET=node-server bun run build \
+    && test -f /app/.output/server/index.mjs
 
 FROM node:22-slim
 WORKDIR /app
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
-# Fora da Lovable a montagem gera um servidor Node completo em .output
 COPY --from=build /app/.output ./.output
 EXPOSE 3000
+HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=5 \
+  CMD node -e "fetch('http://127.0.0.1:3000/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 CMD ["node", ".output/server/index.mjs"]
