@@ -35,9 +35,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 text-deep-foreground transition-colors duration-300 ${
         solid
-          ? pathname === "/"
-            ? "bg-deep/70 backdrop-blur-xl"
-            : "bg-deep"
+          ? "bg-deep/70 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
