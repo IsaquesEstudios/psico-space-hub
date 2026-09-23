@@ -109,6 +109,9 @@ export const sairAdmin = createServerFn({ method: "POST" }).handler(async () => 
 });
 
 export const statusAdmin = createServerFn({ method: "GET" }).handler(async () => {
+  if ((process.env["ADMIN_SESSION_SECRET"] ?? "").length < 32) {
+    throw new Error("ADMIN_SESSION_SECRET precisa ter pelo menos 32 caracteres no servidor.");
+  }
   const session = await useSession<AdminSession>(sessionConfig());
   return { autenticado: session.data.unlocked === true, senhaConfigurada: !!process.env["ADMIN_PASSWORD"] };
 });
