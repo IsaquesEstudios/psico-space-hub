@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
 import { listarPostsPublicados } from "@/lib/blog.functions";
-import { paraPost } from "@/lib/blog-posts";
+import { decodificarBlocos, paraPost } from "@/lib/blog-posts";
 
 const meses = [
   "janeiro",
@@ -111,11 +111,42 @@ function PostPage() {
             className="mt-10 w-full object-contain"
           />
           <div className="mt-10">
-            {post.paragrafos.map((p, index) => (
-              <p key={`${post.slug}-${index}`} className="mb-6 whitespace-pre-wrap text-base leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
+            {decodificarBlocos(post.paragrafos).map((bloco, index) => {
+              const chave = `${post.slug}-${index}`;
+              if (bloco.tipo === "imagem") {
+                return (
+                  <img
+                    key={chave}
+                    src={bloco.valor}
+                    alt=""
+                    loading="lazy"
+                    className="mb-8 w-full object-contain"
+                  />
+                );
+              }
+              if (bloco.tipo === "h2") {
+                return (
+                  <h2 key={chave} className="mb-4 mt-10 font-display text-2xl sm:text-3xl">
+                    {bloco.valor}
+                  </h2>
+                );
+              }
+              if (bloco.tipo === "h3") {
+                return (
+                  <h3 key={chave} className="mb-3 mt-8 font-display text-xl sm:text-2xl">
+                    {bloco.valor}
+                  </h3>
+                );
+              }
+              return (
+                <p
+                  key={chave}
+                  className="mb-6 whitespace-pre-wrap text-base leading-relaxed text-muted-foreground"
+                >
+                  {bloco.valor}
+                </p>
+              );
+            })}
           </div>
         </div>
       </Section>
