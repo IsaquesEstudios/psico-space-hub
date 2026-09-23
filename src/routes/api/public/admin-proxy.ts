@@ -8,6 +8,7 @@ const esquema = z.object({
 });
 
 export const Route = createFileRoute("/api/public/admin-proxy")({
+  staticData: { sitemap: false },
   server: {
     handlers: {
       POST: async ({ request }) => {
