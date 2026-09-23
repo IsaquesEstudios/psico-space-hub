@@ -18,8 +18,7 @@ RUN bun run build
 FROM node:22-slim
 WORKDIR /app
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
-# O TanStack/Nitro deste projeto gera o servidor Node em dist/server
-COPY --from=build /app/dist ./dist
-COPY docker/start.mjs ./docker/start.mjs
+# O TanStack/Nitro deste projeto gera o servidor Node em .output/server
+COPY --from=build /app/.output ./.output
 EXPOSE 3000
-CMD ["node", "docker/start.mjs"]
+CMD ["node", ".output/server/index.mjs"]
