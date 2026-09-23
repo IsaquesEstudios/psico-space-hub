@@ -160,16 +160,13 @@
 
 @keyframes nav-progress-slide {
   0% {
-    transform: translateX(-100%);
-  }
-  60% {
-    transform: translateX(-10%);
+    transform: scaleX(0);
   }
   100% {
-    transform: translateX(0%);
+    transform: scaleX(0.92);
   }
 }
 
 @utility nav-progress {
-  animation: nav-progress-slide 1s ease-in-out infinite;
+  animation: nav-progress-slide 700ms ease-out both;
 }
