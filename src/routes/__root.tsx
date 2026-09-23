@@ -132,7 +132,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function IndicadorCarregamento() {
   const ativo = useRouterState({
-    select: (s) => s.location.href !== s.resolvedLocation?.href,
+    select: (s) => s.isTransitioning,
   });
   return (
     <div
