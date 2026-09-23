@@ -35,6 +35,8 @@ function Admin() {
       setPosts(await listar());
     } catch {
       setPosts([]);
+      setAutenticado(false);
+      toast.error("Sessão expirada. Entre novamente.");
     }
   }
 
