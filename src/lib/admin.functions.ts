@@ -1,20 +1,16 @@
 import { createServerFn } from "@tanstack/react-start";
-import { useSession } from "@tanstack/react-start/server";
-import { createHash, timingSafeEqual } from "node:crypto";
-
 import type { PostDb } from "@/lib/blog-posts";
 
 type AdminSession = { unlocked?: boolean };
 
 function sessionConfig() {
+  const secret = process.env["ADMIN_SESSION_SECRET"] || "temporario-para-build-ou-falta-de-config";
   return {
-    password: process.env["ADMIN_SESSION_SECRET"]!,
+    password: secret,
     name: "evoluta-admin",
     maxAge: 60 * 60 * 24 * 7,
     cookie: {
       httpOnly: true,
-      // a pré-visualização roda dentro de um iframe (contexto cross-site):
-      // o cookie só é aceito com SameSite=None + Secure
       secure: true,
       sameSite: "none" as const,
       path: "/",
@@ -22,38 +18,44 @@ function sessionConfig() {
   };
 }
 
-function senhaConfere(entrada: string, esperada: string): boolean {
-  const a = createHash("sha256").update(entrada, "utf8").digest();
-  const b = createHash("sha256").update(esperada, "utf8").digest();
-  return timingSafeEqual(a, b);
-}
-
 async function exigirSessao() {
+  const { useSession } = await import("@tanstack/react-start/server");
   const session = await useSession<AdminSession>(sessionConfig());
   if (!session.data.unlocked) throw new Error("NAO_AUTORIZADO");
   return session;
 }
 
-const LIMITE_IP = 5; // tentativas erradas por aparelho
-const LIMITE_GLOBAL = 30; // tentativas erradas no total
+const LIMITE_IP = 5;
+const LIMITE_GLOBAL = 30;
 const JANELA_MIN = 15;
 const tentativasMemoria = new Map<string, number[]>();
 
 export const entrarAdmin = createServerFn({ method: "POST" })
   .inputValidator((data: { senha: string }) => ({ senha: String(data?.senha ?? "").slice(0, 200) }))
   .handler(async ({ data }) => {
+    const { useSession, getRequestHeader } = await import("@tanstack/react-start/server");
+    const { createHash } = await import("node:crypto");
+    const { temChaveServico } = await import("@/lib/admin-ops.server");
+
     const esperada = process.env["ADMIN_PASSWORD"];
     if (!esperada) return { ok: false as const, motivo: "sem-senha" as const };
 
-    const { getRequestHeader } = await import("@tanstack/react-start/server");
     const ip =
       getRequestHeader("cf-connecting-ip") ||
       getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() ||
       "desconhecido";
+    
     const ipHash = createHash("sha256")
       .update(ip + (process.env["ADMIN_SESSION_SECRET"] ?? ""))
       .digest("hex");
-    const { temChaveServico } = await import("@/lib/admin-ops.server");
+
+    const senhaConfere = async (entrada: string, esperada: string) => {
+      const { createHash, timingSafeEqual } = await import("node:crypto");
+      const a = createHash("sha256").update(entrada, "utf8").digest();
+      const b = createHash("sha256").update(esperada, "utf8").digest();
+      return timingSafeEqual(a, b);
+    };
+
     if (!temChaveServico()) {
       const agora = Date.now();
       const janela = JANELA_MIN * 60_000;
@@ -61,7 +63,7 @@ export const entrarAdmin = createServerFn({ method: "POST" })
       if (lista.length >= LIMITE_IP) {
         return { ok: false as const, motivo: "bloqueado" as const, minutos: JANELA_MIN };
       }
-      if (!data.senha || !senhaConfere(data.senha, esperada)) {
+      if (!data.senha || !(await senhaConfere(data.senha, esperada))) {
         lista.push(agora);
         tentativasMemoria.set(ipHash, lista);
         await new Promise((r) => setTimeout(r, 800));
@@ -83,11 +85,12 @@ export const entrarAdmin = createServerFn({ method: "POST" })
           .select("id", { count: "exact", head: true })
           .gte("created_at", desde),
       ]);
+      
       if ((porIp.count ?? 0) >= LIMITE_IP || (total.count ?? 0) >= LIMITE_GLOBAL) {
         return { ok: false as const, motivo: "bloqueado" as const, minutos: JANELA_MIN };
       }
 
-      if (!data.senha || !senhaConfere(data.senha, esperada)) {
+      if (!data.senha || !(await senhaConfere(data.senha, esperada))) {
         await supabaseAdmin.from("admin_login_attempts" as never).insert({ ip_hash: ipHash } as never);
         await new Promise((r) => setTimeout(r, 800));
         const restantes = Math.max(0, LIMITE_IP - (porIp.count ?? 0) - 1);
@@ -103,17 +106,24 @@ export const entrarAdmin = createServerFn({ method: "POST" })
   });
 
 export const sairAdmin = createServerFn({ method: "POST" }).handler(async () => {
+  const { useSession } = await import("@tanstack/react-start/server");
   const session = await useSession<AdminSession>(sessionConfig());
   await session.clear();
   return { ok: true as const };
 });
 
 export const statusAdmin = createServerFn({ method: "GET" }).handler(async () => {
-  if ((process.env["ADMIN_SESSION_SECRET"] ?? "").length < 32) {
-    throw new Error("ADMIN_SESSION_SECRET precisa ter pelo menos 32 caracteres no servidor.");
+  const secret = process.env["ADMIN_SESSION_SECRET"] ?? "";
+  if (secret.length < 32) {
+    console.error("ERRO: ADMIN_SESSION_SECRET ausente ou muito curto no servidor.");
+    return { autenticado: false, senhaConfigurada: false, erro: "configuracao" };
   }
+  const { useSession } = await import("@tanstack/react-start/server");
   const session = await useSession<AdminSession>(sessionConfig());
-  return { autenticado: session.data.unlocked === true, senhaConfigurada: !!process.env["ADMIN_PASSWORD"] };
+  return { 
+    autenticado: session.data.unlocked === true, 
+    senhaConfigurada: !!process.env["ADMIN_PASSWORD"] 
+  };
 });
 
 export const listarPostsAdmin = createServerFn({ method: "GET" }).handler(async () => {
