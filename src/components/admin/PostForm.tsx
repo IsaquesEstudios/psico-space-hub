@@ -209,21 +209,12 @@ export function PostForm({ post }: { post?: PostDb | null }) {
     <div className="mx-auto max-w-3xl">
       <div className="border-b border-border pb-8">
         <span className={rotulo}>Imagem da postagem</span>
-        {imagem ? (
-          <img src={imagem} alt="Capa da postagem" className="mt-3 w-full object-contain" />
-        ) : (
-          <div className="mt-3 flex min-h-72 items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
-            Escolha a imagem que abre a postagem.
-          </div>
-        )}
-        <input
-          type="file"
-          accept="image/*"
-          className="mt-4 w-full text-xs"
-          onChange={(e) => {
-            const arquivo = e.target.files?.[0];
-            if (arquivo) void escolherCapa(arquivo);
-          }}
+        <CampoImagem
+          valor={imagem}
+          alto="min-h-72"
+          vazio="Escolha a imagem que abre a postagem."
+          recomendacao="Recomendado: 1600 × 900 px (JPG ou PNG, formato horizontal)."
+          onArquivo={(arquivo) => void escolherCapa(arquivo)}
         />
         {enviando ? <p className="mt-2 text-xs text-muted-foreground">Carregando imagem…</p> : null}
       </div>
