@@ -19,7 +19,7 @@ RUN bun run build
 FROM node:22-slim
 WORKDIR /app
 ENV NODE_ENV=production PORT=3000 HOST=0.0.0.0
-# Fora do ambiente Lovable, o build gera .output (preset node-server)
-COPY --from=build /app/.output ./.output
+# O TanStack/Nitro deste projeto gera o servidor Node em dist/server
+COPY --from=build /app/dist ./dist
 EXPOSE 3000
-CMD ["node", ".output/server/index.mjs"]
+CMD ["node", "dist/server/index.mjs"]
