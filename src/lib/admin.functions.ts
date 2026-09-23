@@ -14,9 +14,10 @@ function sessionConfig() {
     maxAge: 60 * 60 * 24 * 7,
     cookie: {
       httpOnly: true,
-      // em http://localhost o navegador descarta cookies "secure"
-      secure: process.env["NODE_ENV"] === "production",
-      sameSite: "lax" as const,
+      // a pré-visualização roda dentro de um iframe (contexto cross-site):
+      // o cookie só é aceito com SameSite=None + Secure
+      secure: true,
+      sameSite: "none" as const,
       path: "/",
     },
   };
