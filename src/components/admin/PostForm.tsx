@@ -27,7 +27,7 @@ function blocosIniciais(post?: PostDb | null): Bloco[] {
   return [{ tipo: "paragrafo", valor: "" }];
 }
 
-async function paraBase64(arquivo: File) {
+async function paraBase64(arquivo: Blob) {
   const bytes = new Uint8Array(await arquivo.arrayBuffer());
   let binario = "";
   for (let i = 0; i < bytes.length; i += 1) {
@@ -35,6 +35,64 @@ async function paraBase64(arquivo: File) {
     if (byte !== undefined) binario += String.fromCharCode(byte);
   }
   return btoa(binario);
+}
+
+// reduz para a largura máxima e converte para WebP compactado
+async function otimizarImagem(arquivo: File, larguraMax: number): Promise<Blob> {
+  const bitmap = await createImageBitmap(arquivo);
+  const escala = Math.min(1, larguraMax / bitmap.width);
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * escala);
+  canvas.height = Math.round(bitmap.height * escala);
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return arquivo;
+  ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, "image/webp", 0.72));
+  if (!blob || blob.size >= arquivo.size) return arquivo;
+  return blob;
+}
+
+function CampoImagem({
+  valor,
+  recomendacao,
+  vazio,
+  alto,
+  onArquivo,
+}: {
+  valor: string | null;
+  recomendacao: string;
+  vazio: string;
+  alto: string;
+  onArquivo: (arquivo: File) => void;
+}) {
+  return (
+    <label className="mt-3 block cursor-pointer">
+      {valor ? (
+        <img src={valor} alt="" className="w-full object-contain" />
+      ) : (
+        <div
+          className={`flex ${alto} flex-col items-center justify-center gap-2 border border-dashed border-border bg-muted px-6 text-center text-sm text-muted-foreground hover:border-primary`}
+        >
+          <span>{vazio}</span>
+          <span className="eyebrow text-primary">Clique para escolher do computador</span>
+        </div>
+      )}
+      <input
+        type="file"
+        accept="image/*"
+        className="sr-only"
+        onChange={(e) => {
+          const arquivo = e.target.files?.[0];
+          if (arquivo) onArquivo(arquivo);
+          e.target.value = "";
+        }}
+      />
+      <span className="mt-2 block text-xs text-muted-foreground">
+        {valor ? "Clique na imagem para trocar. " : ""}
+        {recomendacao} A imagem é compactada automaticamente.
+      </span>
+    </label>
+  );
 }
 
 export function PostForm({ post }: { post?: PostDb | null }) {
@@ -66,10 +124,16 @@ export function PostForm({ post }: { post?: PostDb | null }) {
     setBlocos((atuais) => (atuais.length === 1 ? atuais : atuais.filter((_, i) => i !== indice)));
   }
 
-  async function subirImagem(arquivo: File) {
-    const base64 = await paraBase64(arquivo);
+  async function subirImagem(arquivo: File, larguraMax: number) {
+    const otimizada = await otimizarImagem(arquivo, larguraMax);
+    const webp = otimizada.type === "image/webp";
+    const base64 = await paraBase64(otimizada);
     const resultado = await upload({
-      data: { nome: arquivo.name, tipo: arquivo.type, base64 },
+      data: {
+        nome: webp ? "imagem.webp" : arquivo.name,
+        tipo: otimizada.type || arquivo.type,
+        base64,
+      },
     });
     return resultado.url;
   }
@@ -77,7 +141,7 @@ export function PostForm({ post }: { post?: PostDb | null }) {
   async function escolherCapa(arquivo: File) {
     setEnviando(true);
     try {
-      setImagem(await subirImagem(arquivo));
+      setImagem(await subirImagem(arquivo, 1600));
       toast.success("Imagem carregada");
     } catch {
       toast.error("Não foi possível carregar a imagem");
@@ -89,7 +153,7 @@ export function PostForm({ post }: { post?: PostDb | null }) {
   async function escolherImagemBloco(indice: number, arquivo: File) {
     setEnviando(true);
     try {
-      atualizarBloco(indice, await subirImagem(arquivo));
+      atualizarBloco(indice, await subirImagem(arquivo, 1200));
       toast.success("Imagem carregada");
     } catch {
       toast.error("Não foi possível carregar a imagem");
@@ -97,6 +161,8 @@ export function PostForm({ post }: { post?: PostDb | null }) {
       setEnviando(false);
     }
   }
+
+
 
   async function enviar(status: "draft" | "published") {
     if (!titulo.trim()) {
@@ -143,21 +209,12 @@ export function PostForm({ post }: { post?: PostDb | null }) {
     <div className="mx-auto max-w-3xl">
       <div className="border-b border-border pb-8">
         <span className={rotulo}>Imagem da postagem</span>
-        {imagem ? (
-          <img src={imagem} alt="Capa da postagem" className="mt-3 w-full object-contain" />
-        ) : (
-          <div className="mt-3 flex min-h-72 items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
-            Escolha a imagem que abre a postagem.
-          </div>
-        )}
-        <input
-          type="file"
-          accept="image/*"
-          className="mt-4 w-full text-xs"
-          onChange={(e) => {
-            const arquivo = e.target.files?.[0];
-            if (arquivo) void escolherCapa(arquivo);
-          }}
+        <CampoImagem
+          valor={imagem}
+          alto="min-h-72"
+          vazio="Escolha a imagem que abre a postagem."
+          recomendacao="Recomendado: 1600 × 900 px (JPG ou PNG, formato horizontal)."
+          onArquivo={(arquivo) => void escolherCapa(arquivo)}
         />
         {enviando ? <p className="mt-2 text-xs text-muted-foreground">Carregando imagem…</p> : null}
       </div>
@@ -185,24 +242,13 @@ export function PostForm({ post }: { post?: PostDb | null }) {
               </div>
 
               {bloco.tipo === "imagem" ? (
-                <div>
-                  {bloco.valor ? (
-                    <img src={bloco.valor} alt="" className="mt-3 w-full object-contain" />
-                  ) : (
-                    <div className="mt-3 flex min-h-40 items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
-                      Escolha a imagem deste bloco.
-                    </div>
-                  )}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="mt-3 w-full text-xs"
-                    onChange={(e) => {
-                      const arquivo = e.target.files?.[0];
-                      if (arquivo) void escolherImagemBloco(indice, arquivo);
-                    }}
-                  />
-                </div>
+                <CampoImagem
+                  valor={bloco.valor || null}
+                  alto="min-h-40"
+                  vazio="Escolha a imagem deste bloco."
+                  recomendacao="Recomendado: 1200 × 800 px (JPG ou PNG)."
+                  onArquivo={(arquivo) => void escolherImagemBloco(indice, arquivo)}
+                />
               ) : bloco.tipo === "paragrafo" ? (
                 <textarea
                   className={`${campo} whitespace-pre-wrap`}
