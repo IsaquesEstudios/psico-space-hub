@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/api/public/blog-imagem/$")({
+  staticData: { sitemap: false },
   server: {
     handlers: {
       GET: async ({ params }) => {
