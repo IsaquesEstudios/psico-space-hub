@@ -148,6 +148,16 @@ function Admin() {
                 <h2 className="mt-2 font-display text-2xl leading-snug">{post.titulo}</h2>
               </div>
               <div className="flex gap-3">
+                {post.status === "published" ? (
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: post.slug }}
+                    target="_blank"
+                    className="eyebrow border border-border px-4 py-2 text-primary"
+                  >
+                    Visualizar
+                  </Link>
+                ) : null}
                 <Link
                   to="/admin/$slug"
                   params={{ slug: post.slug }}
