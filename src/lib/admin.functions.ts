@@ -12,7 +12,13 @@ function sessionConfig() {
     password: process.env["ADMIN_SESSION_SECRET"]!,
     name: "evoluta-admin",
     maxAge: 60 * 60 * 24 * 7,
-    cookie: { httpOnly: true, secure: true, sameSite: "lax" as const, path: "/" },
+    cookie: {
+      httpOnly: true,
+      // em http://localhost o navegador descarta cookies "secure"
+      secure: process.env["NODE_ENV"] === "production",
+      sameSite: "lax" as const,
+      path: "/",
+    },
   };
 }
 
