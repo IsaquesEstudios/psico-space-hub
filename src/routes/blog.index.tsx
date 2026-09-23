@@ -32,8 +32,6 @@ export const Route = createFileRoute("/blog/")({
 function BlogIndex() {
   const { dinamicos } = Route.useLoaderData();
   const todos = [...dinamicos, ...posts];
-  const destaque = todos[0]!;
-  const restantes = todos.slice(1);
 
   return (
     <>
@@ -56,54 +54,62 @@ function BlogIndex() {
       </section>
 
       <Section>
-        <Link
-          to="/blog/$slug"
-          params={{ slug: destaque.slug }}
-          className="group grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16"
-        >
-          <img
-            src={destaque.imagem}
-            alt={destaque.titulo}
-            width={1200}
-            height={800}
-            className="h-72 w-full object-cover lg:h-[460px]"
-          />
-          <div>
-            <Eyebrow>
-              {destaque.categoria} · {destaque.data}
-            </Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-              {destaque.titulo}
-            </h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{destaque.resumo}</p>
-            <span className="eyebrow mt-8 inline-flex items-center gap-2 text-primary">
-              Ler o texto
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-            </span>
-          </div>
-        </Link>
-
-        <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {restantes.map((p) => (
-            <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group block">
+        {todos.length === 0 ? (
+          <p className="text-sm text-muted-foreground">
+            Novas postagens em breve.
+          </p>
+        ) : (
+          <>
+            <Link
+              to="/blog/$slug"
+              params={{ slug: todos[0]!.slug }}
+              className="group grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16"
+            >
               <img
-                src={p.imagem}
-                alt={p.titulo}
-                loading="lazy"
+                src={todos[0]!.imagem}
+                alt={todos[0]!.titulo}
                 width={1200}
                 height={800}
-                className="h-56 w-full object-cover"
+                className="h-72 w-full object-cover lg:h-[460px]"
               />
-              <p className="eyebrow mt-5 text-muted-foreground">
-                {p.categoria} · {p.leitura}
-              </p>
-              <h3 className="mt-3 font-display text-2xl leading-snug transition-colors group-hover:text-primary">
-                {p.titulo}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.resumo}</p>
+              <div>
+                <Eyebrow>
+                  {todos[0]!.categoria} · {todos[0]!.data}
+                </Eyebrow>
+                <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
+                  {todos[0]!.titulo}
+                </h2>
+                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{todos[0]!.resumo}</p>
+                <span className="eyebrow mt-8 inline-flex items-center gap-2 text-primary">
+                  Ler o texto
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </div>
             </Link>
-          ))}
-        </div>
+
+            <div className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {todos.slice(1).map((p) => (
+                <Link key={p.slug} to="/blog/$slug" params={{ slug: p.slug }} className="group block">
+                  <img
+                    src={p.imagem}
+                    alt={p.titulo}
+                    loading="lazy"
+                    width={1200}
+                    height={800}
+                    className="h-56 w-full object-cover"
+                  />
+                  <p className="eyebrow mt-5 text-muted-foreground">
+                    {p.categoria} · {p.leitura}
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl leading-snug transition-colors group-hover:text-primary">
+                    {p.titulo}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.resumo}</p>
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
       </Section>
     </>
   );
