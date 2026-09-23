@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Section } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, posts } from "@/data/site";
 import { listarPostsPublicados } from "@/lib/blog.functions";
-import { paraPost } from "@/lib/blog-posts";
+import { decodificarBlocos, paraPost } from "@/lib/blog-posts";
 
 const meses = [
   "janeiro",
