@@ -61,6 +61,7 @@ export const Route = createFileRoute("/")({
 const icones = [Puzzle, HeartHandshake, Users, ClipboardList];
 
 function Inicio() {
+  const { postsBlog } = Route.useLoaderData();
   return (
     <>
       {/* Hero */}
