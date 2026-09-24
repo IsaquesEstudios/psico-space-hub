@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-muted">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
         <div>
-          <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.nome} — Início`}>
+          <Link to="/" className="inline-flex items-center gap-3" aria-label={`${site.nome}, início`}>
             <img src={logoAsset.url} alt="" width="72" height="65" className="h-16 w-auto object-contain" loading="lazy" />
             <p className="font-display text-2xl leading-tight">{site.nome}</p>
           </Link>

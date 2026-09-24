@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          name: "Clínica Evoluta — Desenvolvimento Infantil",
+          name: "Clínica Evoluta Desenvolvimento Infantil",
           description:
             "Equipe multidisciplinar em avaliação neuropsicológica, intervenção e acompanhamento de crianças, adolescentes e adultos.",
           url: "https://psico-space-hub.lovable.app/",
@@ -80,11 +80,11 @@ function Inicio() {
           <div className="max-w-xl">
             <p className="eyebrow text-primary">Cuidar. Compreender. Transformar.</p>
             <h1 className="mt-5 font-display text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
-              Clínica Evoluta — avaliação e desenvolvimento infantil em São Gabriel da Palha
+              Clínica Evoluta: avaliação e desenvolvimento infantil em São Gabriel da Palha
             </h1>
 
             <p className="mt-6 max-w-md text-sm leading-relaxed text-deep-foreground/80">
-              Equipe multidisciplinar em avaliação, intervenção e acompanhamento — considerando aspectos
+              Equipe multidisciplinar em avaliação, intervenção e acompanhamento, considerando aspectos
               cognitivos, emocionais, comportamentais, sociais e de aprendizagem.
             </p>
             <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:flex-wrap sm:items-center">
@@ -121,12 +121,12 @@ function Inicio() {
               e necessidades únicas
             </h2>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              A Clínica Evoluta — Desenvolvimento Infantil reúne uma equipe multidisciplinar que atua na
+              A Clínica Evoluta Desenvolvimento Infantil reúne uma equipe multidisciplinar que atua na
               avaliação, intervenção e acompanhamento de crianças, adolescentes e adultos.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Cuidar, compreender e transformar através da ciência, do acolhimento e da atuação
-              multidisciplinar — considerando aspectos cognitivos, emocionais, comportamentais, sociais e
+              multidisciplinar, considerando aspectos cognitivos, emocionais, comportamentais, sociais e
               de aprendizagem.
             </p>
             <Link

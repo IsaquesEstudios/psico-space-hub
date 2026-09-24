@@ -44,7 +44,7 @@ export const Route = createFileRoute("/cursos/$slug")({
             audience: { "@type": "Audience", audienceType: curso.publico },
             provider: {
               "@type": "Organization",
-              name: `${site.nome} — ${site.subtitulo}`,
+              name: `${site.nome} ${site.subtitulo}`,
               url: "https://psico-space-hub.lovable.app",
             },
             hasCourseInstance: [
