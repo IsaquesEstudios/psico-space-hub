@@ -105,7 +105,7 @@ function PostPage() {
           <h1 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">{post.titulo}</h1>
           <img
             src={fotoJessica}
-            alt={`Jéssica Pelissari — ${post.titulo}`}
+            alt={`Jéssica Pelissari no artigo ${post.titulo}`}
             width={1080}
             height={720}
             className="mt-10 w-full object-contain"

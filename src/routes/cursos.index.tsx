@@ -59,7 +59,7 @@ function CursosIndex() {
             <article key={c.slug} className="flex flex-col bg-muted">
               <img
                 src={c.imagem}
-                alt={`Jéssica, da Clínica Evoluta — ${c.titulo}`}
+                alt={`Jéssica, da Clínica Evoluta, no curso ${c.titulo}`}
                 loading="lazy"
                 width={1200}
                 height={800}

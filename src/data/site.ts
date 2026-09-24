@@ -95,7 +95,7 @@ export const jessicaBio = {
     "Pós-graduação em Terapia Cognitivo-Comportamental na Infância e Adolescência",
     "Pós-graduação em Intervenção ABA aplicada ao Transtorno do Espectro Autista e à Deficiência Intelectual",
     "Especialista em Neuropsicologia pelo Conselho Federal de Psicologia",
-    "Idealizadora, fundadora e diretora da Clínica Evoluta — Desenvolvimento Infantil, em São Gabriel da Palha/ES",
+    "Idealizadora, fundadora e diretora da Clínica Evoluta Desenvolvimento Infantil, em São Gabriel da Palha/ES",
     "Atuação em avaliação neuropsicológica, com experiência em diferentes fases do desenvolvimento",
     "Atuação com transtornos do neurodesenvolvimento, dificuldades de aprendizagem e demandas cognitivas, emocionais e comportamentais",
     "Supervisora e mentora de profissionais da área de Neuropsicologia",
@@ -620,7 +620,7 @@ export type ConteudoAtendimento = {
 export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
   "avaliacao-neuropsicologica": {
     chamada:
-      "Uma avaliação para entender o funcionamento cognitivo, emocional e comportamental com profundidade — e transformar dúvidas sobre aprendizagem, atenção, memória ou desenvolvimento em direcionamentos mais claros.",
+      "Uma avaliação para entender o funcionamento cognitivo, emocional e comportamental com profundidade e transformar dúvidas sobre aprendizagem, atenção, memória ou desenvolvimento em direcionamentos mais claros.",
     chamadaComplementar:
       "Crianças, adolescentes, adultos e idosos com dúvidas sobre atenção, memória, aprendizagem, comportamento ou desenvolvimento.",
     tituloApresentacao: "O Método Evoluta olha para além do teste",
@@ -956,7 +956,7 @@ export const fundadora = {
   papel: "Psicóloga • Neuropsicóloga • Especialista em Neuropsicologia • Fundadora da Clínica Evoluta",
   imagem: jessicaAsset.url,
   proposito:
-    "Psicóloga, neuropsicóloga, especialista em Neuropsicologia e fundadora da Clínica Evoluta — Desenvolvimento Infantil.",
+    "Psicóloga, neuropsicóloga, especialista em Neuropsicologia e fundadora da Clínica Evoluta Desenvolvimento Infantil.",
   intro: [
     "Sua trajetória profissional é marcada pela atuação clínica, avaliação neuropsicológica, desenvolvimento infantil, transtornos do neurodesenvolvimento, aprendizagem e formação de profissionais da área.",
   ],
@@ -966,7 +966,7 @@ export const fundadora = {
     "Pós-graduação em Terapia Cognitivo-Comportamental na Infância e Adolescência",
     "Pós-graduação em Intervenção ABA aplicada ao Transtorno do Espectro Autista e à Deficiência Intelectual",
     "Especialista em Neuropsicologia pelo Conselho Federal de Psicologia",
-    "Idealizadora, fundadora e diretora da Clínica Evoluta — Desenvolvimento Infantil, em São Gabriel da Palha/ES",
+    "Idealizadora, fundadora e diretora da Clínica Evoluta Desenvolvimento Infantil, em São Gabriel da Palha/ES",
     "Atuação em avaliação neuropsicológica em diferentes fases do desenvolvimento",
     "Experiência com transtornos do neurodesenvolvimento, dificuldades de aprendizagem e demandas cognitivas, emocionais e comportamentais",
     "Supervisora e mentora de profissionais da área de Neuropsicologia",
@@ -979,11 +979,11 @@ export const fundadora = {
     },
     {
       titulo: "TDAH na Escola",
-      nota: "Lançamento em 2026 — compreensão do TDAH no contexto escolar, da identificação ao acompanhamento.",
+      nota: "Lançamento em 2026, com foco na compreensão do TDAH no contexto escolar, da identificação ao acompanhamento.",
     },
     {
       titulo: "Psicologia Clínica: o que não te ensinaram na universidade",
-      nota: "Lançamento em 2026 — desafios, aprendizados e reflexões que ultrapassam a formação acadêmica.",
+      nota: "Lançamento em 2026, com desafios, aprendizados e reflexões que ultrapassam a formação acadêmica.",
     },
   ],
   autoriaIntroducao:

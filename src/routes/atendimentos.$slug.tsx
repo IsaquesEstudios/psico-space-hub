@@ -130,7 +130,7 @@ function AtendimentoHero({
     <section className="relative flex min-h-[560px] items-end overflow-hidden bg-deep text-deep-foreground lg:aspect-[18/7] lg:min-h-0">
       <img
         src={fotoJessica}
-        alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta — ${item.titulo}`}
+        alt={`Jéssica Pelissari, neuropsicóloga da Clínica Evoluta, no atendimento ${item.titulo}`}
         width={item.imagemHero ? 1536 : 1080}
         height={item.imagemHero ? 768 : 720}
         className={`absolute inset-0 h-full w-full object-cover object-top ${item.imagemHero ? "lg:object-center" : "lg:object-[78%_20%]"}`}

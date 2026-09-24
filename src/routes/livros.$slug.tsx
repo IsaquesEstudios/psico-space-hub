@@ -47,7 +47,7 @@ export const Route = createFileRoute("/livros/$slug")({
             },
             publisher: {
               "@type": "Organization",
-              name: `${site.nome} — ${site.subtitulo}`,
+              name: `${site.nome} ${site.subtitulo}`,
             },
             ...(livro.investimento.includes("R$")
               ? {

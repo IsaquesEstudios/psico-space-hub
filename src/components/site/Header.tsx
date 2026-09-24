@@ -41,7 +41,7 @@ export function Header() {
     >
       <div className="px-5 lg:px-10">
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 xl:flex xl:justify-between xl:gap-8">
-        <Link to="/" className="flex min-w-0 items-center gap-3 leading-tight" aria-label={`${site.nome} — Início`}>
+        <Link to="/" className="flex min-w-0 items-center gap-3 leading-tight" aria-label={`${site.nome}, início`}>
           <img src={logoAsset.url} alt="" width="56" height="51" className="h-10 w-auto shrink-0 object-contain" />
           <span className="min-w-0 truncate font-display text-lg font-semibold sm:text-xl">{site.nome}</span>
         </Link>
