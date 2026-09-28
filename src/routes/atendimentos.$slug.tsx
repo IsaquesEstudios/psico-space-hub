@@ -105,9 +105,7 @@ function AtendimentoPage() {
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} conteudo={conteudo} />
-      {item.slug !== "capacitacoes-e-palestras" && (
-        <ImagemDoAcompanhamento item={item} conteudo={conteudo} />
-      )}
+      <ImagemDoAcompanhamento item={item} conteudo={conteudo} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
       <Avaliacoes className="bg-background" />
