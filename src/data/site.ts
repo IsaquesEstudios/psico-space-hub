@@ -48,6 +48,11 @@ import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.j
 import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infantil-na-pratica.jpeg.asset.json";
 import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
 import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.png";
+import gersonCamataCapa from "@/assets/gerson-camata-capa.jpg.asset.json";
+import gersonCamataTela from "@/assets/gerson-camata-tela.jpg.asset.json";
+import gersonCamataPalestra from "@/assets/gerson-camata-palestra.jpg.asset.json";
+import gersonCamataCertificado from "@/assets/gerson-camata-certificado.jpg.asset.json";
+import gersonCamataGrupo from "@/assets/gerson-camata-grupo.jpg.asset.json";
 
 export const brandShareImage =
   "https://id-preview--deb759cf-cdb0-4e38-afae-699e1737adb9.lovable.app/__l5e/assets-v1/50c90749-1ebe-4ab2-a6d1-8badb534742a/logo-social.jpg";
@@ -1670,8 +1675,19 @@ export type Post = {
 
 export const posts: Post[] = [];
 
-export const novidades = [
-    {
+type Novidade = {
+  slug: string;
+  data: string;
+  titulo: string;
+  texto: string;
+  etiqueta: string;
+  paragrafos: string[];
+  imagemCapa?: { url: string; alt: string };
+  galeria?: { url: string; alt: string }[];
+};
+
+export const novidades: Novidade[] = [
+  {
     slug: "reflexao-convivencia-saude-emocional-escola-gerson-camata",
     data: "18 de setembro de 2026",
     titulo: "Clínica Evoluta promove momentos de reflexão sobre convivência e saúde emocional na Escola Gerson Camata",
