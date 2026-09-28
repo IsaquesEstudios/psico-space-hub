@@ -32,7 +32,7 @@ import jessicaEscrevendo from "@/assets/GHR06764.jpg.asset.json";
 import jessicaSorrindo from "@/assets/GHR07265.jpg.asset.json";
 import jessicaJanela from "@/assets/GHR06712.jpg.asset.json";
 import jessicaMesaAmpla from "@/assets/GHR06849-2.jpg.asset.json";
-import posCapacitacaoHero from "@/assets/pos-capacitacao-jessica.jpg.asset.json";
+import posCapacitacaoHero from "@/assets/pos-capacitacao-hero.jpg.asset.json";
 import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
