@@ -610,8 +610,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Para instituições",
     resumo:
       "Capacitações, palestras, workshops e encontros formativos conduzidos por Jéssica Pelissari, com conteúdo desenvolvido de acordo com as necessidades de cada instituição.",
-    imagem: palestraAuditorio.url,
-    imagemSecundaria: jessicaPalestra.url,
+    imagem: jessicaPalestra.url,
+    imagemSecundaria: jessicaMesaAmpla.url,
+    imagemHero: palestraAuditorio.url,
     paraQuem: [
       "Empresas que desejam promover saúde mental, comunicação e desenvolvimento entre colaboradores",
       "Escolas e equipes de apoio escolar que buscam formação sobre desenvolvimento, aprendizagem e inclusão",
