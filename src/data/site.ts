@@ -1813,7 +1813,7 @@ export const novidades: Novidade[] = [
     imagemCapa: {
       url: coopesgCapa.url,
       alt: "Jéssica Pelissari ao lado das auxiliares e cuidadoras da COOPESG com os certificados da capacitação",
-      posicao: "50% 54%",
+      posicao: "50% 62%",
     },
     galeria: [
       {
