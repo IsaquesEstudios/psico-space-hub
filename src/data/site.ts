@@ -1899,8 +1899,8 @@ export const novidades: Novidade[] = [
       posicao: "50% 32%",
     },
     galeria: [
-      { url: "/__l5e/assets-v1/9a2b6db1-569f-4a41-976f-5f5eb75a2f2a/pestalozzi-palestra.jpg", alt: "Jéssica Pelissari explicando caso clínico durante a capacitação na Pestalozzi", posicao: "50% 40%" },
-      { url: "/__l5e/assets-v1/5f7190e4-4c24-4620-96e0-30337a2d044d/pestalozzi-equipe.jpg", alt: "Jéssica Pelissari apresentando o tema Transtornos do Neurodesenvolvimento na Pestalozzi", posicao: "50% 40%" },
+      { url: "/__l5e/assets-v1/ed335190-2575-48ca-b8ac-e62a6691c319/pestalozzi-palestra.jpg", alt: "Jéssica Pelissari explicando caso clínico durante a capacitação na Pestalozzi", posicao: "50% 40%" },
+      { url: "/__l5e/assets-v1/e33b0993-f8a3-405c-a981-9482bd18e463/pestalozzi-equipe.jpg", alt: "Jéssica Pelissari apresentando o tema Transtornos do Neurodesenvolvimento na Pestalozzi", posicao: "50% 40%" },
     ],
     paragrafos: [      "No dia 28 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pereira Pelissari Oliveira, diretora da instituição, realizou uma capacitação profissional em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional.",
       "Com o tema “Neurodesenvolvimento: compreender para acolher, incluir e transformar”, a formação teve como objetivo ampliar o conhecimento dos profissionais sobre os Transtornos do Neurodesenvolvimento e fortalecer estratégias de acolhimento, inclusão e manejo diante das diferentes necessidades encontradas no cotidiano institucional.",
