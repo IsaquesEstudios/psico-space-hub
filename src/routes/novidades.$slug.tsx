@@ -147,7 +147,7 @@ function NovidadePage() {
         </div>
       </Section>
 
-      {fotoAberta !== null && novidade.galeria && (
+      {fotoAberta !== null && novidade.galeria?.[fotoAberta] && (
         <div
           role="dialog"
           aria-modal="true"
@@ -156,13 +156,13 @@ function NovidadePage() {
           onClick={() => setFotoAberta(null)}
         >
           <img
-            src={novidade.galeria[fotoAberta].url}
-            alt={novidade.galeria[fotoAberta].alt}
+            src={novidade.galeria[fotoAberta]!.url}
+            alt={novidade.galeria[fotoAberta]!.alt}
             className="max-h-[80vh] w-auto max-w-full object-contain"
             onClick={(e) => e.stopPropagation()}
           />
           <p className="mt-4 max-w-2xl text-center text-sm text-deep-foreground/80">
-            {novidade.galeria[fotoAberta].alt}
+            {novidade.galeria[fotoAberta]!.alt}
           </p>
           <div
             className="mt-6 flex items-center gap-3"
