@@ -1713,6 +1713,24 @@ export const novidades: Novidade[] = [
       "A Clínica Evoluta acredita que levar informação para dentro das escolas é uma importante estratégia de promoção da saúde emocional e prevenção. Quando estudantes têm espaço para conversar, questionar e refletir, tornam-se parte ativa da construção de ambientes mais respeitosos e inclusivos.",
       "A Clínica Evoluta Desenvolvimento Infantil agradece à Escola Gerson Camata, aos profissionais envolvidos e a todos que contribuíram para a realização desse momento.",
       "Que iniciativas como essa continuem fortalecendo o diálogo e levando informação, respeito, empatia e saúde emocional para dentro das escolas.",    ],
+    galeria: [
+      {
+        url: gersonCamataTela.url,
+        alt: "Jéssica Pelissari ao lado da tela com o tema Convivência e Saúde Emocional",
+      },
+      {
+        url: gersonCamataPalestra.url,
+        alt: "Jéssica Pelissari apresentando o diálogo com os estudantes",
+      },
+      {
+        url: gersonCamataCertificado.url,
+        alt: "Jéssica Pelissari recebe certificado de agradecimento da Escola Gerson Camata",
+      },
+      {
+        url: gersonCamataGrupo.url,
+        alt: "Registro com os profissionais da Escola Gerson Camata",
+      },
+    ],
   },
     {
     slug: "palestra-online-saude-mental-no-trabalho-cooabriel",
