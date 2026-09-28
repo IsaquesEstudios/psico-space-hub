@@ -1693,6 +1693,10 @@ export const novidades: Novidade[] = [
     titulo: "Clínica Evoluta promove momentos de reflexão sobre convivência e saúde emocional na Escola Gerson Camata",
     texto: "Um retorno cheio de significado: no dia 18 de setembro, a Clínica Evoluta esteve na Escola Gerson Camata para três momentos de diálogo com estudantes do Ensino Fundamental II e Ensino Médio sobre bullying, respeito, igualdade de gênero, convivência e saúde emocional. Para Jéssica Pelissari, retornar à escola onde cresceu, agora como profissional, tornou a experiência ainda mais especial.",
     etiqueta: "Palestras e capacitações",
+    imagemCapa: {
+      url: gersonCamataCapa.url,
+      alt: "Auditório cheio de estudantes durante a palestra da Clínica Evoluta na Escola Gerson Camata",
+    },
     paragrafos: [      "No dia 18 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Gerson Camata para uma importante ação de conscientização sobre convivência, respeito e saúde emocional no ambiente escolar.",
       "A atividade foi realizada em três momentos, contemplando diferentes grupos de estudantes do Ensino Fundamental II e Ensino Médio, permitindo que os alunos participassem das discussões de acordo com a organização das turmas.",
       "Durante os encontros, foram abordados temas fundamentais para a convivência escolar, como bullying, respeito, igualdade de gênero, empatia e saúde emocional, promovendo reflexões sobre a importância de construir relações mais saudáveis, respeitosas e acolhedoras dentro e fora da escola.",
