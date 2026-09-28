@@ -146,6 +146,58 @@ function NovidadePage() {
           ))}
         </div>
       </Section>
+
+      {fotoAberta !== null && novidade.galeria && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Foto ampliada"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-deep/95 p-4 sm:p-8"
+          onClick={() => setFotoAberta(null)}
+        >
+          <img
+            src={novidade.galeria[fotoAberta].url}
+            alt={novidade.galeria[fotoAberta].alt}
+            className="max-h-[80vh] w-auto max-w-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <p className="mt-4 max-w-2xl text-center text-sm text-deep-foreground/80">
+            {novidade.galeria[fotoAberta].alt}
+          </p>
+          <div
+            className="mt-6 flex items-center gap-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Foto anterior"
+              onClick={() => setFotoAberta((fotoAberta - 1 + novidade.galeria!.length) % novidade.galeria!.length)}
+              className="flex h-11 w-11 items-center justify-center border border-deep-foreground/30 text-deep-foreground transition-colors hover:bg-deep-foreground/10"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <span className="text-sm text-deep-foreground/70">
+              {fotoAberta + 1} / {novidade.galeria.length}
+            </span>
+            <button
+              type="button"
+              aria-label="Próxima foto"
+              onClick={() => setFotoAberta((fotoAberta + 1) % novidade.galeria!.length)}
+              className="flex h-11 w-11 items-center justify-center border border-deep-foreground/30 text-deep-foreground transition-colors hover:bg-deep-foreground/10"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
+          <button
+            type="button"
+            aria-label="Fechar"
+            onClick={() => setFotoAberta(null)}
+            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-deep-foreground/30 text-deep-foreground transition-colors hover:bg-deep-foreground/10"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+      )}
     </>
   );
 }
