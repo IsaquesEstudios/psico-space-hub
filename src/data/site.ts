@@ -1893,6 +1893,15 @@ export const novidades: Novidade[] = [
     titulo: "Clínica Evoluta realiza capacitação para profissionais da saúde e educação na Pestalozzi",
     texto: "No dia 28 de agosto, a Clínica Evoluta realizou uma capacitação em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional em seis horas de formação presencial.",
     etiqueta: "Palestras e capacitações",
+    imagemCapa: {
+      url: "/__l5e/assets-v1/9f2dc646-af22-4f35-8ccd-e39da83d1012/pestalozzi-capa.jpg",
+      alt: "Jéssica Pelissari palestrando sobre Neurodesenvolvimento durante a capacitação na Pestalozzi",
+      posicao: "50% 45%",
+    },
+    galeria: [
+      { url: "/__l5e/assets-v1/ed335190-2575-48ca-b8ac-e62a6691c319/pestalozzi-palestra.jpg", alt: "Jéssica Pelissari explicando caso clínico durante a capacitação na Pestalozzi", posicao: "50% 40%" },
+      { url: "/__l5e/assets-v1/e33b0993-f8a3-405c-a981-9482bd18e463/pestalozzi-equipe.jpg", alt: "Jéssica Pelissari apresentando o tema Transtornos do Neurodesenvolvimento na Pestalozzi", posicao: "50% 40%" },
+    ],
     paragrafos: [      "No dia 28 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pereira Pelissari Oliveira, diretora da instituição, realizou uma capacitação profissional em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional.",
       "Com o tema “Neurodesenvolvimento: compreender para acolher, incluir e transformar”, a formação teve como objetivo ampliar o conhecimento dos profissionais sobre os Transtornos do Neurodesenvolvimento e fortalecer estratégias de acolhimento, inclusão e manejo diante das diferentes necessidades encontradas no cotidiano institucional.",
       "A capacitação contou com seis horas de formação presencial e foi construída a partir das demandas e desafios vivenciados pelas equipes da instituição. O encontro buscou aproximar o conhecimento científico da prática profissional, proporcionando momentos de reflexão, discussão de casos e apresentação de estratégias aplicáveis à rotina.",
