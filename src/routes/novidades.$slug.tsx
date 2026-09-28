@@ -112,6 +112,7 @@ function NovidadePage() {
                       src={foto.url}
                       alt={foto.alt}
                       loading="lazy"
+                      style={foto.posicao ? { objectPosition: foto.posicao } : undefined}
                       className="aspect-[4/3] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                       width={1080}
                       height={720}

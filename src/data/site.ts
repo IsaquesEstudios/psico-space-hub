@@ -1695,7 +1695,7 @@ type Novidade = {
   etiqueta: string;
   paragrafos: string[];
   imagemCapa?: { url: string; alt: string; posicao?: string };
-  galeria?: { url: string; alt: string }[];
+  galeria?: { url: string; alt: string; posicao?: string }[];
 };
 
 export const novidades: Novidade[] = [
@@ -1867,6 +1867,17 @@ export const novidades: Novidade[] = [
     titulo: "Clínica Evoluta realiza segundo momento de palestra sobre Neurodesenvolvimento na Escola do Bley",
     texto: "Dando continuidade à ação de conscientização realizada na Escola do Bley, a Clínica Evoluta realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento, desta vez para outras turmas do Ensino Fundamental II e Ensino Médio.",
     etiqueta: "Palestras e capacitações",
+    imagemCapa: {
+      url: "/__l5e/assets-v1/be597458-c3ea-45ad-90bb-ac75b801f9cb/bley-neuro2-capa.jpg",
+      alt: "Jéssica Pelissari palestrando para estudantes reunidos no auditório da Escola do Bley",
+      posicao: "50% 55%",
+    },
+    galeria: [
+      { url: "/__l5e/assets-v1/ab8bdbab-f9eb-407f-ba53-a6ef19651146/bley-neuro2-auditorio.jpg", alt: "Auditório da Escola do Bley cheio de estudantes durante a palestra sobre Neurodesenvolvimento", posicao: "50% 50%" },
+      { url: "/__l5e/assets-v1/e73839ec-4f35-4111-8aa6-23af5b7bc8f6/bley-neuro2-palestra.jpg", alt: "Jéssica Pelissari apresentando o tema Ninguém é Perfeito aos estudantes", posicao: "50% 48%" },
+      { url: "/__l5e/assets-v1/003200cd-7a21-4c0c-a406-299dce2a9578/bley-neuro2-grupo.jpg", alt: "Jéssica Pelissari ao lado de estudantes ao final da palestra na Escola do Bley", posicao: "50% 30%" },
+      { url: "/__l5e/assets-v1/89bcb5fe-119d-4e8d-b229-915d9c3a1062/bley-neuro2-turma.jpg", alt: "Palestra da Clínica Evoluta com a participação de estudantes na Escola do Bley", posicao: "50% 47%" },
+    ],
     paragrafos: [      "Dando continuidade à ação de conscientização realizada na Escola do Bley, no dia 31 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento.",
       "Desta vez, o encontro foi direcionado a outras turmas de estudantes do Ensino Fundamental II e Ensino Médio, proporcionando a um novo grupo de alunos a oportunidade de conhecer e dialogar sobre questões relacionadas ao desenvolvimento, à aprendizagem e às diferenças individuais.",
       "A palestra abordou informações sobre os Transtornos do Neurodesenvolvimento, destacando como algumas características podem aparecer no cotidiano escolar e nas relações com colegas, professores e familiares.",
