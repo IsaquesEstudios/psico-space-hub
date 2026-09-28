@@ -74,8 +74,8 @@ export const images = {
   sobre: sobreImg.url,
   jessica: jessicaAsset.url,
   cta: ctaImg.url,
-  blogHero.url,
-  novidadesHero.url,
+  blogHero: blogHero.url,
+  novidadesHero: novidadesHero.url,
 };
 
 export const fotosJessica = {
