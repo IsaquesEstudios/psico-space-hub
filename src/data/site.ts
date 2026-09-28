@@ -1668,64 +1668,54 @@ export type Post = {
   paragrafos: string[];
 };
 
-export const posts: Post[] = [
-  {
+export const posts: Post[] = [];
+
+export const novidades = [
+    {
     slug: "reflexao-convivencia-saude-emocional-escola-gerson-camata",
-    titulo:
-      "Clínica Evoluta promove momentos de reflexão sobre convivência e saúde emocional na Escola Gerson Camata",
-    categoria: "Palestras e capacitações",
     data: "18 de setembro de 2026",
-    leitura: "4 min de leitura",
-    resumo:
-      "Um retorno cheio de significado: no dia 18 de setembro, a Clínica Evoluta esteve na Escola Gerson Camata para três momentos de diálogo com estudantes do Ensino Fundamental II e Ensino Médio sobre bullying, respeito, igualdade de gênero, convivência e saúde emocional. Para Jéssica Pelissari, retornar à escola onde cresceu, agora como profissional, tornou a experiência ainda mais especial.",
-    imagem: jessicaMesaHorizontal.url,
-    paragrafos: [
-      "No dia 18 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Gerson Camata para uma importante ação de conscientização sobre convivência, respeito e saúde emocional no ambiente escolar.",
+    titulo: "Clínica Evoluta promove momentos de reflexão sobre convivência e saúde emocional na Escola Gerson Camata",
+    texto: "Um retorno cheio de significado: no dia 18 de setembro, a Clínica Evoluta esteve na Escola Gerson Camata para três momentos de diálogo com estudantes do Ensino Fundamental II e Ensino Médio sobre bullying, respeito, igualdade de gênero, convivência e saúde emocional. Para Jéssica Pelissari, retornar à escola onde cresceu, agora como profissional, tornou a experiência ainda mais especial.",
+    etiqueta: "Palestras e capacitações",
+    paragrafos: [      "No dia 18 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Gerson Camata para uma importante ação de conscientização sobre convivência, respeito e saúde emocional no ambiente escolar.",
       "A atividade foi realizada em três momentos, contemplando diferentes grupos de estudantes do Ensino Fundamental II e Ensino Médio, permitindo que os alunos participassem das discussões de acordo com a organização das turmas.",
       "Durante os encontros, foram abordados temas fundamentais para a convivência escolar, como bullying, respeito, igualdade de gênero, empatia e saúde emocional, promovendo reflexões sobre a importância de construir relações mais saudáveis, respeitosas e acolhedoras dentro e fora da escola.",
-      "## Informação, diálogo e prevenção",
+      "Informação, diálogo e prevenção",
       "A proposta da ação foi criar um espaço de diálogo com os estudantes, possibilitando que refletissem sobre suas atitudes, sobre a forma como se relacionam com os colegas e sobre o impacto que palavras e comportamentos podem ter na vida de outras pessoas.",
       "Falar sobre saúde emocional no ambiente escolar também significa trabalhar a prevenção, fortalecendo nos adolescentes recursos para reconhecer situações de violência, respeitar as diferenças e buscar ajuda quando necessário.",
       "A iniciativa faz parte da atuação da Clínica Evoluta na realização de palestras e capacitações em escolas, levando conhecimentos da Psicologia e da Neuropsicologia para espaços de educação, convivência e desenvolvimento.",
-      "## Um retorno cheio de significado",
+      "Um retorno cheio de significado",
       "Para Jéssica Pelissari, essa ação teve um significado ainda mais especial: a Escola Gerson Camata faz parte de sua própria história.",
       "Retornar ao espaço onde estudou e onde construiu parte de sua trajetória, desta vez como profissional e representando a Clínica Evoluta, tornou o momento especialmente significativo.",
       "“Foi muito mais do que uma palestra. Foi voltar ao lugar onde cresci, onde aprendi e onde tantos professores fizeram parte da minha história. Hoje, poder retornar como profissional e representar um trabalho que também acredita na transformação por meio da informação e do cuidado foi muito especial.”",
       "A experiência representa um encontro entre memória, formação e contribuição profissional, mostrando como conhecimentos construídos ao longo da trajetória podem, posteriormente, transformar-se em novas oportunidades de aprendizado e cuidado para outras pessoas.",
-      "## Construindo escolas mais acolhedoras",
+      "Construindo escolas mais acolhedoras",
       "A Clínica Evoluta acredita que levar informação para dentro das escolas é uma importante estratégia de promoção da saúde emocional e prevenção. Quando estudantes têm espaço para conversar, questionar e refletir, tornam-se parte ativa da construção de ambientes mais respeitosos e inclusivos.",
       "A Clínica Evoluta Desenvolvimento Infantil agradece à Escola Gerson Camata, aos profissionais envolvidos e a todos que contribuíram para a realização desse momento.",
-      "Que iniciativas como essa continuem fortalecendo o diálogo e levando informação, respeito, empatia e saúde emocional para dentro das escolas.",
-    ],
-  },
-  {
+      "Que iniciativas como essa continuem fortalecendo o diálogo e levando informação, respeito, empatia e saúde emocional para dentro das escolas.",    ],
+  },,
+    {
     slug: "palestra-online-saude-mental-no-trabalho-cooabriel",
-    titulo:
-      "Clínica Evoluta promove palestra online sobre Saúde Mental no Trabalho para colaboradores da Cooabriel",
-    categoria: "Palestras e capacitações",
     data: "17 de setembro de 2026",
-    leitura: "3 min de leitura",
-    resumo:
-      "Saúde Mental no Trabalho em pauta: no dia 17 de setembro, a Clínica Evoluta realizou uma palestra online para os colaboradores da Cooabriel, promovendo informação, reflexão e diálogo sobre cuidado emocional, escuta, acolhimento e saúde mental no ambiente profissional.",
-    imagem: jessicaEntrevista.url,
-    paragrafos: [
-      "No dia 17 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra online sobre Saúde Mental no Trabalho para os colaboradores da Cooabriel.",
+    titulo: "Clínica Evoluta promove palestra online sobre Saúde Mental no Trabalho para colaboradores da Cooabriel",
+    texto: "Saúde Mental no Trabalho em pauta: no dia 17 de setembro, a Clínica Evoluta realizou uma palestra online para os colaboradores da Cooabriel, promovendo informação, reflexão e diálogo sobre cuidado emocional, escuta, acolhimento e saúde mental no ambiente profissional.",
+    etiqueta: "Palestras e capacitações",
+    paragrafos: [      "No dia 17 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra online sobre Saúde Mental no Trabalho para os colaboradores da Cooabriel.",
       "O encontro teve como objetivo levar informação, promover reflexão e ampliar o diálogo sobre a saúde mental no ambiente profissional, incentivando uma cultura de cuidado, escuta, acolhimento e respeito.",
       "Realizada de forma online, a palestra possibilitou a participação dos colaboradores de maneira prática e acessível, demonstrando também a possibilidade de a Clínica Evoluta levar suas ações de capacitação para diferentes equipes e instituições, independentemente da localização.",
-      "## Saúde mental também faz parte do ambiente de trabalho",
+      "Saúde mental também faz parte do ambiente de trabalho",
       "Durante o encontro, foram abordadas reflexões relacionadas ao cuidado emocional, à percepção das próprias necessidades e à importância de desenvolver um olhar mais atento para o próprio bem-estar e também para as pessoas que fazem parte do ambiente profissional.",
       "A proposta foi aproximar os conhecimentos da Psicologia da realidade vivenciada pelos colaboradores, criando um espaço de reflexão sobre cuidado, relações interpessoais, escuta e acolhimento.",
       "Para Jéssica Pelissari, levar conhecimento sobre saúde mental para as organizações representa uma importante oportunidade de promover prevenção e cuidado:",
       "“Espero que cada pessoa que esteve presente possa levar consigo novos conhecimentos, reflexões e, principalmente, um olhar mais atento para o próprio cuidado e para o cuidado com o outro.”",
-      "## Psicologia além do consultório",
+      "Psicologia além do consultório",
       "A realização da palestra reforça a atuação da Clínica Evoluta também no contexto corporativo, oferecendo palestras, capacitações e ações de educação em saúde mental para empresas e instituições, tanto no formato presencial quanto online.",
       "As ações são estruturadas de acordo com as necessidades de cada organização, buscando transformar conhecimento científico em reflexões e estratégias que possam fazer sentido para a realidade das equipes.",
-      "## Um momento de conexão e cuidado",
+      "Um momento de conexão e cuidado",
       "A Clínica Evoluta agradece à Cooabriel e, de forma especial, a Leny Menegassi, pela confiança, parceria e pela oportunidade de levar conhecimento e reflexão sobre saúde mental aos seus colaboradores.",
-      "Foi uma alegria fazer parte desse momento e contribuir para a construção de espaços profissionais cada vez mais voltados à escuta, conexão, acolhimento e cuidado.",
-    ],
-  },
-  {
+      "Foi uma alegria fazer parte desse momento e contribuir para a construção de espaços profissionais cada vez mais voltados à escuta, conexão, acolhimento e cuidado.",    ],
+  },,
+    {
     slug: "dialogo-bullying-cyberbullying-estudantes",
     titulo: "Clínica Evoluta promove diálogo sobre Bullying e Cyberbullying com estudantes",
     categoria: "Palestras e capacitações",
@@ -1753,102 +1743,76 @@ export const posts: Post[] = [
   },
   {
     slug: "capacitacao-autismo-inclusao-escolar-coopesg",
-    titulo:
-      "Clínica Evoluta realiza capacitação sobre Autismo e Inclusão Escolar para equipe da COOPESG",
-    categoria: "Palestras e capacitações",
     data: "8 de setembro de 2026",
-    leitura: "3 min de leitura",
-    resumo:
-      "No dia 8 de setembro, a Clínica Evoluta esteve novamente junto à equipe da COOPESG para uma capacitação voltada às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
-    imagem: jessicaConversa.url,
-    paragrafos: [
-      "No dia 8 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve novamente junto à equipe da COOPESG para um momento de capacitação voltado às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
+    titulo: "Clínica Evoluta realiza capacitação sobre Autismo e Inclusão Escolar para equipe da COOPESG",
+    texto: "No dia 8 de setembro, a Clínica Evoluta esteve novamente junto à equipe da COOPESG para uma capacitação voltada às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
+    etiqueta: "Palestras e capacitações",
+    paragrafos: [      "No dia 8 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve novamente junto à equipe da COOPESG para um momento de capacitação voltado às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
       "O encontro teve como propósito compartilhar conhecimentos e estratégias que possam contribuir para uma atuação mais acolhedora, consciente e qualificada diante das necessidades de crianças com Transtorno do Espectro Autista (TEA) no ambiente escolar.",
       "Durante a capacitação, foram discutidos aspectos relacionados ao comportamento infantil, às particularidades do desenvolvimento e à importância de compreender o que está por trás dos comportamentos apresentados pela criança.",
       "A proposta foi reforçar que compreender um comportamento é um passo fundamental para que o profissional possa ir além da tentativa de simplesmente controlá-lo, buscando identificar necessidades, ensinar novas habilidades, oferecer suporte e favorecer a participação da criança no ambiente escolar.",
-      "## Conhecimento que transforma a prática",
+      "Conhecimento que transforma a prática",
       "A formação também proporcionou um espaço de troca de experiências entre as profissionais, permitindo discutir situações presentes no cotidiano escolar e refletir sobre estratégias que podem ser utilizadas na rotina.",
       "Para Jéssica Pelissari, momentos de capacitação como esse são fundamentais para fortalecer uma cultura de inclusão baseada no conhecimento e na compreensão das necessidades individuais de cada criança.",
       "“Quando entendemos o comportamento de uma criança, deixamos de apenas tentar controlá-lo e passamos a acolher, ensinar e ajudar.”",
       "A iniciativa faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de capacitações e formações para escolas e equipes profissionais, levando conhecimentos da Psicologia e da Neuropsicologia para os diferentes contextos em que crianças e adolescentes estão inseridos.",
       "A Clínica Evoluta agradece à Escola COOPESG pela confiança e pela oportunidade de, mais uma vez, contribuir para a formação de sua equipe e para a construção de uma escola cada vez mais preparada para acolher a diversidade.",
-      "Capacitar é transformar. Incluir é compreender.",
-    ],
-  },
-  {
+      "Capacitar é transformar. Incluir é compreender.",    ],
+  },,
+    {
     slug: "segundo-momento-palestra-neurodesenvolvimento-escola-do-bley",
-    titulo:
-      "Clínica Evoluta realiza segundo momento de palestra sobre Neurodesenvolvimento na Escola do Bley",
-    categoria: "Palestras e capacitações",
     data: "31 de agosto de 2026",
-    leitura: "3 min de leitura",
-    resumo:
-      "Dando continuidade à ação de conscientização realizada na Escola do Bley, a Clínica Evoluta realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento, desta vez para outras turmas do Ensino Fundamental II e Ensino Médio.",
-    imagem: jessicaRetratoLateral.url,
-    paragrafos: [
-      "Dando continuidade à ação de conscientização realizada na Escola do Bley, no dia 31 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento.",
+    titulo: "Clínica Evoluta realiza segundo momento de palestra sobre Neurodesenvolvimento na Escola do Bley",
+    texto: "Dando continuidade à ação de conscientização realizada na Escola do Bley, a Clínica Evoluta realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento, desta vez para outras turmas do Ensino Fundamental II e Ensino Médio.",
+    etiqueta: "Palestras e capacitações",
+    paragrafos: [      "Dando continuidade à ação de conscientização realizada na Escola do Bley, no dia 31 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento.",
       "Desta vez, o encontro foi direcionado a outras turmas de estudantes do Ensino Fundamental II e Ensino Médio, proporcionando a um novo grupo de alunos a oportunidade de conhecer e dialogar sobre questões relacionadas ao desenvolvimento, à aprendizagem e às diferenças individuais.",
       "A palestra abordou informações sobre os Transtornos do Neurodesenvolvimento, destacando como algumas características podem aparecer no cotidiano escolar e nas relações com colegas, professores e familiares.",
       "Além dos aspectos relacionados ao desenvolvimento, o encontro buscou promover uma reflexão sobre empatia, respeito, inclusão e a importância de não definir uma pessoa apenas por suas dificuldades ou por um diagnóstico.",
       "Levar esse tipo de conhecimento para o ambiente escolar é uma das formas encontradas pela Clínica Evoluta para contribuir com a construção de uma comunidade mais consciente sobre o desenvolvimento humano e sobre a diversidade presente dentro da escola.",
       "A condução da palestra foi realizada por Jéssica Pelissari, que trouxe sua experiência na área de Psicologia e da Neuropsicologia para aproximar o conhecimento técnico da realidade vivenciada pelos adolescentes.",
       "A realização dos dois momentos, nos dias 25 e 31 de agosto, reforça a importância de criar espaços de diálogo dentro das escolas e evidencia o compromisso da Clínica Evoluta Desenvolvimento Infantil com ações de educação, conscientização e promoção da inclusão.",
-      "A Clínica Evoluta agradece à Escola do Bley pela parceria e pela confiança em abrir espaço para essa importante conversa com os estudantes.",
-    ],
-  },
-  {
+      "A Clínica Evoluta agradece à Escola do Bley pela parceria e pela confiança em abrir espaço para essa importante conversa com os estudantes.",    ],
+  },,
+    {
     slug: "capacitacao-profissionais-saude-educacao-pestalozzi",
-    titulo:
-      "Clínica Evoluta realiza capacitação para profissionais da saúde e educação na Pestalozzi",
-    categoria: "Palestras e capacitações",
     data: "28 de agosto de 2026",
-    leitura: "4 min de leitura",
-    resumo:
-      "No dia 28 de agosto, a Clínica Evoluta realizou uma capacitação em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional em seis horas de formação presencial.",
-    imagem: jessicaEscrevendo.url,
-    paragrafos: [
-      "No dia 28 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pereira Pelissari Oliveira, diretora da instituição, realizou uma capacitação profissional em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional.",
+    titulo: "Clínica Evoluta realiza capacitação para profissionais da saúde e educação na Pestalozzi",
+    texto: "No dia 28 de agosto, a Clínica Evoluta realizou uma capacitação em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional em seis horas de formação presencial.",
+    etiqueta: "Palestras e capacitações",
+    paragrafos: [      "No dia 28 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pereira Pelissari Oliveira, diretora da instituição, realizou uma capacitação profissional em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional.",
       "Com o tema “Neurodesenvolvimento: compreender para acolher, incluir e transformar”, a formação teve como objetivo ampliar o conhecimento dos profissionais sobre os Transtornos do Neurodesenvolvimento e fortalecer estratégias de acolhimento, inclusão e manejo diante das diferentes necessidades encontradas no cotidiano institucional.",
       "A capacitação contou com seis horas de formação presencial e foi construída a partir das demandas e desafios vivenciados pelas equipes da instituição. O encontro buscou aproximar o conhecimento científico da prática profissional, proporcionando momentos de reflexão, discussão de casos e apresentação de estratégias aplicáveis à rotina.",
       "Participaram da formação profissionais de diferentes áreas e funções, incluindo professores, psicólogos, fonoaudiólogos, assistentes sociais, coordenadores, diretores, cuidadores, monitores e integrantes das equipes administrativa e de apoio.",
-      "## Conhecimento para transformar a prática",
+      "Conhecimento para transformar a prática",
       "Entre os conteúdos trabalhados estiveram o Transtorno do Espectro Autista (TEA), o Transtorno do Déficit de Atenção e Hiperatividade (TDAH), o Transtorno Opositivo Desafiador (TOD) e a Deficiência Intelectual.",
       "Também foram abordados sinais de alerta, características do neurodesenvolvimento, impactos na aprendizagem e na convivência, estratégias de suporte, comunicação com as famílias e a importância da atuação integrada entre os diferentes profissionais.",
       "A proposta foi ampliar o olhar das equipes para além do diagnóstico, considerando as necessidades individuais de cada criança e adolescente e a importância de uma atuação articulada entre os profissionais que fazem parte de sua rede de cuidado.",
-      "## Da teoria para a prática",
+      "Da teoria para a prática",
       "Para Jéssica Pereira Pelissari Oliveira, a capacitação foi estruturada para responder às necessidades reais apresentadas pelos profissionais da instituição.",
       "“A proposta foi justamente trazer a teoria para situações que fazem parte da rotina dos profissionais. Trabalhamos com casos, discussões e estratégias que podem ser utilizadas no dia a dia, considerando as diferentes funções que existem dentro da instituição.”",
       "A formação reforça a importância da educação continuada para profissionais que atuam diretamente com crianças, adolescentes e famílias, especialmente diante da necessidade de compreender cada vez melhor as diferentes manifestações do neurodesenvolvimento.",
-      "## Clínica Evoluta: conhecimento que chega até onde é necessário",
+      "Clínica Evoluta: conhecimento que chega até onde é necessário",
       "A realização dessa capacitação representa também um dos pilares de atuação da Clínica Evoluta Desenvolvimento Infantil: levar a Psicologia e a Neuropsicologia para além do espaço clínico, contribuindo para a formação de profissionais e para o fortalecimento das redes de cuidado, educação e inclusão.",
       "Por meio de capacitações, palestras e assessoria exclusiva, a Clínica Evoluta desenvolve ações personalizadas para escolas, instituições, empresas e equipes multidisciplinares, considerando as necessidades específicas de cada público.",
-      "A Clínica Evoluta agradece à Pestalozzi pela parceria e pela oportunidade de compartilhar conhecimento, construir diálogos e fortalecer práticas cada vez mais acolhedoras, inclusivas e qualificadas.",
-    ],
-  },
-  {
+      "A Clínica Evoluta agradece à Pestalozzi pela parceria e pela oportunidade de compartilhar conhecimento, construir diálogos e fortalecer práticas cada vez mais acolhedoras, inclusivas e qualificadas.",    ],
+  },,
+    {
     slug: "palestra-transtornos-neurodesenvolvimento-escola-do-bley",
-    titulo:
-      "Clínica Evoluta promove palestra sobre Transtornos do Neurodesenvolvimento para estudantes",
-    categoria: "Palestras e capacitações",
     data: "25 de agosto de 2026",
-    leitura: "3 min de leitura",
-    resumo:
-      "No dia 25 de agosto, a Clínica Evoluta realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley, levando informação, conscientização e conhecimento aos adolescentes.",
-    imagem: jessicaJanela.url,
-    paragrafos: [
-      "No dia 25 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley.",
+    titulo: "Clínica Evoluta promove palestra sobre Transtornos do Neurodesenvolvimento para estudantes",
+    texto: "No dia 25 de agosto, a Clínica Evoluta realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley, levando informação, conscientização e conhecimento aos adolescentes.",
+    etiqueta: "Palestras e capacitações",
+    paragrafos: [      "No dia 25 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley.",
       "A iniciativa teve como objetivo levar informação, conscientização e conhecimento aos adolescentes sobre temas relacionados ao neurodesenvolvimento, contribuindo para a construção de um ambiente escolar mais acolhedor, respeitoso e inclusivo.",
       "Durante o encontro, foram abordados aspectos relacionados aos Transtornos do Neurodesenvolvimento, suas principais características e a forma como podem se manifestar no contexto escolar e nas relações sociais. A palestra também possibilitou refletir sobre a importância de compreender que cada pessoa apresenta uma forma singular de aprender, se comunicar, interagir e desenvolver suas habilidades.",
       "A proposta da Clínica Evoluta é contribuir para que a informação ultrapasse o consultório e alcance também os espaços onde crianças e adolescentes convivem diariamente. A escola possui um papel fundamental nesse processo, especialmente na identificação de sinais de alerta, na promoção da inclusão e na construção de relações baseadas em respeito e empatia.",
       "Para Jéssica Pelissari, ações educativas como essa são importantes para aproximar a comunidade do conhecimento científico e ampliar a compreensão sobre o desenvolvimento humano:",
       "“Falar sobre neurodesenvolvimento com os adolescentes é também falar sobre respeito às diferenças, empatia e inclusão. Informação adequada ajuda a reduzir preconceitos e favorece um ambiente em que cada estudante possa ser compreendido em suas particularidades.”",
       "A palestra faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de ações de capacitação, educação e conscientização voltadas a escolas, empresas e instituições, levando conhecimentos da Psicologia e da Neuropsicologia para diferentes contextos da sociedade.",
-      "A Clínica Evoluta agradece à Escola do Bley pela oportunidade e pela parceria na construção de um espaço de diálogo e aprendizagem sobre um tema tão relevante para a comunidade escolar.",
-    ],
-  },
-];
+      "A Clínica Evoluta agradece à Escola do Bley pela oportunidade e pela parceria na construção de um espaço de diálogo e aprendizagem sobre um tema tão relevante para a comunidade escolar.",    ],
+  },,
 
-export const novidades = [
   {
     slug: "novas-vagas-avaliacao-neuropsicologica",
     data: "Setembro de 2026",
