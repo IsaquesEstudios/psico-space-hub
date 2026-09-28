@@ -192,6 +192,12 @@ export const h1Atendimentos: Record<string, string> = {
   "fonoaudiologia-adolescentes-adultos-idosos":
     "Fonoaudiologia para adolescentes, adultos e idosos em São Gabriel da Palha",
   "estimulacao-cognitiva-idosos": "Estimulação cognitiva para idosos em São Gabriel da Palha",
+  "capacitacoes-e-palestras": "Capacitações e palestras para escolas, empresas e instituições",
+  "supervisao-clinica-neuropsicologia": "Supervisão clínica em neuropsicologia para profissionais",
+  "supervisao-terapia-cognitivo-comportamental":
+    "Supervisão em terapia cognitivo-comportamental para profissionais",
+  "acompanhamento-pos-capacitacao": "Acompanhamento pós-capacitação para instituições",
+  "terapia-cognitivo-comportamental": "Terapia cognitivo-comportamental para adultos on-line",
 };
 
 
@@ -596,6 +602,246 @@ export const atendimentos: Atendimento[] = [
       "Mais do que repetir exercícios, o cuidado busca criar experiências que tenham significado: lembrar histórias, organizar informações, sustentar conversas, tomar decisões simples e manter participação nas atividades possíveis.",
     ],
   },
+  {
+    slug: "capacitacoes-e-palestras",
+    titulo: "Capacitações e Palestras",
+    etiqueta: "Para instituições",
+    resumo:
+      "Capacitações, palestras, workshops e encontros formativos conduzidos por Jéssica Pelissari, com conteúdo desenvolvido de acordo com as necessidades de cada instituição.",
+    imagem: jessicaConversa.url,
+    imagemSecundaria: jessicaMesaAmpla.url,
+    paraQuem: [
+      "Empresas que desejam promover saúde mental, comunicação e desenvolvimento entre colaboradores",
+      "Escolas e equipes de apoio escolar que buscam formação sobre desenvolvimento, aprendizagem e inclusão",
+      "Prefeituras, secretarias e órgãos públicos com demandas de capacitação para suas equipes",
+      "Clínicas, instituições de ensino e equipes multiprofissionais",
+      "Profissionais da saúde e da educação que desejam ampliar conhecimentos e estratégias de atuação",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Escuta da demanda",
+        texto:
+          "Cada proposta é construída de acordo com o perfil do público, os objetivos da instituição, a carga horária e as necessidades identificadas.",
+      },
+      {
+        titulo: "Conteúdo personalizado",
+        texto:
+          "Os temas são definidos em conjunto com a instituição, podendo contemplar desenvolvimento infantil, TEA, TDAH, aprendizagem, inclusão, saúde mental e outros assuntos da Psicologia e da Neuropsicologia.",
+      },
+      {
+        titulo: "Formação presencial ou on-line",
+        texto:
+          "As ações podem ser realizadas em empresas, escolas, prefeituras, instituições de ensino, clínicas e demais organizações, no formato presencial ou on-line.",
+      },
+      {
+        titulo: "Conhecimento aplicado à prática",
+        texto:
+          "O objetivo é levar conhecimento científico para a prática, promovendo informação, prevenção, desenvolvimento profissional e estratégias aplicáveis à rotina.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Empresas, escolas, prefeituras e equipes" },
+      { rotulo: "Formato", valor: "Presencial ou on-line" },
+      { rotulo: "Condução", valor: "Psicóloga e Neuropsicóloga Jéssica Pelissari" },
+      { rotulo: "Conteúdo", valor: "Personalizado para cada instituição" },
+    ],
+    texto: [
+      "A Clínica Evoluta Desenvolvimento Infantil oferece capacitações, palestras, workshops e encontros formativos conduzidos pela Psicóloga e Neuropsicóloga Jéssica Pelissari, com conteúdos desenvolvidos de acordo com as necessidades de cada instituição.",
+      "As ações podem ser realizadas em empresas, escolas, prefeituras, instituições de ensino, clínicas, equipes multiprofissionais e demais organizações, de forma presencial ou on-line.",
+      "O objetivo é levar conhecimento científico para a prática, promovendo informação, prevenção, desenvolvimento profissional e estratégias aplicáveis à rotina.",
+    ],
+  },
+  {
+    slug: "supervisao-clinica-neuropsicologia",
+    titulo: "Supervisão Clínica em Neuropsicologia",
+    etiqueta: "Para profissionais",
+    resumo:
+      "Supervisão clínica para psicólogos e profissionais que atuam ou estão em formação em Neuropsicologia, com discussão de casos e aprimoramento da prática.",
+    imagem: jessicaEscrevendo.url,
+    imagemSecundaria: jessicaMesaHorizontal.url,
+    paraQuem: [
+      "Psicólogos que atuam com avaliação neuropsicológica e desejam aprimorar sua prática",
+      "Profissionais em formação na área de Neuropsicologia",
+      "Profissionais que buscam espaço para discussão de casos e raciocínio clínico",
+      "Quem deseja aperfeiçoar planejamento, interpretação de resultados e elaboração de documentos psicológicos",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Discussão de casos",
+        texto:
+          "A supervisão oferece espaço para discussão de casos clínicos, raciocínio clínico e construção de hipóteses diagnósticas.",
+      },
+      {
+        titulo: "Planejamento da avaliação",
+        texto:
+          "São trabalhados o planejamento da avaliação neuropsicológica e a seleção e organização dos instrumentos adequados a cada demanda.",
+      },
+      {
+        titulo: "Integração dos dados",
+        texto:
+          "A supervisão acompanha a integração e interpretação dos resultados obtidos durante o processo avaliativo, apoiando a construção de conclusões.",
+      },
+      {
+        titulo: "Documentos e encaminhamentos",
+        texto:
+          "Também podem ser abordadas a elaboração de documentos psicológicos, a conduta profissional e os encaminhamentos necessários.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Psicólogos e profissionais em formação" },
+      { rotulo: "Formato", valor: "Individual ou em pequenos grupos" },
+      { rotulo: "Condução", valor: "Jéssica Pelissari" },
+      { rotulo: "Foco", valor: "Aprimoramento da prática profissional" },
+    ],
+    texto: [
+      "A Clínica Evoluta oferece supervisão clínica para psicólogos e profissionais que atuam ou estão em formação na área de Neuropsicologia.",
+      "Conduzida por Jéssica Pelissari, a supervisão tem como objetivo contribuir para o aprimoramento da prática profissional, oferecendo espaço para discussão de casos, raciocínio clínico, planejamento da avaliação e integração dos dados obtidos durante o processo avaliativo.",
+      "A supervisão pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada.",
+    ],
+  },
+  {
+    slug: "supervisao-terapia-cognitivo-comportamental",
+    titulo: "Supervisão em Terapia Cognitivo-Comportamental",
+    etiqueta: "Para profissionais",
+    resumo:
+      "Supervisão clínica em TCC para profissionais que atendem crianças, adolescentes e adultos, com suporte técnico para o desenvolvimento da prática.",
+    imagem: jessicaSofa.url,
+    imagemSecundaria: jessicaEntrevista.url,
+    paraQuem: [
+      "Profissionais que realizam atendimentos infantis, adolescentes e adultos em TCC",
+      "Profissionais em início de carreira que buscam suporte técnico e clínico",
+      "Profissionais experientes que desejam aperfeiçoar a prática clínica e ampliar o repertório técnico",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Formulação e planejamento",
+        texto:
+          "São trabalhadas a formulação de casos clínicos, o planejamento terapêutico e a definição de objetivos e metas para cada paciente.",
+      },
+      {
+        titulo: "Técnicas e manejo clínico",
+        texto:
+          "A supervisão aborda a seleção de técnicas da TCC, o manejo clínico e o desenvolvimento de estratégias para diferentes demandas.",
+      },
+      {
+        titulo: "Estruturação das sessões",
+        texto:
+          "Também fazem parte do processo a estruturação das sessões, a psicoeducação e o monitoramento da evolução terapêutica.",
+      },
+      {
+        titulo: "Respeito a cada faixa etária",
+        texto:
+          "O suporte respeita as particularidades de cada faixa etária e as demandas apresentadas em cada caso, com orientações para atuação com crianças, adolescentes e adultos.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Profissionais da clínica em TCC" },
+      { rotulo: "Atendimentos", valor: "Infantis, adolescentes e adultos" },
+      { rotulo: "Indicação", valor: "Início de carreira ou aperfeiçoamento" },
+      { rotulo: "Foco", valor: "Suporte técnico e clínico" },
+    ],
+    texto: [
+      "A Clínica Evoluta também oferece supervisão clínica em Terapia Cognitivo-Comportamental (TCC) para profissionais que realizam atendimentos infantis, adolescentes e adultos.",
+      "A proposta é oferecer suporte técnico e clínico para o desenvolvimento da prática profissional, respeitando as particularidades de cada faixa etária e as demandas apresentadas em cada caso.",
+      "A supervisão é indicada tanto para profissionais em início de carreira quanto para aqueles que desejam aperfeiçoar sua prática clínica e ampliar seu repertório técnico.",
+    ],
+  },
+  {
+    slug: "acompanhamento-pos-capacitacao",
+    titulo: "Acompanhamento Pós-Capacitação",
+    etiqueta: "Assessoria exclusiva",
+    resumo:
+      "Assessoria exclusiva para instituições que já receberam uma palestra ou capacitação, dando continuidade ao trabalho e apoiando a aplicação prática dos conhecimentos.",
+    imagem: jessicaMesaAmpla.url,
+    imagemSecundaria: jessicaConversa.url,
+    paraQuem: [
+      "Escolas que receberam formação e desejam continuidade no acompanhamento da equipe",
+      "Empresas e instituições que querem implementar os conhecimentos desenvolvidos na capacitação",
+      "Equipes multiprofissionais com demandas específicas de orientação técnica",
+      "Órgãos públicos que buscam suporte estratégico contínuo",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Continuidade após a formação",
+        texto:
+          "Após uma palestra ou capacitação, a instituição pode contar com a Assessoria Exclusiva da Clínica Evoluta, criada para dar continuidade ao trabalho.",
+      },
+      {
+        titulo: "Proposta personalizada e estratégica",
+        texto:
+          "A Clínica Evoluta acompanha a instituição de acordo com suas necessidades, desafios e objetivos, com encontros de acompanhamento e orientações técnicas.",
+      },
+      {
+        titulo: "Aplicação no cotidiano",
+        texto:
+          "São realizadas análise de situações práticas, discussão de demandas da equipe e direcionamento de estratégias para aplicação dos conhecimentos no dia a dia.",
+      },
+      {
+        titulo: "Revisão e próximos passos",
+        texto:
+          "A assessoria pode incluir revisão das ações desenvolvidas, estruturação de estratégias e planejamento dos próximos passos.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Escolas, empresas, instituições e órgãos públicos" },
+      { rotulo: "Formato", valor: "Acompanhamento contínuo e personalizado" },
+      { rotulo: "Inclui", valor: "Orientação técnica e reuniões de acompanhamento" },
+      { rotulo: "Proposta", valor: "Continuidade, suporte e acompanhamento especializado" },
+    ],
+    texto: [
+      "Após uma palestra ou capacitação, a instituição pode contar com uma modalidade de Assessoria Exclusiva da Clínica Evoluta, criada para oferecer continuidade ao trabalho e auxiliar na implementação prática dos conhecimentos desenvolvidos durante a formação.",
+      "A assessoria é uma proposta personalizada e estratégica, na qual a Clínica Evoluta acompanha a instituição de acordo com suas necessidades, desafios e objetivos.",
+      "Mais do que uma palestra pontual, a proposta é oferecer continuidade, suporte e acompanhamento especializado, aproximando o conhecimento da realidade e das necessidades de cada instituição. Na Clínica Evoluta, cada projeto pode ser construído de forma personalizada, desde uma palestra ou capacitação pontual até um programa continuado envolvendo formação, supervisão e Assessoria Exclusiva.",
+    ],
+  },
+  {
+    slug: "terapia-cognitivo-comportamental",
+    titulo: "Terapia Cognitivo-Comportamental",
+    etiqueta: "Atendimento on-line",
+    resumo:
+      "Psicoterapia baseada na TCC para adultos, em formato on-line, com espaço de acolhimento para compreender pensamentos, emoções e comportamentos.",
+    imagem: jessicaSorrindo.url,
+    imagemSecundaria: jessicaJanela.url,
+    paraQuem: [
+      "Adultos que desejam acompanhamento psicológico em formato on-line",
+      "Pessoas que enfrentam dificuldades emocionais ou comportamentais no cotidiano",
+      "Quem busca autoconhecimento, regulação emocional e desenvolvimento de habilidades",
+      "Pessoas que precisam de estratégias mais funcionais para lidar com situações do dia a dia",
+    ],
+    comoFunciona: [
+      {
+        titulo: "Acolhimento e escuta",
+        texto:
+          "A psicoterapia baseada na Terapia Cognitivo-Comportamental oferece um espaço de acolhimento, escuta e desenvolvimento.",
+      },
+      {
+        titulo: "Compreensão dos padrões",
+        texto:
+          "O acompanhamento auxilia o paciente a compreender a relação entre pensamentos, emoções e comportamentos.",
+      },
+      {
+        titulo: "Construção de estratégias",
+        texto:
+          "O atendimento é individualizado e pode envolver autoconhecimento, regulação emocional, reestruturação de pensamentos e desenvolvimento de estratégias de enfrentamento.",
+      },
+      {
+        titulo: "Atendimento on-line",
+        texto:
+          "O acompanhamento acontece on-line para adultos, com a mesma atenção e qualidade do atendimento clínico presencial.",
+      },
+    ],
+    info: [
+      { rotulo: "Público", valor: "Adultos" },
+      { rotulo: "Formato", valor: "On-line" },
+      { rotulo: "Abordagem", valor: "Terapia Cognitivo-Comportamental" },
+      { rotulo: "Cuidado", valor: "Individualizado e humanizado" },
+    ],
+    texto: [
+      "A Clínica Evoluta Desenvolvimento Infantil oferece atendimento psicológico especializado de forma on-line, proporcionando praticidade, acolhimento e acompanhamento profissional, com a mesma atenção e qualidade do atendimento clínico.",
+      "A Psicoterapia baseada na Terapia Cognitivo-Comportamental (TCC) oferece um espaço de acolhimento, escuta e desenvolvimento, auxiliando o paciente a compreender a relação entre pensamentos, emoções e comportamentos.",
+      "Na Clínica Evoluta, cada pessoa é acompanhada de forma individualizada, considerando sua história, suas necessidades e seus objetivos. Nosso propósito é unir conhecimento científico, experiência clínica e acolhimento, oferecendo um atendimento ético, personalizado e voltado para o desenvolvimento e a qualidade de vida.",
+    ],
+  },
 ];
 
 export type ConteudoAtendimento = {
@@ -928,6 +1174,241 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
       { pergunta: "A família recebe orientação?", resposta: "Pode receber orientações para apoiar estímulos cotidianos de forma possível, respeitosa e sem transformar o cuidado em pressão." },
     ],
   },
+  "capacitacoes-e-palestras": {
+    chamada:
+      "Capacitações, palestras, workshops e encontros formativos conduzidos pela Psicóloga e Neuropsicóloga Jéssica Pelissari, com conteúdo desenvolvido de acordo com as necessidades de cada instituição.",
+    chamadaComplementar:
+      "Empresas, escolas, prefeituras, secretarias, equipes de apoio escolar, clínicas, instituições de ensino, equipes multiprofissionais e profissionais da saúde e educação.",
+    tituloApresentacao: "Conhecimento científico levado para a prática",
+    introducao:
+      "Cada proposta é construída de acordo com o perfil do público, os objetivos da instituição, a carga horária e as necessidades identificadas. As ações podem acontecer de forma presencial ou on-line, em empresas, escolas, prefeituras, instituições de ensino, clínicas, equipes multiprofissionais e demais organizações.",
+    tituloSituacoes: "Temas que podem ser abordados",
+    textoSituacoes:
+      "Os conteúdos são personalizados de acordo com o público e a demanda da instituição, podendo contemplar temas como:",
+    sinais: [
+      "Desenvolvimento infantil e neurodesenvolvimento",
+      "Transtorno do Espectro Autista (TEA) e Transtorno do Déficit de Atenção/Hiperatividade (TDAH)",
+      "Aprendizagem, dificuldades escolares, inclusão e educação especial",
+      "Saúde mental no ambiente escolar e profissional",
+      "Manejo de comportamentos, inteligência emocional e habilidades socioemocionais",
+      "Comunicação, relacionamento interpessoal e neuropsicologia aplicada",
+      "Orientação para professores, equipes e familiares",
+      "Estratégias para identificação de sinais de alerta no desenvolvimento",
+    ],
+    tituloObjetivos: "O que essas formações promovem",
+    textoObjetivos:
+      "O objetivo é levar conhecimento científico para a prática, aproximando a teoria da realidade vivenciada por cada equipe.",
+    objetivos: [
+      "Promover informação, prevenção e desenvolvimento profissional",
+      "Oferecer estratégias aplicáveis à rotina de cada instituição",
+      "Ampliar a compreensão sobre desenvolvimento, aprendizagem e comportamento",
+      "Fortalecer práticas mais acolhedoras, inclusivas e qualificadas",
+      "Construir propostas alinhadas aos objetivos e à realidade de cada instituição",
+    ],
+    tituloEtapas: "Como uma capacitação é construída",
+    textoEtapas:
+      "Do primeiro contato à realização da formação, cada etapa considera o perfil do público e as necessidades da instituição.",
+    tituloImagem: "Formação que chega onde é necessária",
+    textoImagem:
+      "As capacitações podem acontecer presencialmente ou on-line, permitindo levar conhecimento da Psicologia e da Neuropsicologia para diferentes equipes e instituições, independentemente da localização.",
+    participacao: {
+      titulo: "Cada proposta nasce da escuta da instituição",
+      texto:
+        "Antes da formação, são considerados o perfil do público, os objetivos da instituição, a carga horária disponível e as necessidades identificadas. Depois da capacitação, a instituição ainda pode contar com o Acompanhamento Pós-Capacitação, uma assessoria exclusiva para dar continuidade ao trabalho.",
+    },
+    perguntas: [
+      { pergunta: "As palestras podem ser on-line?", resposta: "Sim. As ações podem ser realizadas de forma presencial ou on-line, de acordo com a necessidade da instituição." },
+      { pergunta: "O conteúdo é sempre o mesmo?", resposta: "Não. Os conteúdos são personalizados de acordo com o público, os objetivos e a demanda de cada instituição." },
+      { pergunta: "Para quais instituições as capacitações são indicadas?", resposta: "Empresas, escolas, prefeituras, secretarias, equipes de apoio escolar, clínicas, instituições de ensino, equipes multiprofissionais e profissionais da saúde e educação." },
+      { pergunta: "Existe acompanhamento depois da capacitação?", resposta: "Sim. A instituição pode contratar o Acompanhamento Pós-Capacitação, uma assessoria exclusiva para apoiar a aplicação prática dos conhecimentos." },
+    ],
+  },
+  "supervisao-clinica-neuropsicologia": {
+    chamada:
+      "Supervisão clínica para psicólogos e profissionais que atuam ou estão em formação na área de Neuropsicologia, conduzida por Jéssica Pelissari.",
+    chamadaComplementar:
+      "Indicada para quem deseja aprimorar a prática profissional com espaço para discussão de casos, raciocínio clínico e planejamento da avaliação.",
+    tituloApresentacao: "Um espaço técnico para crescer na prática",
+    introducao:
+      "A supervisão tem como objetivo contribuir para o aprimoramento da prática profissional, oferecendo espaço para discussão de casos, raciocínio clínico, planejamento da avaliação e integração dos dados obtidos durante o processo avaliativo.",
+    tituloSituacoes: "O que pode ser trabalhado",
+    textoSituacoes:
+      "Durante a supervisão, os encontros podem contemplar diferentes aspectos da atuação em Neuropsicologia:",
+    sinais: [
+      "Raciocínio clínico e hipóteses diagnósticas",
+      "Planejamento da avaliação neuropsicológica",
+      "Seleção e organização de instrumentos",
+      "Integração e interpretação dos resultados",
+      "Construção de hipóteses e conclusões",
+      "Elaboração de documentos psicológicos",
+      "Discussão de casos clínicos, conduta e encaminhamentos",
+    ],
+    tituloObjetivos: "Aprimoramento da prática profissional",
+    textoObjetivos:
+      "A supervisão busca fortalecer a segurança técnica do profissional em cada etapa do processo avaliativo.",
+    objetivos: [
+      "Desenvolver raciocínio clínico estruturado e criterioso",
+      "Aprimorar o planejamento e a condução de avaliações neuropsicológicas",
+      "Integrar dados de instrumentos, entrevistas e história do paciente",
+      "Construir conclusões e documentos psicológicos com mais clareza",
+      "Orientar condutas e encaminhamentos de forma fundamentada",
+    ],
+    tituloEtapas: "Como a supervisão acontece",
+    textoEtapas:
+      "A supervisão pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada.",
+    tituloImagem: "Discussão de casos com direção técnica",
+    textoImagem:
+      "Cada encontro aproxima a teoria da prática, permitindo que o profissional analise situações reais da sua atuação com suporte especializado.",
+    participacao: {
+      titulo: "Individual ou em pequenos grupos",
+      texto:
+        "A supervisão pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada. Esse formato permite aprofundar a discussão de casos e respeitar o momento profissional de cada participante.",
+    },
+    perguntas: [
+      { pergunta: "Quem pode participar da supervisão?", resposta: "Psicólogos e profissionais que atuam ou estão em formação na área de Neuropsicologia." },
+      { pergunta: "A supervisão é individual ou em grupo?", resposta: "Pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada." },
+      { pergunta: "Posso levar casos reais para discussão?", resposta: "Sim. A discussão de casos clínicos é uma das partes centrais da supervisão, sempre com respeito ao sigilo profissional." },
+      { pergunta: "A supervisão ajuda na elaboração de documentos?", resposta: "Sim. A elaboração de documentos psicológicos, como laudos e relatórios, pode ser trabalhada durante os encontros." },
+    ],
+  },
+  "supervisao-terapia-cognitivo-comportamental": {
+    chamada:
+      "Supervisão clínica em Terapia Cognitivo-Comportamental (TCC) para profissionais que realizam atendimentos infantis, adolescentes e adultos.",
+    chamadaComplementar:
+      "Indicada tanto para profissionais em início de carreira quanto para quem deseja aperfeiçoar a prática clínica e ampliar o repertório técnico.",
+    tituloApresentacao: "Suporte técnico para a prática em TCC",
+    introducao:
+      "A proposta é oferecer suporte técnico e clínico para o desenvolvimento da prática profissional, respeitando as particularidades de cada faixa etária e as demandas apresentadas em cada caso.",
+    tituloSituacoes: "O que pode ser abordado",
+    textoSituacoes:
+      "Durante a supervisão, os encontros podem contemplar diferentes aspectos da atuação clínica em TCC:",
+    sinais: [
+      "Formulação de casos clínicos e planejamento terapêutico",
+      "Definição de objetivos e metas",
+      "Seleção de técnicas da TCC e manejo clínico",
+      "Desenvolvimento de estratégias para diferentes demandas",
+      "Estruturação das sessões e psicoeducação",
+      "Monitoramento da evolução terapêutica",
+      "Orientações para atuação clínica com crianças, adolescentes e adultos",
+    ],
+    tituloObjetivos: "Mais segurança e repertório na clínica",
+    textoObjetivos:
+      "A supervisão busca fortalecer a atuação do profissional em cada etapa do acompanhamento terapêutico.",
+    objetivos: [
+      "Aprimorar a formulação e o planejamento de casos",
+      "Ampliar o repertório de técnicas da TCC",
+      "Desenvolver estratégias adequadas a cada faixa etária",
+      "Estruturar sessões com objetivos claros",
+      "Acompanhar a evolução terapêutica com critérios definidos",
+    ],
+    tituloEtapas: "Como a supervisão acontece",
+    textoEtapas:
+      "Os encontros são organizados a partir das demandas trazidas pelo profissional, com espaço para discussão de casos e construção de estratégias.",
+    tituloImagem: "Cada faixa etária pede um olhar diferente",
+    textoImagem:
+      "A supervisão respeita as particularidades de atendimentos infantis, adolescentes e adultos, ajudando o profissional a adaptar técnicas e condução para cada realidade.",
+    participacao: {
+      titulo: "Para quem está começando e para quem quer avançar",
+      texto:
+        "A supervisão é indicada tanto para profissionais em início de carreira quanto para aqueles que desejam aperfeiçoar sua prática clínica e ampliar seu repertório técnico.",
+    },
+    perguntas: [
+      { pergunta: "A supervisão atende quem trabalha com adultos?", resposta: "Sim. A supervisão em TCC contempla profissionais que realizam atendimentos infantis, adolescentes e adultos." },
+      { pergunta: "É indicada para quem está começando?", resposta: "Sim. A supervisão é indicada tanto para profissionais em início de carreira quanto para quem deseja aperfeiçoar a prática clínica." },
+      { pergunta: "Posso discutir casos reais?", resposta: "Sim. A discussão de casos faz parte da supervisão, sempre com respeito ao sigilo profissional." },
+      { pergunta: "O que é trabalhado além de técnicas?", resposta: "Formulação de casos, planejamento terapêutico, estruturação de sessões, psicoeducação e monitoramento da evolução, entre outros aspectos." },
+    ],
+  },
+  "acompanhamento-pos-capacitacao": {
+    chamada:
+      "Após uma palestra ou capacitação, a instituição pode contar com a Assessoria Exclusiva da Clínica Evoluta, criada para dar continuidade ao trabalho e auxiliar na implementação prática dos conhecimentos desenvolvidos durante a formação.",
+    chamadaComplementar:
+      "Uma proposta personalizada e estratégica para escolas, empresas, instituições, equipes multiprofissionais e órgãos públicos.",
+    tituloApresentacao: "Uma experiência que vai além da palestra",
+    introducao:
+      "A assessoria é uma proposta personalizada e estratégica, na qual a Clínica Evoluta acompanha a instituição de acordo com suas necessidades, desafios e objetivos. Por meio dessa proposta, podem ser realizados encontros de acompanhamento, orientações técnicas, análise de situações práticas, discussão de demandas da equipe e direcionamento de estratégias para aplicação dos conhecimentos no cotidiano.",
+    tituloSituacoes: "Quando a assessoria faz diferença",
+    textoSituacoes:
+      "A Assessoria Exclusiva pode ser estruturada para diferentes contextos, como escolas, empresas, instituições, equipes multiprofissionais e órgãos públicos.",
+    sinais: [
+      "A equipe recebeu uma formação e precisa de apoio para aplicar os conhecimentos na rotina",
+      "Surgem situações práticas que pedem orientação técnica especializada",
+      "A instituição deseja estruturar estratégias de acordo com suas demandas específicas",
+      "Há necessidade de revisar ações desenvolvidas e planejar próximos passos",
+    ],
+    tituloObjetivos: "Continuidade, suporte e acompanhamento especializado",
+    textoObjetivos:
+      "Mais do que uma palestra pontual, a proposta é aproximar o conhecimento da realidade e das necessidades de cada instituição.",
+    objetivos: [
+      "Acompanhar a equipe na implementação prática dos conhecimentos",
+      "Oferecer orientação técnica diante de demandas específicas",
+      "Discutir situações práticas presentes no cotidiano da instituição",
+      "Estruturar estratégias e revisar as ações desenvolvidas",
+      "Planejar próximos passos com direcionamento especializado",
+    ],
+    tituloEtapas: "Como a assessoria é estruturada",
+    textoEtapas:
+      "A assessoria pode incluir acompanhamento da equipe, orientação técnica, discussão de situações práticas, reuniões de acompanhamento, estruturação de estratégias, orientação diante de demandas específicas, revisão das ações desenvolvidas e planejamento de próximos passos.",
+    tituloImagem: "Conhecimento, prática e desenvolvimento",
+    textoImagem:
+      "Na Clínica Evoluta, cada projeto pode ser construído de forma personalizada, desde uma palestra ou capacitação pontual até um programa continuado envolvendo formação, supervisão e Assessoria Exclusiva.",
+    participacao: {
+      titulo: "Uma parceria construída com a instituição",
+      texto:
+        "A assessoria acompanha a instituição de acordo com suas necessidades, desafios e objetivos, com encontros de acompanhamento e orientações técnicas que respeitam a realidade de cada equipe.",
+    },
+    perguntas: [
+      { pergunta: "A assessoria só existe depois de uma capacitação?", resposta: "A Assessoria Exclusiva foi criada para dar continuidade a palestras e capacitações, mas cada projeto pode ser construído de forma personalizada com a instituição." },
+      { pergunta: "Para quais instituições ela é indicada?", resposta: "Escolas, empresas, instituições, equipes multiprofissionais e órgãos públicos." },
+      { pergunta: "O que a assessoria pode incluir?", resposta: "Acompanhamento da equipe, orientação técnica, discussão de situações práticas, reuniões de acompanhamento, estruturação de estratégias, revisão das ações desenvolvidas e planejamento de próximos passos." },
+      { pergunta: "É possível montar um programa continuado?", resposta: "Sim. Cada projeto pode ser construído de forma personalizada, desde uma palestra pontual até um programa continuado envolvendo formação, supervisão e Assessoria Exclusiva." },
+    ],
+  },
+  "terapia-cognitivo-comportamental": {
+    chamada:
+      "Atendimento psicológico especializado de forma on-line, proporcionando praticidade, acolhimento e acompanhamento profissional, com a mesma atenção e qualidade do atendimento clínico.",
+    chamadaComplementar: "Atendimento on-line para adultos.",
+    tituloApresentacao: "Compreender pensamentos, emoções e comportamentos",
+    introducao:
+      "A Psicoterapia baseada na Terapia Cognitivo-Comportamental (TCC) oferece um espaço de acolhimento, escuta e desenvolvimento, auxiliando o paciente a compreender a relação entre pensamentos, emoções e comportamentos.",
+    tituloSituacoes: "Quando a terapia pode ajudar",
+    textoSituacoes:
+      "A TCC pode ser utilizada no acompanhamento de diferentes demandas emocionais e comportamentais, contribuindo para o desenvolvimento de estratégias mais funcionais para lidar com situações do cotidiano.",
+    sinais: [
+      "Dificuldades emocionais que pesam na rotina, no trabalho ou nos relacionamentos",
+      "Pensamentos recorrentes que geram sofrimento ou paralisam decisões",
+      "Dificuldade para regular emoções em situações do dia a dia",
+      "Comportamentos que a pessoa deseja compreender e modificar",
+      "Busca por autoconhecimento e desenvolvimento pessoal",
+    ],
+    tituloObjetivos: "Estratégias mais funcionais para o cotidiano",
+    textoObjetivos:
+      "O atendimento é individualizado e construído de acordo com a história, as necessidades e os objetivos de cada pessoa.",
+    objetivos: [
+      "Promover autoconhecimento e regulação emocional",
+      "Desenvolver habilidades e estratégias de enfrentamento",
+      "Trabalhar a reestruturação de pensamentos",
+      "Apoiar o manejo de dificuldades emocionais",
+      "Construir novos comportamentos mais funcionais",
+    ],
+    tituloEtapas: "Como o acompanhamento acontece",
+    textoEtapas:
+      "O atendimento é individualizado e acontece on-line para adultos, com encontros estruturados de acordo com a demanda de cada pessoa.",
+    tituloImagem: "Atendimento especializado e humanizado",
+    textoImagem:
+      "Na Clínica Evoluta, cada pessoa é acompanhada de forma individualizada, considerando sua história, suas necessidades e seus objetivos.",
+    participacao: {
+      titulo: "Conhecimento científico, experiência clínica e acolhimento",
+      texto:
+        "Nosso propósito é unir conhecimento científico, experiência clínica e acolhimento, oferecendo um atendimento ético, personalizado e voltado para o desenvolvimento e a qualidade de vida.",
+    },
+    perguntas: [
+      { pergunta: "O atendimento é presencial ou on-line?", resposta: "Essa modalidade de acompanhamento em TCC é realizada on-line, para adultos." },
+      { pergunta: "Para quais demandas a TCC é indicada?", resposta: "A TCC pode ser utilizada no acompanhamento de diferentes demandas emocionais e comportamentais, contribuindo para estratégias mais funcionais no cotidiano." },
+      { pergunta: "O atendimento on-line tem a mesma qualidade?", resposta: "Sim. O formato on-line mantém a mesma atenção e qualidade do atendimento clínico, com praticidade e acolhimento." },
+      { pergunta: "Como começo?", resposta: "Entre em contato com a Clínica Evoluta e conheça a modalidade de atendimento mais adequada para você." },
+    ],
+  },
 };
 
 export const destaques = [
@@ -1177,7 +1658,185 @@ export type Post = {
   paragrafos: string[];
 };
 
-export const posts: Post[] = [];
+export const posts: Post[] = [
+  {
+    slug: "reflexao-convivencia-saude-emocional-escola-gerson-camata",
+    titulo:
+      "Clínica Evoluta promove momentos de reflexão sobre convivência e saúde emocional na Escola Gerson Camata",
+    categoria: "Palestras e capacitações",
+    data: "18 de setembro de 2026",
+    leitura: "4 min de leitura",
+    resumo:
+      "Um retorno cheio de significado: no dia 18 de setembro, a Clínica Evoluta esteve na Escola Gerson Camata para três momentos de diálogo com estudantes do Ensino Fundamental II e Ensino Médio sobre bullying, respeito, igualdade de gênero, convivência e saúde emocional. Para Jéssica Pelissari, retornar à escola onde cresceu, agora como profissional, tornou a experiência ainda mais especial.",
+    imagem: jessicaMesaHorizontal.url,
+    paragrafos: [
+      "No dia 18 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Gerson Camata para uma importante ação de conscientização sobre convivência, respeito e saúde emocional no ambiente escolar.",
+      "A atividade foi realizada em três momentos, contemplando diferentes grupos de estudantes do Ensino Fundamental II e Ensino Médio, permitindo que os alunos participassem das discussões de acordo com a organização das turmas.",
+      "Durante os encontros, foram abordados temas fundamentais para a convivência escolar, como bullying, respeito, igualdade de gênero, empatia e saúde emocional, promovendo reflexões sobre a importância de construir relações mais saudáveis, respeitosas e acolhedoras dentro e fora da escola.",
+      "## Informação, diálogo e prevenção",
+      "A proposta da ação foi criar um espaço de diálogo com os estudantes, possibilitando que refletissem sobre suas atitudes, sobre a forma como se relacionam com os colegas e sobre o impacto que palavras e comportamentos podem ter na vida de outras pessoas.",
+      "Falar sobre saúde emocional no ambiente escolar também significa trabalhar a prevenção, fortalecendo nos adolescentes recursos para reconhecer situações de violência, respeitar as diferenças e buscar ajuda quando necessário.",
+      "A iniciativa faz parte da atuação da Clínica Evoluta na realização de palestras e capacitações em escolas, levando conhecimentos da Psicologia e da Neuropsicologia para espaços de educação, convivência e desenvolvimento.",
+      "## Um retorno cheio de significado",
+      "Para Jéssica Pelissari, essa ação teve um significado ainda mais especial: a Escola Gerson Camata faz parte de sua própria história.",
+      "Retornar ao espaço onde estudou e onde construiu parte de sua trajetória, desta vez como profissional e representando a Clínica Evoluta, tornou o momento especialmente significativo.",
+      "“Foi muito mais do que uma palestra. Foi voltar ao lugar onde cresci, onde aprendi e onde tantos professores fizeram parte da minha história. Hoje, poder retornar como profissional e representar um trabalho que também acredita na transformação por meio da informação e do cuidado foi muito especial.”",
+      "A experiência representa um encontro entre memória, formação e contribuição profissional, mostrando como conhecimentos construídos ao longo da trajetória podem, posteriormente, transformar-se em novas oportunidades de aprendizado e cuidado para outras pessoas.",
+      "## Construindo escolas mais acolhedoras",
+      "A Clínica Evoluta acredita que levar informação para dentro das escolas é uma importante estratégia de promoção da saúde emocional e prevenção. Quando estudantes têm espaço para conversar, questionar e refletir, tornam-se parte ativa da construção de ambientes mais respeitosos e inclusivos.",
+      "A Clínica Evoluta Desenvolvimento Infantil agradece à Escola Gerson Camata, aos profissionais envolvidos e a todos que contribuíram para a realização desse momento.",
+      "Que iniciativas como essa continuem fortalecendo o diálogo e levando informação, respeito, empatia e saúde emocional para dentro das escolas.",
+    ],
+  },
+  {
+    slug: "palestra-online-saude-mental-no-trabalho-cooabriel",
+    titulo:
+      "Clínica Evoluta promove palestra online sobre Saúde Mental no Trabalho para colaboradores da Cooabriel",
+    categoria: "Palestras e capacitações",
+    data: "17 de setembro de 2026",
+    leitura: "3 min de leitura",
+    resumo:
+      "Saúde Mental no Trabalho em pauta: no dia 17 de setembro, a Clínica Evoluta realizou uma palestra online para os colaboradores da Cooabriel, promovendo informação, reflexão e diálogo sobre cuidado emocional, escuta, acolhimento e saúde mental no ambiente profissional.",
+    imagem: jessicaEntrevista.url,
+    paragrafos: [
+      "No dia 17 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra online sobre Saúde Mental no Trabalho para os colaboradores da Cooabriel.",
+      "O encontro teve como objetivo levar informação, promover reflexão e ampliar o diálogo sobre a saúde mental no ambiente profissional, incentivando uma cultura de cuidado, escuta, acolhimento e respeito.",
+      "Realizada de forma online, a palestra possibilitou a participação dos colaboradores de maneira prática e acessível, demonstrando também a possibilidade de a Clínica Evoluta levar suas ações de capacitação para diferentes equipes e instituições, independentemente da localização.",
+      "## Saúde mental também faz parte do ambiente de trabalho",
+      "Durante o encontro, foram abordadas reflexões relacionadas ao cuidado emocional, à percepção das próprias necessidades e à importância de desenvolver um olhar mais atento para o próprio bem-estar e também para as pessoas que fazem parte do ambiente profissional.",
+      "A proposta foi aproximar os conhecimentos da Psicologia da realidade vivenciada pelos colaboradores, criando um espaço de reflexão sobre cuidado, relações interpessoais, escuta e acolhimento.",
+      "Para Jéssica Pelissari, levar conhecimento sobre saúde mental para as organizações representa uma importante oportunidade de promover prevenção e cuidado:",
+      "“Espero que cada pessoa que esteve presente possa levar consigo novos conhecimentos, reflexões e, principalmente, um olhar mais atento para o próprio cuidado e para o cuidado com o outro.”",
+      "## Psicologia além do consultório",
+      "A realização da palestra reforça a atuação da Clínica Evoluta também no contexto corporativo, oferecendo palestras, capacitações e ações de educação em saúde mental para empresas e instituições, tanto no formato presencial quanto online.",
+      "As ações são estruturadas de acordo com as necessidades de cada organização, buscando transformar conhecimento científico em reflexões e estratégias que possam fazer sentido para a realidade das equipes.",
+      "## Um momento de conexão e cuidado",
+      "A Clínica Evoluta agradece à Cooabriel e, de forma especial, a Leny Menegassi, pela confiança, parceria e pela oportunidade de levar conhecimento e reflexão sobre saúde mental aos seus colaboradores.",
+      "Foi uma alegria fazer parte desse momento e contribuir para a construção de espaços profissionais cada vez mais voltados à escuta, conexão, acolhimento e cuidado.",
+    ],
+  },
+  {
+    slug: "dialogo-bullying-cyberbullying-estudantes",
+    titulo: "Clínica Evoluta promove diálogo sobre Bullying e Cyberbullying com estudantes",
+    categoria: "Palestras e capacitações",
+    data: "11 de setembro de 2026",
+    leitura: "3 min de leitura",
+    resumo:
+      "Bullying e cyberbullying em pauta: no dia 11 de setembro, a Clínica Evoluta esteve na Escola Ilda Ferreira para promover um momento de informação, diálogo e conscientização com os estudantes sobre respeito, empatia, convivência e prevenção da violência.",
+    imagem: jessicaSorrindo.url,
+    paragrafos: [
+      "No dia 11 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Ilda Ferreira para um momento de diálogo e conscientização sobre um tema que precisa estar cada vez mais presente no ambiente escolar: bullying e cyberbullying.",
+      "A atividade foi realizada com as turmas da instituição e teve como objetivo promover informação, reflexão e conscientização entre crianças e adolescentes sobre as diferentes formas de violência que podem ocorrer no ambiente escolar e também nos espaços digitais.",
+      "Durante o encontro, foram discutidas situações relacionadas ao bullying e ao cyberbullying, destacando como palavras, atitudes e comportamentos podem impactar profundamente a vida de outras pessoas, tanto de maneira positiva quanto negativa.",
+      "A proposta também buscou estimular nos estudantes a reflexão sobre empatia, respeito, responsabilidade e convivência, mostrando que cada aluno possui um papel importante na construção de um ambiente escolar mais seguro e acolhedor.",
+      "## Psicologia também é prevenção",
+      "Para Jéssica Pelissari, levar conhecimento para dentro das escolas é uma importante ferramenta de prevenção e cuidado.",
+      "“Como psicóloga, acredito que levar conhecimento, promover diálogo e ajudar crianças e adolescentes a compreenderem suas emoções e suas atitudes também é uma forma de prevenção e cuidado.”",
+      "A conversa proporcionou um espaço de escuta e participação, no qual os estudantes puderam compartilhar percepções, fazer perguntas e refletir sobre situações que fazem parte de sua realidade.",
+      "A iniciativa reforça o compromisso da Clínica Evoluta Desenvolvimento Infantil com ações que aproximam a Psicologia do ambiente escolar e contribuem para a promoção da saúde emocional, da prevenção e de relações mais respeitosas.",
+      "## Construindo uma escola com mais respeito e empatia",
+      "A Clínica Evoluta acredita que falar sobre bullying e cyberbullying é também falar sobre responsabilidade coletiva. A prevenção começa quando crianças e adolescentes compreendem o impacto de suas ações, aprendem a reconhecer situações de violência e sabem que podem buscar ajuda quando necessário.",
+      "A Clínica Evoluta agradece à Escola Ilda Ferreira pela confiança e pela oportunidade de realizar esse importante momento de diálogo com os estudantes.",
+      "Nosso agradecimento também a cada turma que participou, ouviu, questionou e contribuiu para tornar o encontro ainda mais significativo.",
+      "Que possamos continuar construindo ambientes em que respeito, empatia e acolhimento sejam sempre maiores do que qualquer forma de violência.",
+    ],
+  },
+  {
+    slug: "capacitacao-autismo-inclusao-escolar-coopesg",
+    titulo:
+      "Clínica Evoluta realiza capacitação sobre Autismo e Inclusão Escolar para equipe da COOPESG",
+    categoria: "Palestras e capacitações",
+    data: "8 de setembro de 2026",
+    leitura: "3 min de leitura",
+    resumo:
+      "No dia 8 de setembro, a Clínica Evoluta esteve novamente junto à equipe da COOPESG para uma capacitação voltada às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
+    imagem: jessicaConversa.url,
+    paragrafos: [
+      "No dia 8 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve novamente junto à equipe da COOPESG para um momento de capacitação voltado às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
+      "O encontro teve como propósito compartilhar conhecimentos e estratégias que possam contribuir para uma atuação mais acolhedora, consciente e qualificada diante das necessidades de crianças com Transtorno do Espectro Autista (TEA) no ambiente escolar.",
+      "Durante a capacitação, foram discutidos aspectos relacionados ao comportamento infantil, às particularidades do desenvolvimento e à importância de compreender o que está por trás dos comportamentos apresentados pela criança.",
+      "A proposta foi reforçar que compreender um comportamento é um passo fundamental para que o profissional possa ir além da tentativa de simplesmente controlá-lo, buscando identificar necessidades, ensinar novas habilidades, oferecer suporte e favorecer a participação da criança no ambiente escolar.",
+      "## Conhecimento que transforma a prática",
+      "A formação também proporcionou um espaço de troca de experiências entre as profissionais, permitindo discutir situações presentes no cotidiano escolar e refletir sobre estratégias que podem ser utilizadas na rotina.",
+      "Para Jéssica Pelissari, momentos de capacitação como esse são fundamentais para fortalecer uma cultura de inclusão baseada no conhecimento e na compreensão das necessidades individuais de cada criança.",
+      "“Quando entendemos o comportamento de uma criança, deixamos de apenas tentar controlá-lo e passamos a acolher, ensinar e ajudar.”",
+      "A iniciativa faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de capacitações e formações para escolas e equipes profissionais, levando conhecimentos da Psicologia e da Neuropsicologia para os diferentes contextos em que crianças e adolescentes estão inseridos.",
+      "A Clínica Evoluta agradece à Escola COOPESG pela confiança e pela oportunidade de, mais uma vez, contribuir para a formação de sua equipe e para a construção de uma escola cada vez mais preparada para acolher a diversidade.",
+      "Capacitar é transformar. Incluir é compreender.",
+    ],
+  },
+  {
+    slug: "segundo-momento-palestra-neurodesenvolvimento-escola-do-bley",
+    titulo:
+      "Clínica Evoluta realiza segundo momento de palestra sobre Neurodesenvolvimento na Escola do Bley",
+    categoria: "Palestras e capacitações",
+    data: "31 de agosto de 2026",
+    leitura: "3 min de leitura",
+    resumo:
+      "Dando continuidade à ação de conscientização realizada na Escola do Bley, a Clínica Evoluta realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento, desta vez para outras turmas do Ensino Fundamental II e Ensino Médio.",
+    imagem: jessicaRetratoLateral.url,
+    paragrafos: [
+      "Dando continuidade à ação de conscientização realizada na Escola do Bley, no dia 31 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento.",
+      "Desta vez, o encontro foi direcionado a outras turmas de estudantes do Ensino Fundamental II e Ensino Médio, proporcionando a um novo grupo de alunos a oportunidade de conhecer e dialogar sobre questões relacionadas ao desenvolvimento, à aprendizagem e às diferenças individuais.",
+      "A palestra abordou informações sobre os Transtornos do Neurodesenvolvimento, destacando como algumas características podem aparecer no cotidiano escolar e nas relações com colegas, professores e familiares.",
+      "Além dos aspectos relacionados ao desenvolvimento, o encontro buscou promover uma reflexão sobre empatia, respeito, inclusão e a importância de não definir uma pessoa apenas por suas dificuldades ou por um diagnóstico.",
+      "Levar esse tipo de conhecimento para o ambiente escolar é uma das formas encontradas pela Clínica Evoluta para contribuir com a construção de uma comunidade mais consciente sobre o desenvolvimento humano e sobre a diversidade presente dentro da escola.",
+      "A condução da palestra foi realizada por Jéssica Pelissari, que trouxe sua experiência na área de Psicologia e da Neuropsicologia para aproximar o conhecimento técnico da realidade vivenciada pelos adolescentes.",
+      "A realização dos dois momentos, nos dias 25 e 31 de agosto, reforça a importância de criar espaços de diálogo dentro das escolas e evidencia o compromisso da Clínica Evoluta Desenvolvimento Infantil com ações de educação, conscientização e promoção da inclusão.",
+      "A Clínica Evoluta agradece à Escola do Bley pela parceria e pela confiança em abrir espaço para essa importante conversa com os estudantes.",
+    ],
+  },
+  {
+    slug: "capacitacao-profissionais-saude-educacao-pestalozzi",
+    titulo:
+      "Clínica Evoluta realiza capacitação para profissionais da saúde e educação na Pestalozzi",
+    categoria: "Palestras e capacitações",
+    data: "28 de agosto de 2026",
+    leitura: "4 min de leitura",
+    resumo:
+      "No dia 28 de agosto, a Clínica Evoluta realizou uma capacitação em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional em seis horas de formação presencial.",
+    imagem: jessicaEscrevendo.url,
+    paragrafos: [
+      "No dia 28 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pereira Pelissari Oliveira, diretora da instituição, realizou uma capacitação profissional em parceria com a Pestalozzi, reunindo mais de 60 profissionais das áreas da saúde, educação, assistência e apoio institucional.",
+      "Com o tema “Neurodesenvolvimento: compreender para acolher, incluir e transformar”, a formação teve como objetivo ampliar o conhecimento dos profissionais sobre os Transtornos do Neurodesenvolvimento e fortalecer estratégias de acolhimento, inclusão e manejo diante das diferentes necessidades encontradas no cotidiano institucional.",
+      "A capacitação contou com seis horas de formação presencial e foi construída a partir das demandas e desafios vivenciados pelas equipes da instituição. O encontro buscou aproximar o conhecimento científico da prática profissional, proporcionando momentos de reflexão, discussão de casos e apresentação de estratégias aplicáveis à rotina.",
+      "Participaram da formação profissionais de diferentes áreas e funções, incluindo professores, psicólogos, fonoaudiólogos, assistentes sociais, coordenadores, diretores, cuidadores, monitores e integrantes das equipes administrativa e de apoio.",
+      "## Conhecimento para transformar a prática",
+      "Entre os conteúdos trabalhados estiveram o Transtorno do Espectro Autista (TEA), o Transtorno do Déficit de Atenção e Hiperatividade (TDAH), o Transtorno Opositivo Desafiador (TOD) e a Deficiência Intelectual.",
+      "Também foram abordados sinais de alerta, características do neurodesenvolvimento, impactos na aprendizagem e na convivência, estratégias de suporte, comunicação com as famílias e a importância da atuação integrada entre os diferentes profissionais.",
+      "A proposta foi ampliar o olhar das equipes para além do diagnóstico, considerando as necessidades individuais de cada criança e adolescente e a importância de uma atuação articulada entre os profissionais que fazem parte de sua rede de cuidado.",
+      "## Da teoria para a prática",
+      "Para Jéssica Pereira Pelissari Oliveira, a capacitação foi estruturada para responder às necessidades reais apresentadas pelos profissionais da instituição.",
+      "“A proposta foi justamente trazer a teoria para situações que fazem parte da rotina dos profissionais. Trabalhamos com casos, discussões e estratégias que podem ser utilizadas no dia a dia, considerando as diferentes funções que existem dentro da instituição.”",
+      "A formação reforça a importância da educação continuada para profissionais que atuam diretamente com crianças, adolescentes e famílias, especialmente diante da necessidade de compreender cada vez melhor as diferentes manifestações do neurodesenvolvimento.",
+      "## Clínica Evoluta: conhecimento que chega até onde é necessário",
+      "A realização dessa capacitação representa também um dos pilares de atuação da Clínica Evoluta Desenvolvimento Infantil: levar a Psicologia e a Neuropsicologia para além do espaço clínico, contribuindo para a formação de profissionais e para o fortalecimento das redes de cuidado, educação e inclusão.",
+      "Por meio de capacitações, palestras e assessoria exclusiva, a Clínica Evoluta desenvolve ações personalizadas para escolas, instituições, empresas e equipes multidisciplinares, considerando as necessidades específicas de cada público.",
+      "A Clínica Evoluta agradece à Pestalozzi pela parceria e pela oportunidade de compartilhar conhecimento, construir diálogos e fortalecer práticas cada vez mais acolhedoras, inclusivas e qualificadas.",
+    ],
+  },
+  {
+    slug: "palestra-transtornos-neurodesenvolvimento-escola-do-bley",
+    titulo:
+      "Clínica Evoluta promove palestra sobre Transtornos do Neurodesenvolvimento para estudantes",
+    categoria: "Palestras e capacitações",
+    data: "25 de agosto de 2026",
+    leitura: "3 min de leitura",
+    resumo:
+      "No dia 25 de agosto, a Clínica Evoluta realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley, levando informação, conscientização e conhecimento aos adolescentes.",
+    imagem: jessicaJanela.url,
+    paragrafos: [
+      "No dia 25 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley.",
+      "A iniciativa teve como objetivo levar informação, conscientização e conhecimento aos adolescentes sobre temas relacionados ao neurodesenvolvimento, contribuindo para a construção de um ambiente escolar mais acolhedor, respeitoso e inclusivo.",
+      "Durante o encontro, foram abordados aspectos relacionados aos Transtornos do Neurodesenvolvimento, suas principais características e a forma como podem se manifestar no contexto escolar e nas relações sociais. A palestra também possibilitou refletir sobre a importância de compreender que cada pessoa apresenta uma forma singular de aprender, se comunicar, interagir e desenvolver suas habilidades.",
+      "A proposta da Clínica Evoluta é contribuir para que a informação ultrapasse o consultório e alcance também os espaços onde crianças e adolescentes convivem diariamente. A escola possui um papel fundamental nesse processo, especialmente na identificação de sinais de alerta, na promoção da inclusão e na construção de relações baseadas em respeito e empatia.",
+      "Para Jéssica Pelissari, ações educativas como essa são importantes para aproximar a comunidade do conhecimento científico e ampliar a compreensão sobre o desenvolvimento humano:",
+      "“Falar sobre neurodesenvolvimento com os adolescentes é também falar sobre respeito às diferenças, empatia e inclusão. Informação adequada ajuda a reduzir preconceitos e favorece um ambiente em que cada estudante possa ser compreendido em suas particularidades.”",
+      "A palestra faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de ações de capacitação, educação e conscientização voltadas a escolas, empresas e instituições, levando conhecimentos da Psicologia e da Neuropsicologia para diferentes contextos da sociedade.",
+      "A Clínica Evoluta agradece à Escola do Bley pela oportunidade e pela parceria na construção de um espaço de diálogo e aprendizagem sobre um tema tão relevante para a comunidade escolar.",
+    ],
+  },
+];
 
 export const novidades = [
   {
