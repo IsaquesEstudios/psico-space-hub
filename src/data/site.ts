@@ -53,6 +53,14 @@ import ildaFerreiraCapa from "@/assets/ilda-ferreira-capa.jpg.asset.json";
 import ildaFerreiraPalestra from "@/assets/ilda-ferreira-palestra.jpg.asset.json";
 import ildaFerreiraGrupo from "@/assets/ilda-ferreira-grupo.jpg.asset.json";
 import cooabrielCapa from "@/assets/cooabriel-capa.jpg.asset.json";
+import coopesgCapa from "@/assets/coopesg-capa.jpg.asset.json";
+import coopesgFoto5443 from "@/assets/coopesg-foto-5443.jpg.asset.json";
+import coopesgFoto5441 from "@/assets/coopesg-foto-5441.jpg.asset.json";
+import coopesgFoto5452 from "@/assets/coopesg-foto-5452.jpg.asset.json";
+import coopesgFoto5464 from "@/assets/coopesg-foto-5464.jpg.asset.json";
+import coopesgFoto5466 from "@/assets/coopesg-foto-5466.jpg.asset.json";
+import coopesgFoto5468 from "@/assets/coopesg-foto-5468.jpg.asset.json";
+import coopesgFoto5456 from "@/assets/coopesg-foto-5456.jpg.asset.json";
 import gersonCamataTela from "@/assets/gerson-camata-tela.jpg.asset.json";
 import gersonCamataPalestra from "@/assets/gerson-camata-palestra.jpg.asset.json";
 import gersonCamataCertificado from "@/assets/gerson-camata-certificado.jpg.asset.json";
@@ -1802,6 +1810,41 @@ export const novidades: Novidade[] = [
   },
   {
     slug: "capacitacao-autismo-inclusao-escolar-coopesg",
+    imagemCapa: {
+      url: coopesgCapa.url,
+      alt: "Jéssica Pelissari ao lado das auxiliares e cuidadoras da COOPESG com os certificados da capacitação",
+      posicao: "50% 56%",
+    },
+    galeria: [
+      {
+        url: coopesgFoto5443.url,
+        alt: "Jéssica Pelissari entrega o certificado da capacitação a uma das profissionais da COOPESG",
+      },
+      {
+        url: coopesgFoto5441.url,
+        alt: "Jéssica Pelissari entrega o livro Vozes da Neurodiversidade a uma profissional da COOPESG",
+      },
+      {
+        url: coopesgFoto5452.url,
+        alt: "Profissional da COOPESG recebe o certificado da capacitação com a Jéssica Pelissari",
+      },
+      {
+        url: coopesgFoto5464.url,
+        alt: "Profissional da COOPESG posa com o certificado ao lado da Jéssica Pelissari",
+      },
+      {
+        url: coopesgFoto5466.url,
+        alt: "Registro da entrega de certificados da capacitação da COOPESG",
+      },
+      {
+        url: coopesgFoto5468.url,
+        alt: "Profissional da COOPESG comemora a certificação ao lado da Jéssica Pelissari",
+      },
+      {
+        url: coopesgFoto5456.url,
+        alt: "Jovem aprendiz da COOPESG recebe o certificado da capacitação com a Jéssica Pelissari",
+      },
+    ],
     data: "8 de setembro de 2026",
     titulo: "Clínica Evoluta realiza capacitação sobre Autismo e Inclusão Escolar para equipe da COOPESG",
     texto: "No dia 8 de setembro, a Clínica Evoluta esteve novamente junto à equipe da COOPESG para uma capacitação voltada às auxiliares e cuidadoras da instituição, com foco em Autismo e Inclusão Escolar.",
