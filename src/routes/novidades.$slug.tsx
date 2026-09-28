@@ -35,6 +35,18 @@ export const Route = createFileRoute("/novidades/$slug")({
 function NovidadePage() {
   const { novidade } = Route.useLoaderData();
   const outras = novidades.filter((n) => n.slug !== novidade.slug).slice(0, 3);
+  const [fotoAberta, setFotoAberta] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (fotoAberta === null) return;
+    const aoTeclar = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setFotoAberta(null);
+      if (e.key === "ArrowRight") setFotoAberta((i) => (i === null ? null : (i + 1) % novidade.galeria!.length));
+      if (e.key === "ArrowLeft") setFotoAberta((i) => (i === null ? null : (i - 1 + novidade.galeria!.length) % novidade.galeria!.length));
+    };
+    window.addEventListener("keydown", aoTeclar);
+    return () => window.removeEventListener("keydown", aoTeclar);
+  }, [fotoAberta, novidade]);
 
   return (
     <>
@@ -87,21 +99,24 @@ function NovidadePage() {
           {novidade.galeria && novidade.galeria.length > 0 && (
             <div className="mt-14">
               <p className="eyebrow text-primary">Fotos do encontro</p>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
                 {novidade.galeria.map((foto, i) => (
-                  <figure
+                  <button
                     key={foto.url}
-                    className={i === novidade.galeria!.length - 1 ? "sm:col-span-2" : ""}
+                    type="button"
+                    onClick={() => setFotoAberta(i)}
+                    className="group relative block w-full overflow-hidden bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    aria-label={`Ampliar foto: ${foto.alt}`}
                   >
                     <img
                       src={foto.url}
                       alt={foto.alt}
-                      className="w-full"
                       loading="lazy"
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       width={1080}
                       height={720}
                     />
-                  </figure>
+                  </button>
                 ))}
               </div>
             </div>
