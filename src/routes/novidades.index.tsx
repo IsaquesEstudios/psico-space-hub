@@ -43,7 +43,7 @@ function Novidades() {
         <div className="relative mx-auto w-full max-w-7xl">
           <p className="eyebrow text-deep-foreground/60">Novidades</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Avisos, vagas e agenda
+            Notícias e eventos da clínica
           </h1>
         </div>
       </section>
