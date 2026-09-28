@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import { Section, WhatsAppButton } from "@/components/site/bits";
 import { brandShareImage, fotosJessica, novidades, site } from "@/data/site";
@@ -43,6 +44,7 @@ function NovidadePage() {
           alt={novidade.imagemCapa?.alt ?? "Jéssica Pelissari, da Clínica Evoluta"}
           width={1080}
           height={720}
+          style={novidade.imagemCapa ? { objectPosition: "50% 68%" } : undefined}
           className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_20%]"
         />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
