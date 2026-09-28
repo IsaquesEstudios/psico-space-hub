@@ -23,8 +23,8 @@ export const Route = createFileRoute("/novidades/$slug")({
         { property: "og:title", content: novidade.titulo },
         { property: "og:description", content: novidade.texto },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: brandShareImage },
-        { name: "twitter:image", content: brandShareImage },
+        { property: "og:image", content: novidade.imagemCapa?.url ?? brandShareImage },
+        { name: "twitter:image", content: novidade.imagemCapa?.url ?? brandShareImage },
       ],
     };
   },
@@ -39,8 +39,8 @@ function NovidadePage() {
     <>
       <section className="relative flex min-h-[440px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[520px]">
         <img
-          src={fotosJessica.novidades}
-          alt="Jéssica Pelissari, da Clínica Evoluta"
+          src={novidade.imagemCapa?.url ?? fotosJessica.novidades}
+          alt={novidade.imagemCapa?.alt ?? "Jéssica Pelissari, da Clínica Evoluta"}
           width={1080}
           height={720}
           className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_20%]"
@@ -82,6 +82,28 @@ function NovidadePage() {
               ),
             )}
           </div>
+          {novidade.galeria && novidade.galeria.length > 0 && (
+            <div className="mt-14">
+              <p className="eyebrow text-primary">Fotos do encontro</p>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                {novidade.galeria.map((foto, i) => (
+                  <figure
+                    key={foto.url}
+                    className={i === novidade.galeria!.length - 1 ? "sm:col-span-2" : ""}
+                  >
+                    <img
+                      src={foto.url}
+                      alt={foto.alt}
+                      className="w-full"
+                      loading="lazy"
+                      width={1080}
+                      height={720}
+                    />
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="mt-10">
             <WhatsAppButton href={site.whatsapp} />
           </div>
