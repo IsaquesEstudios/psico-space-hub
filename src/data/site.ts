@@ -32,7 +32,7 @@ import jessicaEscrevendo from "@/assets/GHR06764.jpg.asset.json";
 import jessicaSorrindo from "@/assets/GHR07265.jpg.asset.json";
 import jessicaJanela from "@/assets/GHR06712.jpg.asset.json";
 import jessicaMesaAmpla from "@/assets/GHR06849-2.jpg.asset.json";
-import posCapacitacaoAuditorio from "@/assets/pos-capacitacao-auditorio.jpg.asset.json";
+import posCapacitacaoHero from "@/assets/pos-capacitacao-jessica.jpg.asset.json";
 import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
@@ -762,7 +762,7 @@ export const atendimentos: Atendimento[] = [
       "Assessoria exclusiva para instituições que já receberam uma palestra ou capacitação, dando continuidade ao trabalho e apoiando a aplicação prática dos conhecimentos.",
     imagem: jessicaMesaAmpla.url,
     imagemSecundaria: jessicaConversa.url,
-    imagemHero: posCapacitacaoAuditorio.url,
+    imagemHero: posCapacitacaoHero.url,
     paraQuem: [
       "Escolas que receberam formação e desejam continuidade no acompanhamento da equipe",
       "Empresas e instituições que querem implementar os conhecimentos desenvolvidos na capacitação",
