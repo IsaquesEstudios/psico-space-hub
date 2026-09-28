@@ -1693,7 +1693,7 @@ export const novidades = [
       "A Clínica Evoluta acredita que levar informação para dentro das escolas é uma importante estratégia de promoção da saúde emocional e prevenção. Quando estudantes têm espaço para conversar, questionar e refletir, tornam-se parte ativa da construção de ambientes mais respeitosos e inclusivos.",
       "A Clínica Evoluta Desenvolvimento Infantil agradece à Escola Gerson Camata, aos profissionais envolvidos e a todos que contribuíram para a realização desse momento.",
       "Que iniciativas como essa continuem fortalecendo o diálogo e levando informação, respeito, empatia e saúde emocional para dentro das escolas.",    ],
-  },,
+  },
     {
     slug: "palestra-online-saude-mental-no-trabalho-cooabriel",
     data: "17 de setembro de 2026",
@@ -1714,16 +1714,13 @@ export const novidades = [
       "## Um momento de conexão e cuidado",
       "A Clínica Evoluta agradece à Cooabriel e, de forma especial, a Leny Menegassi, pela confiança, parceria e pela oportunidade de levar conhecimento e reflexão sobre saúde mental aos seus colaboradores.",
       "Foi uma alegria fazer parte desse momento e contribuir para a construção de espaços profissionais cada vez mais voltados à escuta, conexão, acolhimento e cuidado.",    ],
-  },,
-    {
+  },
+  {
     slug: "dialogo-bullying-cyberbullying-estudantes",
-    titulo: "Clínica Evoluta promove diálogo sobre Bullying e Cyberbullying com estudantes",
-    categoria: "Palestras e capacitações",
     data: "11 de setembro de 2026",
-    leitura: "3 min de leitura",
-    resumo:
-      "Bullying e cyberbullying em pauta: no dia 11 de setembro, a Clínica Evoluta esteve na Escola Ilda Ferreira para promover um momento de informação, diálogo e conscientização com os estudantes sobre respeito, empatia, convivência e prevenção da violência.",
-    imagem: jessicaSorrindo.url,
+    titulo: "Clínica Evoluta promove diálogo sobre Bullying e Cyberbullying com estudantes",
+    texto: "Bullying e cyberbullying em pauta: no dia 11 de setembro, a Clínica Evoluta esteve na Escola Ilda Ferreira para promover um momento de informação, diálogo e conscientização com os estudantes sobre respeito, empatia, convivência e prevenção da violência.",
+    etiqueta: "Palestras e capacitações",
     paragrafos: [
       "No dia 11 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Ilda Ferreira para um momento de diálogo e conscientização sobre um tema que precisa estar cada vez mais presente no ambiente escolar: bullying e cyberbullying.",
       "A atividade foi realizada com as turmas da instituição e teve como objetivo promover informação, reflexão e conscientização entre crianças e adolescentes sobre as diferentes formas de violência que podem ocorrer no ambiente escolar e também nos espaços digitais.",
@@ -1758,7 +1755,7 @@ export const novidades = [
       "A iniciativa faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de capacitações e formações para escolas e equipes profissionais, levando conhecimentos da Psicologia e da Neuropsicologia para os diferentes contextos em que crianças e adolescentes estão inseridos.",
       "A Clínica Evoluta agradece à Escola COOPESG pela confiança e pela oportunidade de, mais uma vez, contribuir para a formação de sua equipe e para a construção de uma escola cada vez mais preparada para acolher a diversidade.",
       "Capacitar é transformar. Incluir é compreender.",    ],
-  },,
+  },
     {
     slug: "segundo-momento-palestra-neurodesenvolvimento-escola-do-bley",
     data: "31 de agosto de 2026",
@@ -1773,7 +1770,7 @@ export const novidades = [
       "A condução da palestra foi realizada por Jéssica Pelissari, que trouxe sua experiência na área de Psicologia e da Neuropsicologia para aproximar o conhecimento técnico da realidade vivenciada pelos adolescentes.",
       "A realização dos dois momentos, nos dias 25 e 31 de agosto, reforça a importância de criar espaços de diálogo dentro das escolas e evidencia o compromisso da Clínica Evoluta Desenvolvimento Infantil com ações de educação, conscientização e promoção da inclusão.",
       "A Clínica Evoluta agradece à Escola do Bley pela parceria e pela confiança em abrir espaço para essa importante conversa com os estudantes.",    ],
-  },,
+  },
     {
     slug: "capacitacao-profissionais-saude-educacao-pestalozzi",
     data: "28 de agosto de 2026",
@@ -1796,7 +1793,7 @@ export const novidades = [
       "A realização dessa capacitação representa também um dos pilares de atuação da Clínica Evoluta Desenvolvimento Infantil: levar a Psicologia e a Neuropsicologia para além do espaço clínico, contribuindo para a formação de profissionais e para o fortalecimento das redes de cuidado, educação e inclusão.",
       "Por meio de capacitações, palestras e assessoria exclusiva, a Clínica Evoluta desenvolve ações personalizadas para escolas, instituições, empresas e equipes multidisciplinares, considerando as necessidades específicas de cada público.",
       "A Clínica Evoluta agradece à Pestalozzi pela parceria e pela oportunidade de compartilhar conhecimento, construir diálogos e fortalecer práticas cada vez mais acolhedoras, inclusivas e qualificadas.",    ],
-  },,
+  },
     {
     slug: "palestra-transtornos-neurodesenvolvimento-escola-do-bley",
     data: "25 de agosto de 2026",
@@ -1811,7 +1808,7 @@ export const novidades = [
       "“Falar sobre neurodesenvolvimento com os adolescentes é também falar sobre respeito às diferenças, empatia e inclusão. Informação adequada ajuda a reduzir preconceitos e favorece um ambiente em que cada estudante possa ser compreendido em suas particularidades.”",
       "A palestra faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de ações de capacitação, educação e conscientização voltadas a escolas, empresas e instituições, levando conhecimentos da Psicologia e da Neuropsicologia para diferentes contextos da sociedade.",
       "A Clínica Evoluta agradece à Escola do Bley pela oportunidade e pela parceria na construção de um espaço de diálogo e aprendizagem sobre um tema tão relevante para a comunidade escolar.",    ],
-  },,
+  },
 
   {
     slug: "novas-vagas-avaliacao-neuropsicologica",
