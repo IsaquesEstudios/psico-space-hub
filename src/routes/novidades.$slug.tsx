@@ -26,6 +26,7 @@ export const Route = createFileRoute("/novidades/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:image", content: novidade.imagemCapa?.url ?? brandShareImage },
         { name: "twitter:image", content: novidade.imagemCapa?.url ?? brandShareImage },
+        { name: "twitter:card", content: "summary_large_image" },
       ],
     };
   },

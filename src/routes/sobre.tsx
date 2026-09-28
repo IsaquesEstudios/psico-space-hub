@@ -22,6 +22,7 @@ export const Route = createFileRoute("/sobre")({
       { property: "og:type", content: "profile" },
       { property: "og:image", content: brandShareImage },
       { name: "twitter:image", content: brandShareImage },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: SobrePage,
