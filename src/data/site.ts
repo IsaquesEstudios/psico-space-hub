@@ -1174,6 +1174,241 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
       { pergunta: "A família recebe orientação?", resposta: "Pode receber orientações para apoiar estímulos cotidianos de forma possível, respeitosa e sem transformar o cuidado em pressão." },
     ],
   },
+  "capacitacoes-e-palestras": {
+    chamada:
+      "Capacitações, palestras, workshops e encontros formativos conduzidos pela Psicóloga e Neuropsicóloga Jéssica Pelissari, com conteúdo desenvolvido de acordo com as necessidades de cada instituição.",
+    chamadaComplementar:
+      "Empresas, escolas, prefeituras, secretarias, equipes de apoio escolar, clínicas, instituições de ensino, equipes multiprofissionais e profissionais da saúde e educação.",
+    tituloApresentacao: "Conhecimento científico levado para a prática",
+    introducao:
+      "Cada proposta é construída de acordo com o perfil do público, os objetivos da instituição, a carga horária e as necessidades identificadas. As ações podem acontecer de forma presencial ou on-line, em empresas, escolas, prefeituras, instituições de ensino, clínicas, equipes multiprofissionais e demais organizações.",
+    tituloSituacoes: "Temas que podem ser abordados",
+    textoSituacoes:
+      "Os conteúdos são personalizados de acordo com o público e a demanda da instituição, podendo contemplar temas como:",
+    sinais: [
+      "Desenvolvimento infantil e neurodesenvolvimento",
+      "Transtorno do Espectro Autista (TEA) e Transtorno do Déficit de Atenção/Hiperatividade (TDAH)",
+      "Aprendizagem, dificuldades escolares, inclusão e educação especial",
+      "Saúde mental no ambiente escolar e profissional",
+      "Manejo de comportamentos, inteligência emocional e habilidades socioemocionais",
+      "Comunicação, relacionamento interpessoal e neuropsicologia aplicada",
+      "Orientação para professores, equipes e familiares",
+      "Estratégias para identificação de sinais de alerta no desenvolvimento",
+    ],
+    tituloObjetivos: "O que essas formações promovem",
+    textoObjetivos:
+      "O objetivo é levar conhecimento científico para a prática, aproximando a teoria da realidade vivenciada por cada equipe.",
+    objetivos: [
+      "Promover informação, prevenção e desenvolvimento profissional",
+      "Oferecer estratégias aplicáveis à rotina de cada instituição",
+      "Ampliar a compreensão sobre desenvolvimento, aprendizagem e comportamento",
+      "Fortalecer práticas mais acolhedoras, inclusivas e qualificadas",
+      "Construir propostas alinhadas aos objetivos e à realidade de cada instituição",
+    ],
+    tituloEtapas: "Como uma capacitação é construída",
+    textoEtapas:
+      "Do primeiro contato à realização da formação, cada etapa considera o perfil do público e as necessidades da instituição.",
+    tituloImagem: "Formação que chega onde é necessária",
+    textoImagem:
+      "As capacitações podem acontecer presencialmente ou on-line, permitindo levar conhecimento da Psicologia e da Neuropsicologia para diferentes equipes e instituições, independentemente da localização.",
+    participacao: {
+      titulo: "Cada proposta nasce da escuta da instituição",
+      texto:
+        "Antes da formação, são considerados o perfil do público, os objetivos da instituição, a carga horária disponível e as necessidades identificadas. Depois da capacitação, a instituição ainda pode contar com o Acompanhamento Pós-Capacitação, uma assessoria exclusiva para dar continuidade ao trabalho.",
+    },
+    perguntas: [
+      { pergunta: "As palestras podem ser on-line?", resposta: "Sim. As ações podem ser realizadas de forma presencial ou on-line, de acordo com a necessidade da instituição." },
+      { pergunta: "O conteúdo é sempre o mesmo?", resposta: "Não. Os conteúdos são personalizados de acordo com o público, os objetivos e a demanda de cada instituição." },
+      { pergunta: "Para quais instituições as capacitações são indicadas?", resposta: "Empresas, escolas, prefeituras, secretarias, equipes de apoio escolar, clínicas, instituições de ensino, equipes multiprofissionais e profissionais da saúde e educação." },
+      { pergunta: "Existe acompanhamento depois da capacitação?", resposta: "Sim. A instituição pode contratar o Acompanhamento Pós-Capacitação, uma assessoria exclusiva para apoiar a aplicação prática dos conhecimentos." },
+    ],
+  },
+  "supervisao-clinica-neuropsicologia": {
+    chamada:
+      "Supervisão clínica para psicólogos e profissionais que atuam ou estão em formação na área de Neuropsicologia, conduzida por Jéssica Pelissari.",
+    chamadaComplementar:
+      "Indicada para quem deseja aprimorar a prática profissional com espaço para discussão de casos, raciocínio clínico e planejamento da avaliação.",
+    tituloApresentacao: "Um espaço técnico para crescer na prática",
+    introducao:
+      "A supervisão tem como objetivo contribuir para o aprimoramento da prática profissional, oferecendo espaço para discussão de casos, raciocínio clínico, planejamento da avaliação e integração dos dados obtidos durante o processo avaliativo.",
+    tituloSituacoes: "O que pode ser trabalhado",
+    textoSituacoes:
+      "Durante a supervisão, os encontros podem contemplar diferentes aspectos da atuação em Neuropsicologia:",
+    sinais: [
+      "Raciocínio clínico e hipóteses diagnósticas",
+      "Planejamento da avaliação neuropsicológica",
+      "Seleção e organização de instrumentos",
+      "Integração e interpretação dos resultados",
+      "Construção de hipóteses e conclusões",
+      "Elaboração de documentos psicológicos",
+      "Discussão de casos clínicos, conduta e encaminhamentos",
+    ],
+    tituloObjetivos: "Aprimoramento da prática profissional",
+    textoObjetivos:
+      "A supervisão busca fortalecer a segurança técnica do profissional em cada etapa do processo avaliativo.",
+    objetivos: [
+      "Desenvolver raciocínio clínico estruturado e criterioso",
+      "Aprimorar o planejamento e a condução de avaliações neuropsicológicas",
+      "Integrar dados de instrumentos, entrevistas e história do paciente",
+      "Construir conclusões e documentos psicológicos com mais clareza",
+      "Orientar condutas e encaminhamentos de forma fundamentada",
+    ],
+    tituloEtapas: "Como a supervisão acontece",
+    textoEtapas:
+      "A supervisão pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada.",
+    tituloImagem: "Discussão de casos com direção técnica",
+    textoImagem:
+      "Cada encontro aproxima a teoria da prática, permitindo que o profissional analise situações reais da sua atuação com suporte especializado.",
+    participacao: {
+      titulo: "Individual ou em pequenos grupos",
+      texto:
+        "A supervisão pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada. Esse formato permite aprofundar a discussão de casos e respeitar o momento profissional de cada participante.",
+    },
+    perguntas: [
+      { pergunta: "Quem pode participar da supervisão?", resposta: "Psicólogos e profissionais que atuam ou estão em formação na área de Neuropsicologia." },
+      { pergunta: "A supervisão é individual ou em grupo?", resposta: "Pode ser realizada individualmente ou em pequenos grupos, de acordo com a proposta contratada." },
+      { pergunta: "Posso levar casos reais para discussão?", resposta: "Sim. A discussão de casos clínicos é uma das partes centrais da supervisão, sempre com respeito ao sigilo profissional." },
+      { pergunta: "A supervisão ajuda na elaboração de documentos?", resposta: "Sim. A elaboração de documentos psicológicos, como laudos e relatórios, pode ser trabalhada durante os encontros." },
+    ],
+  },
+  "supervisao-terapia-cognitivo-comportamental": {
+    chamada:
+      "Supervisão clínica em Terapia Cognitivo-Comportamental (TCC) para profissionais que realizam atendimentos infantis, adolescentes e adultos.",
+    chamadaComplementar:
+      "Indicada tanto para profissionais em início de carreira quanto para quem deseja aperfeiçoar a prática clínica e ampliar o repertório técnico.",
+    tituloApresentacao: "Suporte técnico para a prática em TCC",
+    introducao:
+      "A proposta é oferecer suporte técnico e clínico para o desenvolvimento da prática profissional, respeitando as particularidades de cada faixa etária e as demandas apresentadas em cada caso.",
+    tituloSituacoes: "O que pode ser abordado",
+    textoSituacoes:
+      "Durante a supervisão, os encontros podem contemplar diferentes aspectos da atuação clínica em TCC:",
+    sinais: [
+      "Formulação de casos clínicos e planejamento terapêutico",
+      "Definição de objetivos e metas",
+      "Seleção de técnicas da TCC e manejo clínico",
+      "Desenvolvimento de estratégias para diferentes demandas",
+      "Estruturação das sessões e psicoeducação",
+      "Monitoramento da evolução terapêutica",
+      "Orientações para atuação clínica com crianças, adolescentes e adultos",
+    ],
+    tituloObjetivos: "Mais segurança e repertório na clínica",
+    textoObjetivos:
+      "A supervisão busca fortalecer a atuação do profissional em cada etapa do acompanhamento terapêutico.",
+    objetivos: [
+      "Aprimorar a formulação e o planejamento de casos",
+      "Ampliar o repertório de técnicas da TCC",
+      "Desenvolver estratégias adequadas a cada faixa etária",
+      "Estruturar sessões com objetivos claros",
+      "Acompanhar a evolução terapêutica com critérios definidos",
+    ],
+    tituloEtapas: "Como a supervisão acontece",
+    textoEtapas:
+      "Os encontros são organizados a partir das demandas trazidas pelo profissional, com espaço para discussão de casos e construção de estratégias.",
+    tituloImagem: "Cada faixa etária pede um olhar diferente",
+    textoImagem:
+      "A supervisão respeita as particularidades de atendimentos infantis, adolescentes e adultos, ajudando o profissional a adaptar técnicas e condução para cada realidade.",
+    participacao: {
+      titulo: "Para quem está começando e para quem quer avançar",
+      texto:
+        "A supervisão é indicada tanto para profissionais em início de carreira quanto para aqueles que desejam aperfeiçoar sua prática clínica e ampliar seu repertório técnico.",
+    },
+    perguntas: [
+      { pergunta: "A supervisão atende quem trabalha com adultos?", resposta: "Sim. A supervisão em TCC contempla profissionais que realizam atendimentos infantis, adolescentes e adultos." },
+      { pergunta: "É indicada para quem está começando?", resposta: "Sim. A supervisão é indicada tanto para profissionais em início de carreira quanto para quem deseja aperfeiçoar a prática clínica." },
+      { pergunta: "Posso discutir casos reais?", resposta: "Sim. A discussão de casos faz parte da supervisão, sempre com respeito ao sigilo profissional." },
+      { pergunta: "O que é trabalhado além de técnicas?", resposta: "Formulação de casos, planejamento terapêutico, estruturação de sessões, psicoeducação e monitoramento da evolução, entre outros aspectos." },
+    ],
+  },
+  "acompanhamento-pos-capacitacao": {
+    chamada:
+      "Após uma palestra ou capacitação, a instituição pode contar com a Assessoria Exclusiva da Clínica Evoluta, criada para dar continuidade ao trabalho e auxiliar na implementação prática dos conhecimentos desenvolvidos durante a formação.",
+    chamadaComplementar:
+      "Uma proposta personalizada e estratégica para escolas, empresas, instituições, equipes multiprofissionais e órgãos públicos.",
+    tituloApresentacao: "Uma experiência que vai além da palestra",
+    introducao:
+      "A assessoria é uma proposta personalizada e estratégica, na qual a Clínica Evoluta acompanha a instituição de acordo com suas necessidades, desafios e objetivos. Por meio dessa proposta, podem ser realizados encontros de acompanhamento, orientações técnicas, análise de situações práticas, discussão de demandas da equipe e direcionamento de estratégias para aplicação dos conhecimentos no cotidiano.",
+    tituloSituacoes: "Quando a assessoria faz diferença",
+    textoSituacoes:
+      "A Assessoria Exclusiva pode ser estruturada para diferentes contextos, como escolas, empresas, instituições, equipes multiprofissionais e órgãos públicos.",
+    sinais: [
+      "A equipe recebeu uma formação e precisa de apoio para aplicar os conhecimentos na rotina",
+      "Surgem situações práticas que pedem orientação técnica especializada",
+      "A instituição deseja estruturar estratégias de acordo com suas demandas específicas",
+      "Há necessidade de revisar ações desenvolvidas e planejar próximos passos",
+    ],
+    tituloObjetivos: "Continuidade, suporte e acompanhamento especializado",
+    textoObjetivos:
+      "Mais do que uma palestra pontual, a proposta é aproximar o conhecimento da realidade e das necessidades de cada instituição.",
+    objetivos: [
+      "Acompanhar a equipe na implementação prática dos conhecimentos",
+      "Oferecer orientação técnica diante de demandas específicas",
+      "Discutir situações práticas presentes no cotidiano da instituição",
+      "Estruturar estratégias e revisar as ações desenvolvidas",
+      "Planejar próximos passos com direcionamento especializado",
+    ],
+    tituloEtapas: "Como a assessoria é estruturada",
+    textoEtapas:
+      "A assessoria pode incluir acompanhamento da equipe, orientação técnica, discussão de situações práticas, reuniões de acompanhamento, estruturação de estratégias, orientação diante de demandas específicas, revisão das ações desenvolvidas e planejamento de próximos passos.",
+    tituloImagem: "Conhecimento, prática e desenvolvimento",
+    textoImagem:
+      "Na Clínica Evoluta, cada projeto pode ser construído de forma personalizada, desde uma palestra ou capacitação pontual até um programa continuado envolvendo formação, supervisão e Assessoria Exclusiva.",
+    participacao: {
+      titulo: "Uma parceria construída com a instituição",
+      texto:
+        "A assessoria acompanha a instituição de acordo com suas necessidades, desafios e objetivos, com encontros de acompanhamento e orientações técnicas que respeitam a realidade de cada equipe.",
+    },
+    perguntas: [
+      { pergunta: "A assessoria só existe depois de uma capacitação?", resposta: "A Assessoria Exclusiva foi criada para dar continuidade a palestras e capacitações, mas cada projeto pode ser construído de forma personalizada com a instituição." },
+      { pergunta: "Para quais instituições ela é indicada?", resposta: "Escolas, empresas, instituições, equipes multiprofissionais e órgãos públicos." },
+      { pergunta: "O que a assessoria pode incluir?", resposta: "Acompanhamento da equipe, orientação técnica, discussão de situações práticas, reuniões de acompanhamento, estruturação de estratégias, revisão das ações desenvolvidas e planejamento de próximos passos." },
+      { pergunta: "É possível montar um programa continuado?", resposta: "Sim. Cada projeto pode ser construído de forma personalizada, desde uma palestra pontual até um programa continuado envolvendo formação, supervisão e Assessoria Exclusiva." },
+    ],
+  },
+  "terapia-cognitivo-comportamental": {
+    chamada:
+      "Atendimento psicológico especializado de forma on-line, proporcionando praticidade, acolhimento e acompanhamento profissional, com a mesma atenção e qualidade do atendimento clínico.",
+    chamadaComplementar: "Atendimento on-line para adultos.",
+    tituloApresentacao: "Compreender pensamentos, emoções e comportamentos",
+    introducao:
+      "A Psicoterapia baseada na Terapia Cognitivo-Comportamental (TCC) oferece um espaço de acolhimento, escuta e desenvolvimento, auxiliando o paciente a compreender a relação entre pensamentos, emoções e comportamentos.",
+    tituloSituacoes: "Quando a terapia pode ajudar",
+    textoSituacoes:
+      "A TCC pode ser utilizada no acompanhamento de diferentes demandas emocionais e comportamentais, contribuindo para o desenvolvimento de estratégias mais funcionais para lidar com situações do cotidiano.",
+    sinais: [
+      "Dificuldades emocionais que pesam na rotina, no trabalho ou nos relacionamentos",
+      "Pensamentos recorrentes que geram sofrimento ou paralisam decisões",
+      "Dificuldade para regular emoções em situações do dia a dia",
+      "Comportamentos que a pessoa deseja compreender e modificar",
+      "Busca por autoconhecimento e desenvolvimento pessoal",
+    ],
+    tituloObjetivos: "Estratégias mais funcionais para o cotidiano",
+    textoObjetivos:
+      "O atendimento é individualizado e construído de acordo com a história, as necessidades e os objetivos de cada pessoa.",
+    objetivos: [
+      "Promover autoconhecimento e regulação emocional",
+      "Desenvolver habilidades e estratégias de enfrentamento",
+      "Trabalhar a reestruturação de pensamentos",
+      "Apoiar o manejo de dificuldades emocionais",
+      "Construir novos comportamentos mais funcionais",
+    ],
+    tituloEtapas: "Como o acompanhamento acontece",
+    textoEtapas:
+      "O atendimento é individualizado e acontece on-line para adultos, com encontros estruturados de acordo com a demanda de cada pessoa.",
+    tituloImagem: "Atendimento especializado e humanizado",
+    textoImagem:
+      "Na Clínica Evoluta, cada pessoa é acompanhada de forma individualizada, considerando sua história, suas necessidades e seus objetivos.",
+    participacao: {
+      titulo: "Conhecimento científico, experiência clínica e acolhimento",
+      texto:
+        "Nosso propósito é unir conhecimento científico, experiência clínica e acolhimento, oferecendo um atendimento ético, personalizado e voltado para o desenvolvimento e a qualidade de vida.",
+    },
+    perguntas: [
+      { pergunta: "O atendimento é presencial ou on-line?", resposta: "Essa modalidade de acompanhamento em TCC é realizada on-line, para adultos." },
+      { pergunta: "Para quais demandas a TCC é indicada?", resposta: "A TCC pode ser utilizada no acompanhamento de diferentes demandas emocionais e comportamentais, contribuindo para estratégias mais funcionais no cotidiano." },
+      { pergunta: "O atendimento on-line tem a mesma qualidade?", resposta: "Sim. O formato on-line mantém a mesma atenção e qualidade do atendimento clínico, com praticidade e acolhimento." },
+      { pergunta: "Como começo?", resposta: "Entre em contato com a Clínica Evoluta e conheça a modalidade de atendimento mais adequada para você." },
+    ],
+  },
 };
 
 export const destaques = [
