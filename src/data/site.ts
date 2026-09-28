@@ -48,6 +48,11 @@ import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.j
 import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infantil-na-pratica.jpeg.asset.json";
 import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
 import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.png";
+import gersonCamataCapa from "@/assets/gerson-camata-capa.jpg.asset.json";
+import gersonCamataTela from "@/assets/gerson-camata-tela.jpg.asset.json";
+import gersonCamataPalestra from "@/assets/gerson-camata-palestra.jpg.asset.json";
+import gersonCamataCertificado from "@/assets/gerson-camata-certificado.jpg.asset.json";
+import gersonCamataGrupo from "@/assets/gerson-camata-grupo.jpg.asset.json";
 
 export const brandShareImage =
   "https://id-preview--deb759cf-cdb0-4e38-afae-699e1737adb9.lovable.app/__l5e/assets-v1/50c90749-1ebe-4ab2-a6d1-8badb534742a/logo-social.jpg";
@@ -1670,13 +1675,28 @@ export type Post = {
 
 export const posts: Post[] = [];
 
-export const novidades = [
-    {
+type Novidade = {
+  slug: string;
+  data: string;
+  titulo: string;
+  texto: string;
+  etiqueta: string;
+  paragrafos: string[];
+  imagemCapa?: { url: string; alt: string };
+  galeria?: { url: string; alt: string }[];
+};
+
+export const novidades: Novidade[] = [
+  {
     slug: "reflexao-convivencia-saude-emocional-escola-gerson-camata",
     data: "18 de setembro de 2026",
     titulo: "Clínica Evoluta promove momentos de reflexão sobre convivência e saúde emocional na Escola Gerson Camata",
     texto: "Um retorno cheio de significado: no dia 18 de setembro, a Clínica Evoluta esteve na Escola Gerson Camata para três momentos de diálogo com estudantes do Ensino Fundamental II e Ensino Médio sobre bullying, respeito, igualdade de gênero, convivência e saúde emocional. Para Jéssica Pelissari, retornar à escola onde cresceu, agora como profissional, tornou a experiência ainda mais especial.",
     etiqueta: "Palestras e capacitações",
+    imagemCapa: {
+      url: gersonCamataCapa.url,
+      alt: "Auditório cheio de estudantes durante a palestra da Clínica Evoluta na Escola Gerson Camata",
+    },
     paragrafos: [      "No dia 18 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Gerson Camata para uma importante ação de conscientização sobre convivência, respeito e saúde emocional no ambiente escolar.",
       "A atividade foi realizada em três momentos, contemplando diferentes grupos de estudantes do Ensino Fundamental II e Ensino Médio, permitindo que os alunos participassem das discussões de acordo com a organização das turmas.",
       "Durante os encontros, foram abordados temas fundamentais para a convivência escolar, como bullying, respeito, igualdade de gênero, empatia e saúde emocional, promovendo reflexões sobre a importância de construir relações mais saudáveis, respeitosas e acolhedoras dentro e fora da escola.",
@@ -1693,6 +1713,24 @@ export const novidades = [
       "A Clínica Evoluta acredita que levar informação para dentro das escolas é uma importante estratégia de promoção da saúde emocional e prevenção. Quando estudantes têm espaço para conversar, questionar e refletir, tornam-se parte ativa da construção de ambientes mais respeitosos e inclusivos.",
       "A Clínica Evoluta Desenvolvimento Infantil agradece à Escola Gerson Camata, aos profissionais envolvidos e a todos que contribuíram para a realização desse momento.",
       "Que iniciativas como essa continuem fortalecendo o diálogo e levando informação, respeito, empatia e saúde emocional para dentro das escolas.",    ],
+    galeria: [
+      {
+        url: gersonCamataTela.url,
+        alt: "Jéssica Pelissari ao lado da tela com o tema Convivência e Saúde Emocional",
+      },
+      {
+        url: gersonCamataPalestra.url,
+        alt: "Jéssica Pelissari apresentando o diálogo com os estudantes",
+      },
+      {
+        url: gersonCamataCertificado.url,
+        alt: "Jéssica Pelissari recebe certificado de agradecimento da Escola Gerson Camata",
+      },
+      {
+        url: gersonCamataGrupo.url,
+        alt: "Registro com os profissionais da Escola Gerson Camata",
+      },
+    ],
   },
     {
     slug: "palestra-online-saude-mental-no-trabalho-cooabriel",
