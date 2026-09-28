@@ -37,6 +37,7 @@ import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
 import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
 import supervisaoTcc from "@/assets/supervisao-tcc-jessica.jpg";
+import heroSupervisaoTcc from "@/assets/hero-supervisao-tcc.jpg";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
@@ -713,6 +714,7 @@ export const atendimentos: Atendimento[] = [
       "Supervisão clínica em TCC para profissionais que atendem crianças, adolescentes e adultos, com suporte técnico para o desenvolvimento da prática.",
     imagem: jessicaSofa.url,
     imagemSecundaria: supervisaoTcc,
+    imagemHero: heroSupervisaoTcc,
     paraQuem: [
       "Profissionais que realizam atendimentos infantis, adolescentes e adultos em TCC",
       "Profissionais em início de carreira que buscam suporte técnico e clínico",
@@ -742,7 +744,6 @@ export const atendimentos: Atendimento[] = [
     ],
     info: [
       { rotulo: "Público", valor: "Profissionais da clínica em TCC" },
-      { rotulo: "Atendimentos", valor: "Infantis, adolescentes e adultos" },
       { rotulo: "Indicação", valor: "Início de carreira ou aperfeiçoamento" },
       { rotulo: "Foco", valor: "Suporte técnico e clínico" },
     ],
