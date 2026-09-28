@@ -1862,32 +1862,6 @@ export const novidades: Novidade[] = [
       "Capacitar é transformar. Incluir é compreender.",    ],
   },
     {
-    slug: "segundo-momento-palestra-neurodesenvolvimento-escola-do-bley",
-    data: "31 de agosto de 2026",
-    titulo: "Clínica Evoluta realiza segundo momento de palestra sobre Neurodesenvolvimento na Escola do Bley",
-    texto: "Dando continuidade à ação de conscientização realizada na Escola do Bley, a Clínica Evoluta realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento, desta vez para outras turmas do Ensino Fundamental II e Ensino Médio.",
-    etiqueta: "Palestras e capacitações",
-    imagemCapa: {
-      url: "/__l5e/assets-v1/be597458-c3ea-45ad-90bb-ac75b801f9cb/bley-neuro2-capa.jpg",
-      alt: "Jéssica Pelissari palestrando para estudantes reunidos no auditório da Escola do Bley",
-      posicao: "50% 55%",
-    },
-    galeria: [
-      { url: "/__l5e/assets-v1/ab8bdbab-f9eb-407f-ba53-a6ef19651146/bley-neuro2-auditorio.jpg", alt: "Auditório da Escola do Bley cheio de estudantes durante a palestra sobre Neurodesenvolvimento", posicao: "50% 50%" },
-      { url: "/__l5e/assets-v1/e73839ec-4f35-4111-8aa6-23af5b7bc8f6/bley-neuro2-palestra.jpg", alt: "Jéssica Pelissari apresentando o tema Ninguém é Perfeito aos estudantes", posicao: "50% 48%" },
-      { url: "/__l5e/assets-v1/003200cd-7a21-4c0c-a406-299dce2a9578/bley-neuro2-grupo.jpg", alt: "Jéssica Pelissari ao lado de estudantes ao final da palestra na Escola do Bley", posicao: "50% 30%" },
-      { url: "/__l5e/assets-v1/89bcb5fe-119d-4e8d-b229-915d9c3a1062/bley-neuro2-turma.jpg", alt: "Palestra da Clínica Evoluta com a participação de estudantes na Escola do Bley", posicao: "50% 47%" },
-    ],
-    paragrafos: [      "Dando continuidade à ação de conscientização realizada na Escola do Bley, no dia 31 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou um segundo momento de palestra sobre Transtornos do Neurodesenvolvimento.",
-      "Desta vez, o encontro foi direcionado a outras turmas de estudantes do Ensino Fundamental II e Ensino Médio, proporcionando a um novo grupo de alunos a oportunidade de conhecer e dialogar sobre questões relacionadas ao desenvolvimento, à aprendizagem e às diferenças individuais.",
-      "A palestra abordou informações sobre os Transtornos do Neurodesenvolvimento, destacando como algumas características podem aparecer no cotidiano escolar e nas relações com colegas, professores e familiares.",
-      "Além dos aspectos relacionados ao desenvolvimento, o encontro buscou promover uma reflexão sobre empatia, respeito, inclusão e a importância de não definir uma pessoa apenas por suas dificuldades ou por um diagnóstico.",
-      "Levar esse tipo de conhecimento para o ambiente escolar é uma das formas encontradas pela Clínica Evoluta para contribuir com a construção de uma comunidade mais consciente sobre o desenvolvimento humano e sobre a diversidade presente dentro da escola.",
-      "A condução da palestra foi realizada por Jéssica Pelissari, que trouxe sua experiência na área de Psicologia e da Neuropsicologia para aproximar o conhecimento técnico da realidade vivenciada pelos adolescentes.",
-      "A realização dos dois momentos, nos dias 25 e 31 de agosto, reforça a importância de criar espaços de diálogo dentro das escolas e evidencia o compromisso da Clínica Evoluta Desenvolvimento Infantil com ações de educação, conscientização e promoção da inclusão.",
-      "A Clínica Evoluta agradece à Escola do Bley pela parceria e pela confiança em abrir espaço para essa importante conversa com os estudantes.",    ],
-  },
-    {
     slug: "capacitacao-profissionais-saude-educacao-pestalozzi",
     data: "28 de agosto de 2026",
     titulo: "Clínica Evoluta realiza capacitação para profissionais da saúde e educação na Pestalozzi",
@@ -1919,73 +1893,6 @@ export const novidades: Novidade[] = [
       "Por meio de capacitações, palestras e assessoria exclusiva, a Clínica Evoluta desenvolve ações personalizadas para escolas, instituições, empresas e equipes multidisciplinares, considerando as necessidades específicas de cada público.",
       "A Clínica Evoluta agradece à Pestalozzi pela parceria e pela oportunidade de compartilhar conhecimento, construir diálogos e fortalecer práticas cada vez mais acolhedoras, inclusivas e qualificadas.",    ],
   },
-    {
-    slug: "palestra-transtornos-neurodesenvolvimento-escola-do-bley",
-    data: "25 de agosto de 2026",
-    titulo: "Clínica Evoluta promove palestra sobre Transtornos do Neurodesenvolvimento para estudantes",
-    texto: "No dia 25 de agosto, a Clínica Evoluta realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley, levando informação, conscientização e conhecimento aos adolescentes.",
-    etiqueta: "Palestras e capacitações",
-    paragrafos: [      "No dia 25 de agosto de 2026, a Clínica Evoluta Desenvolvimento Infantil, representada pela Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra sobre Transtornos do Neurodesenvolvimento para estudantes do Ensino Fundamental II e Ensino Médio da Escola do Bley.",
-      "A iniciativa teve como objetivo levar informação, conscientização e conhecimento aos adolescentes sobre temas relacionados ao neurodesenvolvimento, contribuindo para a construção de um ambiente escolar mais acolhedor, respeitoso e inclusivo.",
-      "Durante o encontro, foram abordados aspectos relacionados aos Transtornos do Neurodesenvolvimento, suas principais características e a forma como podem se manifestar no contexto escolar e nas relações sociais. A palestra também possibilitou refletir sobre a importância de compreender que cada pessoa apresenta uma forma singular de aprender, se comunicar, interagir e desenvolver suas habilidades.",
-      "A proposta da Clínica Evoluta é contribuir para que a informação ultrapasse o consultório e alcance também os espaços onde crianças e adolescentes convivem diariamente. A escola possui um papel fundamental nesse processo, especialmente na identificação de sinais de alerta, na promoção da inclusão e na construção de relações baseadas em respeito e empatia.",
-      "Para Jéssica Pelissari, ações educativas como essa são importantes para aproximar a comunidade do conhecimento científico e ampliar a compreensão sobre o desenvolvimento humano:",
-      "“Falar sobre neurodesenvolvimento com os adolescentes é também falar sobre respeito às diferenças, empatia e inclusão. Informação adequada ajuda a reduzir preconceitos e favorece um ambiente em que cada estudante possa ser compreendido em suas particularidades.”",
-      "A palestra faz parte da atuação da Clínica Evoluta Desenvolvimento Infantil na promoção de ações de capacitação, educação e conscientização voltadas a escolas, empresas e instituições, levando conhecimentos da Psicologia e da Neuropsicologia para diferentes contextos da sociedade.",
-      "A Clínica Evoluta agradece à Escola do Bley pela oportunidade e pela parceria na construção de um espaço de diálogo e aprendizagem sobre um tema tão relevante para a comunidade escolar.",    ],
-  },
 
-  {
-    slug: "novas-vagas-avaliacao-neuropsicologica",
-    data: "Setembro de 2026",
-    titulo: "Novas vagas para avaliação neuropsicológica",
-    texto:
-      "Abertura de vagas para processos de avaliação com início em setembro, nos períodos da manhã e da tarde.",
-    etiqueta: "Agenda",
-    paragrafos: [
-      "A agenda de avaliação neuropsicológica foi ampliada e novas vagas estão disponíveis para início em setembro, com horários nos períodos da manhã e da tarde.",
-      "O processo acontece em encontros sequenciais, com entrevista inicial, aplicação de instrumentos, conversa com a escola quando necessário e devolutiva às famílias.",
-      "Para verificar a disponibilidade de horários e entender como funciona cada etapa, fale com a equipe Evoluta.",
-    ],
-  },
-  {
-    slug: "turma-avaliacao-neuropsicologica-na-pratica",
-    data: "Agosto de 2026",
-    titulo: "Turma de “Avaliação neuropsicológica na prática”",
-    texto:
-      "Inscrições abertas para a nova turma online, com encontros ao vivo e gravações liberadas por seis meses.",
-    etiqueta: "Cursos",
-    paragrafos: [
-      "Estão abertas as inscrições para a nova turma online do curso “Avaliação neuropsicológica na prática”, voltada a profissionais que desejam estruturar seus processos de avaliação.",
-      "Os encontros são ao vivo, com espaço para discussão de casos, e as gravações ficam liberadas por seis meses após o término da turma.",
-      "As vagas são limitadas para garantir a troca entre os participantes. Entre em contato para receber o conteúdo completo e as datas.",
-    ],
-  },
-  {
-    slug: "lancamentos-de-2026",
-    data: "Julho de 2026",
-    titulo: "Lançamentos de 2026",
-    texto:
-      "Duas novas obras em coautoria: “Psicologia Clínica: o que não te ensinaram na universidade” e “TDAH na Escola”.",
-    etiqueta: "Publicações",
-    paragrafos: [
-      "Duas novas obras em coautoria chegam em 2026: “Psicologia Clínica: o que não te ensinaram na universidade” e “TDAH na Escola”.",
-      "Os textos reúnem prática clínica e pesquisa, com foco em situações reais de atendimento e no cotidiano escolar de crianças e adolescentes.",
-      "Assim que as informações de venda estiverem confirmadas, elas serão divulgadas por aqui e nas redes da clínica.",
-    ],
-  },
-  {
-    slug: "orientacao-para-equipes-escolares",
-    data: "Junho de 2026",
-    titulo: "Orientação para equipes escolares",
-    texto:
-      "Encontro de orientação sobre adaptações em sala de aula realizado com a equipe de uma escola parceira.",
-    etiqueta: "Escolas",
-    paragrafos: [
-      "Um encontro de orientação foi realizado com a equipe pedagógica de uma escola parceira, com foco em adaptações possíveis dentro da sala de aula.",
-      "Foram discutidas estratégias de organização das atividades, formas de apoiar a atenção e o uso de combinados simples que ajudam alunos com diferentes perfis de aprendizagem.",
-      "Escolas interessadas em receber um encontro semelhante podem entrar em contato para conhecer os formatos disponíveis.",
-    ],
-  },
 ];
 
