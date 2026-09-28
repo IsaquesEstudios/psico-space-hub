@@ -812,6 +812,7 @@ export const atendimentos: Atendimento[] = [
       "Psicoterapia baseada na TCC para adultos, em formato on-line, com espaço de acolhimento para compreender pensamentos, emoções e comportamentos.",
     imagem: jessicaSorrindo.url,
     imagemSecundaria: jessicaJanela.url,
+    imagemHero: tccOnlineHero.url,
     paraQuem: [
       "Adultos que desejam acompanhamento psicológico em formato on-line",
       "Pessoas que enfrentam dificuldades emocionais ou comportamentais no cotidiano",
