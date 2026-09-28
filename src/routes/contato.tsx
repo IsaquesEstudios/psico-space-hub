@@ -54,7 +54,7 @@ function Contato() {
             Vamos começar por uma conversa
           </h1>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-deep-foreground/70">
-            Conte a idade da criança e a principal queixa. Respondo com horários disponíveis e o
+            Conte a idade da pessoa e a principal demanda. Nossa equipe responderá com os horários disponíveis e o
             caminho mais indicado.
           </p>
         </div>
