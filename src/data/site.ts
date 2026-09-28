@@ -761,6 +761,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Assessoria exclusiva para instituições que já receberam uma palestra ou capacitação, dando continuidade ao trabalho e apoiando a aplicação prática dos conhecimentos.",
     imagem: jessicaMesaAmpla.url,
+    imagemSecundaria: jessicaConversa.url,
     imagemHero: posCapacitacaoHero.url,
     paraQuem: [
       "Escolas que receberam formação e desejam continuidade no acompanhamento da equipe",
