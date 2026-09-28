@@ -661,7 +661,7 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Para profissionais",
     resumo:
       "Supervisão clínica para psicólogos e profissionais que atuam ou estão em formação em Neuropsicologia, com discussão de casos e aprimoramento da prática.",
-    imagem: supervisaoClinicaHero.url ?? supervisaoClinicaHero,
+    imagem: supervisaoClinicaHero,
     imagemSecundaria: jessicaMesaHorizontal.url,
     paraQuem: [
       "Psicólogos que atuam com avaliação neuropsicológica e desejam aprimorar sua prática",
