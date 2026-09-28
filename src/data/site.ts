@@ -49,6 +49,9 @@ import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infanti
 import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
 import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.png";
 import gersonCamataCapa from "@/assets/gerson-camata-capa.jpg.asset.json";
+import ildaFerreiraCapa from "@/assets/ilda-ferreira-capa.jpg.asset.json";
+import ildaFerreiraPalestra from "@/assets/ilda-ferreira-palestra.jpg.asset.json";
+import ildaFerreiraGrupo from "@/assets/ilda-ferreira-grupo.jpg.asset.json";
 import cooabrielCapa from "@/assets/cooabriel-capa.jpg.asset.json";
 import gersonCamataTela from "@/assets/gerson-camata-tela.jpg.asset.json";
 import gersonCamataPalestra from "@/assets/gerson-camata-palestra.jpg.asset.json";
@@ -1765,6 +1768,11 @@ export const novidades: Novidade[] = [
     titulo: "Clínica Evoluta promove diálogo sobre Bullying e Cyberbullying com estudantes",
     texto: "Bullying e cyberbullying em pauta: no dia 11 de setembro, a Clínica Evoluta esteve na Escola Ilda Ferreira para promover um momento de informação, diálogo e conscientização com os estudantes sobre respeito, empatia, convivência e prevenção da violência.",
     etiqueta: "Palestras e capacitações",
+    imagemCapa: {
+      url: ildaFerreiraCapa.url,
+      alt: "Auditório cheio de estudantes durante o diálogo sobre bullying e cyberbullying na Escola Ilda Ferreira",
+      posicao: "50% 72%",
+    },
     paragrafos: [
       "No dia 11 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, esteve na Escola Ilda Ferreira para um momento de diálogo e conscientização sobre um tema que precisa estar cada vez mais presente no ambiente escolar: bullying e cyberbullying.",
       "A atividade foi realizada com as turmas da instituição e teve como objetivo promover informação, reflexão e conscientização entre crianças e adolescentes sobre as diferentes formas de violência que podem ocorrer no ambiente escolar e também nos espaços digitais.",
@@ -1780,6 +1788,16 @@ export const novidades: Novidade[] = [
       "A Clínica Evoluta agradece à Escola Ilda Ferreira pela confiança e pela oportunidade de realizar esse importante momento de diálogo com os estudantes.",
       "Nosso agradecimento também a cada turma que participou, ouviu, questionou e contribuiu para tornar o encontro ainda mais significativo.",
       "Que possamos continuar construindo ambientes em que respeito, empatia e acolhimento sejam sempre maiores do que qualquer forma de violência.",
+    ],
+    galeria: [
+      {
+        url: ildaFerreiraPalestra.url,
+        alt: "Jéssica Pelissari fala sobre bullying e cyberbullying para os estudantes da Escola Ilda Ferreira",
+      },
+      {
+        url: ildaFerreiraGrupo.url,
+        alt: "Jéssica Pelissari ao lado das educadoras da Escola Ilda Ferreira ao final do encontro",
+      },
     ],
   },
   {
