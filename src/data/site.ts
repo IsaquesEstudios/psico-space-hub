@@ -217,6 +217,7 @@ export type Atendimento = {
   imagem: string;
   imagemSecundaria: string;
   imagemHero?: string;
+  imagemHeroPosicao?: string;
   paraQuem: string[];
   comoFunciona: { titulo: string; texto: string }[];
   info: { rotulo: string; valor: string }[];
