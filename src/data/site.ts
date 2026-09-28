@@ -49,6 +49,7 @@ import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infanti
 import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
 import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.png";
 import gersonCamataCapa from "@/assets/gerson-camata-capa.jpg.asset.json";
+import cooabrielCapa from "@/assets/cooabriel-capa.jpg.asset.json";
 import gersonCamataTela from "@/assets/gerson-camata-tela.jpg.asset.json";
 import gersonCamataPalestra from "@/assets/gerson-camata-palestra.jpg.asset.json";
 import gersonCamataCertificado from "@/assets/gerson-camata-certificado.jpg.asset.json";
@@ -1682,7 +1683,7 @@ type Novidade = {
   texto: string;
   etiqueta: string;
   paragrafos: string[];
-  imagemCapa?: { url: string; alt: string };
+  imagemCapa?: { url: string; alt: string; posicao?: string };
   galeria?: { url: string; alt: string }[];
 };
 
@@ -1738,6 +1739,11 @@ export const novidades: Novidade[] = [
     titulo: "Clínica Evoluta promove palestra online sobre Saúde Mental no Trabalho para colaboradores da Cooabriel",
     texto: "Saúde Mental no Trabalho em pauta: no dia 17 de setembro, a Clínica Evoluta realizou uma palestra online para os colaboradores da Cooabriel, promovendo informação, reflexão e diálogo sobre cuidado emocional, escuta, acolhimento e saúde mental no ambiente profissional.",
     etiqueta: "Palestras e capacitações",
+    imagemCapa: {
+      url: cooabrielCapa.url,
+      alt: "Jéssica Pelissari ministra a palestra online sobre Saúde Mental no Trabalho para os colaboradores da Cooabriel",
+      posicao: "50% 32%",
+    },
     paragrafos: [      "No dia 17 de setembro de 2026, a Clínica Evoluta Desenvolvimento Infantil, por meio da Psicóloga e Neuropsicóloga Jéssica Pelissari, realizou uma palestra online sobre Saúde Mental no Trabalho para os colaboradores da Cooabriel.",
       "O encontro teve como objetivo levar informação, promover reflexão e ampliar o diálogo sobre a saúde mental no ambiente profissional, incentivando uma cultura de cuidado, escuta, acolhimento e respeito.",
       "Realizada de forma online, a palestra possibilitou a participação dos colaboradores de maneira prática e acessível, demonstrando também a possibilidade de a Clínica Evoluta levar suas ações de capacitação para diferentes equipes e instituições, independentemente da localização.",

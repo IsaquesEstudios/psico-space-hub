@@ -56,7 +56,7 @@ function NovidadePage() {
           alt={novidade.imagemCapa?.alt ?? "Jéssica Pelissari, da Clínica Evoluta"}
           width={1080}
           height={720}
-          style={novidade.imagemCapa ? { objectPosition: "50% 68%" } : undefined}
+          style={novidade.imagemCapa ? { objectPosition: novidade.imagemCapa.posicao ?? "50% 68%" } : undefined}
           className="absolute inset-0 h-full w-full object-cover object-top lg:object-[72%_20%]"
         />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
