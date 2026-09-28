@@ -36,7 +36,7 @@ import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
 import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
-import supervisaoTcc from "@/assets/supervisao-tcc.jpg";
+import supervisaoTcc from "@/assets/supervisao-tcc-jessica.jpg";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
