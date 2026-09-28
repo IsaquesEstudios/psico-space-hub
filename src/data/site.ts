@@ -39,6 +39,7 @@ import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
 import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
 import supervisaoTcc from "@/assets/supervisao-tcc-jessica.jpg";
 import heroSupervisaoTcc from "@/assets/hero-supervisao-tcc.jpg";
+import tccOnlineHero from "@/assets/tcc-online-jessica.jpg.asset.json";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
@@ -216,6 +217,7 @@ export type Atendimento = {
   imagem: string;
   imagemSecundaria: string;
   imagemHero?: string;
+  imagemHeroPosicao?: string;
   paraQuem: string[];
   comoFunciona: { titulo: string; texto: string }[];
   info: { rotulo: string; valor: string }[];
@@ -811,6 +813,8 @@ export const atendimentos: Atendimento[] = [
       "Psicoterapia baseada na TCC para adultos, em formato on-line, com espaço de acolhimento para compreender pensamentos, emoções e comportamentos.",
     imagem: jessicaSorrindo.url,
     imagemSecundaria: jessicaJanela.url,
+    imagemHero: tccOnlineHero.url,
+    imagemHeroPosicao: "50% 25%",
     paraQuem: [
       "Adultos que desejam acompanhamento psicológico em formato on-line",
       "Pessoas que enfrentam dificuldades emocionais ou comportamentais no cotidiano",

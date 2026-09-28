@@ -134,6 +134,7 @@ function AtendimentoHero({
         width={item.imagemHero ? 1536 : 1080}
         height={item.imagemHero ? 768 : 720}
         className={`absolute inset-0 h-full w-full object-cover object-top ${item.imagemHero ? "lg:object-center" : "lg:object-[78%_20%]"}`}
+        style={item.imagemHeroPosicao ? { objectPosition: item.imagemHeroPosicao } : undefined}
       />
       <div className="absolute inset-0 bg-deep/65 lg:hidden" />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
