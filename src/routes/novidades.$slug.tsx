@@ -70,11 +70,17 @@ function NovidadePage() {
         <div className="mx-auto max-w-3xl">
           <p className="text-lg leading-relaxed">{novidade.texto}</p>
           <div className="mt-8">
-            {novidade.paragrafos.map((p) => (
-              <p key={p} className="mb-6 text-base leading-relaxed text-muted-foreground">
-                {p}
-              </p>
-            ))}
+            {novidade.paragrafos.map((p) =>
+              p.startsWith("## ") ? (
+                <h2 key={p} className="mb-4 mt-10 font-display text-2xl sm:text-3xl">
+                  {p.slice(3)}
+                </h2>
+              ) : (
+                <p key={p} className="mb-6 text-base leading-relaxed text-muted-foreground">
+                  {p}
+                </p>
+              ),
+            )}
           </div>
           <div className="mt-10">
             <WhatsAppButton href={site.whatsapp} />
