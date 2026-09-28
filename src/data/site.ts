@@ -1862,7 +1862,6 @@ export const novidades: Novidade[] = [
       "Capacitar é transformar. Incluir é compreender.",    ],
   },
     {
-    {
     slug: "capacitacao-profissionais-saude-educacao-pestalozzi",
     data: "28 de agosto de 2026",
     titulo: "Clínica Evoluta realiza capacitação para profissionais da saúde e educação na Pestalozzi",
