@@ -1896,7 +1896,7 @@ export const novidades: Novidade[] = [
     imagemCapa: {
       url: "/__l5e/assets-v1/9f2dc646-af22-4f35-8ccd-e39da83d1012/pestalozzi-capa.jpg",
       alt: "Jéssica Pelissari palestrando sobre Neurodesenvolvimento durante a capacitação na Pestalozzi",
-      posicao: "50% 32%",
+      posicao: "50% 45%",
     },
     galeria: [
       { url: "/__l5e/assets-v1/ed335190-2575-48ca-b8ac-e62a6691c319/pestalozzi-palestra.jpg", alt: "Jéssica Pelissari explicando caso clínico durante a capacitação na Pestalozzi", posicao: "50% 40%" },
