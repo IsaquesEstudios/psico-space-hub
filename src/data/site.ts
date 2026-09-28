@@ -34,6 +34,8 @@ import jessicaJanela from "@/assets/GHR06712.jpg.asset.json";
 import jessicaMesaAmpla from "@/assets/GHR06849-2.jpg.asset.json";
 import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
+import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
+import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
 import novidadesHero from "@/assets/novidades-hero.jpg";
@@ -608,8 +610,8 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Para instituições",
     resumo:
       "Capacitações, palestras, workshops e encontros formativos conduzidos por Jéssica Pelissari, com conteúdo desenvolvido de acordo com as necessidades de cada instituição.",
-    imagem: jessicaConversa.url,
-    imagemSecundaria: jessicaMesaAmpla.url,
+    imagem: palestraAuditorio.url,
+    imagemSecundaria: jessicaPalestra.url,
     paraQuem: [
       "Empresas que desejam promover saúde mental, comunicação e desenvolvimento entre colaboradores",
       "Escolas e equipes de apoio escolar que buscam formação sobre desenvolvimento, aprendizagem e inclusão",
