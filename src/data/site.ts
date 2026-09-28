@@ -36,6 +36,7 @@ import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
 import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
+import supervisaoTcc from "@/assets/supervisao-tcc.jpg";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
@@ -711,7 +712,7 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Supervisão clínica em TCC para profissionais que atendem crianças, adolescentes e adultos, com suporte técnico para o desenvolvimento da prática.",
     imagem: jessicaSofa.url,
-    imagemSecundaria: jessicaEntrevista.url,
+    imagemSecundaria: supervisaoTcc,
     paraQuem: [
       "Profissionais que realizam atendimentos infantis, adolescentes e adultos em TCC",
       "Profissionais em início de carreira que buscam suporte técnico e clínico",
