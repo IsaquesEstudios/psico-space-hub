@@ -1,6 +1,7 @@
 import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
+import imagemOnline from "@/assets/atendimento-online.jpg";
 import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
 import {
@@ -106,6 +107,7 @@ function AtendimentoPage() {
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} conteudo={conteudo} />
       {conteudo.tituloImagem ? <ImagemDoAcompanhamento item={item} conteudo={conteudo} /> : null}
+      <AtendimentoOnline slug={item.slug} />
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
       <Avaliacoes className="bg-background" />
@@ -280,6 +282,58 @@ function Etapas({ item, conteudo }: { item: Atendimento; conteudo: ConteudoAtend
         ))}
       </ol>
     </Section>
+  );
+}
+
+const atendimentoOnline: Record<string, { titulo: string; texto: string }> = {
+  "avaliacao-neuropsicologica": {
+    titulo: "Avaliação Neuropsicológica para adultos também on-line",
+    texto:
+      "A Avaliação Neuropsicológica para adultos pode ser realizada de forma on-line, investigando atenção, memória, funções executivas, aprendizagem, aspectos emocionais e comportamentais, incluindo a investigação de TDAH e outras condições do neurodesenvolvimento.",
+  },
+  "terapia-cognitivo-comportamental": {
+    titulo: "Psicoterapia TCC on-line para adultos",
+    texto:
+      "A psicoterapia baseada na Terapia Cognitivo-Comportamental é oferecida on-line para adultos, com espaço de acolhimento e escuta para trabalhar autoconhecimento, regulação emocional e estratégias para lidar com o cotidiano.",
+  },
+};
+
+function AtendimentoOnline({ slug }: { slug: string }) {
+  const online = atendimentoOnline[slug];
+  if (!online) return null;
+  return (
+    <section className="bg-secondary px-5 py-16 sm:py-20 lg:px-10 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <img
+          src={imagemOnline}
+          alt="Mesa com notebook aberto em uma videochamada de atendimento on-line"
+          loading="lazy"
+          width={1344}
+          height={896}
+          className="aspect-[3/2] w-full object-cover"
+        />
+        <div>
+          <Eyebrow>Atendimento on-line</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+            {online.titulo}
+          </h2>
+          <p className="mt-5 leading-relaxed text-muted-foreground">
+            A Clínica Evoluta oferece atendimento psicológico especializado de forma on-line,
+            proporcionando praticidade, acolhimento e acompanhamento profissional, com a mesma
+            atenção e qualidade do atendimento clínico.
+          </p>
+          <p className="mt-4 leading-relaxed text-muted-foreground">{online.texto}</p>
+          <ul className="mt-6 space-y-3">
+            {["Sem deslocamento, de onde você estiver", "Mesma qualidade do atendimento presencial", "Horários combinados com a equipe"].map((t) => (
+              <li key={t} className="flex items-start gap-3 text-foreground">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
 
