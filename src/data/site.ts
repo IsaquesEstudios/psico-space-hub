@@ -39,6 +39,7 @@ import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
 import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
 import supervisaoTcc from "@/assets/supervisao-tcc-jessica.jpg";
 import heroSupervisaoTcc from "@/assets/hero-supervisao-tcc.jpg";
+import tccOnlineHero from "@/assets/tcc-online-jessica.jpg.asset.json";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
