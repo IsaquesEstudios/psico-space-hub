@@ -418,7 +418,6 @@ function SobreJessica() {
   return (
     <Section>
       <div>
-        <div>
           <Eyebrow>Quem acompanha você</Eyebrow>
           <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">{jessicaBio.nome}</h2>
           <p className="mt-3 text-sm font-semibold text-primary">{jessicaBio.credenciais}</p>
@@ -440,7 +439,6 @@ function SobreJessica() {
               ))}
             </ul>
           </div>
-        </div>
       </div>
     </Section>
   );
