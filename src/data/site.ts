@@ -742,7 +742,6 @@ export const atendimentos: Atendimento[] = [
     ],
     info: [
       { rotulo: "Público", valor: "Profissionais da clínica em TCC" },
-      { rotulo: "Atendimentos", valor: "Infantis, adolescentes e adultos" },
       { rotulo: "Indicação", valor: "Início de carreira ou aperfeiçoamento" },
       { rotulo: "Foco", valor: "Suporte técnico e clínico" },
     ],
