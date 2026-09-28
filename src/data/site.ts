@@ -814,6 +814,7 @@ export const atendimentos: Atendimento[] = [
     imagem: jessicaSorrindo.url,
     imagemSecundaria: jessicaJanela.url,
     imagemHero: tccOnlineHero.url,
+    imagemHeroPosicao: "50% 25%",
     paraQuem: [
       "Adultos que desejam acompanhamento psicológico em formato on-line",
       "Pessoas que enfrentam dificuldades emocionais ou comportamentais no cotidiano",
