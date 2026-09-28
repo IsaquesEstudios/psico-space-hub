@@ -417,18 +417,7 @@ function OutrosAtendimentos({ item }: { item: Atendimento }) {
 function SobreJessica() {
   return (
     <Section>
-      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
-        <div>
-          <img
-            src={jessicaBio.foto}
-            alt="Jéssica Pelissari, psicóloga e neuropsicóloga, fundadora da Clínica Evoluta"
-            loading="lazy"
-            width={720}
-            height={1080}
-            className="aspect-[2/3] w-full object-cover"
-          />
-        </div>
-
+      <div>
         <div>
           <Eyebrow>Quem acompanha você</Eyebrow>
           <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">{jessicaBio.nome}</h2>
