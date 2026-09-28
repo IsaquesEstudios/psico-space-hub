@@ -35,6 +35,7 @@ import jessicaMesaAmpla from "@/assets/GHR06849-2.jpg.asset.json";
 import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
+import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
 import blogHero from "@/assets/blog-hero.jpg";
@@ -662,6 +663,7 @@ export const atendimentos: Atendimento[] = [
       "Supervisão clínica para psicólogos e profissionais que atuam ou estão em formação em Neuropsicologia, com discussão de casos e aprimoramento da prática.",
     imagem: jessicaEscrevendo.url,
     imagemSecundaria: jessicaMesaHorizontal.url,
+    imagemHero: heroSupervisaoClinica,
     paraQuem: [
       "Psicólogos que atuam com avaliação neuropsicológica e desejam aprimorar sua prática",
       "Profissionais em formação na área de Neuropsicologia",
