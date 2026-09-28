@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, redirect, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
-import imagemOnline from "@/assets/atendimento-online.jpg";
+import imagemOnline from "@/assets/atendimento-online.webp.asset.json";
 import { Avaliacoes } from "@/components/site/Avaliacoes";
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
 import {
@@ -305,7 +305,7 @@ function AtendimentoOnline({ slug }: { slug: string }) {
     <section className="bg-secondary px-5 py-16 sm:py-20 lg:px-10 lg:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <img
-          src={imagemOnline}
+          src={imagemOnline.url}
           alt="Mesa com notebook aberto em uma videochamada de atendimento on-line"
           loading="lazy"
           width={1344}

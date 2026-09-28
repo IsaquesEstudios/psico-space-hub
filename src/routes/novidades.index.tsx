@@ -9,19 +9,21 @@ export const Route = createFileRoute("/novidades/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Novidades | Clínica Evoluta" },
+      { title: "Notícias | Clínica Evoluta" },
       {
         name: "description",
         content:
           "Agenda de vagas, turmas abertas, formações em escolas e encontros com famílias.",
       },
-      { property: "og:title", content: "Novidades | Clínica Evoluta" },
+      { property: "og:title", content: "Notícias | Clínica Evoluta" },
       {
         property: "og:description",
-        content: "Acompanhe vagas, turmas e eventos do consultório.",
+        content: "Acompanhe vagas, turmas e eventos da Clínica Evoluta.",
       },
       { property: "og:image", content: brandShareImage },
+      { property: "og:type", content: "website" },
       { name: "twitter:image", content: brandShareImage },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Novidades,
@@ -41,7 +43,7 @@ function Novidades() {
         <div className="absolute inset-0 hidden bg-gradient-to-r from-deep from-[0%] via-deep/90 via-[34%] to-transparent to-[82%] lg:block" />
         <div className="absolute inset-0 bg-deep/70 lg:hidden" />
         <div className="relative mx-auto w-full max-w-7xl">
-          <p className="eyebrow text-deep-foreground/60">Novidades</p>
+          <p className="eyebrow text-deep-foreground/60">Notícias</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Notícias e eventos da clínica
           </h1>
@@ -76,9 +78,9 @@ function Novidades() {
 
 
           <div className="mt-14 bg-muted p-6 text-center sm:p-10">
-            <h2 className="font-display text-3xl">Quer ser avisada das próximas turmas?</h2>
+            <h2 className="font-display text-3xl">Quer receber um aviso sobre as próximas turmas?</h2>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Envie uma mensagem pedindo para entrar na lista de espera e aviso assim que abrir vaga.
+              Envie uma mensagem para entrar na lista de espera. Nossa equipe avisará quando uma vaga estiver disponível.
             </p>
             <div className="mt-8">
               <WhatsAppButton href={site.whatsapp} label="Entrar na lista" />
