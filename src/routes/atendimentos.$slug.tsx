@@ -105,7 +105,7 @@ function AtendimentoPage() {
       <Apresentacao item={item} conteudo={conteudo} />
       <SituacoesEObjetivos item={item} conteudo={conteudo} />
       <Etapas item={item} conteudo={conteudo} />
-      <ImagemDoAcompanhamento item={item} conteudo={conteudo} />
+      {conteudo.tituloImagem ? <ImagemDoAcompanhamento item={item} conteudo={conteudo} /> : null}
       <ParticipacaoEInformacoes item={item} conteudo={conteudo} />
       <Perguntas conteudo={conteudo} />
       <Avaliacoes className="bg-background" />

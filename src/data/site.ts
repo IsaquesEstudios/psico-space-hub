@@ -866,8 +866,8 @@ export type ConteudoAtendimento = {
   objetivos: string[];
   tituloEtapas: string;
   textoEtapas: string;
-  tituloImagem: string;
-  textoImagem: string;
+  tituloImagem?: string;
+  textoImagem?: string;
   participacao: { titulo: string; texto: string };
   perguntas: { pergunta: string; resposta: string }[];
 };
@@ -1358,9 +1358,6 @@ export const conteudosAtendimentos: Record<string, ConteudoAtendimento> = {
     tituloEtapas: "Como a assessoria é estruturada",
     textoEtapas:
       "A assessoria pode incluir acompanhamento da equipe, orientação técnica, discussão de situações práticas, reuniões de acompanhamento, estruturação de estratégias, orientação diante de demandas específicas, revisão das ações desenvolvidas e planejamento de próximos passos.",
-    tituloImagem: "Conhecimento, prática e desenvolvimento",
-    textoImagem:
-      "Na Clínica Evoluta, cada projeto pode ser construído de forma personalizada, desde uma palestra ou capacitação pontual até um programa continuado envolvendo formação, supervisão e Assessoria Exclusiva.",
     participacao: {
       titulo: "Uma parceria construída com a instituição",
       texto:
