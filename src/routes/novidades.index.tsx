@@ -76,7 +76,7 @@ function Novidades() {
 
 
           <div className="mt-14 bg-muted p-6 text-center sm:p-10">
-            <h2 className="font-display text-3xl">Quer ser avisada das próximas turmas?</h2>
+            <h2 className="font-display text-3xl">Quer receber um aviso sobre as próximas turmas?</h2>
             <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Envie uma mensagem pedindo para entrar na lista de espera e aviso assim que abrir vaga.
             </p>

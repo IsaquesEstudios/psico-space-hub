@@ -1,26 +1,26 @@
-import sobreImg from "@/assets/sobre.jpg";
-import ctaImg from "@/assets/cta-conversa.jpg";
-import avaliacaoNeuropsicologicaImg from "@/assets/servico-avaliacao-neuropsicologica-1.jpg";
-import avaliacaoNeuropsicologicaImg2 from "@/assets/servico-avaliacao-neuropsicologica-2.jpg";
-import avaliacaoNeuropsicologicaHero from "@/assets/hero-servico-avaliacao-neuropsicologica.jpg";
-import psicologiaInfantilImg from "@/assets/servico-psicologia-infantil-1.jpg";
-import psicologiaInfantilImg2 from "@/assets/servico-psicologia-infantil-2.jpg";
-import psicologiaInfantilHero from "@/assets/hero-servico-psicologia-infantil.jpg";
-import intervencaoAbaImg from "@/assets/servico-intervencao-aba-1.jpg";
-import intervencaoAbaImg2 from "@/assets/servico-intervencao-aba-2-corrigida.png";
-import intervencaoAbaHero from "@/assets/hero-servico-intervencao-aba.jpg";
-import avaliacaoNeuropsicopedagogicaImg from "@/assets/servico-avaliacao-neuropsicopedagogica-1.jpg";
-import avaliacaoNeuropsicopedagogicaImg2 from "@/assets/servico-avaliacao-neuropsicopedagogica-2.jpg";
-import avaliacaoNeuropsicopedagogicaHero from "@/assets/hero-servico-avaliacao-neuropsicopedagogica.jpg";
-import fonoaudiologiaInfantilImg from "@/assets/servico-fonoaudiologia-infantil-1.jpg";
-import fonoaudiologiaInfantilImg2 from "@/assets/servico-fonoaudiologia-infantil-2.jpg";
-import fonoaudiologiaInfantilHero from "@/assets/hero-servico-fonoaudiologia-infantil.jpg";
-import fonoaudiologiaAdultosImg from "@/assets/servico-fonoaudiologia-adultos-1.jpg";
-import fonoaudiologiaAdultosImg2 from "@/assets/servico-fonoaudiologia-adultos-2.jpg";
-import fonoaudiologiaAdultosHero from "@/assets/hero-servico-fonoaudiologia-adultos.jpg";
-import estimulacaoCognitivaIdososImg from "@/assets/servico-estimulacao-cognitiva-idosos-1.jpg";
-import estimulacaoCognitivaIdososImg2 from "@/assets/servico-estimulacao-cognitiva-idosos-2.jpg";
-import estimulacaoCognitivaIdososHero from "@/assets/hero-servico-estimulacao-cognitiva-idosos.jpg";
+import sobreImg from "@/assets/sobre.webp.asset.json";
+import ctaImg from "@/assets/cta-conversa.webp.asset.json";
+import avaliacaoNeuropsicologicaImg from "@/assets/servico-avaliacao-neuropsicologica-1.webp.asset.json";
+import avaliacaoNeuropsicologicaImg2 from "@/assets/servico-avaliacao-neuropsicologica-2.webp.asset.json";
+import avaliacaoNeuropsicologicaHero from "@/assets/hero-servico-avaliacao-neuropsicologica.webp.asset.json";
+import psicologiaInfantilImg from "@/assets/servico-psicologia-infantil-1.webp.asset.json";
+import psicologiaInfantilImg2 from "@/assets/servico-psicologia-infantil-2.webp.asset.json";
+import psicologiaInfantilHero from "@/assets/hero-servico-psicologia-infantil.webp.asset.json";
+import intervencaoAbaImg from "@/assets/servico-intervencao-aba-1.webp.asset.json";
+import intervencaoAbaImg2 from "@/assets/servico-intervencao-aba-2-corrigida.webp.asset.json";
+import intervencaoAbaHero from "@/assets/hero-servico-intervencao-aba.webp.asset.json";
+import avaliacaoNeuropsicopedagogicaImg from "@/assets/servico-avaliacao-neuropsicopedagogica-1.webp.asset.json";
+import avaliacaoNeuropsicopedagogicaImg2 from "@/assets/servico-avaliacao-neuropsicopedagogica-2.webp.asset.json";
+import avaliacaoNeuropsicopedagogicaHero from "@/assets/hero-servico-avaliacao-neuropsicopedagogica.webp.asset.json";
+import fonoaudiologiaInfantilImg from "@/assets/servico-fonoaudiologia-infantil-1.webp.asset.json";
+import fonoaudiologiaInfantilImg2 from "@/assets/servico-fonoaudiologia-infantil-2.webp.asset.json";
+import fonoaudiologiaInfantilHero from "@/assets/hero-servico-fonoaudiologia-infantil.webp.asset.json";
+import fonoaudiologiaAdultosImg from "@/assets/servico-fonoaudiologia-adultos-1.webp.asset.json";
+import fonoaudiologiaAdultosImg2 from "@/assets/servico-fonoaudiologia-adultos-2.webp.asset.json";
+import fonoaudiologiaAdultosHero from "@/assets/hero-servico-fonoaudiologia-adultos.webp.asset.json";
+import estimulacaoCognitivaIdososImg from "@/assets/servico-estimulacao-cognitiva-idosos-1.webp.asset.json";
+import estimulacaoCognitivaIdososImg2 from "@/assets/servico-estimulacao-cognitiva-idosos-2.webp.asset.json";
+import estimulacaoCognitivaIdososHero from "@/assets/hero-servico-estimulacao-cognitiva-idosos.webp.asset.json";
 import jessicaAsset from "@/assets/jessica-clinica-evoluta.png.asset.json";
 import jessicaHeroMesa from "@/assets/jessica-hero-mesa.jpg.asset.json";
 import jessicaRetratoFrontal from "@/assets/GHR07001.jpg.asset.json";
@@ -36,18 +36,18 @@ import posCapacitacaoHero from "@/assets/pos-capacitacao-hero.jpg.asset.json";
 import jessicaSofa from "@/assets/GHR07063.jpg.asset.json";
 import jessicaConversa from "@/assets/GHR07210.jpg.asset.json";
 import palestraAuditorio from "@/assets/palestra-auditorio.jpg.asset.json";
-import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.jpg";
-import supervisaoTcc from "@/assets/supervisao-tcc-jessica.jpg";
-import heroSupervisaoTcc from "@/assets/hero-supervisao-tcc.jpg";
+import heroSupervisaoClinica from "@/assets/hero-supervisao-clinica.webp.asset.json";
+import supervisaoTcc from "@/assets/supervisao-tcc-jessica.webp.asset.json";
+import heroSupervisaoTcc from "@/assets/hero-supervisao-tcc.webp.asset.json";
 import tccOnlineHero from "@/assets/tcc-online-jessica.jpg.asset.json";
 import jessicaPalestra from "@/assets/jessica-palestra.jpg.asset.json";
 import jessicaRetratoBio from "@/assets/jessica-retrato-bio.jpg.asset.json";
-import blogHero from "@/assets/blog-hero.jpg";
-import novidadesHero from "@/assets/novidades-hero.jpg";
+import blogHero from "@/assets/blog-hero.webp.asset.json";
+import novidadesHero from "@/assets/novidades-hero.webp.asset.json";
 import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.json";
 import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infantil-na-pratica.jpeg.asset.json";
 import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
-import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.png";
+import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.webp.asset.json";
 import gersonCamataCapa from "@/assets/gerson-camata-capa.jpg.asset.json";
 import ildaFerreiraCapa from "@/assets/ilda-ferreira-capa.jpg.asset.json";
 import ildaFerreiraPalestra from "@/assets/ilda-ferreira-palestra.jpg.asset.json";
@@ -71,11 +71,11 @@ export const brandShareImage =
 
 export const images = {
   hero: jessicaHeroMesa.url,
-  sobre: sobreImg,
+  sobre: sobreImg.url,
   jessica: jessicaAsset.url,
-  cta: ctaImg,
-  blogHero,
-  novidadesHero,
+  cta: ctaImg.url,
+  blogHero.url,
+  novidadesHero.url,
 };
 
 export const fotosJessica = {
@@ -248,9 +248,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Método Evoluta",
     resumo:
       "Investigação clínica do funcionamento cognitivo, emocional e comportamental, com devolutiva clara para orientar decisões.",
-    imagem: avaliacaoNeuropsicologicaImg,
-    imagemSecundaria: avaliacaoNeuropsicologicaImg2,
-    imagemHero: avaliacaoNeuropsicologicaHero,
+    imagem: avaliacaoNeuropsicologicaImg.url,
+    imagemSecundaria: avaliacaoNeuropsicologicaImg2.url,
+    imagemHero: avaliacaoNeuropsicologicaHero.url,
     paraQuem: [
       "Crianças, adolescentes, adultos e idosos com dúvidas sobre atenção, memória, aprendizagem, comportamento ou desenvolvimento",
       "Famílias que precisam entender se as dificuldades observadas indicam necessidade de acompanhamento específico",
@@ -303,9 +303,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Psicoterapia infantil",
     resumo:
       "Acompanhamento psicológico para crianças e adolescentes lidarem melhor com emoções, pensamentos, comportamentos e relações.",
-    imagem: psicologiaInfantilImg,
-    imagemSecundaria: psicologiaInfantilImg2,
-    imagemHero: psicologiaInfantilHero,
+    imagem: psicologiaInfantilImg.url,
+    imagemSecundaria: psicologiaInfantilImg2.url,
+    imagemHero: psicologiaInfantilHero.url,
     paraQuem: [
       "Crianças e adolescentes que apresentam sofrimento emocional, mudanças de comportamento ou dificuldade de adaptação",
       "Famílias que observam ansiedade, medos, insegurança, irritabilidade, isolamento ou baixa autoestima",
@@ -358,9 +358,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Análise do Comportamento Aplicada",
     resumo:
       "Plano de intervenção comportamental para ensinar repertórios importantes de comunicação, interação, autonomia e aprendizagem.",
-    imagem: intervencaoAbaImg,
-    imagemSecundaria: intervencaoAbaImg2,
-    imagemHero: intervencaoAbaHero,
+    imagem: intervencaoAbaImg.url,
+    imagemSecundaria: intervencaoAbaImg2.url,
+    imagemHero: intervencaoAbaHero.url,
     paraQuem: [
       "Pessoas com TEA e outras demandas do desenvolvimento ou comportamento, conforme avaliação individual",
       "Crianças, adolescentes ou adultos que precisam ampliar comunicação funcional e participação nas atividades",
@@ -413,9 +413,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Aprendizagem escolar",
     resumo:
       "Investigação do perfil de aprendizagem para entender barreiras em leitura, escrita, matemática, atenção e desempenho escolar.",
-    imagem: avaliacaoNeuropsicopedagogicaImg,
-    imagemSecundaria: avaliacaoNeuropsicopedagogicaImg2,
-    imagemHero: avaliacaoNeuropsicopedagogicaHero,
+    imagem: avaliacaoNeuropsicopedagogicaImg.url,
+    imagemSecundaria: avaliacaoNeuropsicopedagogicaImg2.url,
+    imagemHero: avaliacaoNeuropsicopedagogicaHero.url,
     paraQuem: [
       "Crianças e adolescentes com baixo rendimento, atraso na aquisição de habilidades acadêmicas ou dificuldades escolares persistentes",
       "Estudantes que apresentam barreiras em leitura, escrita, compreensão, raciocínio lógico-matemático ou estratégias de estudo",
@@ -468,9 +468,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Fala e linguagem",
     resumo:
       "Acompanhamento para bebês, crianças e adolescentes com atrasos ou dificuldades de fala, linguagem, comunicação e alimentação.",
-    imagem: fonoaudiologiaInfantilImg,
-    imagemHero: fonoaudiologiaInfantilHero,
-    imagemSecundaria: fonoaudiologiaInfantilImg2,
+    imagem: fonoaudiologiaInfantilImg.url,
+    imagemHero: fonoaudiologiaInfantilHero.url,
+    imagemSecundaria: fonoaudiologiaInfantilImg2.url,
     paraQuem: [
       "Bebês, crianças e adolescentes com atraso para falar, pouca intenção comunicativa ou dificuldade para se expressar",
       "Crianças com trocas de sons, omissões, fala pouco compreensível ou dificuldade de articulação",
@@ -523,9 +523,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Comunicação em diferentes fases da vida",
     resumo:
       "Acompanhamento fonoaudiológico para voz, fala, linguagem, comunicação, motricidade orofacial e deglutição.",
-    imagem: fonoaudiologiaAdultosImg,
-    imagemHero: fonoaudiologiaAdultosHero,
-    imagemSecundaria: fonoaudiologiaAdultosImg2,
+    imagem: fonoaudiologiaAdultosImg.url,
+    imagemHero: fonoaudiologiaAdultosHero.url,
+    imagemSecundaria: fonoaudiologiaAdultosImg2.url,
     paraQuem: [
       "Adolescentes, adultos e idosos com mudanças na voz, articulação, clareza da fala, linguagem ou comunicação",
       "Pessoas com dificuldade para mastigar, engolir, coordenar funções orais ou manter segurança durante a alimentação",
@@ -578,9 +578,9 @@ export const atendimentos: Atendimento[] = [
     etiqueta: "Cognição e autonomia",
     resumo:
       "Acompanhamento para idosos com atividades cognitivas significativas, voltadas à memória, atenção, linguagem e organização.",
-    imagem: estimulacaoCognitivaIdososImg,
-    imagemSecundaria: estimulacaoCognitivaIdososImg2,
-    imagemHero: estimulacaoCognitivaIdososHero,
+    imagem: estimulacaoCognitivaIdososImg.url,
+    imagemSecundaria: estimulacaoCognitivaIdososImg2.url,
+    imagemHero: estimulacaoCognitivaIdososHero.url,
     paraQuem: [
       "Idosos que desejam manter a mente ativa com propostas respeitosas e adequadas ao seu momento de vida",
       "Pessoas com queixas de memória, atenção, linguagem, orientação, planejamento ou organização",
@@ -685,7 +685,7 @@ export const atendimentos: Atendimento[] = [
       "Supervisão clínica para psicólogos e profissionais que atuam ou estão em formação em Neuropsicologia, com discussão de casos e aprimoramento da prática.",
     imagem: jessicaEscrevendo.url,
     imagemSecundaria: jessicaMesaHorizontal.url,
-    imagemHero: heroSupervisaoClinica,
+    imagemHero: heroSupervisaoClinica.url,
     paraQuem: [
       "Psicólogos que atuam com avaliação neuropsicológica e desejam aprimorar sua prática",
       "Profissionais em formação na área de Neuropsicologia",
@@ -733,8 +733,8 @@ export const atendimentos: Atendimento[] = [
     resumo:
       "Supervisão clínica em TCC para profissionais que atendem crianças, adolescentes e adultos, com suporte técnico para o desenvolvimento da prática.",
     imagem: jessicaSofa.url,
-    imagemSecundaria: supervisaoTcc,
-    imagemHero: heroSupervisaoTcc,
+    imagemSecundaria: supervisaoTcc.url,
+    imagemHero: heroSupervisaoTcc.url,
     paraQuem: [
       "Profissionais que realizam atendimentos infantis, adolescentes e adultos em TCC",
       "Profissionais em início de carreira que buscam suporte técnico e clínico",
@@ -1627,7 +1627,7 @@ export const livros: Livro[] = [
     etiqueta: "E-book",
     resumo:
       "Um material em linguagem leve e acessível para compreender o TDAH na infância e adolescência com base em evidências e prática clínica.",
-    imagem: ebookEntendendoTdah,
+    imagem: ebookEntendendoTdah.url,
     formato: "E-book digital",
     investimento: "R$ 27,90",
     publico: "Famílias, educadores e profissionais que acompanham crianças com TDAH",
