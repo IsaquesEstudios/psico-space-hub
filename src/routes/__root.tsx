@@ -7,6 +7,7 @@ import {
   useRouterState,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -40,7 +41,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -132,7 +133,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function IndicadorCarregamento() {
   const ativo = useRouterState({
-    select: (s) => s.isTransitioning,
+    select: (s) => s.status === "pending",
   });
   return (
     <div
