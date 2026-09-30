@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
   loader: async () => ({ postsBlog: (await listarPostsPublicados()).map(paraPost) }),
   head: () => ({
     meta: [
-      { title: "Clínica Evoluta | Atendimentos multidisciplinares em São Gabriel da Palha" },
+      { title: "Clínica Evoluta | Atendimentos multidisciplinares em São Gabriel da Palha - ES" },
       {
         name: "description",
         content:
