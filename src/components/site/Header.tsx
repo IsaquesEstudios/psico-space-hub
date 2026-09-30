@@ -7,6 +7,7 @@ import { atendimentos, site } from "@/data/site";
 
 const links = [
   { to: "/", label: "Início" },
+  { to: "/atendimento-online", label: "Atendimento Online" },
   { to: "/sobre", label: "Sobre nós" },
   { to: "/cursos", label: "Cursos" },
   { to: "/livros", label: "Livros" },
