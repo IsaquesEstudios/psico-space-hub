@@ -134,14 +134,14 @@ export const site = {
   whatsapp: "https://api.whatsapp.com/message/OMXN2X3IIFAWJ1?autoload=1&app_absent=0",
   telefone: "(27) 99938-6386",
   telefoneLink: "tel:+5527999386386",
-  email: "contato@clinicaevoluta.com.br",
+  email: "evolutaclinicad@gmail.com",
   instagram: "@evolutaclinica",
   instagramUrl: "https://www.instagram.com/evolutaclinica/",
   youtube: "@neuropsicologajessicapelissari",
   youtubeUrl: "https://www.youtube.com/@neuropsicologajessicapelissari",
   tiktok: "@evoluta.clinica",
   tiktokUrl: "https://www.tiktok.com/@evoluta.clinica",
-  cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha 29780-000",
+  cidade: "Rua Antônio Borgo, 230, Centro, São Gabriel da Palha - ES, 29780-000",
   enderecoMapa: "R. Antônio Borgo, 230 - Centro, São Gabriel da Palha - ES, 29780-000",
 } as const;
 
@@ -208,14 +208,14 @@ export const avaliacoes: Avaliacao[] = [
 
 /** Termos de busca usados como H1 das páginas de atendimento (SEO local). */
 export const h1Atendimentos: Record<string, string> = {
-  "avaliacao-neuropsicologica": "Avaliação neuropsicológica em São Gabriel da Palha",
-  "psicologia-infantil-tcc": "Psicologia infantil com TCC em São Gabriel da Palha",
-  "intervencao-aba": "Intervenção ABA em São Gabriel da Palha",
-  "avaliacao-neuropsicopedagogica": "Avaliação neuropsicopedagógica em São Gabriel da Palha",
-  "fonoaudiologia-infantil": "Fonoaudiologia infantil em São Gabriel da Palha",
+  "avaliacao-neuropsicologica": "Avaliação neuropsicológica em São Gabriel da Palha - ES",
+  "psicologia-infantil-tcc": "Psicologia infantil com TCC em São Gabriel da Palha - ES",
+  "intervencao-aba": "Intervenção ABA em São Gabriel da Palha - ES",
+  "avaliacao-neuropsicopedagogica": "Avaliação neuropsicopedagógica em São Gabriel da Palha - ES",
+  "fonoaudiologia-infantil": "Fonoaudiologia infantil em São Gabriel da Palha - ES",
   "fonoaudiologia-adolescentes-adultos-idosos":
-    "Fonoaudiologia para adolescentes, adultos e idosos em São Gabriel da Palha",
-  "estimulacao-cognitiva-idosos": "Estimulação cognitiva para idosos em São Gabriel da Palha",
+    "Fonoaudiologia para adolescentes, adultos e idosos em São Gabriel da Palha - ES",
+  "estimulacao-cognitiva-idosos": "Estimulação cognitiva para idosos em São Gabriel da Palha - ES",
   "capacitacoes-e-palestras": "Capacitações e palestras para escolas, empresas e instituições",
   "supervisao-clinica-neuropsicologia": "Supervisão clínica em neuropsicologia para profissionais",
   "supervisao-terapia-cognitivo-comportamental":

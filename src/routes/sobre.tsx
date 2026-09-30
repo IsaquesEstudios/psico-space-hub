@@ -66,7 +66,7 @@ function SobrePage() {
           </div>
           <img
             src={fotoClinica}
-            alt="Entrada da Clínica Evoluta, em São Gabriel da Palha"
+            alt="Entrada da Clínica Evoluta, em São Gabriel da Palha - ES"
             width={1920}
             height={1272}
             loading="lazy"
