@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Imagens públicas otimizadas usam WebP hospedado no CDN por arquivos `.asset.json`, para reduzir o peso sem depender de binários no repositório.
+- A página `/atendimento-online` reúne os atendimentos remotos para adultos descritos no material institucional, evitando duplicá-los na listagem principal.

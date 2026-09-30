@@ -7,6 +7,7 @@ import { atendimentos, site } from "@/data/site";
 
 const links = [
   { to: "/", label: "Início" },
+  { to: "/atendimento-online", label: "Atendimento Online" },
   { to: "/sobre", label: "Sobre nós" },
   { to: "/cursos", label: "Cursos" },
   { to: "/livros", label: "Livros" },
@@ -43,7 +44,7 @@ export function Header() {
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 xl:flex xl:justify-between xl:gap-8">
         <Link to="/" className="flex min-w-0 items-center gap-3 leading-tight" aria-label={`${site.nome}, início`}>
           <img src={logoAsset.url} alt="" width="56" height="51" className="h-10 w-auto shrink-0 object-contain" />
-          <span className="min-w-0 truncate font-display text-lg font-semibold sm:text-xl">{site.nome}</span>
+          <span className="min-w-0 truncate font-display text-lg font-semibold sm:text-xl xl:hidden 2xl:block">{site.nome}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 xl:flex 2xl:gap-8">
@@ -86,8 +87,8 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
-              className="eyebrow text-deep-foreground/75 transition-colors hover:text-primary"
-              activeProps={{ className: "eyebrow text-primary" }}
+              className="eyebrow whitespace-nowrap text-deep-foreground/75 transition-colors hover:text-primary"
+              activeProps={{ className: "eyebrow whitespace-nowrap text-primary" }}
             >
               {l.label}
             </Link>
