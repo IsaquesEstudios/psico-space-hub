@@ -103,11 +103,11 @@ function PaginaGuia() {
 
         <div className="relative z-10 mx-auto max-w-4xl px-5 py-24 text-center">
           <img
-            src={logoL.url}
+            src={logoCompleto.url}
             alt="Clínica Evoluta"
-            width={512}
-            height={311}
-            className="mx-auto w-52 drop-shadow-sm sm:w-72"
+            width={690}
+            height={409}
+            className="mx-auto w-64 drop-shadow-sm sm:w-96"
           />
           <p className="eyebrow mt-10 text-primary">Guia gratuito para pais e responsáveis</p>
           <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
