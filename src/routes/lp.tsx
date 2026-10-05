@@ -7,6 +7,7 @@ import guiaPdf from "@/assets/guia-para-os-pais.pdf.asset.json";
 import fundoHero from "@/assets/lp-guia-fundo.png.asset.json";
 import logoCompleto from "@/assets/lp-logo-completo.png.asset.json";
 import fotoGuia from "@/assets/lp-guia-hero.jpg";
+import fotoPaiFilho from "@/assets/lp-pai-filho.webp.asset.json";
 
 export const Route = createFileRoute("/lp")({
   staticData: { sitemap: false },
@@ -159,7 +160,7 @@ function PaginaGuia() {
 
       {/* Download do guia */}
       <section id="receber" className="scroll-mt-10 bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
           <div>
             <p className="eyebrow text-primary">Download gratuito</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">Baixe gratuitamente o Guia para Pais</h2>
@@ -174,16 +175,25 @@ function PaginaGuia() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="flex flex-col items-center gap-5 py-8 text-center">
-            <Button asChild className="eyebrow h-auto max-w-full whitespace-normal rounded-full px-8 py-5 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5">
+            <Button asChild className="eyebrow mt-10 h-auto max-w-full whitespace-normal rounded-full px-8 py-5 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5">
               <a href={guiaPdf.url} download="Guia_para_os_Pais.pdf" target="_blank" rel="noopener noreferrer">
                 <Download aria-hidden="true" />
                 Baixar PDF grátis
               </a>
             </Button>
-            <p className="text-sm text-deep-foreground/70">Guia para Pais · PDF gratuito</p>
+            <p className="mt-4 text-sm text-deep-foreground/60">Guia para Pais · PDF gratuito</p>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+            <div className="absolute -bottom-4 -right-4 h-full w-full rounded-3xl bg-primary/25" aria-hidden="true" />
+            <img
+              src={fotoPaiFilho.url}
+              alt="Pai sentado no chão ajudando o filho a dar os primeiros passos, cercado de brinquedos"
+              loading="lazy"
+              width={1024}
+              height={1280}
+              className="relative h-[380px] w-full rounded-3xl object-cover object-center shadow-2xl sm:h-[460px] lg:h-[540px]"
+            />
           </div>
         </div>
       </section>
