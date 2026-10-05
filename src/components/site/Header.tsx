@@ -14,6 +14,7 @@ const links = [
   { to: "/blog", label: "Blog" },
   { to: "/novidades", label: "Notícias" },
   { to: "/contato", label: "Contato" },
+  { to: "/lp", label: "PDF grátis" },
 ] as const;
 
 export function Header() {
@@ -47,7 +48,7 @@ export function Header() {
           <span className="min-w-0 truncate font-display text-lg font-semibold sm:text-xl xl:hidden 2xl:block">{site.nome}</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 xl:flex 2xl:gap-8">
+        <nav className="hidden items-center gap-4 xl:flex 2xl:gap-6">
           <Link
             to="/"
             activeOptions={{ exact: true }}
