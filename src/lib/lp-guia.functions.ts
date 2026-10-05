@@ -9,9 +9,9 @@ const esquema = z.object({
   whatsapp: z
     .string()
     .trim()
+    .max(20)
     .transform((v) => v.replace(/\D/g, ""))
-    .refine((v) => v.length >= 10 && v.length <= 13, "Informe um WhatsApp válido com DDD.")
-    .max(20),
+    .refine((v) => v.length >= 10 && v.length <= 13, "Informe um WhatsApp válido com DDD."),
   armadilha: z.string().optional(),
 });
 
