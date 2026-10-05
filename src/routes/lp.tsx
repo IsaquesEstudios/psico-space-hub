@@ -6,7 +6,7 @@ import { useState, type FormEvent } from "react";
 import { brandShareImage } from "@/data/site";
 import { enviarCadastroGuia } from "@/lib/lp-guia.functions";
 import fundoHero from "@/assets/lp-guia-fundo.png.asset.json";
-import logoL from "@/assets/logo-l.png.asset.json";
+import logoCompleto from "@/assets/lp-logo-completo.png.asset.json";
 import fotoGuia from "@/assets/lp-guia-hero.jpg";
 
 export const Route = createFileRoute("/lp")({
