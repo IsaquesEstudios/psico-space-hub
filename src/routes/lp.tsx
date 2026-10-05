@@ -1,10 +1,9 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
-import { ChevronDown, Check } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { ChevronDown, Check, Download } from "lucide-react";
 
 import { brandShareImage } from "@/data/site";
-import { enviarCadastroGuia } from "@/lib/lp-guia.functions";
+import { Button } from "@/components/ui/button";
+import guiaPdf from "@/assets/guia-para-os-pais.pdf.asset.json";
 import fundoHero from "@/assets/lp-guia-fundo.png.asset.json";
 import logoCompleto from "@/assets/lp-logo-completo.png.asset.json";
 import fotoGuia from "@/assets/lp-guia-hero.jpg";
@@ -50,45 +49,6 @@ const itensGuia = [
 ];
 
 function PaginaGuia() {
-  const enviar = useServerFn(enviarCadastroGuia);
-  const [enviando, setEnviando] = useState(false);
-  const [enviado, setEnviado] = useState(false);
-  const [erro, setErro] = useState("");
-
-  async function aoEnviar(evento: FormEvent<HTMLFormElement>) {
-    evento.preventDefault();
-    const dados = new FormData(evento.currentTarget);
-    const nome = String(dados.get("nome") ?? "").trim();
-    const email = String(dados.get("email") ?? "").trim();
-    const whatsapp = String(dados.get("whatsapp") ?? "").trim();
-
-    if (nome.length < 3) {
-      setErro("Informe seu nome completo.");
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setErro("Informe um e-mail válido.");
-      return;
-    }
-    if (whatsapp.replace(/\D/g, "").length < 10) {
-      setErro("Informe um WhatsApp válido, com DDD.");
-      return;
-    }
-
-    setErro("");
-    setEnviando(true);
-    try {
-      await enviar({ data: { nome, email, whatsapp, armadilha: String(dados.get("empresa") ?? "") } });
-      setEnviado(true);
-    } catch (excecao) {
-      setErro(
-        excecao instanceof Error ? excecao.message : "Não foi possível enviar agora. Tente novamente.",
-      );
-    } finally {
-      setEnviando(false);
-    }
-  }
-
   return (
     <div className="bg-background">
       {/* Hero com a foto da clínica e a logo centralizada */}
@@ -116,12 +76,12 @@ function PaginaGuia() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Entenda os principais sinais que merecem atenção no desenvolvimento da criança.
           </p>
-          <a
-            href="#receber"
-            className="eyebrow mt-10 inline-flex rounded-full bg-primary px-8 py-4 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:opacity-95"
-          >
-            Quero receber o guia
-          </a>
+          <Button asChild className="eyebrow mt-10 h-auto rounded-full px-8 py-4 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5">
+            <a href={guiaPdf.url} download="Guia_para_os_Pais.pdf" target="_blank" rel="noopener noreferrer">
+              <Download aria-hidden="true" />
+              Baixar PDF grátis
+            </a>
+          </Button>
         </div>
 
         <a
@@ -197,14 +157,14 @@ function PaginaGuia() {
         </div>
       </section>
 
-      {/* Formulário */}
+      {/* Download do guia */}
       <section id="receber" className="scroll-mt-10 bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow text-primary">Download gratuito</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">Baixe gratuitamente o Guia para Pais</h2>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70 sm:text-base">
-              Preencha seus dados abaixo para receber o material.
+              Acesse o guia completo em PDF, gratuitamente e sem cadastro.
             </p>
             <ul className="mt-8 space-y-3">
               {itensGuia.slice(0, 3).map((item) => (
@@ -216,78 +176,14 @@ function PaginaGuia() {
             </ul>
           </div>
 
-          <div className="rounded-3xl bg-background p-6 text-foreground shadow-2xl sm:p-10">
-            {enviado ? (
-              <div className="py-6 text-center">
-                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                  <Check className="h-7 w-7 text-primary" aria-hidden="true" />
-                </span>
-                <h3 className="mt-6 font-display text-2xl">Cadastro recebido!</h3>
-                <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                  Obrigado! Nossa equipe vai enviar o guia para o e-mail e o WhatsApp informados.
-                </p>
-              </div>
-            ) : (
-              <form className="space-y-6" onSubmit={aoEnviar} noValidate>
-                <label className="block">
-                  <span className="eyebrow text-muted-foreground">Seu nome</span>
-                  <input
-                    name="nome"
-                    type="text"
-                    autoComplete="name"
-                    className="mt-3 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
-                    placeholder="Nome completo"
-                  />
-                </label>
-                <label className="block">
-                  <span className="eyebrow text-muted-foreground">E-mail</span>
-                  <input
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    className="mt-3 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
-                    placeholder="seu@email.com"
-                  />
-                </label>
-                <label className="block">
-                  <span className="eyebrow text-muted-foreground">WhatsApp</span>
-                  <input
-                    name="whatsapp"
-                    type="tel"
-                    autoComplete="tel"
-                    className="mt-3 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
-                    placeholder="(27) 99999-9999"
-                  />
-                </label>
-
-                {/* Campo-armadilha: permanece invisível para pessoas */}
-                <input
-                  name="empresa"
-                  type="text"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -left-[9999px] h-0 w-0 opacity-0"
-                />
-
-                {erro ? (
-                  <p role="alert" className="text-sm text-destructive">
-                    {erro}
-                  </p>
-                ) : null}
-
-                <button
-                  type="submit"
-                  disabled={enviando}
-                  className="eyebrow w-full rounded-full bg-primary px-7 py-4 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:opacity-95 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-70"
-                >
-                  {enviando ? "Enviando…" : "Quero receber o guia"}
-                </button>
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  Ao enviar o formulário, você concorda em receber o guia e o contato da equipe Evoluta.
-                </p>
-              </form>
-            )}
+          <div className="flex flex-col items-center gap-5 py-8 text-center">
+            <Button asChild className="eyebrow h-auto max-w-full whitespace-normal rounded-full px-8 py-5 shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5">
+              <a href={guiaPdf.url} download="Guia_para_os_Pais.pdf" target="_blank" rel="noopener noreferrer">
+                <Download aria-hidden="true" />
+                Baixar PDF grátis
+              </a>
+            </Button>
+            <p className="text-sm text-deep-foreground/70">Guia para Pais · PDF gratuito</p>
           </div>
         </div>
       </section>
