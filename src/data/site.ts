@@ -48,6 +48,8 @@ import clinicaInauguracao from "@/assets/clinica-evoluta-inauguracao.jpg.asset.j
 import cursoDesenvolvimentoInfantil from "@/assets/curso-desenvolvimento-infantil-na-pratica.jpeg.asset.json";
 import livroVozesDaNeurodiversidade from "@/assets/livro-vozes-da-neurodiversidade.webp.asset.json";
 import ebookEntendendoTdah from "@/assets/livro-alem-da-distracao-v3.webp.asset.json";
+import capaGuiaPais from "@/assets/lp-guia-capa.webp";
+import guiaPdf from "@/assets/guia-para-os-pais.pdf.asset.json";
 import gersonCamataCapa from "@/assets/gerson-camata-capa.jpg.asset.json";
 import ildaFerreiraCapa from "@/assets/ilda-ferreira-capa.jpg.asset.json";
 import ildaFerreiraPalestra from "@/assets/ilda-ferreira-palestra.jpg.asset.json";
@@ -1621,6 +1623,32 @@ export type Livro = {
 };
 
 export const livros: Livro[] = [
+  {
+    slug: "guia-para-pais-sinais-de-alerta",
+    titulo: "Guia para Pais: Sinais de Alerta no Desenvolvimento Infantil",
+    etiqueta: "E-book",
+    resumo:
+      "Material gratuito em PDF para pais e responsáveis reconhecerem sinais de alerta no desenvolvimento infantil com mais tranquilidade.",
+    imagem: capaGuiaPais,
+    formato: "E-book digital (PDF)",
+    investimento: "Gratuito",
+    publico: "Pais, responsáveis e educadores que acompanham o desenvolvimento de crianças",
+    compraUrl: guiaPdf.url,
+    compraTexto: "Baixar PDF grátis",
+    compraNota: "Download gratuito: o arquivo abre em uma nova aba e pode ser salvo no celular ou computador.",
+    texto: [
+      "O Guia para Pais foi elaborado pela equipe da Clínica Evoluta para ajudar famílias a observarem o desenvolvimento infantil com mais clareza e segurança.",
+      "Em linguagem simples e acessível, o material apresenta sinais de alerta relacionados ao desenvolvimento da criança, envolvendo comportamento, comunicação e aprendizagem.",
+      "O objetivo é orientar pais e responsáveis sobre quando uma observação merece atenção e como buscar avaliação e acompanhamento especializados no momento adequado.",
+    ],
+    destaques: [
+      "Sinais de alerta relacionados ao desenvolvimento infantil",
+      "Aspectos de comportamento, comunicação e aprendizagem que merecem atenção",
+      "Situações em que pode ser importante procurar orientação profissional",
+      "Informações para compreender melhor o desenvolvimento da criança",
+      "Orientações sobre quando buscar uma avaliação especializada",
+    ],
+  },
   {
     slug: "entendendo-o-tdah",
     titulo: "Além da Distração: Entendendo o TDAH na Infância e Adolescência",

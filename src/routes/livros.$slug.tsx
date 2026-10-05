@@ -121,6 +121,7 @@ function LivroPage() {
                 href={livro.compraUrl}
                 target="_blank"
                 rel="noreferrer"
+                {...(livro.compraUrl.endsWith(".pdf") ? { download: "Guia_para_os_Pais.pdf" } : {})}
                 className="eyebrow mt-8 inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
               >
                 {livro.compraTexto ?? "Comprar e-book"}

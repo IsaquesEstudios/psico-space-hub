@@ -52,7 +52,7 @@ function PaginaGuia() {
   return (
     <div className="bg-background">
       {/* Hero com a foto da clínica e a logo centralizada */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         <img
           src={fundoHero.url}
           alt=""
