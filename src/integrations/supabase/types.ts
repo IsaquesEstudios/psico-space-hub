@@ -80,6 +80,33 @@ export type Database = {
         }
         Relationships: []
       }
+      guia_pais_leads: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          nome: string
+          origem: string
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          nome: string
+          origem?: string
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          nome?: string
+          origem?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
