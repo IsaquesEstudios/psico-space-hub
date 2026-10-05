@@ -1,11 +1,12 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { Check } from "lucide-react";
+import { ChevronDown, Check } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
 import { brandShareImage } from "@/data/site";
 import { enviarCadastroGuia } from "@/lib/lp-guia.functions";
-import capaGuia from "@/assets/lp-guia-capa.jpg";
+import fundoHero from "@/assets/lp-guia-fundo.png.asset.json";
+import logoCompleto from "@/assets/lp-logo-completo.png.asset.json";
 import fotoGuia from "@/assets/lp-guia-hero.jpg";
 
 export const Route = createFileRoute("/lp")({
@@ -90,39 +91,62 @@ function PaginaGuia() {
 
   return (
     <div className="bg-background">
-      {/* Hero */}
-      <section className="bg-deep px-5 py-16 text-deep-foreground lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div>
-            <p className="eyebrow text-primary">Guia gratuito para pais e responsáveis</p>
-            <h1 className="mt-6 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              Guia para Pais: Sinais de Alerta no Desenvolvimento Infantil
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-deep-foreground/75 sm:text-lg">
-              Entenda os principais sinais que merecem atenção no desenvolvimento da criança.
-            </p>
-            <a
-              href="#receber"
-              className="eyebrow mt-9 inline-flex bg-primary px-7 py-4 text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Quero receber o guia
-            </a>
-          </div>
-          <div className="mx-auto w-full max-w-md">
-            <img
-              src={capaGuia}
-              alt="Capa do Guia para Pais: Sinais de Alerta no Desenvolvimento Infantil, da Clínica Evoluta"
-              width={800}
-              height={1072}
-              className="w-full object-cover shadow-2xl"
-            />
-          </div>
+      {/* Hero com a foto da clínica e a logo centralizada */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+        <img
+          src={fundoHero.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/35 to-background/80" />
+
+        <div className="relative z-10 mx-auto max-w-4xl px-5 py-24 text-center">
+          <img
+            src={logoCompleto.url}
+            alt="Clínica Evoluta"
+            width={690}
+            height={409}
+            className="mx-auto w-64 drop-shadow-sm sm:w-96"
+          />
+          <p className="eyebrow mt-10 text-primary">Guia gratuito para pais e responsáveis</p>
+          <h1 className="mt-5 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            Guia para Pais: Sinais de Alerta no Desenvolvimento Infantil
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Entenda os principais sinais que merecem atenção no desenvolvimento da criança.
+          </p>
+          <a
+            href="#receber"
+            className="eyebrow mt-10 inline-flex rounded-full bg-primary px-8 py-4 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:opacity-95"
+          >
+            Quero receber o guia
+          </a>
         </div>
+
+        <a
+          href="#material"
+          aria-label="Rolar para o conteúdo"
+          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-deep/70 transition-colors hover:text-primary"
+        >
+          <ChevronDown className="h-7 w-7 animate-bounce" aria-hidden="true" />
+        </a>
       </section>
 
       {/* Por que este guia */}
-      <section className="px-5 py-16 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
+      <section id="material" className="scroll-mt-10 px-5 py-20 lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          <div className="relative">
+            <div className="absolute -left-4 -top-4 h-full w-full rounded-3xl bg-secondary" aria-hidden="true" />
+            <img
+              src={fotoGuia}
+              alt="Materiais de acompanhamento do desenvolvimento infantil sobre uma mesa de trabalho"
+              loading="lazy"
+              width={1600}
+              height={900}
+              className="relative h-72 w-full rounded-3xl object-cover shadow-xl sm:h-96"
+            />
+          </div>
           <div>
             <p className="eyebrow text-primary">Sobre este material</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">
@@ -137,31 +161,30 @@ function PaginaGuia() {
               que merecem atenção no desenvolvimento infantil.
             </p>
           </div>
-          <img
-            src={fotoGuia}
-            alt="Materiais de acompanhamento do desenvolvimento infantil sobre uma mesa de trabalho"
-            loading="lazy"
-            width={1600}
-            height={900}
-            className="h-72 w-full object-cover sm:h-96"
-          />
         </div>
       </section>
 
       {/* O que você vai encontrar */}
-      <section className="bg-muted px-5 py-16 lg:px-10 lg:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="eyebrow text-primary">Conteúdo do guia</p>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl">O que você vai encontrar neste guia?</h2>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {itensGuia.map((item) => (
-              <li key={item} className="flex items-start gap-4 border border-border bg-background p-5 sm:p-6">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-                <span className="text-sm leading-relaxed sm:text-base">{item}</span>
+      <section className="bg-secondary px-5 py-20 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <p className="eyebrow text-primary">Conteúdo do guia</p>
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl">O que você vai encontrar neste guia?</h2>
+          </div>
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2">
+            {itensGuia.map((item, indice) => (
+              <li
+                key={item}
+                className="rounded-2xl border border-border bg-background p-6 transition-shadow hover:shadow-lg sm:p-8"
+              >
+                <span className="font-display text-sm font-semibold tracking-widest text-primary">
+                  {String(indice + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-3 text-sm leading-relaxed sm:text-base">{item}</p>
               </li>
             ))}
           </ul>
-          <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <p className="mt-12 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             <strong className="font-semibold text-foreground">
               Informação para ajudar você a entender melhor o desenvolvimento do seu filho.
             </strong>{" "}
@@ -175,25 +198,25 @@ function PaginaGuia() {
       </section>
 
       {/* Formulário */}
-      <section id="receber" className="scroll-mt-24 px-5 py-16 lg:px-10 lg:py-24">
-        <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <section id="receber" className="scroll-mt-10 bg-deep px-5 py-20 text-deep-foreground lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow text-primary">Download gratuito</p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">Baixe gratuitamente o Guia para Pais</h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-deep-foreground/70 sm:text-base">
               Preencha seus dados abaixo para receber o material.
             </p>
-            <img
-              src={capaGuia}
-              alt="Capa do Guia para Pais: Sinais de Alerta no Desenvolvimento Infantil"
-              loading="lazy"
-              width={800}
-              height={1072}
-              className="mt-8 w-full max-w-[220px] object-cover shadow-lg"
-            />
+            <ul className="mt-8 space-y-3">
+              {itensGuia.slice(0, 3).map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-deep-foreground/80">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="border border-border bg-background p-6 sm:p-10">
+          <div className="rounded-3xl bg-background p-6 text-foreground shadow-2xl sm:p-10">
             {enviado ? (
               <div className="py-6 text-center">
                 <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
@@ -212,7 +235,7 @@ function PaginaGuia() {
                     name="nome"
                     type="text"
                     autoComplete="name"
-                    className="mt-3 w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"
+                    className="mt-3 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
                     placeholder="Nome completo"
                   />
                 </label>
@@ -222,7 +245,7 @@ function PaginaGuia() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="mt-3 w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"
+                    className="mt-3 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
                     placeholder="seu@email.com"
                   />
                 </label>
@@ -232,7 +255,7 @@ function PaginaGuia() {
                     name="whatsapp"
                     type="tel"
                     autoComplete="tel"
-                    className="mt-3 w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"
+                    className="mt-3 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
                     placeholder="(27) 99999-9999"
                   />
                 </label>
@@ -256,7 +279,7 @@ function PaginaGuia() {
                 <button
                   type="submit"
                   disabled={enviando}
-                  className="eyebrow w-full bg-primary px-7 py-4 text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="eyebrow w-full rounded-full bg-primary px-7 py-4 text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:opacity-95 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {enviando ? "Enviando…" : "Quero receber o guia"}
                 </button>
@@ -270,21 +293,21 @@ function PaginaGuia() {
       </section>
 
       {/* Sobre a clínica */}
-      <section className="bg-deep px-5 py-16 text-deep-foreground lg:px-10 lg:py-24">
+      <section className="bg-secondary px-5 py-20 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-deep-foreground/60">Sobre a Clínica Evoluta</p>
+          <p className="eyebrow text-primary">Sobre a Clínica Evoluta</p>
           <h2 className="mt-4 font-display text-3xl sm:text-4xl">Cuidar. Compreender. Transformar.</h2>
-          <p className="mt-8 text-sm leading-relaxed text-deep-foreground/75 sm:text-base">
+          <p className="mt-8 text-sm leading-relaxed text-muted-foreground sm:text-base">
             A Clínica Evoluta atua no acompanhamento do desenvolvimento infantil, oferecendo uma abordagem
             multidisciplinar com profissionais de diferentes áreas.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-deep-foreground/75 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
             A clínica trabalha com avaliação e acompanhamento em áreas como psicologia, neuropsicologia,
             neuropsicopedagogia, fonoaudiologia e intervenção comportamental.
           </p>
           <Link
             to="/"
-            className="eyebrow mt-10 inline-flex border border-deep-foreground/25 px-7 py-4 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
+            className="eyebrow mt-10 inline-flex rounded-full border border-deep/25 px-8 py-4 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
           >
             Conheça a Clínica Evoluta
           </Link>
