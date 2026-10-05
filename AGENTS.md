@@ -11,3 +11,4 @@
 
 - Imagens públicas otimizadas usam WebP hospedado no CDN por arquivos `.asset.json`, para reduzir o peso sem depender de binários no repositório.
 - A página `/atendimento-online` reúne os atendimentos remotos para adultos descritos no material institucional, evitando duplicá-los na listagem principal.
+- A landing page /lp (Guia para Pais) grava cadastros na tabela guia_pais_leads via função de servidor com RLS de apenas-INSERT para anon; ninguém lê a tabela pela API.

@@ -16,6 +16,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as LivrosRouteImport } from './routes/livros'
+import { Route as LpRouteImport } from './routes/lp'
 import { Route as NovidadesRouteImport } from './routes/novidades'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
@@ -68,6 +69,11 @@ const CursosRoute = CursosRouteImport.update({
 const LivrosRoute = LivrosRouteImport.update({
   id: '/livros',
   path: '/livros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LpRoute = LpRouteImport.update({
+  id: '/lp',
+  path: '/lp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NovidadesRoute = NovidadesRouteImport.update({
@@ -170,6 +176,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
   '/livros': typeof LivrosRouteWithChildren
+  '/lp': typeof LpRoute
   '/novidades': typeof NovidadesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -193,6 +200,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atendimento-online': typeof AtendimentoOnlineRoute
   '/contato': typeof ContatoRoute
+  '/lp': typeof LpRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
@@ -220,6 +228,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/cursos': typeof CursosRouteWithChildren
   '/livros': typeof LivrosRouteWithChildren
+  '/lp': typeof LpRoute
   '/novidades': typeof NovidadesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
@@ -249,6 +258,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cursos'
     | '/livros'
+    | '/lp'
     | '/novidades'
     | '/sitemap.xml'
     | '/sobre'
@@ -272,6 +282,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atendimento-online'
     | '/contato'
+    | '/lp'
     | '/sitemap.xml'
     | '/sobre'
     | '/admin/$slug'
@@ -298,6 +309,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/cursos'
     | '/livros'
+    | '/lp'
     | '/novidades'
     | '/sitemap.xml'
     | '/sobre'
@@ -326,6 +338,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   CursosRoute: typeof CursosRouteWithChildren
   LivrosRoute: typeof LivrosRouteWithChildren
+  LpRoute: typeof LpRoute
   NovidadesRoute: typeof NovidadesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
@@ -385,6 +398,13 @@ declare module '@tanstack/react-router' {
       path: '/livros'
       fullPath: '/livros'
       preLoaderRoute: typeof LivrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lp': {
+      id: '/lp'
+      path: '/lp'
+      fullPath: '/lp'
+      preLoaderRoute: typeof LpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/novidades': {
@@ -590,6 +610,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   CursosRoute: CursosRouteWithChildren,
   LivrosRoute: LivrosRouteWithChildren,
+  LpRoute: LpRoute,
   NovidadesRoute: NovidadesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
