@@ -7,6 +7,7 @@ import guiaPdf from "@/assets/guia-para-os-pais.pdf.asset.json";
 import fundoHero from "@/assets/lp-guia-fundo.png.asset.json";
 import logoCompleto from "@/assets/lp-logo-completo.png.asset.json";
 import fotoGuia from "@/assets/lp-guia-hero.jpg";
+import fotoPaiFilho from "@/assets/lp-pai-filho.webp.asset.json";
 
 export const Route = createFileRoute("/lp")({
   staticData: { sitemap: false },
