@@ -12,7 +12,7 @@ export const Route = createFileRoute("/livros/")({
       {
         name: "description",
         content:
-          "E-books da Clínica Evoluta com conteúdo acessível sobre TDAH, desenvolvimento, infância e aprendizagem.",
+          "E-books da Clínica Evoluta com conteúdo acessível sobre TDAH, desenvolvimento infantil, infância e aprendizagem. Guia gratuito para pais disponível para download.",
       },
       { property: "og:title", content: "Livros e e-books | Clínica Evoluta" },
       {
@@ -85,6 +85,7 @@ function LivrosIndex() {
                     href={livro.compraUrl}
                     target="_blank"
                     rel="noreferrer"
+                    {...(livro.compraUrl.endsWith(".pdf") ? { download: "Guia_para_os_Pais.pdf" } : {})}
                     className="eyebrow inline-flex max-w-full items-center justify-center gap-2 bg-primary px-6 py-4 text-center text-primary-foreground transition-opacity hover:opacity-90 sm:px-7"
                   >
                     {livro.compraTexto ?? "Comprar e-book"}

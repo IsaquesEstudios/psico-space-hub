@@ -52,7 +52,7 @@ function PaginaGuia() {
   return (
     <div className="bg-background">
       {/* Hero com a foto da clínica e a logo centralizada */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[520px] items-center justify-center overflow-hidden lg:min-h-[600px]">
         <img
           src={fundoHero.url}
           alt=""
@@ -61,7 +61,7 @@ function PaginaGuia() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/35 to-background/80" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-5 py-24 text-center">
+        <div className="relative z-10 mx-auto max-w-4xl px-5 py-16 text-center">
           <img
             src={logoCompleto.url}
             alt="Clínica Evoluta"
