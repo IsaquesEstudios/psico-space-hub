@@ -10,7 +10,7 @@ const descricao =
   "Conheça os atendimentos on-line para adultos da Clínica Evoluta: avaliação neuropsicológica e psicoterapia com Terapia Cognitivo-Comportamental.";
 const url = "https://psico-space-hub.lovable.app/atendimento-online";
 
-export const Route = createFileRoute("/atendimento-online")({
+export const Route = createFileRoute("/atendimento-online/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
