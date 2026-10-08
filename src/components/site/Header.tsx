@@ -37,7 +37,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 text-deep-foreground backdrop-blur-xl [-webkit-backdrop-filter:blur(24px)] xl:transition-colors xl:duration-300 ${
+      className={`fixed inset-x-0 top-0 z-[60] isolate [transform:translateZ(0)] text-deep-foreground backdrop-blur-xl [-webkit-backdrop-filter:blur(24px)] xl:transition-colors xl:duration-300 ${
         solid
           ? "bg-deep/85 xl:bg-deep/70"
           : "bg-deep/85 xl:bg-transparent xl:backdrop-blur-none xl:[-webkit-backdrop-filter:none]"
@@ -143,7 +143,7 @@ export function Header() {
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           aria-controls="menu-celular"
-          className="h-12 w-12 shrink-0 touch-manipulation text-deep-foreground hover:bg-deep-foreground/10 hover:text-deep-foreground active:bg-deep-foreground/20 [&_svg]:size-6 xl:hidden"
+          className="relative z-10 h-12 w-12 shrink-0 touch-manipulation [-webkit-tap-highlight-color:transparent] text-deep-foreground hover:bg-deep-foreground/10 hover:text-deep-foreground active:bg-deep-foreground/20 [&_svg]:size-6 xl:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
