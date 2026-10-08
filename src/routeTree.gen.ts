@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AtendimentoOnlineRouteImport } from './routes/atendimento-online'
 import { Route as AtendimentosRouteImport } from './routes/atendimentos'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -23,6 +22,8 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminSlugRouteImport } from './routes/admin.$slug'
 import { Route as AdminNovoRouteImport } from './routes/admin.novo'
+import { Route as AtendimentoOnlineIndexRouteImport } from './routes/atendimento-online.index'
+import { Route as AtendimentoOnlineSlugRouteImport } from './routes/atendimento-online.$slug'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -39,11 +40,6 @@ import { Route as ApiPublicBlogImagemSplatRouteImport } from './routes/api/publi
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AtendimentoOnlineRoute = AtendimentoOnlineRouteImport.update({
-  id: '/atendimento-online',
-  path: '/atendimento-online',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AtendimentosRoute = AtendimentosRouteImport.update({
@@ -104,6 +100,16 @@ const AdminSlugRoute = AdminSlugRouteImport.update({
 const AdminNovoRoute = AdminNovoRouteImport.update({
   id: '/admin/novo',
   path: '/admin/novo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtendimentoOnlineIndexRoute = AtendimentoOnlineIndexRouteImport.update({
+  id: '/atendimento-online/',
+  path: '/atendimento-online/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtendimentoOnlineSlugRoute = AtendimentoOnlineSlugRouteImport.update({
+  id: '/atendimento-online/$slug',
+  path: '/atendimento-online/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AtendimentosIndexRoute = AtendimentosIndexRouteImport.update({
@@ -170,7 +176,6 @@ const ApiPublicBlogImagemSplatRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/atendimento-online': typeof AtendimentoOnlineRoute
   '/atendimentos': typeof AtendimentosRouteWithChildren
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
@@ -182,12 +187,14 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
   '/admin/novo': typeof AdminNovoRoute
+  '/atendimento-online/$slug': typeof AtendimentoOnlineSlugRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
   '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/atendimento-online/': typeof AtendimentoOnlineIndexRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
@@ -198,19 +205,20 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/atendimento-online': typeof AtendimentoOnlineRoute
   '/contato': typeof ContatoRoute
   '/lp': typeof LpRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
   '/admin/novo': typeof AdminNovoRoute
+  '/atendimento-online/$slug': typeof AtendimentoOnlineSlugRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
   '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
   '/admin': typeof AdminIndexRoute
+  '/atendimento-online': typeof AtendimentoOnlineIndexRoute
   '/atendimentos': typeof AtendimentosIndexRoute
   '/blog': typeof BlogIndexRoute
   '/cursos': typeof CursosIndexRoute
@@ -222,7 +230,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/atendimento-online': typeof AtendimentoOnlineRoute
   '/atendimentos': typeof AtendimentosRouteWithChildren
   '/blog': typeof BlogRouteWithChildren
   '/contato': typeof ContatoRoute
@@ -234,12 +241,14 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
   '/admin/novo': typeof AdminNovoRoute
+  '/atendimento-online/$slug': typeof AtendimentoOnlineSlugRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
   '/livros/$slug': typeof LivrosSlugRoute
   '/novidades/$slug': typeof NovidadesSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/atendimento-online/': typeof AtendimentoOnlineIndexRoute
   '/atendimentos/': typeof AtendimentosIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/cursos/': typeof CursosIndexRoute
@@ -252,7 +261,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/atendimento-online'
     | '/atendimentos'
     | '/blog'
     | '/contato'
@@ -264,12 +272,14 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/admin/$slug'
     | '/admin/novo'
+    | '/atendimento-online/$slug'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
     | '/livros/$slug'
     | '/novidades/$slug'
     | '/admin/'
+    | '/atendimento-online/'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
@@ -280,19 +290,20 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/atendimento-online'
     | '/contato'
     | '/lp'
     | '/sitemap.xml'
     | '/sobre'
     | '/admin/$slug'
     | '/admin/novo'
+    | '/atendimento-online/$slug'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
     | '/livros/$slug'
     | '/novidades/$slug'
     | '/admin'
+    | '/atendimento-online'
     | '/atendimentos'
     | '/blog'
     | '/cursos'
@@ -303,7 +314,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/atendimento-online'
     | '/atendimentos'
     | '/blog'
     | '/contato'
@@ -315,12 +325,14 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/admin/$slug'
     | '/admin/novo'
+    | '/atendimento-online/$slug'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
     | '/livros/$slug'
     | '/novidades/$slug'
     | '/admin/'
+    | '/atendimento-online/'
     | '/atendimentos/'
     | '/blog/'
     | '/cursos/'
@@ -332,7 +344,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AtendimentoOnlineRoute: typeof AtendimentoOnlineRoute
   AtendimentosRoute: typeof AtendimentosRouteWithChildren
   BlogRoute: typeof BlogRouteWithChildren
   ContatoRoute: typeof ContatoRoute
@@ -344,7 +355,9 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   AdminSlugRoute: typeof AdminSlugRoute
   AdminNovoRoute: typeof AdminNovoRoute
+  AtendimentoOnlineSlugRoute: typeof AtendimentoOnlineSlugRoute
   AdminIndexRoute: typeof AdminIndexRoute
+  AtendimentoOnlineIndexRoute: typeof AtendimentoOnlineIndexRoute
   ApiPublicAdminProxyRoute: typeof ApiPublicAdminProxyRoute
   ApiPublicBlogImagemSplatRoute: typeof ApiPublicBlogImagemSplatRoute
 }
@@ -356,13 +369,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/atendimento-online': {
-      id: '/atendimento-online'
-      path: '/atendimento-online'
-      fullPath: '/atendimento-online'
-      preLoaderRoute: typeof AtendimentoOnlineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atendimentos': {
@@ -447,6 +453,20 @@ declare module '@tanstack/react-router' {
       path: '/admin/novo'
       fullPath: '/admin/novo'
       preLoaderRoute: typeof AdminNovoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimento-online/': {
+      id: '/atendimento-online/'
+      path: '/atendimento-online'
+      fullPath: '/atendimento-online/'
+      preLoaderRoute: typeof AtendimentoOnlineIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimento-online/$slug': {
+      id: '/atendimento-online/$slug'
+      path: '/atendimento-online/$slug'
+      fullPath: '/atendimento-online/$slug'
+      preLoaderRoute: typeof AtendimentoOnlineSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atendimentos/': {
@@ -604,7 +624,6 @@ const NovidadesRouteWithChildren = NovidadesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AtendimentoOnlineRoute: AtendimentoOnlineRoute,
   AtendimentosRoute: AtendimentosRouteWithChildren,
   BlogRoute: BlogRouteWithChildren,
   ContatoRoute: ContatoRoute,
@@ -616,7 +635,9 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   AdminSlugRoute: AdminSlugRoute,
   AdminNovoRoute: AdminNovoRoute,
+  AtendimentoOnlineSlugRoute: AtendimentoOnlineSlugRoute,
   AdminIndexRoute: AdminIndexRoute,
+  AtendimentoOnlineIndexRoute: AtendimentoOnlineIndexRoute,
   ApiPublicAdminProxyRoute: ApiPublicAdminProxyRoute,
   ApiPublicBlogImagemSplatRoute: ApiPublicBlogImagemSplatRoute,
 }

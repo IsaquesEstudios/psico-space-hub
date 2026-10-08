@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 import imagemOnline from "@/assets/atendimento-online.webp.asset.json";
 import { Eyebrow, Section, WhatsAppButton } from "@/components/site/bits";
+import { atendimentosOnline } from "@/data/atendimento-online";
 import { brandShareImage, site } from "@/data/site";
 
 const titulo = "Atendimento Online | Clínica Evoluta";
@@ -10,7 +11,7 @@ const descricao =
   "Conheça os atendimentos on-line para adultos da Clínica Evoluta: avaliação neuropsicológica e psicoterapia com Terapia Cognitivo-Comportamental.";
 const url = "https://psico-space-hub.lovable.app/atendimento-online";
 
-export const Route = createFileRoute("/atendimento-online")({
+export const Route = createFileRoute("/atendimento-online/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
@@ -28,27 +29,6 @@ export const Route = createFileRoute("/atendimento-online")({
   }),
   component: AtendimentoOnlinePage,
 });
-
-const possibilidadesAvaliacao = [
-  "Atenção e concentração",
-  "Memória",
-  "Funções executivas",
-  "Raciocínio",
-  "Aprendizagem",
-  "Organização e planejamento",
-  "Aspectos emocionais e comportamentais",
-  "Investigação de TDAH e outras condições do neurodesenvolvimento",
-];
-
-const possibilidadesPsicoterapia = [
-  "Autoconhecimento",
-  "Regulação emocional",
-  "Desenvolvimento de habilidades",
-  "Reestruturação de pensamentos",
-  "Manejo de dificuldades emocionais",
-  "Desenvolvimento de estratégias de enfrentamento",
-  "Construção de novos comportamentos",
-];
 
 function AtendimentoOnlinePage() {
   return (
@@ -82,66 +62,37 @@ function AtendimentoOnlinePage() {
 
       <Section>
         <div className="max-w-3xl">
-          <Eyebrow>Atendimento para adultos</Eyebrow>
+          <Eyebrow>Atendimentos on-line</Eyebrow>
           <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">
-            Acompanhamento especializado e humanizado
+            Escolha o atendimento
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Na Clínica Evoluta, cada pessoa é acompanhada de forma individualizada, considerando sua
-            história, suas necessidades e seus objetivos.
-          </p>
         </div>
-      </Section>
-
-      <Section className="bg-muted">
-        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
-          <article>
-            <Eyebrow>Avaliação on-line</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">
-              Avaliação Neuropsicológica para Adultos
-            </h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">
-              A avaliação tem como objetivo investigar o funcionamento cognitivo, emocional e
-              comportamental, contribuindo para uma compreensão mais ampla das dificuldades e
-              potencialidades de cada pessoa.
-            </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              O processo é individualizado e conduzido de acordo com a demanda apresentada,
-              considerando a história de vida, o contexto atual e os objetivos da avaliação.
-            </p>
-            <Lista itens={possibilidadesAvaliacao} />
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {atendimentosOnline.map((a) => (
             <Link
-              to="/atendimentos/$slug"
-              params={{ slug: "avaliacao-neuropsicologica" }}
-              className="eyebrow mt-8 inline-flex items-center gap-2 text-primary"
+              key={a.slug}
+              to="/atendimento-online/$slug"
+              params={{ slug: a.slug }}
+              className="group block overflow-hidden border border-border bg-card transition-shadow hover:shadow-lg"
             >
-              Conhecer este atendimento <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <img
+                src={a.imagem}
+                alt={a.alt}
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="aspect-[16/10] w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="p-8">
+                <p className="eyebrow text-primary">{a.etiqueta}</p>
+                <h3 className="mt-3 font-display text-2xl leading-tight">{a.titulo}</h3>
+                <p className="mt-4 leading-relaxed text-muted-foreground">{a.resumo}</p>
+                <span className="eyebrow mt-6 inline-flex items-center gap-2 text-primary">
+                  Conhecer este atendimento <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </div>
             </Link>
-          </article>
-
-          <article className="border-t border-border pt-12 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
-            <Eyebrow>Psicoterapia on-line</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">
-              Psicoterapia com Terapia Cognitivo-Comportamental
-            </h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">
-              A psicoterapia baseada na Terapia Cognitivo-Comportamental oferece um espaço de
-              acolhimento, escuta e desenvolvimento, auxiliando o paciente a compreender a relação
-              entre pensamentos, emoções e comportamentos.
-            </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              A TCC pode acompanhar diferentes demandas emocionais e comportamentais, contribuindo
-              para o desenvolvimento de estratégias mais funcionais para situações do cotidiano.
-            </p>
-            <Lista itens={possibilidadesPsicoterapia} />
-            <Link
-              to="/atendimentos/$slug"
-              params={{ slug: "terapia-cognitivo-comportamental" }}
-              className="eyebrow mt-8 inline-flex items-center gap-2 text-primary"
-            >
-              Conhecer este atendimento <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </article>
+          ))}
         </div>
       </Section>
 
@@ -172,15 +123,3 @@ function AtendimentoOnlinePage() {
   );
 }
 
-function Lista({ itens }: { itens: string[] }) {
-  return (
-    <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-      {itens.map((item) => (
-        <li key={item} className="flex gap-3 text-sm leading-relaxed">
-          <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
