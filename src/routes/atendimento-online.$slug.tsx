@@ -68,35 +68,35 @@ function AtendimentoOnlineDetalhe() {
       </section>
 
       <Section>
-        <div className="mx-auto max-w-3xl">
-          <Eyebrow>Sobre o atendimento</Eyebrow>
-          {item.paragrafos.map((p: string) => (
-            <p key={p} className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              {p}
-            </p>
-          ))}
-          <h2 className="mt-12 font-display text-2xl leading-tight sm:text-3xl">{item.tituloLista}</h2>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {item.itens.map((i: string) => (
-              <li key={i} className="flex gap-3 leading-relaxed">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-                {i}
-              </li>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <Eyebrow>Sobre o atendimento</Eyebrow>
+            {item.paragrafos.map((p: string) => (
+              <p key={p} className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                {p}
+              </p>
             ))}
-          </ul>
-          {item.fechamento && (
-            <p className="mt-10 leading-relaxed text-muted-foreground">{item.fechamento}</p>
-          )}
-          <div className="mt-12 overflow-hidden">
-            <img
-              src={item.imagem}
-              alt={item.alt}
-              width={1536}
-              height={1024}
-              loading="lazy"
-              className="aspect-[16/9] w-full object-cover object-center"
-            />
+            <h2 className="mt-10 font-display text-2xl leading-tight sm:text-3xl">{item.tituloLista}</h2>
+            <ul className="mt-6 grid gap-3">
+              {item.itens.map((i: string) => (
+                <li key={i} className="flex gap-3 leading-relaxed">
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                  {i}
+                </li>
+              ))}
+            </ul>
+            {item.fechamento && (
+              <p className="mt-8 leading-relaxed text-muted-foreground">{item.fechamento}</p>
+            )}
           </div>
+          <img
+            src={item.imagemApoio}
+            alt={item.altApoio}
+            width={1024}
+            height={1280}
+            loading="lazy"
+            className="aspect-[4/5] w-full object-cover object-center"
+          />
         </div>
       </Section>
 
