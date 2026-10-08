@@ -6,6 +6,7 @@ import { atendimentosOnline } from "@/data/atendimento-online";
 import { brandShareImage, site } from "@/data/site";
 
 export const Route = createFileRoute("/atendimento-online/$slug")({
+  staticData: { sitemap: false },
   loader: ({ params }) => {
     const item = atendimentosOnline.find((a) => a.slug === params.slug);
     if (!item) throw notFound();
@@ -69,14 +70,14 @@ function AtendimentoOnlineDetalhe() {
       <Section>
         <div className="mx-auto max-w-3xl">
           <Eyebrow>Sobre o atendimento</Eyebrow>
-          {item.paragrafos.map((p) => (
+          {item.paragrafos.map((p: string) => (
             <p key={p} className="mt-6 text-lg leading-relaxed text-muted-foreground">
               {p}
             </p>
           ))}
           <h2 className="mt-12 font-display text-2xl leading-tight sm:text-3xl">{item.tituloLista}</h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {item.itens.map((i) => (
+            {item.itens.map((i: string) => (
               <li key={i} className="flex gap-3 leading-relaxed">
                 <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                 {i}
