@@ -1,5 +1,7 @@
 import imgAvaliacao from "@/assets/online-avaliacao.webp";
 import imgPsicoterapia from "@/assets/online-psicoterapia.webp";
+import imgAvaliacao2 from "@/assets/online-avaliacao-2.webp";
+import imgPsicoterapia2 from "@/assets/online-psicoterapia-2.webp";
 
 export type AtendimentoOnline = {
   slug: string;
@@ -8,6 +10,8 @@ export type AtendimentoOnline = {
   resumo: string;
   imagem: string;
   alt: string;
+  imagemApoio: string;
+  altApoio: string;
   paragrafos: string[];
   tituloLista: string;
   itens: string[];
@@ -22,6 +26,8 @@ export const atendimentosOnline: AtendimentoOnline[] = [
     etiqueta: "Avaliação on-line",
     resumo:
       "Investigação do funcionamento cognitivo, emocional e comportamental, com compreensão ampla das dificuldades e potencialidades.",
+    imagemApoio: imgAvaliacao2,
+    altApoio: "Caderno com atividade de raciocínio lógico sobre uma mesa, ao lado de uma xícara de chá",
     imagem: imgAvaliacao,
     alt: "Notebook em videochamada com ilustração do cérebro e atividades de avaliação",
     paragrafos: [
@@ -48,6 +54,8 @@ export const atendimentosOnline: AtendimentoOnline[] = [
     etiqueta: "Psicoterapia on-line",
     resumo:
       "Espaço de acolhimento, escuta e desenvolvimento para compreender a relação entre pensamentos, emoções e comportamentos.",
+    imagemApoio: imgPsicoterapia2,
+    altApoio: "Cantinho aconchegante com planta, caderno, chá e notebook sobre uma mesa de madeira",
     imagem: imgPsicoterapia,
     alt: "Poltrona aconchegante ao lado de notebook preparado para sessão on-line",
     paragrafos: [
