@@ -154,7 +154,7 @@ function NovidadePage() {
           role="dialog"
           aria-modal="true"
           aria-label="Foto ampliada"
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-deep/95 p-4 sm:p-8"
+          className="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-deep/95 p-4 sm:p-8"
           onClick={() => setFotoAberta(null)}
         >
           <img
