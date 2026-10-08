@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 import logoAsset from "@/assets/logo-l.png.asset.json";
 import { atendimentos, site } from "@/data/site";
@@ -31,15 +32,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Na home, o menu nasce transparente sobre o marrom do hero e ganha o vidro ao rolar.
+  // No celular, o vidro permanece ativo; na home desktop, aparece ao rolar.
   const solid = scrolled || open || pathname !== "/";
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 text-deep-foreground transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 text-deep-foreground backdrop-blur-xl [-webkit-backdrop-filter:blur(24px)] xl:transition-colors xl:duration-300 ${
         solid
-          ? "bg-deep/70 backdrop-blur-xl"
-          : "bg-transparent"
+          ? "bg-deep/85 xl:bg-deep/70"
+          : "bg-deep/85 xl:bg-transparent xl:backdrop-blur-none xl:[-webkit-backdrop-filter:none]"
       }`}
     >
       <div className="px-5 lg:px-10">
@@ -134,19 +135,23 @@ export function Header() {
           </a>
         </div>
 
-        <button
+        <Button
           type="button"
+          variant="ghost"
+          size="icon"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Abrir menu"
-          className="shrink-0 xl:hidden"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+          aria-controls="menu-celular"
+          className="h-12 w-12 shrink-0 touch-manipulation text-deep-foreground hover:bg-deep-foreground/10 hover:text-deep-foreground active:bg-deep-foreground/20 [&_svg]:size-6 xl:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        </Button>
         </div>
       </div>
 
       {open && (
-        <div className="max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-deep-foreground/10 px-5 pb-6 xl:hidden">
+        <div id="menu-celular" className="max-h-[calc(100dvh-80px)] overflow-y-auto border-t border-deep-foreground/10 px-5 pb-6 xl:hidden">
           <Link to="/" onClick={() => setOpen(false)} className="block py-3 text-sm">
             Início
           </Link>
