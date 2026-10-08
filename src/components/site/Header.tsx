@@ -190,9 +190,6 @@ export function Header() {
           </button>
           {onlineOpen && (
             <div className="border-l border-deep-foreground/15 pl-4">
-              <Link to="/atendimento-online" onClick={() => setOpen(false)} className="block py-2 text-sm text-deep-foreground/70">
-                Ver todos
-              </Link>
               {atendimentosOnline.map((a) => (
                 <Link
                   key={a.slug}
