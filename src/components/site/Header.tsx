@@ -4,10 +4,10 @@ import { ChevronDown, Menu, X } from "lucide-react";
 
 import logoAsset from "@/assets/logo-l.png.asset.json";
 import { atendimentos, site } from "@/data/site";
+import { atendimentosOnline } from "@/data/atendimento-online";
 
 const links = [
   { to: "/", label: "Início" },
-  { to: "/atendimento-online", label: "Atendimento Online" },
   { to: "/sobre", label: "Sobre nós" },
   { to: "/cursos", label: "Cursos" },
   { to: "/livros", label: "Livros" },
@@ -20,6 +20,7 @@ const links = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [subOpen, setSubOpen] = useState(false);
+  const [onlineOpen, setOnlineOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
@@ -73,6 +74,32 @@ export function Header() {
                   <Link
                     key={a.slug}
                     to="/atendimentos/$slug"
+                    params={{ slug: a.slug }}
+                    className="block px-4 py-3 text-sm text-foreground transition-colors hover:bg-muted hover:text-primary"
+                  >
+                    {a.titulo}
+                    <span className="mt-0.5 block text-xs text-muted-foreground">{a.etiqueta}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="group relative">
+            <Link
+              to="/atendimento-online"
+              className="eyebrow flex items-center gap-1.5 whitespace-nowrap text-deep-foreground/75 transition-colors hover:text-primary"
+              activeProps={{ className: "eyebrow flex items-center gap-1.5 whitespace-nowrap text-primary" }}
+            >
+              Atendimento Online
+              <ChevronDown className="h-3 w-3" />
+            </Link>
+            <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-4 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+              <div className="border border-border/60 bg-background/90 p-2 shadow-lg backdrop-blur-xl">
+                {atendimentosOnline.map((a) => (
+                  <Link
+                    key={a.slug}
+                    to="/atendimento-online/$slug"
                     params={{ slug: a.slug }}
                     className="block px-4 py-3 text-sm text-foreground transition-colors hover:bg-muted hover:text-primary"
                   >
@@ -144,6 +171,32 @@ export function Header() {
                 <Link
                   key={a.slug}
                   to="/atendimentos/$slug"
+                  params={{ slug: a.slug }}
+                  onClick={() => setOpen(false)}
+                  className="block py-2 text-sm text-deep-foreground/70"
+                >
+                  {a.titulo}
+                </Link>
+              ))}
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={() => setOnlineOpen((v) => !v)}
+            className="flex w-full items-center justify-between py-3 text-sm"
+          >
+            Atendimento Online
+            <ChevronDown className={`h-4 w-4 transition-transform ${onlineOpen ? "rotate-180" : ""}`} />
+          </button>
+          {onlineOpen && (
+            <div className="border-l border-deep-foreground/15 pl-4">
+              <Link to="/atendimento-online" onClick={() => setOpen(false)} className="block py-2 text-sm text-deep-foreground/70">
+                Ver todos
+              </Link>
+              {atendimentosOnline.map((a) => (
+                <Link
+                  key={a.slug}
+                  to="/atendimento-online/$slug"
                   params={{ slug: a.slug }}
                   onClick={() => setOpen(false)}
                   className="block py-2 text-sm text-deep-foreground/70"

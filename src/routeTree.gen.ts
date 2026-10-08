@@ -23,6 +23,7 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as AdminSlugRouteImport } from './routes/admin.$slug'
 import { Route as AdminNovoRouteImport } from './routes/admin.novo'
 import { Route as AtendimentoOnlineIndexRouteImport } from './routes/atendimento-online.index'
+import { Route as AtendimentoOnlineSlugRouteImport } from './routes/atendimento-online.$slug'
 import { Route as AtendimentosIndexRouteImport } from './routes/atendimentos.index'
 import { Route as AtendimentosSlugRouteImport } from './routes/atendimentos.$slug'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -106,6 +107,11 @@ const AtendimentoOnlineIndexRoute = AtendimentoOnlineIndexRouteImport.update({
   path: '/atendimento-online/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtendimentoOnlineSlugRoute = AtendimentoOnlineSlugRouteImport.update({
+  id: '/atendimento-online/$slug',
+  path: '/atendimento-online/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AtendimentosIndexRoute = AtendimentosIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -181,6 +187,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
   '/admin/novo': typeof AdminNovoRoute
+  '/atendimento-online/$slug': typeof AtendimentoOnlineSlugRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
@@ -204,6 +211,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
   '/admin/novo': typeof AdminNovoRoute
+  '/atendimento-online/$slug': typeof AtendimentoOnlineSlugRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
@@ -233,6 +241,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/admin/$slug': typeof AdminSlugRoute
   '/admin/novo': typeof AdminNovoRoute
+  '/atendimento-online/$slug': typeof AtendimentoOnlineSlugRoute
   '/atendimentos/$slug': typeof AtendimentosSlugRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/cursos/$slug': typeof CursosSlugRoute
@@ -263,6 +272,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/admin/$slug'
     | '/admin/novo'
+    | '/atendimento-online/$slug'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
@@ -286,6 +296,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/admin/$slug'
     | '/admin/novo'
+    | '/atendimento-online/$slug'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
@@ -314,6 +325,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/admin/$slug'
     | '/admin/novo'
+    | '/atendimento-online/$slug'
     | '/atendimentos/$slug'
     | '/blog/$slug'
     | '/cursos/$slug'
@@ -343,6 +355,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   AdminSlugRoute: typeof AdminSlugRoute
   AdminNovoRoute: typeof AdminNovoRoute
+  AtendimentoOnlineSlugRoute: typeof AtendimentoOnlineSlugRoute
   AdminIndexRoute: typeof AdminIndexRoute
   AtendimentoOnlineIndexRoute: typeof AtendimentoOnlineIndexRoute
   ApiPublicAdminProxyRoute: typeof ApiPublicAdminProxyRoute
@@ -447,6 +460,13 @@ declare module '@tanstack/react-router' {
       path: '/atendimento-online'
       fullPath: '/atendimento-online/'
       preLoaderRoute: typeof AtendimentoOnlineIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atendimento-online/$slug': {
+      id: '/atendimento-online/$slug'
+      path: '/atendimento-online/$slug'
+      fullPath: '/atendimento-online/$slug'
+      preLoaderRoute: typeof AtendimentoOnlineSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atendimentos/': {
@@ -615,6 +635,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   AdminSlugRoute: AdminSlugRoute,
   AdminNovoRoute: AdminNovoRoute,
+  AtendimentoOnlineSlugRoute: AtendimentoOnlineSlugRoute,
   AdminIndexRoute: AdminIndexRoute,
   AtendimentoOnlineIndexRoute: AtendimentoOnlineIndexRoute,
   ApiPublicAdminProxyRoute: ApiPublicAdminProxyRoute,
