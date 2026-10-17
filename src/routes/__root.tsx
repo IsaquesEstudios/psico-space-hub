@@ -130,6 +130,15 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body className="overflow-x-hidden">
         {children}
+        <noscript>
+          <img
+            height={1}
+            width={1}
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=931231562612399&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         <Scripts />
       </body>
     </html>
