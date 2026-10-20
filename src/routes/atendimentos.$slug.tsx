@@ -129,7 +129,7 @@ function AtendimentoHero({
   fotoJessica: string;
 }) {
   return (
-    <section className="relative flex min-h-[560px] items-end overflow-hidden bg-deep text-deep-foreground lg:aspect-[18/7] lg:min-h-0">
+    <section className="relative flex min-h-[560px] items-end overflow-hidden bg-deep text-deep-foreground lg:min-h-[calc(100vw*7/18)]">
       <img
         src={fotoJessica}
         alt={item.imagemHero ? `Atendimento de ${item.titulo} na Clínica Evoluta` : `Jéssica Pelissari, neuropsicóloga da Clínica Evoluta, no atendimento ${item.titulo}`}
